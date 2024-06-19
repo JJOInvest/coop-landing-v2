@@ -5,14 +5,13 @@ import { Cormorant } from 'next/font/google';
 import localFont from 'next/font/local';
 import { ReactNode } from 'react';
 
-import { useTranslation } from '@/i18n';
-import { fallbackLng, languages } from '@/i18n/settings';
+import { I18nProvider } from '@/i18n/i18n-context';
+import { detectLanguage, getServerTranslations } from '@/i18n/server';
 import { ReactQueryProvider } from '@/lib/query-provider';
-import { BasePageParams } from '@/types/page';
 
-import '../globals.css';
+import './globals.css';
 
-interface LayoutProps extends BasePageParams {
+interface Props {
     children: ReactNode;
 }
 
@@ -21,12 +20,12 @@ const cormorant = Cormorant({ subsets: ['latin', 'cyrillic'], variable: '--font-
 const sfPro = localFont({
     src: [
         {
-            path: '../fonts/sf-pro-display-regular.woff2',
+            path: './fonts/sf-pro-display-regular.woff2',
             weight: '400',
             style: 'normal',
         },
         {
-            path: '../fonts/sf-pro-display-semibold.woff2',
+            path: './fonts/sf-pro-display-semibold.woff2',
             weight: '600',
             style: 'normal',
         },
@@ -42,31 +41,23 @@ export const viewport: Viewport = {
     userScalable: false,
 };
 
-export async function generateStaticParams() {
-    return languages.map((lng) => ({ lng }));
-}
-
-export async function generateMetadata({
-    params: { lng },
-}: {
-    params: {
-        lng: string;
-    };
-}) {
-    if (languages.indexOf(lng) < 0) lng = fallbackLng;
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const { t } = await useTranslation(lng);
+export async function generateMetadata() {
+    const { t } = await getServerTranslations();
     return {
         title: t('title'),
     };
 }
 
-export default function RootLayout({ children, params: { lng } }: LayoutProps) {
+export default async function RootLayout({ children }: Props) {
+    const lng = await detectLanguage();
+
     return (
-        <html lang={lng} dir={dir(lng)}>
+        <I18nProvider language={lng}>
             <ReactQueryProvider>
-                <body className={cn([sfPro.className, cormorant.className])}>{children}</body>
+                <html lang={lng} dir={dir(lng)}>
+                    <body className={cn([sfPro.className, cormorant.className])}>{children}</body>
+                </html>
             </ReactQueryProvider>
-        </html>
+        </I18nProvider>
     );
 }

@@ -1,5 +1,5 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
-import Cookies from 'js-cookie';
+import { deleteCookie, getCookie } from 'cookies-next';
 import { redirect } from 'next/navigation';
 
 const api = axios.create({
@@ -24,7 +24,7 @@ const withAuth =
         let token = accessToken;
 
         if (typeof window !== 'undefined') {
-            token = Cookies.get('accessToken');
+            token = getCookie('accessToken');
         }
 
         try {
@@ -34,7 +34,7 @@ const withAuth =
             const axiosError = error as AxiosError;
             if (axiosError?.response?.status === 401) {
                 if (typeof window !== 'undefined') {
-                    Cookies.remove('accessToken');
+                    deleteCookie('accessToken');
                 }
                 redirect('/login');
             } else {
@@ -48,7 +48,7 @@ export const getRequest = async <P = {}, R = ResponseData>(
     url: string,
     params: P,
     headers: Record<string, string> = {},
-    optionalParams: OptionalParams = {}, // NEW
+    optionalParams: OptionalParams = {},
 ): Promise<R> => {
     try {
         const response: AxiosResponse<R> = await api.get(url, {

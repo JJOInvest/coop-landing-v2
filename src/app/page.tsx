@@ -1,9 +1,5 @@
-import { BasePageParams } from '@/types/page';
+import { MainPage } from '@/routes/main-page';
 
-export default function Home({ params: { lng } }: BasePageParams) {
-    return (
-        <main>
-            <div className="container mx-auto">Hello there!</div>
-        </main>
-    );
+export default function Home() {
+    return <MainPage />;
 }
