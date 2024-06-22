@@ -1,8 +1,8 @@
-import { FC, HTMLProps } from 'react';
+import { HTMLProps } from 'react';
 
 export interface Props extends HTMLProps<SVGSVGElement> {}
 
-export const HeroIconM: FC<Props> = ({ ...props }) => {
+export const HeroIconM = ({ ...props }: Props) => {
     return (
         <svg
             width="60"

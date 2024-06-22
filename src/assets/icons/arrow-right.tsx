@@ -1,10 +1,8 @@
-import { FC } from 'react';
-
 export interface Props {
     color?: string;
 }
 
-export const ArrowRight: FC<Props> = ({ color = 'black' }) => {
+export const ArrowRight = ({ color = 'black' }: Props) => {
     return (
         <svg
             width="20"

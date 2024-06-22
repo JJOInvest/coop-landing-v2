@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { FC, HTMLProps, PropsWithChildren } from 'react';
+import { HTMLProps, PropsWithChildren } from 'react';
 
 import { ArrowRight } from '@/assets/icons/arrow-right';
 
@@ -8,7 +8,7 @@ export interface Props extends PropsWithChildren, Omit<HTMLProps<HTMLButtonEleme
     type?: 'submit' | 'button' | 'reset';
 }
 
-export const Button: FC<Props> = ({ variant = 'solid', className, children, ...props }) => {
+export const Button = ({ variant = 'solid', className, children, ...props }: Props) => {
     return (
         <button
             {...props}
