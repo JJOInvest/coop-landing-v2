@@ -41,10 +41,12 @@ const config: Config = {
             },
             boxShadow: {
                 box: '0px 5px 15px 0px #DFE6F070',
+                button: '0px 1px 2px 0px rgba(77, 84, 94, 0.05), 2px 4px 10px 0px rgba(77, 84, 94, 0.10)',
             },
         },
         backgroundImage: {
             'hero-pattern': "url('/hero/hero-image.png')",
+            'smart-pattern': "url('/smartest/smart-man.png')",
         },
     },
     plugins: [require('daisyui')],
