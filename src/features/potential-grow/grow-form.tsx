@@ -17,7 +17,7 @@ export const GrowForm = () => {
     const { register } = useForm<GrowForm>();
 
     return (
-        <form className={'bg-white rounded-xl p-6 lg:max-w-96 flex flex-col gap-6 shadow-box'}>
+        <form className={'bg-white rounded-xl p-6 lg:max-w-[400px] flex flex-col gap-6 shadow-box'}>
             <div className={'flex flex-col gap-2'}>
                 <span className={'text-brand-400'}>{t('potential.form.start-deposit')}</span>
 
@@ -41,6 +41,25 @@ export const GrowForm = () => {
                     </div>
                     <input type={'number'} placeholder={'500'} {...register('monthlyDeposit')} />
                 </label>
+            </div>
+
+            <div className={'flex flex-col gap-2'}>
+                <span className={'text-brand-400 flex items-center justify-between'}>
+                    {t('potential.form.period')}
+                    <span className={'text-black'}>{`5 ${t('potential.form.years')}`}</span>
+                </span>
+                <input
+                    type={'range'}
+                    min={0}
+                    max={10}
+                    className={'range range-xs text-orange-50'}
+                    style={{
+                        // Нужен для добавления переменной
+                        // @ts-ignore
+                        '--range-shdw': '#f96c41',
+                    }}
+                    {...register('investPeriod')}
+                />
             </div>
 
             <div className={'flex flex-col gap-2'}>

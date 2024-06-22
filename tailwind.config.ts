@@ -22,6 +22,7 @@ const config: Config = {
     content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
     theme: {
         extend: {
+            gradientColorStops: {},
             colors: {
                 primary: {
                     400: '#9293A0',
