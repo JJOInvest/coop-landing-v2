@@ -5,6 +5,7 @@ import { Cormorant } from 'next/font/google';
 import localFont from 'next/font/local';
 import { ReactNode } from 'react';
 
+import { Header } from '@/components/layout/header';
 import { I18nProvider } from '@/i18n/i18n-context';
 import { detectLanguage, getServerTranslations } from '@/i18n/server';
 import { ReactQueryProvider } from '@/lib/query-provider';
@@ -20,8 +21,18 @@ const cormorant = Cormorant({ subsets: ['latin', 'cyrillic'], variable: '--font-
 const sfPro = localFont({
     src: [
         {
+            path: './fonts/sf-pro-display-light.woff2',
+            weight: '300',
+            style: 'normal',
+        },
+        {
             path: './fonts/sf-pro-display-regular.woff2',
             weight: '400',
+            style: 'normal',
+        },
+        {
+            path: './fonts/sf-pro-display-medium.woff2',
+            weight: '500',
             style: 'normal',
         },
         {
@@ -55,7 +66,10 @@ export default async function RootLayout({ children }: Props) {
         <I18nProvider language={lng}>
             <ReactQueryProvider>
                 <html lang={lng} dir={dir(lng)}>
-                    <body className={cn([sfPro.className, cormorant.className])}>{children}</body>
+                    <body className={cn([sfPro.className, cormorant.className])}>
+                        <Header />
+                        <main className={'min-h-screen'}>{children}</main>
+                    </body>
                 </html>
             </ReactQueryProvider>
         </I18nProvider>

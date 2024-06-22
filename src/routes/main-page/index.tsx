@@ -1,11 +1,11 @@
-import { I18nClientComponentExample } from '@/components/i18n-client-component-example';
+import { Hero } from '@/features/hero';
+import { SimpleApproach } from '@/features/simple-approach';
 
 export const MainPage = () => {
     return (
-        <main>
-            <div className="container mx-auto">
-                <I18nClientComponentExample />
-            </div>
-        </main>
+        <>
+            <Hero />
+            <SimpleApproach />
+        </>
     );
 };

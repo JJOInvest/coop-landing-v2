@@ -4,17 +4,21 @@ const config: Config = {
     daisyui: {
         themes: ['light'],
     },
-    content: [
-        './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-        './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-        './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    ],
+    content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
     theme: {
         extend: {
+            colors: {
+                orange: {
+                    120: '#EB592D',
+                },
+            },
             fontFamily: {
                 sans: ['var(--font-sf-pro)'],
                 mono: ['var(--font-cormorant)'],
             },
+        },
+        backgroundImage: {
+            'hero-pattern': "url('/hero/hero-image.png')",
         },
     },
     plugins: [require('daisyui')],
