@@ -1,3 +1,6 @@
+import Image from 'next/image';
+
+import ArrowRight from '@/assets/icons/arrow-right.svg';
 import { Button } from '@/components/button';
 import { getServerTranslations } from '@/i18n/server';
 
@@ -19,9 +22,17 @@ export const Hero = async () => {
                 </p>
 
                 <div className="flex gap-4 lg:gap-5 mt-8 items-center lg:flex-row-reverse flex-col lg:w-min w-full">
-                    <Button type={'button'}>{t('hero.button.try-free')}</Button>
-                    <Button type={'button'} variant={'outline'}>
+                    <Button type={'button'} className={'lg:w-72 w-full lg:justify-between'}>
+                        {t('hero.button.try-free')}
+                        <Image src={ArrowRight} alt={'arrow right'} />
+                    </Button>
+                    <Button
+                        type={'button'}
+                        variant={'outline'}
+                        className={'lg:w-72 w-full lg:justify-between lg:order-2'}
+                    >
                         {t('hero.button.video')}
+                        <Image src={ArrowRight} alt={'arrow right'} className={'invert'} />
                     </Button>
                 </div>
             </div>

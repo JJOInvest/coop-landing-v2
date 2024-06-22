@@ -1,4 +1,5 @@
 import { Hero } from '@/features/hero';
+import { PotentialGrow } from '@/features/potential-grow';
 import { SimpleApproach } from '@/features/simple-approach';
 
 export const MainPage = () => {
@@ -6,6 +7,7 @@ export const MainPage = () => {
         <>
             <Hero />
             <SimpleApproach />
+            <PotentialGrow />
         </>
     );
 };

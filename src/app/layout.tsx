@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import { dir } from 'i18next';
 import type { Viewport } from 'next';
-import { Cormorant } from 'next/font/google';
+import { Cormorant, Mulish } from 'next/font/google';
 import localFont from 'next/font/local';
 import { ReactNode } from 'react';
 
@@ -16,7 +16,15 @@ interface Props {
     children: ReactNode;
 }
 
-const cormorant = Cormorant({ subsets: ['latin', 'cyrillic'], variable: '--font-cormorant' });
+const cormorant = Cormorant({
+    subsets: ['latin', 'cyrillic'],
+    variable: '--font-cormorant',
+});
+
+const mulish = Mulish({
+    subsets: ['latin', 'cyrillic', 'cyrillic-ext', 'cyrillic-ext'],
+    variable: '--font-mulish',
+});
 
 const sfPro = localFont({
     src: [
@@ -65,8 +73,8 @@ export default async function RootLayout({ children }: Props) {
     return (
         <I18nProvider language={lng}>
             <ReactQueryProvider>
-                <html lang={lng} dir={dir(lng)}>
-                    <body className={cn([sfPro.className, cormorant.className])}>
+                <html lang={lng} dir={dir(lng)} data-theme={'jjo'}>
+                    <body className={cn([sfPro.className, cormorant.className, mulish.variable])}>
                         <Header />
                         <main className={'min-h-screen'}>{children}</main>
                     </body>

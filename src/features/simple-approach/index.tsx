@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import ArrowRight from '@/assets/icons/arrow-right.svg';
 import { HeroIconFlash } from '@/assets/icons/hero-icon-flash';
 import { HeroIconM } from '@/assets/icons/hero-icon-m';
 import { HeroIconSteps } from '@/assets/icons/hero-icon-steps';
@@ -39,7 +40,10 @@ export const SimpleApproach = async () => {
                         {t('simple-approach.description')}
                     </p>
 
-                    <Button className={'mt-2'}>{t('simple-approach.button')}</Button>
+                    <Button className={'mt-2 lg:self-start'}>
+                        {t('simple-approach.button')}
+                        <Image src={ArrowRight} alt={'arrow right'} />
+                    </Button>
                 </div>
 
                 <div
