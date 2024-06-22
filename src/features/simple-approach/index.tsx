@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
 import ArrowRight from '@/assets/icons/arrow-right.svg';
-import { HeroIconFlash } from '@/assets/icons/hero-icon-flash';
-import { HeroIconM } from '@/assets/icons/hero-icon-m';
-import { HeroIconSteps } from '@/assets/icons/hero-icon-steps';
-import { HeroIconUnicorn } from '@/assets/icons/hero-icon-unicorn';
+import HeroIconFlash from '@/assets/icons/hero-icon-flash.svg';
+import HeroIconM from '@/assets/icons/hero-icon-m.svg';
+import HeroIconSteps from '@/assets/icons/hero-icon-steps.svg';
+import HeroIconUnicorn from '@/assets/icons/hero-icon-unicorn.svg';
 import { Button } from '@/components/button';
 import { BlobIcon } from '@/features/simple-approach/blob-icon';
 import { getServerTranslations } from '@/i18n/server';
@@ -65,20 +65,28 @@ export const SimpleApproach = async () => {
                         }
                     />
 
-                    <HeroIconUnicorn
+                    <Image
+                        src={HeroIconUnicorn}
+                        alt={'unicorn'}
                         className={'absolute -top-[68px] left-0 lg:top-[170px] lg:-left-[130px]'}
                     />
-                    <HeroIconFlash
+                    <Image
+                        src={HeroIconFlash}
+                        alt={'flash'}
                         className={
                             'absolute -top-[100px] -right-[6px] lg:-right-[120px] lg:-top-[60px]'
                         }
                     />
-                    <HeroIconM
+                    <Image
+                        src={HeroIconM}
+                        alt={'m'}
                         className={
                             'absolute -bottom-[40px] left-0 lg:-left-[90px] lg:bottom-[90px]'
                         }
                     />
-                    <HeroIconSteps
+                    <Image
+                        src={HeroIconSteps}
+                        alt={'steps'}
                         className={
                             'absolute right-0 -bottom-[80px] lg:-bottom-[60px] lg:-right-[80px]'
                         }
