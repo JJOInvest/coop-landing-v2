@@ -1,4 +1,5 @@
 import { BestMinds } from '@/features/best-minds';
+import { FullControl } from '@/features/full-control';
 import { Hero } from '@/features/hero';
 import { MarketGrow } from '@/features/market-grow';
 import { PotentialGrow } from '@/features/potential-grow';
@@ -12,6 +13,7 @@ export const MainPage = () => {
             <PotentialGrow />
             <BestMinds />
             <MarketGrow />
+            <FullControl />
         </>
     );
 };
