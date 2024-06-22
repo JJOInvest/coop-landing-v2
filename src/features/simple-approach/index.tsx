@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { FC } from 'react';
 
 import { HeroIconFlash } from '@/assets/icons/hero-icon-flash';
 import { HeroIconM } from '@/assets/icons/hero-icon-m';
@@ -9,7 +8,7 @@ import { Button } from '@/components/button';
 import { BlobIcon } from '@/features/simple-approach/blob-icon';
 import { getServerTranslations } from '@/i18n/server';
 
-export const SimpleApproach: FC = async () => {
+export const SimpleApproach = async () => {
     const { t } = await getServerTranslations();
 
     return (

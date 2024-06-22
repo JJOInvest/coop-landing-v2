@@ -1,9 +1,7 @@
-import { FC } from 'react';
-
 import { Button } from '@/components/button';
 import { getServerTranslations } from '@/i18n/server';
 
-export const Hero: FC = async () => {
+export const Hero = async () => {
     const { t } = await getServerTranslations();
 
     return (

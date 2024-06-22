@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 import { LoginButton } from '@/components/layout/header/login-button';
 import { Navlink } from '@/components/layout/header/navlink';
 import { getServerTranslations } from '@/i18n/server';
@@ -30,7 +28,7 @@ const points: Point[] = [
     },
 ];
 
-export const Header: FC = async () => {
+export const Header = async () => {
     const { t } = await getServerTranslations();
 
     return (

@@ -1,6 +1,4 @@
-import { FC } from 'react';
-
-export const BlobIcon: FC = () => {
+export const BlobIcon = () => {
     return (
         <svg
             className={
