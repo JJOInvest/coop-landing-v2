@@ -1,5 +1,6 @@
 import { BestMinds } from '@/features/best-minds';
 import { Hero } from '@/features/hero';
+import { MarketGrow } from '@/features/market-grow';
 import { PotentialGrow } from '@/features/potential-grow';
 import { SimpleApproach } from '@/features/simple-approach';
 
@@ -10,6 +11,7 @@ export const MainPage = () => {
             <SimpleApproach />
             <PotentialGrow />
             <BestMinds />
+            <MarketGrow />
         </>
     );
 };
