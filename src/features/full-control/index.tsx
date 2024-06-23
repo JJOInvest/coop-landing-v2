@@ -23,7 +23,7 @@ export const FullControl = async () => {
     return (
         <section
             className={
-                'bg-black text-white pt-20 mb-[512px] pb-48 lg:py-20 relative lg:mb-20 isolate'
+                'bg-black text-white pt-20 mb-[480px] pb-48 lg:py-20 relative lg:mb-32 isolate'
             }
         >
             <div

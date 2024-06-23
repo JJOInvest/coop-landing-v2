@@ -48,6 +48,8 @@ const config: Config = {
             'hero-pattern': "url('/hero/hero-image.png')",
             'smart-pattern': "url('/smartest/smart-man.png')",
             'full-control-pattern': "url('/full-control/bg.png')",
+            'important-pattern': "url('/important-knowledge/woman.png')",
+            'important-pattern-small': "url('/important-knowledge/woman-small.png')",
         },
     },
     plugins: [require('daisyui')],
