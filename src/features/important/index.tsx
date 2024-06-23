@@ -24,6 +24,12 @@ export const ImportantKnowledge = async () => {
 
                 <div
                     className={
+                        'absolute w-full h-full top-0 left-0 -z-10 bg-black hidden lg:block opacity-20'
+                    }
+                />
+
+                <div
+                    className={
                         'hidden lg:block bg-[#f96c41] w-[35%] h-[100px] absolute top-0 right-0 blur-[100px] -z-10'
                     }
                 />
