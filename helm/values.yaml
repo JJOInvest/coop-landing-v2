@@ -95,7 +95,7 @@ ingress:
   className: "nginx"
   # -- Ingress additional annotations
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-http
+    cert-manager.io/cluster-issuer: letsencrypt-nginx
     acme.cert-manager.io/http01-edit-in-place: 'true'
     # nginx.ingress.kubernetes.io/use-regex: "true"
   # -- Ingress host
