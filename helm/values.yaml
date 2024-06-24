@@ -1,6 +1,6 @@
 nameOverride: "coop-landing-v2"
 
-env: "test"
+env: "dev"
 setupType: ""
 
 replicaCount: 1
@@ -90,24 +90,25 @@ probes: {}
 # Configure ingress resourse (Ingress allows ingress services to be created to allow external access)
 ingress:
   # -- Enable or disable igress
-  enabled: false
+  enabled: true
   # -- Ingress className
   className: "nginx"
   # -- Ingress additional annotations
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-http
+    acme.cert-manager.io/http01-edit-in-place: 'true'
     # nginx.ingress.kubernetes.io/use-regex: "true"
   # -- Ingress host
   hosts:
-    - host: url
+    - host: dev-l2.jjo.finance
       paths:
         - path: /
           pathType: Prefix
   # -- If you're providing your own certificates, please use this to add the certificates as secrets (or you can you cert-manager to get certificate)
   tls:
-    - secretName: url-tls
+    - secretName: dev-l2.jjo.finance-tls
       hosts:
-        - url
+        - dev-l2.jjo.finance
 
 
 # Request for storage
