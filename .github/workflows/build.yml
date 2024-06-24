@@ -6,7 +6,7 @@ on:
       - 'release-*'
       - 'hotfix-*'
       - 'KOOP-*'
-      - 'feature*'
+      - 'feature/*'
 env:
   SERVICE_NAME: coop-landing-v2
 
