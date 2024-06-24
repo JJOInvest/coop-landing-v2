@@ -64,7 +64,7 @@ jobs:
         helm upgrade --install $SERVICE_NAME \
         -n default \
         --create-namespace \
-        --set image.tag="${GITHUB_REF_NAME}" \
+        --set image.tag="${GITHUB_REF##*/}" \
         -f helm/values.yaml \
         jjo
       env:
