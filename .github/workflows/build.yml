@@ -1,0 +1,69 @@
+name: Build Changed
+
+on:
+  push:
+    branches:
+      - 'release-*'
+      - 'hotfix-*'
+      - 'KOOP-*'
+      - 'main'
+env:
+  SERVICE_NAME: coop-landing-v2
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    - name: Docker Build
+      run: |
+        docker build -t ghcr.io/jjoinvest/$SERVICE_NAME:${GITHUB_REF##*/} .
+        docker push ghcr.io/jjoinvest/$SERVICE_NAME:${GITHUB_REF##*/}
+        echo "Success build for ${SERVICE_NAME}:${GITHUB_REF##*/}"
+        echo "SUCCESS_BUILD=1" >> $GITHUB_ENV
+    # - name: Send Notification
+    #   if: always()
+    #   run: |
+    #     if [ -z "$SUCCESS_BUILD" ]
+    #     then
+    #       NOTIFY_TEXT="${SERVICE_NAME} build failed"
+    #     else
+    #       NOTIFY_TEXT="${SERVICE_NAME} v$NEW_TAG build success"
+    #     fi
+        
+    #     curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"$NOTIFY_TEXT\"}" ${{ secrets.SLACK_NOTIFICATION_URL }}
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment: dev
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    - uses: tale/kubectl-action@v1
+      with:
+        base64-kube-config: ${{ secrets.KUBE_HTZ_DEV_CONFIG }}
+    - name: Helm deploy
+      run: |
+        helm registry login ghcr.io/jjoinvest/jjo-helm-charts -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
+        helm fetch oci://ghcr.io/jjoinvest/jjo-helm-charts/jjo --version 1.0.0 --untar
+        helm upgrade --install $SERVICE_NAME \
+        -n default \
+        --create-namespace \
+        --set image.tag="${GITHUB_REF##*/}" \
+        -f helm/values.yaml \
+        jjo
