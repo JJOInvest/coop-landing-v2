@@ -1,0 +1,198 @@
+nameOverride: "coop-landing-v2"
+
+env: "test"
+setupType: ""
+
+replicaCount: 1
+revisionHistoryLimit: 5
+
+updateStrategy:
+  type: Recreate
+
+image:
+  repository: "ghcr.io/jjoinvest/coop-landing-v2"
+  tag: ""
+  pullPolicy: Always
+
+imagePullSecrets:
+  - name: "jjo-registry"
+
+global:
+  alwaysRedeploy: true
+  terminationGracePeriodSeconds: 30
+  shareProcessNamespace: false
+    
+secrets:
+  enabled: false
+  secretsList: {}
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+# -- Specifies whether a PodDisruptionBudget should be created
+podDisruptionBudget:
+  enabled: false
+  minAvailable: 1
+  maxUnavailable: 0
+
+# Specifies whether a service should be created
+service:
+  type: ClusterIP
+  # Service ports
+  ports:
+    http:
+      pod_port: 3000
+      service_port: 3000
+      protocol: TCP
+      ingress: true
+
+# -- (dictionary) Configure extra options for containers liveness, readiness and startup probes
+probes: {}
+  # livenessProbe:
+  #   httpGet:
+  #     path: /status
+  #     port: http
+  #   initialDelaySeconds: 30
+  #   periodSeconds: 60
+  #   timeoutSeconds: 5
+  #   successThreshold: 1
+  #   failureThreshold: 3
+  # readinessProbe:
+  #   httpGet:
+  #     path: /status
+  #     port: http
+  #   initialDelaySeconds: 30
+  #   periodSeconds: 10
+  #   timeoutSeconds: 5
+  #   successThreshold: 1
+  #   failureThreshold: 3
+  # startupProbe:
+  #   httpGet:
+  #     path: /status
+  #     port: http
+  #   periodSeconds: 10
+  #   failureThreshold: 10
+
+# Configure ingress resourse (Ingress allows ingress services to be created to allow external access)
+ingress:
+  # -- Enable or disable igress
+  enabled: false
+  # -- Ingress className
+  className: "nginx"
+  # -- Ingress additional annotations
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-http
+    # nginx.ingress.kubernetes.io/use-regex: "true"
+  # -- Ingress host
+  hosts:
+    - host: url
+      paths:
+        - path: /
+          pathType: Prefix
+  # -- If you're providing your own certificates, please use this to add the certificates as secrets (or you can you cert-manager to get certificate)
+  tls:
+    - secretName: url-tls
+      hosts:
+        - url
+
+
+# Request for storage
+persistence:
+  # -- Enable of disable
+  enabled: false
+  # -- Additional annotations for PVC
+  annotations:
+    "helm.sh/resource-policy": keep
+  # -- PVC section
+  pvc:
+    # -- Enable or disable PVC resource creation
+    enabled: false
+    # -- You can add additional pvc in list
+    pvcList: {}
+      # -- PVC name pvc-{{ .Release.Name}}-{{ .Chart.Name }}-data
+      # snapshots:
+      #   # -- PVC storageclass name
+      #   storageClass: scw-bssd
+      #   # -- PVC accessMode
+      #   accessMode: ReadWriteOnce
+      #   # -- PVC size
+      #   size: 30Gi
+      #   # -- PVC mountPath inside container
+      #   mountPath: /data
+      #   # -- PVC readOnly or not
+      #   readOnly: false
+
+# --  (dictionary) Main container resource requests and limits 
+# ref: https://kubernetes.io/docs/user-guide/compute-resources/
+resources: {}
+  # limits:
+  #   cpu: 4000m
+  #   memory: 8Gi
+  # requests:
+  #   cpu: 2000m
+  #   memory: 8Gi
+
+# -- (dictionary) nodeSelector Node labels for pod assignment. Evaluated as a template. 
+# ref: https://kubernetes.io/docs/user-guide/node-selection/
+nodeSelector: {}
+
+# -- (list) Tolerations for pod assignment. Evaluated as a template. 
+# ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+tolerations: []
+
+# -- (dictionary) Affinity for pod assignment. Evaluated as a template. 
+# ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
+affinity: {}
+  # podAffinity:
+  #   requiredDuringSchedulingIgnoredDuringExecution:
+  #   - labelSelector:
+  #       matchExpressions:
+  #       - key: app.kubernetes.io/instance
+  #         operator: In
+  #         values:
+  #         - name
+  #     topologyKey: kubernetes.io/hostname
+  # nodeAffinity:
+  #   requiredDuringSchedulingIgnoredDuringExecution:
+  #     nodeSelectorTerms:
+  #     - matchExpressions:
+  #       - key: name
+  #         operator: In
+  #         values:
+  #         - enabled
+  # podAntiAffinity:
+  #   requiredDuringSchedulingIgnoredDuringExecution:
+  #   - labelSelector:
+  #       matchExpressions:
+  #       - key: app.kubernetes.io/name
+  #         operator: In
+  #         values:
+  #         - name
+  #     topologyKey: kubernetes.io/hostname
+
+# --  Additional env vars for main container 
+env_vars: {}
+  # key: value
+
+# Main container entrypoint and/or args
+customLaunch:
+  # -- Enable or disable custom launch for main container (can be used with only command or/and args)
+  enabled: false
+  # -- Change start command for main container (additional)
+  command: ""
+  # -- Change arguments for main conatiner command (additional)
+  args: [""]
