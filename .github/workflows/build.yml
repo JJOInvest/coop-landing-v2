@@ -56,7 +56,7 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
     - uses: tale/kubectl-action@v1
       with:
-        base64-kube-config: ${{ secrets.KUBE_DO_DEV_CONFIG }}
+        base64-kube-config: ${{ secrets.KUBE_HTZ_DEV_CONFIG }}
     - name: Helm deploy
       run: |
         helm registry login ghcr.io/jjoinvest/jjo-helm-charts -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
@@ -67,5 +67,3 @@ jobs:
         --set image.tag="${GITHUB_REF##*/}" \
         -f helm/values.yaml \
         jjo
-      env:
-        KUBECONFIG: /tmp/config
