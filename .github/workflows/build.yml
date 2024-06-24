@@ -25,9 +25,9 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
     - name: Docker Build
       run: |
-        docker build -t ghcr.io/jjoinvest/$SERVICE_NAME:$GITHUB_REF_NAME .
-        docker push ghcr.io/jjoinvest/$SERVICE_NAME:$GITHUB_REF_NAME
-        echo "Success build for ${SERVICE_NAME}:${GITHUB_REF_NAME}"
+        docker build -t ghcr.io/jjoinvest/$SERVICE_NAME:${GITHUB_REF##*/} .
+        docker push ghcr.io/jjoinvest/$SERVICE_NAME:${GITHUB_REF##*/}
+        echo "Success build for ${SERVICE_NAME}:${GITHUB_REF##*/}"
         echo "SUCCESS_BUILD=1" >> $GITHUB_ENV
     # - name: Send Notification
     #   if: always()
