@@ -6,6 +6,7 @@ import { ImportantKnowledge } from '@/features/important';
 import { MarketGrow } from '@/features/market-grow';
 import { PotentialGrow } from '@/features/potential-grow';
 import { SimpleApproach } from '@/features/simple-approach';
+import { Welcome } from '@/features/welcome';
 
 export const MainPage = () => {
     return (
@@ -18,6 +19,7 @@ export const MainPage = () => {
             <FullControl />
             <ImportantKnowledge />
             <HowItWorks />
+            <Welcome />
         </>
     );
 };
