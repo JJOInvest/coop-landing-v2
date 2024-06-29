@@ -1,14 +1,16 @@
+'use client';
+
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 import Blob3 from '@/assets/blobs/blob-3.svg';
 import ArrowRight from '@/assets/icons/arrow-right.svg';
 import { Button } from '@/components/button';
-import { getServerTranslations } from '@/i18n/server';
 
 import JJO from '@/assets/jjo.svg';
 
-export const MarketGrow = async () => {
-    const { t } = await getServerTranslations();
+export const MarketGrow = () => {
+    const { t } = useTranslation();
 
     return (
         <section className={'pt-20 pb-40 relative overflow-hidden lg:py-32'}>

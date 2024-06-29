@@ -1,17 +1,19 @@
+'use client';
+
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 import ArrowRight from '@/assets/icons/arrow-right.svg';
 import { Button } from '@/components/button';
-import { getServerTranslations } from '@/i18n/server';
 
-export const ImportantKnowledge = async () => {
-    const { t } = await getServerTranslations();
+export const ImportantKnowledge = () => {
+    const { t } = useTranslation();
 
     return (
         <>
             <section
                 className={
-                    'text-white isolate bg-cover pt-52 bg-left-top relative overflow-hidden lg:rounded-xl lg:py-32 lg:mx-48 lg:bg-important-pattern bg-important-pattern-small'
+                    'text-white isolate bg-cover pt-52 bg-left-top relative overflow-hidden lg:rounded-xl lg:py-32 lg:mx-20 lg:bg-important-pattern bg-important-pattern-small'
                 }
             >
                 <div

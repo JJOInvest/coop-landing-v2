@@ -1,16 +1,18 @@
+'use client';
+
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 import ArrowRight from '@/assets/icons/arrow-right.svg';
 import { Button } from '@/components/button';
-import { getServerTranslations } from '@/i18n/server';
 
-export const Welcome = async () => {
-    const { t } = await getServerTranslations();
+export const Welcome = () => {
+    const { t } = useTranslation();
 
     return (
         <section
             className={
-                'pt-20 relative bg-[#9368ff] bg-opacity-15 lg:rounded-xl lg:mx-48 lg:bg-welcome-pattern bg-no-repeat overflow-hidden'
+                'pt-20 relative bg-[#9368ff] bg-opacity-15 lg:rounded-xl lg:mx-20 lg:bg-welcome-pattern bg-no-repeat overflow-hidden lg:-mb-32'
             }
         >
             <div
@@ -30,7 +32,7 @@ export const Welcome = async () => {
                     <h2 className={'text-[28px] font-semibold lg:text-5xl/tight lg:max-w-[80%]'}>
                         {t('welcome.title')}
                     </h2>
-                    <p className={'text-neutral-500 text-[16px]/snug lg:text-lg'}>
+                    <p className={'text-primary-neutral-[16px]/snug lg:text-lg'}>
                         {t('welcome.description')}
                     </p>
                     <Button className={'mt-2'}>

@@ -1,11 +1,27 @@
 export const fallbackLng = 'ru';
-export const languages = [fallbackLng, 'en'];
+export const languages = [
+    'bz',
+    'ch',
+    'fr',
+    'de',
+    'hi',
+    'in',
+    'it',
+    'ja',
+    'ko',
+    'pi',
+    'ru',
+    'sp',
+    'tu',
+    'en',
+    've',
+];
 export const defaultNS = 'translation';
 export const cookieName = 'language';
 
-export function getOptions(lng = fallbackLng, ns: string | string[] = defaultNS) {
+export const getOptions = (lng = fallbackLng, ns: string | string[] = defaultNS) => {
     return {
-        // debug: true,
+        debug: process.env.NODE_ENV === 'development',
         supportedLngs: languages,
         // preload: languages,
         fallbackLng,
@@ -14,4 +30,4 @@ export function getOptions(lng = fallbackLng, ns: string | string[] = defaultNS)
         defaultNS,
         ns,
     };
-}
+};

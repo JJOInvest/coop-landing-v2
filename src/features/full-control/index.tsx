@@ -1,24 +1,38 @@
-import Image from 'next/image';
+'use client';
 
-import { getServerTranslations } from '@/i18n/server';
+import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
+
+import BinanceLogo from '@/assets/full-control/logos/binance.png';
+import Bkex1Logo from '@/assets/full-control/logos/bkex-1.png';
+import BkexLogo from '@/assets/full-control/logos/bkex.png';
+import Coinbase1Logo from '@/assets/full-control/logos/coinbase-1.png';
+import CoinbaseLogo from '@/assets/full-control/logos/coinbase.png';
+import Cryptocom1Logo from '@/assets/full-control/logos/cryptocom-1.png';
+import CryptocomLogo from '@/assets/full-control/logos/cryptocom.png';
+import Huobi1Logo from '@/assets/full-control/logos/huobi-1.png';
+import Huobi2Logo from '@/assets/full-control/logos/huobi-2.png';
+import HuobiLogo from '@/assets/full-control/logos/huobi.png';
+import Kucoin1Logo from '@/assets/full-control/logos/kucoin-1.png';
+import KucoinLogo from '@/assets/full-control/logos/kucoin.png';
 
 const logos = [
-    { width: 114, height: 36, fileName: 'binance.png' },
-    { width: 88, height: 36, fileName: 'bkex.png' },
-    { width: 70, height: 36, fileName: 'bkex-1.png' },
-    { width: 102, height: 36, fileName: 'coinbase.png' },
-    { width: 102, height: 36, fileName: 'coinbase-1.png' },
-    { width: 126, height: 36, fileName: 'cryptocom.png' },
-    { width: 126, height: 36, fileName: 'cryptocom-1.png' },
-    { width: 76, height: 36, fileName: 'huobi.png' },
-    { width: 76, height: 36, fileName: 'huobi-1.png' },
-    { width: 76, height: 36, fileName: 'huobi-2.png' },
-    { width: 92, height: 36, fileName: 'kucoin.png' },
-    { width: 92, height: 40, fileName: 'kucoin-1.png' },
+    BinanceLogo,
+    BkexLogo,
+    Bkex1Logo,
+    CoinbaseLogo,
+    Coinbase1Logo,
+    CryptocomLogo,
+    Cryptocom1Logo,
+    HuobiLogo,
+    Huobi1Logo,
+    Huobi2Logo,
+    KucoinLogo,
+    Kucoin1Logo,
 ];
 
-export const FullControl = async () => {
-    const { t } = await getServerTranslations();
+export const FullControl = () => {
+    const { t } = useTranslation();
 
     return (
         <section
@@ -53,15 +67,10 @@ export const FullControl = async () => {
                 <div className={'grid grid-cols-2 lg:grid-cols-4 mt-16 lg:max-w-[60%] lg:mt-10'}>
                     {logos.map((logo) => (
                         <div
-                            key={logo.fileName}
+                            key={logo.src}
                             className={'flex items-center justify-center h-16 w-full'}
                         >
-                            <Image
-                                src={`/full-control/logos/${logo.fileName}`}
-                                alt={logo.fileName}
-                                width={logo.width}
-                                height={logo.height}
-                            />
+                            <Image src={logo} alt={logo.src} />
                         </div>
                     ))}
                 </div>

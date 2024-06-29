@@ -48,6 +48,11 @@ const sfPro = localFont({
             weight: '600',
             style: 'normal',
         },
+        {
+            path: './fonts/sf-pro-display-bold.woff2',
+            weight: '700',
+            style: 'normal',
+        },
     ],
     display: 'swap',
     variable: '--font-sf-pro',

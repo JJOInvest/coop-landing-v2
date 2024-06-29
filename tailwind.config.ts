@@ -26,12 +26,13 @@ const config: Config = {
             colors: {
                 primary: {
                     400: '#9293A0',
+                    neutral: '#f7f7f7',
                 },
                 orange: {
-                    120: '#EB592D',
+                    120: '#eb592d',
                 },
                 brand: {
-                    400: '#6074A9',
+                    400: '#6074a9',
                 },
             },
             fontFamily: {

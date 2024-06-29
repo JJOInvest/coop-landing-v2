@@ -1,4 +1,5 @@
 import { BestMinds } from '@/features/best-minds';
+import { Footer } from '@/features/footer';
 import { FullControl } from '@/features/full-control';
 import { Hero } from '@/features/hero';
 import { HowItWorks } from '@/features/how-it-works';
@@ -20,6 +21,7 @@ export const MainPage = () => {
             <ImportantKnowledge />
             <HowItWorks />
             <Welcome />
+            <Footer />
         </>
     );
 };

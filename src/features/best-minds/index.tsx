@@ -1,17 +1,20 @@
+'use client';
+
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 import Blob2 from '@/assets/blobs/blob-2.svg';
 import ArrowRight from '@/assets/icons/arrow-right.svg';
+import SmartMan from '@/assets/smartest/smart-man.png';
 import { Button } from '@/components/button';
-import { getServerTranslations } from '@/i18n/server';
 
 import JJO from '@/assets/jjo.svg';
 
-export const BestMinds = async () => {
-    const { t } = await getServerTranslations();
+export const BestMinds = () => {
+    const { t } = useTranslation();
 
     return (
-        <section className={'pt-20 pb-40 relative overflow-hidden bg-[#f7f7f7] lg:py-32'}>
+        <section className={'pt-20 pb-40 relative overflow-hidden bg-primary-neutral lg:py-32'}>
             <div
                 className={
                     'absolute bg-[#3862ef] w-[200px] h-[320px] opacity-20 blur-[70px] -top-[15px] left-[30px]'
@@ -27,7 +30,7 @@ export const BestMinds = async () => {
                         {t('best-minds.description')}
                     </p>
                     <Button className={'mt-2 lg:self-start'}>
-                        Узнать больше
+                        {t('best-minds.button')}
                         <Image src={ArrowRight} alt={'arrow right'} />
                     </Button>
                 </div>
@@ -35,7 +38,7 @@ export const BestMinds = async () => {
                 <div className={'relative isolate'}>
                     <div
                         className={
-                            'absolute bg-[#3862ef] w-[200px] h-[320px] opacity-30 blur-[70px] -top-[15px] -right-[30px] -z-10 lg:-right-[240px] lg:top-[260px] lg:opacity-20'
+                            'absolute bg-[#3862ef] w-52 h-80 opacity-30 blur-[70px] -top-4 -right-8 -z-10 lg:-right-60 lg:top-64 lg:opacity-20'
                         }
                     />
 
@@ -49,22 +52,16 @@ export const BestMinds = async () => {
 
                     <div
                         className={
-                            'absolute top-0 left-14 -translate-y-[50%] rounded-full py-2 px-4 text-white flex items-center gap-2 shadow-button lg:-left-[26px] lg:top-[60px]'
+                            'absolute top-0 left-14 -translate-y-[50%] rounded-full py-2 px-4 text-white flex items-center gap-2 shadow-button lg:-left-[26px] lg:top-[60px] uppercase'
                         }
                         style={{
                             background: 'linear-gradient(48deg, #6EA7B3 6.08%, #0684A1 104.31%)',
                         }}
                     >
                         <Image src={JJO} alt={'index'} />
-                        INDEX
+                        {t('INDEX')}
                     </div>
-                    <Image
-                        src={'/smartest/smart-man.png'}
-                        alt={'smart man'}
-                        className={'rounded-xl'}
-                        width={470}
-                        height={470}
-                    />
+                    <Image src={SmartMan} alt={'smart man'} className={'rounded-xl'} />
                 </div>
             </div>
         </section>

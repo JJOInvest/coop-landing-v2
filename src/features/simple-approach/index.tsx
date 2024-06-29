@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 import ArrowRight from '@/assets/icons/arrow-right.svg';
 import HeroIconFlash from '@/assets/icons/hero-icon-flash.svg';
@@ -7,10 +10,9 @@ import HeroIconSteps from '@/assets/icons/hero-icon-steps.svg';
 import HeroIconUnicorn from '@/assets/icons/hero-icon-unicorn.svg';
 import { Button } from '@/components/button';
 import { BlobIcon } from '@/features/simple-approach/blob-icon';
-import { getServerTranslations } from '@/i18n/server';
 
-export const SimpleApproach = async () => {
-    const { t } = await getServerTranslations();
+export const SimpleApproach = () => {
+    const { t } = useTranslation();
 
     return (
         <section className={'pt-20 relative isolate overflow-hidden pb-56 lg:py-32'}>

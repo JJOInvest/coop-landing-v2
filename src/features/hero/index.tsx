@@ -1,11 +1,13 @@
+'use client';
+
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 import ArrowRight from '@/assets/icons/arrow-right.svg';
 import { Button } from '@/components/button';
-import { getServerTranslations } from '@/i18n/server';
 
-export const Hero = async () => {
-    const { t } = await getServerTranslations();
+export const Hero = () => {
+    const { t } = useTranslation();
 
     return (
         <section className={'h-screen w-screen bg-hero-pattern bg-bottom bg-cover bg-fixed pt-14'}>

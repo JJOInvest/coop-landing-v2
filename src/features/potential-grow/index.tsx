@@ -1,10 +1,13 @@
+'use client';
+
+import { useTranslation } from 'react-i18next';
+
 import { GrowDiagram } from '@/features/potential-grow/grow-diagram';
 import { GrowForm } from '@/features/potential-grow/grow-form';
 import { PercentGrow } from '@/features/potential-grow/percent-grow';
-import { getServerTranslations } from '@/i18n/server';
 
-export const PotentialGrow = async () => {
-    const { t } = await getServerTranslations();
+export const PotentialGrow = () => {
+    const { t } = useTranslation();
 
     return (
         <section

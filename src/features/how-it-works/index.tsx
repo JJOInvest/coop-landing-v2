@@ -1,9 +1,11 @@
+'use client';
+
 import cn from 'classnames';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 import ArrowRight from '@/assets/icons/arrow-right.svg';
 import { Button } from '@/components/button';
-import { getServerTranslations } from '@/i18n/server';
 
 interface Step {
     decorate: boolean;
@@ -25,11 +27,11 @@ const steps: Step[] = [
     },
 ];
 
-export const HowItWorks = async () => {
-    const { t } = await getServerTranslations();
+export const HowItWorks = () => {
+    const { t } = useTranslation();
 
     return (
-        <section className={'relative py-20'}>
+        <section className={'relative py-20 overflow-hidden'}>
             <div
                 className={
                     'absolute bg-[#ef2823] h-[80%] w-[200px] top-[10%] -right-[100px] blur-[80px] opacity-15'
@@ -76,7 +78,7 @@ export const HowItWorks = async () => {
                                         <h5 className={'text-xl'}>
                                             {t(`how-it-works.steps.${step.name}.name`)}
                                         </h5>
-                                        <p className={'text-neutral-500 text-[16px]/snug mt-2'}>
+                                        <p className={'text-neutral-400 text-[16px]/snug mt-2'}>
                                             {t(`how-it-works.steps.${step.name}.description`)}
                                         </p>
                                     </div>
@@ -90,7 +92,7 @@ export const HowItWorks = async () => {
                                 <Image src={ArrowRight} alt={'arrow right'} />
                             </Button>
 
-                            <p className={'text-sm text-neutral-500'}>{t('how-it-works.remark')}</p>
+                            <p className={'text-sm text-neutral-400'}>{t('how-it-works.remark')}</p>
                         </div>
                     </div>
                 </div>

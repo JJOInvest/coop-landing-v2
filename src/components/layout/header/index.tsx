@@ -1,6 +1,9 @@
+'use client';
+
+import { useTranslation } from 'react-i18next';
+
 import { LoginButton } from '@/components/layout/header/login-button';
 import { Navlink } from '@/components/layout/header/navlink';
-import { getServerTranslations } from '@/i18n/server';
 
 import { Logo } from '../../logo';
 
@@ -28,8 +31,8 @@ const points: Point[] = [
     },
 ];
 
-export const Header = async () => {
-    const { t } = await getServerTranslations();
+export const Header = () => {
+    const { t } = useTranslation();
 
     return (
         <header className={'w-screen fixed bg-white z-20'}>
