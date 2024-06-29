@@ -13,7 +13,7 @@ export const Header = () => {
     const { openOrClose } = useContext(mobileHeaderContext);
 
     return (
-        <header className={'lg:hidden w-screen fixed bg-white z-20 py-2'}>
+        <header className={'top-0 lg:hidden w-screen fixed bg-white z-20 py-2'}>
             <div className="container flex items-center justify-between">
                 <Image src={JJO} alt={'jjo'} className={'invert'} width={52} />
 

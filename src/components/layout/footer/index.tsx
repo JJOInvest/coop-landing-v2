@@ -34,7 +34,7 @@ export const Footer = () => {
     ];
 
     return (
-        <footer className={'bg-black pt-24 pb-10 lg:pt-48'}>
+        <footer className={'bg-black pt-24 pb-10 lg:pt-16'}>
             <div className={'container flex flex-col gap-10'}>
                 <div
                     className={

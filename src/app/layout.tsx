@@ -5,6 +5,7 @@ import { Cormorant, Mulish } from 'next/font/google';
 import localFont from 'next/font/local';
 import { ReactNode } from 'react';
 
+import { Footer } from '@/components/layout/footer';
 import { MobileHeader } from '@/components/layout/header/mobile';
 import { Header } from '@/components/layout/header/monitor';
 import { I18nProvider } from '@/i18n/i18n-context';
@@ -84,6 +85,7 @@ export default async function RootLayout({ children }: Props) {
                         <Header />
                         <MobileHeader />
                         <main className={'min-h-screen'}>{children}</main>
+                        <Footer />
                     </body>
                 </html>
             </ReactQueryProvider>

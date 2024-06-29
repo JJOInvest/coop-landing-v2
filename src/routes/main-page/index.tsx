@@ -8,8 +8,6 @@ import { PotentialGrow } from '@/features/potential-grow';
 import { SimpleApproach } from '@/features/simple-approach';
 import { Welcome } from '@/features/welcome';
 
-import { Footer } from '../../components/layout/footer';
-
 export const MainPage = () => {
     return (
         <>
@@ -22,7 +20,6 @@ export const MainPage = () => {
             <ImportantKnowledge />
             <HowItWorks />
             <Welcome />
-            <Footer />
         </>
     );
 };

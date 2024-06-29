@@ -29,10 +29,14 @@ const config: Config = {
                     neutral: '#f7f7f7',
                 },
                 orange: {
+                    100: '#f96c41',
                     120: '#eb592d',
                 },
                 brand: {
                     400: '#6074a9',
+                },
+                salad: {
+                    DEFAULT: '#00d598',
                 },
                 black: {
                     DEFAULT: '#000',
