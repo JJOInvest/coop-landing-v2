@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
+import FullControlBg from '@/assets/full-control/bg.png';
 import BinanceLogo from '@/assets/full-control/logos/binance.png';
 import Bkex1Logo from '@/assets/full-control/logos/bkex-1.png';
 import BkexLogo from '@/assets/full-control/logos/bkex.png';
@@ -15,6 +16,7 @@ import Huobi2Logo from '@/assets/full-control/logos/huobi-2.png';
 import HuobiLogo from '@/assets/full-control/logos/huobi.png';
 import Kucoin1Logo from '@/assets/full-control/logos/kucoin-1.png';
 import KucoinLogo from '@/assets/full-control/logos/kucoin.png';
+import RobotImage from '@/assets/full-control/robot.png';
 
 const logos = [
     BinanceLogo,
@@ -47,10 +49,8 @@ export const FullControl = () => {
             />
 
             <Image
-                src={'/full-control/bg.png'}
-                alt={'nothing'}
-                width={365}
-                height={605}
+                src={FullControlBg}
+                alt={''}
                 className={'hidden lg:block absolute opacity-50 top-0 left-0'}
             />
 
@@ -76,10 +76,8 @@ export const FullControl = () => {
                 </div>
 
                 <Image
-                    src={'/full-control/robot.png'}
+                    src={RobotImage}
                     alt={'robot'}
-                    width={325}
-                    height={510}
                     className={
                         'absolute rounded-xl mx-auto left-0 right-0 mt-20 -mb-[145px] lg:inset-0 lg:my-auto lg:mr-[60px] lg:-bottom-[220px]'
                     }
