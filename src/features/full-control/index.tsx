@@ -39,7 +39,7 @@ export const FullControl = () => {
     return (
         <section
             className={
-                'bg-black text-white pt-20 mb-[480px] pb-48 lg:py-20 relative lg:mb-32 isolate'
+                'bg-black text-white pt-20 mb-[500px] pb-48 lg:py-20 relative lg:mb-32 isolate'
             }
         >
             <div
@@ -79,7 +79,7 @@ export const FullControl = () => {
                     src={RobotImage}
                     alt={'robot'}
                     className={
-                        'absolute rounded-xl mx-auto left-0 right-0 mt-20 -mb-[145px] lg:inset-0 lg:my-auto lg:mr-[60px] lg:-bottom-[220px]'
+                        'absolute rounded-xl mx-auto left-0 right-0 mt-12 -mb-[145px] lg:inset-0 lg:my-auto lg:mr-[60px] lg:-bottom-[220px]'
                     }
                 />
             </div>

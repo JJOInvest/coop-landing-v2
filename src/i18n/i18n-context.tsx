@@ -3,7 +3,7 @@
 import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import resourcesToBackend from 'i18next-resources-to-backend';
-import React, { PropsWithChildren, useMemo } from 'react';
+import { PropsWithChildren, useMemo } from 'react';
 import { I18nextProvider as Provider, initReactI18next } from 'react-i18next';
 
 import { getOptions } from './settings';
@@ -24,9 +24,9 @@ i18next
         },
     });
 
-type Props = PropsWithChildren<{
+interface Props extends PropsWithChildren {
     language: string;
-}>;
+}
 
 export const I18nProvider = ({ children, language }: Props) => {
     useMemo(() => {

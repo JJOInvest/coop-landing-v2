@@ -5,7 +5,7 @@ import { Cormorant, Mulish } from 'next/font/google';
 import localFont from 'next/font/local';
 import { ReactNode } from 'react';
 
-import { Header } from '@/components/layout/header';
+import { Header } from '@/features/header/monitor';
 import { I18nProvider } from '@/i18n/i18n-context';
 import { detectLanguage, getServerTranslations } from '@/i18n/server';
 import { ReactQueryProvider } from '@/lib/query-provider';

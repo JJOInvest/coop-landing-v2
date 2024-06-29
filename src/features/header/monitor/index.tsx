@@ -2,10 +2,10 @@
 
 import { useTranslation } from 'react-i18next';
 
-import { LoginButton } from '@/components/layout/header/login-button';
-import { Navlink } from '@/components/layout/header/navlink';
-
-import { Logo } from '../../logo';
+import { Logo } from '@/components/logo';
+import { LanguagePicker } from '@/features/header/monitor/language-picker';
+import { LoginButton } from '@/features/header/monitor/login-button';
+import { Navlink } from '@/features/header/monitor/navlink';
 
 interface Point {
     labelKey: string;
@@ -46,7 +46,8 @@ export const Header = () => {
                     </nav>
                 </div>
 
-                <div className={'flex items-center'}>
+                <div className={'flex items-center gap-8'}>
+                    <LanguagePicker />
                     <LoginButton />
                 </div>
             </div>

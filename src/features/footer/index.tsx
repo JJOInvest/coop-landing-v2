@@ -8,7 +8,7 @@ import FacebookIcon from '@/assets/footer/social-media-icons/facebook.svg';
 import MediumIcon from '@/assets/footer/social-media-icons/medium.svg';
 import TelegramIcon from '@/assets/footer/social-media-icons/telegram.svg';
 import TwitterIcon from '@/assets/footer/social-media-icons/twitter.svg';
-import { FooterLanguagePicker } from '@/features/footer/footer-language-picker';
+import { LanguagePicker } from '@/features/footer/language-picker';
 
 import JJOIcon from '@/assets/jjo-text.svg';
 
@@ -70,7 +70,7 @@ export const Footer = () => {
                     </div>
 
                     <div className={'flex flex-col gap-10 lg:flex-col-reverse'}>
-                        <FooterLanguagePicker />
+                        <LanguagePicker />
 
                         <div className={'flex items-center justify-between'}>
                             {socialMedias.map((socialMedia) => (

@@ -34,6 +34,14 @@ const config: Config = {
                 brand: {
                     400: '#6074a9',
                 },
+                black: {
+                    DEFAULT: '#000',
+                    10: '#f5f5f7cc',
+                },
+                blue: {
+                    10: '#f3f5fd',
+                    60: '#b8c8fb',
+                },
             },
             fontFamily: {
                 sans: ['var(--font-sf-pro)'],
