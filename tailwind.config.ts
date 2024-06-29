@@ -42,6 +42,9 @@ const config: Config = {
                     10: '#f3f5fd',
                     60: '#b8c8fb',
                 },
+                grey: {
+                    60: '#cfd5e5',
+                },
             },
             fontFamily: {
                 sans: ['var(--font-sf-pro)'],

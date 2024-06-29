@@ -28,8 +28,7 @@
     "react-hook-form": "^7.52.0",
     "react-i18next": "^14.1.2",
     "rooks": "^7.14.1",
-    "yup": "^1.4.0",
-    "zustand": "^4.5.2"
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/lodash.debounce": "^4.0.9",

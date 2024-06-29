@@ -1,5 +1,4 @@
 import { BestMinds } from '@/features/best-minds';
-import { Footer } from '@/features/footer';
 import { FullControl } from '@/features/full-control';
 import { Hero } from '@/features/hero';
 import { HowItWorks } from '@/features/how-it-works';
@@ -8,6 +7,8 @@ import { MarketGrow } from '@/features/market-grow';
 import { PotentialGrow } from '@/features/potential-grow';
 import { SimpleApproach } from '@/features/simple-approach';
 import { Welcome } from '@/features/welcome';
+
+import { Footer } from '../../components/layout/footer';
 
 export const MainPage = () => {
     return (

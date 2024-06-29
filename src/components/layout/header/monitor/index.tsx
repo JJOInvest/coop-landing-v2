@@ -2,40 +2,17 @@
 
 import { useTranslation } from 'react-i18next';
 
+import { LanguagePicker } from '@/components/layout/header/monitor/language-picker';
+import { LoginButton } from '@/components/layout/header/monitor/login-button';
+import { Navlink } from '@/components/layout/header/monitor/navlink';
+import { points } from '@/components/layout/header/points';
 import { Logo } from '@/components/logo';
-import { LanguagePicker } from '@/features/header/monitor/language-picker';
-import { LoginButton } from '@/features/header/monitor/login-button';
-import { Navlink } from '@/features/header/monitor/navlink';
-
-interface Point {
-    labelKey: string;
-    href: string;
-}
-
-const points: Point[] = [
-    {
-        labelKey: 'layout.navbar.main',
-        href: '/',
-    },
-    {
-        labelKey: 'layout.navbar.invest',
-        href: '/invest',
-    },
-    {
-        labelKey: 'layout.navbar.price',
-        href: '/price',
-    },
-    {
-        labelKey: 'layout.navbar.ƒaq',
-        href: '/ƒaq',
-    },
-];
 
 export const Header = () => {
     const { t } = useTranslation();
 
     return (
-        <header className={'w-screen fixed bg-white z-20'}>
+        <header className={'lg:block hidden w-screen fixed bg-white z-20'}>
             <div className="container flex items-center justify-between">
                 <div className={'flex items-center'}>
                     <Logo />

@@ -8,7 +8,7 @@ import FacebookIcon from '@/assets/footer/social-media-icons/facebook.svg';
 import MediumIcon from '@/assets/footer/social-media-icons/medium.svg';
 import TelegramIcon from '@/assets/footer/social-media-icons/telegram.svg';
 import TwitterIcon from '@/assets/footer/social-media-icons/twitter.svg';
-import { LanguagePicker } from '@/features/footer/language-picker';
+import { LanguagePicker } from '@/components/language-picker';
 
 import JJOIcon from '@/assets/jjo-text.svg';
 
