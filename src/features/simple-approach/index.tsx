@@ -8,6 +8,7 @@ import HeroIconFlash from '@/assets/icons/hero-icon-flash.svg';
 import HeroIconM from '@/assets/icons/hero-icon-m.svg';
 import HeroIconSteps from '@/assets/icons/hero-icon-steps.svg';
 import HeroIconUnicorn from '@/assets/icons/hero-icon-unicorn.svg';
+import IPhone from '@/assets/simple-approach/iphone.png';
 import { Button } from '@/components/button';
 import { BlobIcon } from '@/features/simple-approach/blob-icon';
 
@@ -53,13 +54,7 @@ export const SimpleApproach = () => {
                         'mx-auto mt-40 lg:mt-0 flex items-center justify-center relative lg:flex-grow'
                     }
                 >
-                    <Image
-                        className={'z-10'}
-                        src={'/simple-approach/iphone.png'}
-                        alt={'iphone'}
-                        width={290}
-                        height={585}
-                    />
+                    <Image className={'z-10'} src={IPhone} alt={'iphone'} />
 
                     <div
                         className={

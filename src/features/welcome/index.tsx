@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
 import ArrowRight from '@/assets/icons/arrow-right.svg';
+import Hand from '@/assets/welcome/hand.png';
 import { Button } from '@/components/button';
 
 export const Welcome = () => {
@@ -52,13 +53,7 @@ export const Welcome = () => {
                         </Button>
                     </div>
 
-                    <Image
-                        src={'/welcome/hand.png'}
-                        alt={'hand with IPhone'}
-                        width={576}
-                        height={576}
-                        className={'mt-16 -ml-20'}
-                    />
+                    <Image src={Hand} alt={'hand with IPhone'} className={'mt-16 -ml-20'} />
                 </div>
             </section>
         </div>

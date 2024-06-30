@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import Blob3 from '@/assets/blobs/blob-3.svg';
 import ArrowRight from '@/assets/icons/arrow-right.svg';
+import Rocket from '@/assets/market-grow/rocket.png';
 import { Button } from '@/components/button';
 
 import JJO from '@/assets/jjo.svg';
@@ -67,13 +68,7 @@ export const MarketGrow = () => {
                         J’JO35
                     </div>
 
-                    <Image
-                        src={'/market-grow/rocket.png'}
-                        alt={'smart man'}
-                        className={'rounded-xl'}
-                        width={470}
-                        height={470}
-                    />
+                    <Image src={Rocket} alt={'smart man'} className={'rounded-xl'} />
                 </div>
             </div>
         </section>
