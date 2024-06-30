@@ -84,7 +84,7 @@ export default async function RootLayout({ children }: Props) {
                     <body className={cn([sfPro.className, cormorant.className, mulish.variable])}>
                         <Header />
                         <MobileHeader />
-                        <main className={'min-h-screen'}>{children}</main>
+                        <main>{children}</main>
                         <Footer />
                     </body>
                 </html>
