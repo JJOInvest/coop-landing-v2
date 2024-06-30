@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import { getAllArticles, getArticleById } from '@/api/articles';
 import { Button } from '@/components/button';
 import { InvestMenu } from '@/features/invest';
+import { StartWhenever } from '@/features/start-whenever';
 import { getServerTranslations } from '@/i18n/server';
 import { InvestHero } from '@/routes/invest-page/hero';
 
@@ -40,6 +41,8 @@ export const InvestPage = async ({ articleId }: Props) => {
                     <ReactMarkdown className={'mt-6 lg:mt-10'}>{article.content}</ReactMarkdown>
                 </div>
             </div>
+
+            <StartWhenever />
         </section>
     );
 };
