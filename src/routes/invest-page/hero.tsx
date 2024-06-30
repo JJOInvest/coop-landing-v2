@@ -10,7 +10,7 @@ export const InvestHero = () => {
     const { t } = useTranslation();
 
     return (
-        <div className={'relative w-screen z-20'}>
+        <div className={'relative w-screen'}>
             <Image
                 src={Blob4}
                 alt={'blob'}
