@@ -18,13 +18,13 @@ export const SimpleApproach = () => {
         <section className={'pt-20 relative isolate overflow-hidden pb-56 lg:py-32'}>
             <div
                 className={
-                    'absolute w-[475px] h-[435px] rounded-full bg-[#6079FD] -z-10 -top-[50px] -right-[160px] lg:top-[140px] lg:-right-[80px] opacity-10 blur-[100px]'
+                    'absolute w-[475px] h-[435px] rounded-full bg-blue-400 -z-10 -top-[50px] -right-[160px] lg:top-[140px] lg:-right-[80px] opacity-10 blur-[100px]'
                 }
             />
 
             <div
                 className={
-                    'absolute top-[200px] -rotate-[150deg] w-[310px] h-[200px] -z-10 bg-[#00ffff] rounded-full -right-[120px] lg:top-[450px] lg:-right-[40px] opacity-15 blur-[100px] lg:opacity-25'
+                    'absolute top-[200px] -rotate-[150deg] w-[310px] h-[200px] -z-10 bg-cyan rounded-full -right-[120px] lg:top-[450px] lg:-right-[40px] opacity-15 blur-[100px] lg:opacity-25'
                 }
             />
 
@@ -63,7 +63,7 @@ export const SimpleApproach = () => {
 
                     <div
                         className={
-                            'absolute w-[290px] h-[585px] bg-[#1d2a3e] opacity-15 blur-[20px] -mb-8 -mr-8'
+                            'absolute w-[290px] h-[585px] bg-blue-900 opacity-15 blur-[20px] -mb-8 -mr-8'
                         }
                     />
 

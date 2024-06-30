@@ -16,7 +16,7 @@ export const MarketGrow = () => {
         <section className={'pt-20 pb-40 relative overflow-hidden lg:py-32'}>
             <div
                 className={
-                    'absolute bg-[#00ffff] w-[200px] h-[320px] opacity-20 blur-[85px] rotate-[135deg] top-[35px] -right-[50px] lg:top-[320px] lg:right-[50px]'
+                    'absolute bg-cyan w-52 h-80 opacity-20 blur-[85px] rotate-[135deg] top-9 -right-[50px] lg:top-80 lg:right-[50px]'
                 }
             />
 
@@ -25,7 +25,7 @@ export const MarketGrow = () => {
                     <h2 className={'text-2xl lg:text-5xl/tight font-medium'}>
                         {t('market-grow.title')}
                     </h2>
-                    <p className={'text-[16px]/snug text-[#4e4e4e] lg:text-lg/normal'}>
+                    <p className={'text-[16px]/snug text-grey-500 lg:text-lg/normal'}>
                         {t('market-grow.description')}
                     </p>
                     <Button className={'mt-2 lg:self-start'}>
@@ -37,7 +37,7 @@ export const MarketGrow = () => {
                 <div className={'relative isolate'}>
                     <div
                         className={
-                            'absolute bg-[#3862ef] w-[200px] h-[320px] opacity-30 blur-[70px] -top-[15px] -right-[30px] -z-10 lg:-right-[240px] lg:top-[260px] lg:opacity-20'
+                            'absolute bg-blue-800 w-[200px] h-80 opacity-30 blur-[70px] -top-[15px] -right-[30px] -z-10 lg:-right-[240px] lg:top-[260px] lg:opacity-20'
                         }
                     />
 
@@ -51,11 +51,8 @@ export const MarketGrow = () => {
 
                     <div
                         className={
-                            'absolute top-0 left-[5px] -translate-y-[50%] rounded-full py-2 px-4 text-white flex items-center gap-2 shadow-button lg:-left-[70px] lg:top-[30px]'
+                            'absolute top-0 left-[5px] -translate-y-[50%] rounded-full py-2 px-4 text-white flex items-center gap-2 shadow-button lg:-left-[70px] lg:top-[30px] bg-market-grow'
                         }
-                        style={{
-                            background: 'linear-gradient(90deg, #7C5E9C 0%, #3E29B9 100%)',
-                        }}
                     >
                         <Image src={JJO} alt={'index'} />
                         J’JO Optima
@@ -63,11 +60,8 @@ export const MarketGrow = () => {
 
                     <div
                         className={
-                            'absolute -bottom-[100px] right-0 -translate-y-[50%] rounded-full py-2 px-4 text-white flex items-center gap-2 shadow-button lg:right-[20px]'
+                            'absolute -bottom-[100px] right-0 -translate-y-[50%] rounded-full py-2 px-4 text-white flex items-center gap-2 shadow-button lg:right-[20px] bg-market-grow-2'
                         }
-                        style={{
-                            background: 'linear-gradient(48deg, #6EA7B3, #0684A1)',
-                        }}
                     >
                         <Image src={JJO} alt={'index'} />
                         J’JO35

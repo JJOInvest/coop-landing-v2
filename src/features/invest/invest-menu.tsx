@@ -11,12 +11,7 @@ interface Props {
 
 export const InvestMenu = ({ activeArticleId, articles }: Props) => {
     return (
-        <div
-            className={'py-12 text-white flex flex-col gap-4 pr-8'}
-            style={{
-                background: 'linear-gradient(60deg, #ff7f57, #d8575f)',
-            }}
-        >
+        <div className={'py-12 text-white flex flex-col gap-4 pr-8 bg-invest'}>
             {articles.map((article) => (
                 <Link
                     href={`/invest?articleId=${article.id}`}

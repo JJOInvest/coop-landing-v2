@@ -17,7 +17,7 @@ export const Welcome = () => {
 
             <section
                 className={
-                    'pt-20 relative bg-[#9368ff] bg-opacity-15 lg:rounded-xl lg:mx-20 lg:bg-welcome-pattern bg-no-repeat overflow-hidden'
+                    'pt-20 relative bg-violet-400 bg-opacity-15 lg:rounded-xl lg:mx-20 lg:bg-welcome-pattern bg-no-repeat overflow-hidden'
                 }
             >
                 <div
@@ -26,13 +26,13 @@ export const Welcome = () => {
 
                 <div
                     className={
-                        'absolute hidden lg:block bg-[#ef2823] opacity-25 blur-[100px] w-[60%] h-[80%] -top-[160px] -left-[100px] -z-10'
+                        'absolute hidden lg:block bg-red-600 opacity-25 blur-[100px] w-[60%] h-[80%] -top-[160px] -left-[100px] -z-10'
                     }
                 />
 
                 <div
                     className={
-                        'absolute top-0 left-0 bg-[#9368ff] w-full h-full blur-[60px] -z-10 opacity-10'
+                        'absolute top-0 left-0 bg-violet-400 w-full h-full blur-[60px] -z-10 opacity-10'
                     }
                 />
 

@@ -9,12 +9,7 @@ export const PricePage = () => {
 
     return (
         <section className={'relative pt-36 pb-20 isolate'}>
-            <div
-                className={'absolute top-0 left-0 w-screen h-[60%] -z-10'}
-                style={{
-                    background: 'linear-gradient(60deg, #00d598, #4ad56d)',
-                }}
-            />
+            <div className={'absolute top-0 left-0 w-screen h-[60%] -z-10 bg-price'} />
 
             <div className={'container'}>
                 <h2

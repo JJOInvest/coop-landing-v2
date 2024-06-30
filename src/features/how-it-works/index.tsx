@@ -34,7 +34,7 @@ export const HowItWorks = () => {
         <section className={'relative py-20 overflow-hidden'}>
             <div
                 className={
-                    'absolute bg-[#ef2823] h-[80%] w-[200px] top-[10%] -right-[100px] blur-[80px] opacity-15'
+                    'absolute bg-red-600 h-[80%] w-[200px] top-[10%] -right-[100px] blur-[80px] opacity-15'
                 }
             />
 

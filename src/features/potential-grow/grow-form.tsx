@@ -1,9 +1,12 @@
 'use client';
 
+import cn from 'classnames';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { Button } from '@/components/button';
+
+import styles from './grow-form.styles.css';
 
 interface GrowForm {
     startDeposit: number;
@@ -52,7 +55,7 @@ export const GrowForm = () => {
                     type={'range'}
                     min={0}
                     max={10}
-                    className={'range range-xs text-orange-50'}
+                    className={cn('range range-xs text-orange-50', styles.range)}
                     style={{
                         // Нужен для добавления переменной
                         // @ts-ignore

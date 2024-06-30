@@ -44,7 +44,7 @@ export const FullControl = () => {
         >
             <div
                 className={
-                    'hidden lg:block absolute bg-[#9ea8df] w-[60%] h-[300px] -left-[80px] -top-[100px] blur-[140px] opacity-50'
+                    'hidden lg:block absolute bg-blue-100 w-[60%] h-[300px] -left-[80px] -top-[100px] blur-[140px] opacity-50'
                 }
             />
 

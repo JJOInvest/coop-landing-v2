@@ -11,17 +11,17 @@ export const PotentialGrow = () => {
 
     return (
         <section
-            className={'py-20 lg:py-28 text-white bg-[#f96c41] relative isolate overflow-hidden'}
+            className={'py-20 lg:py-28 text-white bg-orange-100 relative isolate overflow-hidden'}
         >
             <div
                 className={
-                    'bg-[#5404DB80] absolute w-full h-[200px] -top-[40px] -z-10 -left-[15%] blur-[80px] opacity-50 lg:w-[45%]'
+                    'bg-violet-800/65 absolute w-full h-[200px] -top-[40px] -z-10 -left-[15%] blur-[80px] opacity-50 lg:w-[45%]'
                 }
             />
 
             <div
                 className={
-                    'bg-[#5404DB80] absolute w-[150%] h-[200px] bottom-0 top-0 my-auto lg:m-0 -z-10 blur-[80px] opacity-50 lg:top-auto lg:w-full lg:h-[120px]'
+                    'bg-violet-800/65 absolute w-[150%] h-[200px] bottom-0 top-0 my-auto lg:m-0 -z-10 blur-[80px] opacity-50 lg:top-auto lg:w-full lg:h-[120px]'
                 }
             />
 

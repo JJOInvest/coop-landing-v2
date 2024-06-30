@@ -17,11 +17,9 @@ export const ImportantKnowledge = () => {
                 }
             >
                 <div
-                    className={'absolute w-full h-full top-0 left-0 -z-10 lg:hidden'}
-                    style={{
-                        background:
-                            'linear-gradient(to bottom, black, transparent, transparent, black)',
-                    }}
+                    className={
+                        'absolute w-full h-full top-0 left-0 -z-10 lg:hidden bg-important-knowledge'
+                    }
                 />
 
                 <div
@@ -32,14 +30,14 @@ export const ImportantKnowledge = () => {
 
                 <div
                     className={
-                        'hidden lg:block bg-[#f96c41] w-[35%] h-[100px] absolute top-0 right-0 blur-[100px] -z-10'
+                        'hidden lg:block bg-orange-100 w-[35%] h-[100px] absolute top-0 right-0 blur-[100px] -z-10'
                     }
                 />
 
                 <div className={'container'}>
                     <div
                         className={
-                            'absolute w-[70%] lg:w-[40%] bg-[#5404db] opacity-60 h-[200px] -top-[100px] left-0 blur-[140px] lg:-top-[150px] -z-10'
+                            'absolute w-[70%] lg:w-[40%] bg-violet-800 opacity-60 h-[200px] -top-[100px] left-0 blur-[140px] lg:-top-[150px] -z-10'
                         }
                     />
 

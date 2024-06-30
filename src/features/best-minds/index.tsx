@@ -17,7 +17,7 @@ export const BestMinds = () => {
         <section className={'pt-20 pb-40 relative overflow-hidden bg-primary-neutral lg:py-32'}>
             <div
                 className={
-                    'absolute bg-[#3862ef] w-[200px] h-[320px] opacity-20 blur-[70px] -top-[15px] left-[30px]'
+                    'absolute bg-blue-800 w-[200px] h-80 opacity-20 blur-[70px] -top-[15px] left-[30px]'
                 }
             />
 
@@ -26,7 +26,7 @@ export const BestMinds = () => {
                     <h2 className={'text-2xl lg:text-5xl/tight font-medium'}>
                         {t('best-minds.title')}
                     </h2>
-                    <p className={'text-[16px]/snug text-[#4e4e4e] lg:text-lg/normal'}>
+                    <p className={'text-[16px]/snug text-grey-500 lg:text-lg/normal'}>
                         {t('best-minds.description')}
                     </p>
                     <Button className={'mt-2 lg:self-start'}>
@@ -38,7 +38,7 @@ export const BestMinds = () => {
                 <div className={'relative isolate'}>
                     <div
                         className={
-                            'absolute bg-[#3862ef] w-52 h-80 opacity-30 blur-[70px] -top-4 -right-8 -z-10 lg:-right-60 lg:top-64 lg:opacity-20'
+                            'absolute bg-blue-800 w-52 h-80 opacity-30 blur-[70px] -top-4 -right-8 -z-10 lg:-right-60 lg:top-64 lg:opacity-20'
                         }
                     />
 
@@ -52,11 +52,8 @@ export const BestMinds = () => {
 
                     <div
                         className={
-                            'absolute top-0 left-14 -translate-y-[50%] rounded-full py-2 px-4 text-white flex items-center gap-2 shadow-button lg:-left-[26px] lg:top-[60px] uppercase'
+                            'absolute top-0 left-14 -translate-y-[50%] rounded-full py-2 px-4 text-white flex items-center gap-2 shadow-button lg:-left-[26px] lg:top-[60px] uppercase bg-best-minds'
                         }
-                        style={{
-                            background: 'linear-gradient(48deg, #6EA7B3 6.08%, #0684A1 104.31%)',
-                        }}
                     >
                         <Image src={JJO} alt={'index'} />
                         {t('INDEX')}

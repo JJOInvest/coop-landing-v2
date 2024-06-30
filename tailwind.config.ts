@@ -24,6 +24,13 @@ const config: Config = {
         extend: {
             gradientColorStops: {},
             colors: {
+                red: {
+                    600: '#ef2823',
+                },
+                violet: {
+                    400: '#9368ff',
+                    800: '#5404db',
+                },
                 primary: {
                     400: '#9293A0',
                     neutral: '#f7f7f7',
@@ -45,16 +52,33 @@ const config: Config = {
                 blue: {
                     10: '#f3f5fd',
                     60: '#b8c8fb',
+                    100: '#9ea8df',
+                    400: '#6079fd',
                     800: '#3862ef',
+                    900: '#1d2a3e',
                 },
                 grey: {
                     60: '#cfd5e5',
+                    500: '#4e4e4e',
+                },
+                cyan: {
+                    DEFAULT: '#00ffff',
                 },
             },
             fontFamily: {
                 sans: ['var(--font-sf-pro)'],
                 mono: ['var(--font-cormorant)'],
                 decorate: ['var(--font-mulish)'],
+            },
+            backgroundImage: {
+                price: 'linear-gradient(60deg, #00d598, #4ad56d)',
+                'important-knowledge':
+                    'linear-gradient(to bottom, black, transparent, transparent, black)',
+                invest: 'linear-gradient(60deg, #ff7f57, #d8575f)',
+                'market-grow': 'linear-gradient(90deg, #7C5E9C 0%, #3E29B9 100%)',
+                'market-grow-2': 'linear-gradient(48deg, #6EA7B3, #0684A1)',
+                'start-whenever': 'linear-gradient(135deg, #fde4e3, #eee7ff)',
+                'best-minds': 'linear-gradient(48deg, #6EA7B3 6.08%, #0684A1 104.31%)',
             },
             boxShadow: {
                 box: '0px 5px 15px 0px #DFE6F070',

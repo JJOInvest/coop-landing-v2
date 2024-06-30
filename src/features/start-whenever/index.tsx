@@ -13,12 +13,7 @@ export const StartWhenever = () => {
                 className={'absolute bg-black hidden lg:block h-32 w-screen bottom-0 left-0 -z-20'}
             />
 
-            <section
-                className={'py-20 lg:mx-20 lg:rounded-xl'}
-                style={{
-                    background: 'linear-gradient(135deg, #fde4e3, #eee7ff)',
-                }}
-            >
+            <section className={'py-20 lg:mx-20 lg:rounded-xl bg-start-whenever'}>
                 <div className={'container flex flex-col gap-8 lg:items-center'}>
                     <h3
                         className={
