@@ -4,7 +4,8 @@
             "main": "Главная",
             "invest": "Инвестировать",
             "price": "Цены",
-            "ƒaq": "Помощь"
+            "ƒaq": "Помощь",
+            "blog": "Блог"
         },
         "header": {
             "button": "Войти"
@@ -12,7 +13,7 @@
     },
     "hero": {
         "title": "Рост ваших сбережений начинается здесь",
-        "description": "Готовое решение для инвестиций в рынок криптовалют, построенное на базе лучших мировых подходов к управлению капиталом. ",
+        "description": "Готовое решение для инвестиций в рынок криптовалют, построенное на базе лучших мировых подходов к управлению капиталом.",
         "button.video": "Смотреть видео",
         "button.try-free": "Попробовать бесплатно"
     },
@@ -20,5 +21,119 @@
         "title": "Простой подход к сложному миру криптовалют",
         "description": "JJO не требует специальных знаний, он прост в использовании и доступен всем, кто желает увеличить свои сбережения.",
         "button": "Узнать больше"
+    },
+    "potential": {
+        "title": "Увидеть свой потенциал роста",
+        "description": "Средняя годовая доходность индекса JJO35 за последние 4 года.",
+        "remark": "*калькулятор и диаграмма не учитывают возможные экономические или рыночные факторы, которые могут повлиять на инвестиции. Результаты предоставляются только для информационных целей и не должны рассматриваться как инвестиционный совет или прогноз для индексов и портфелей jjo.",
+        "form": {
+            "start-deposit": "Стартовый депозит",
+            "monthly-deposit": "Ежемесячное пополнение",
+            "optional": "опционально",
+            "period": "Инвестиционный период",
+            "years": "лет",
+            "average": "Среднегодовой % J’JO35",
+            "button": "Рассчитать",
+            "balance": "Потенциальный баланс"
+        }
+    },
+    "best-minds": {
+        "title": "Лучшие умы десятки лет ищут подходы к управлению капиталом",
+        "description": "Анализ их опыта открывает нам правду о том, что рынок сам дает лучший прирост вашим сбережениям.",
+        "button": "Узнать больше"
+    },
+    "market-grow": {
+        "title": "Потенциал роста рынка криптовалют",
+        "description": "Стремительное развитие технологий и нарастающий интерес крупных финансовых и государственных организаций говорит нам о том, что мы еще только в начале пути.",
+        "button": "Узнать больше"
+    },
+    "full-control": {
+        "title": "Полный контроль только в ваших руках",
+        "description": "Вы не отправляете нам свои средства, исключая все связанные с этим риски. Все происходит под вашим полным контролем на аккаунте той биржи, которой вы доверяете."
+    },
+    "important-knowledge": {
+        "title": "Важно знать!",
+        "description": "JJO не прогнозирует рынок и не оценивает перспективы актива. Его функция заключается в том, что бы отслеживать монеты, которые являются лидерами по обьему вложенных в них средств и убирать из вашего портфеля те монеты которые теряют в стоимости. Такой подход позволяет вам иметь в своей корзине все зарекомендовавшие себя активы рынка и не упускать из виду новые быстрорастущие активы.",
+        "button": "Зарегистрироваться"
+    },
+    "how-it-works": {
+        "title": "Как работает JJO",
+        "remark": "Вложенные в индекс активы все время хранятся на бирже. JJO не имеет доступа к выводу ваших средств с биржи.",
+        "button": "Начать пользоваться J’JO бесплатно",
+        "steps": {
+            "first": {
+                "name": "Зарегистрируйтесь",
+                "description": "Зарегистрируйтесь и подключите JJO к своему аккаунту на бирже."
+            },
+            "second": {
+                "name": "Используйте сервиc",
+                "description": "Купите подписку или используйте сервис бесплатно."
+            },
+            "third": {
+                "name": "Планируйте своё будущее",
+                "description": "Выберите индекс, сумму инвестиций и наблюдайте за тем, как растут ваши сбережения."
+            }
+        }
+    },
+    "welcome": {
+        "title": "Добро пожаловать на борт JJO",
+        "description": "Все, что нужно для эффективного инвестирования в криптовалюты в удобном и простом сервисе.",
+        "button": "Начать больше"
+    },
+    "footer": {
+        "menu": {
+            "main": "Главная",
+            "invest": "Инвестировать",
+            "price": "Цены",
+            "help": "Помощь",
+            "blog": "Блог",
+            "confidence": "Политика конфиденциальности",
+            "conditions": "Условия использования",
+            "cookie": "Политика cookie"
+        },
+        "disclaimer": "Disclaimer: JJO-ONE PTE. LTD. (registration code - 202304367C, registered address 10 ANSON ROAD #20-05 INTERNATIONAL PLAZA SINGAPORE (079903)) do not provide investment or assets management services of any kind or services of investment advisers. Using the Website, you confirm that you are solely responsible for all transactions made within the Website, including but not limited to the risks associated with cryptocurrency trading as activity with high-level risk (see more in our Term of Use) JJO Finance LTD (registration code -13165223, registered address 91 battersea Park Road, London, England, SW8 4DU) is a Payment Agent of JJO-ONE PTE. LTD.\nYou should consider whether you understand how cryptocurrencies and their sets work, and whether you can afford to take the high risk of losing your money while trading in cryptomarkets. Cryptocurrency is a digital representation of value that functions as a medium of exchange, a unit of account, or a store of value, but it does not have legal tender status and is not generally backed or supported by any government or central bank. Due to the fact the legality cryptocurrency holding or trading is not always clear. Cryptocurrency markets and exchanges are not regulated with the same provisions or customer protections applicable to equity, option, futures, or foreign exchange investing. Legislative and regulatory changes or actions at the state or international level may adversely affect the use, transfer, exchange, and value of cryptocurrency. User will be subject to any applicable law which may apply to the blockchain. When seeing any graphics and indicators of cryptomarkets growth, you should remember ast performance is not an indication of future results, and such markets have a high volatility level. You should seek advice from an independent and suitably licensed financial advisor and ensure that you have the risk appetite, relevant experience and knowledge before you decide to use the instruments JJO provides to the users. Before starting usage of the JJO site, please read our Terms of Use and Risk Disclosure Statement. You expressly agree that your use of the software and/or service is at your sole risk. JJO is not liable for any loss or damage arising from your participation in the cryptocurrency trading, including within the use of the JJO platform."
+    },
+    "prices": {
+        "title": "Выберите план",
+        "subtitle": "Ваше финансовое благополучие от 11.66$ в месяц",
+        "description": "Обычно,  портфельное управление сопровождается высокими комиссиями и взиманием процентов с Вашего дохода. \u2028J’JO меняет правила: больше никаких скрытых комиссий и неожиданных платежей. Весь функционал для инвестиций любых размеров в одной подписке всего от $11.66 в месяц, или воспользуйтесь бесплатным доступ для инвестиций в индекс J’JO35 с депозитом до 500$"
+    },
+    "price": {
+        "popular": "Популярный",
+        "profitable": "Выгода 19,99$",
+        "try-free": "Попробовать бесплатно",
+        "connect": "Подключить",
+        "month": "1 месяц",
+        "plans": {
+            "ultra-6": {
+                "mark": "Подписка на 6 месяцев за $79,99"
+            },
+            "ultra-12": {
+                "mark": "Подписка на 12 месяцев за $139,99"
+            },
+            "advantages": {
+                "only-1": "Подключение не более 1 биржи на выбор",
+                "index-jjo-only": "Доступ ТОЛЬКО к индексу J’JO35",
+                "max-500": "Максимальная сумма инвестиций до $500",
+                "no-limit": "Подключение ВСЕХ бирж без ограничений",
+                "all-indexes": "Доступ ко всем индексам J’JO",
+                "index-create": "Создание неограниченного количества своих индексов и портфелей",
+                "rebalance": "Пороговая ребалансировка",
+                "backtests": "Проведение неограниченное количества бэктестов",
+                "max-no-limit": "Максимальная сумма инвестиций - НЕОГРАНИЧЕНО",
+                "referal-jjo": "Доступ к реферальной программе J’JO",
+                "personal-support": "Персональная поддержка"
+            }
+        }
+    },
+    "invest": {
+        "title": "Постройте свое финансовое будущее",
+        "description": "Начните инвестировать в растущий рынок криптовалют без специальных знаний и потери времени, используя готовые индексные портфели.",
+        "button": "Начать инвестировать сейчас"
+    },
+    "start-whenever": {
+        "title": "Вы можете начать когда захотите. Например, прямо сейчас!",
+        "description": "Все, что нужно для эффективного инвестирования в криптовалюты в удобном и простом сервисе.",
+        "button": "Начать сейчас"
     }
 }

@@ -1,0 +1,95 @@
+{
+    "layout": {
+        "navbar": {
+            "main": "",
+            "invest": "",
+            "price": "",
+            "ƒaq": ""
+        },
+        "header": {
+            "button": ""
+        }
+    },
+    "hero": {
+        "title": "",
+        "description": "",
+        "button.video": "",
+        "button.try-free": ""
+    },
+    "simple-approach": {
+        "title": "",
+        "description": "",
+        "button": ""
+    },
+    "potential": {
+        "title": "",
+        "description": "",
+        "remark": "",
+        "form": {
+            "start-deposit": "",
+            "monthly-deposit": "",
+            "optional": "",
+            "period": "",
+            "years": "",
+            "average": "",
+            "button": "",
+            "balance": ""
+        }
+    },
+    "best-minds": {
+        "title": "",
+        "description": "",
+        "button": ""
+    },
+    "market-grow": {
+        "title": "",
+        "description": "",
+        "button": ""
+    },
+    "full-control": {
+        "title": "",
+        "description": ""
+    },
+    "important-knowledge": {
+        "title": "",
+        "description": "",
+        "button": ""
+    },
+    "how-it-works": {
+        "title": "",
+        "remark": "",
+        "button": "",
+        "steps": {
+            "first": {
+                "name": "",
+                "description": ""
+            },
+            "second": {
+                "name": "",
+                "description": ""
+            },
+            "third": {
+                "name": "",
+                "description": ""
+            }
+        }
+    },
+    "welcome": {
+        "title": "",
+        "description": "",
+        "button": ""
+    },
+    "footer": {
+        "menu": {
+            "main": "",
+            "invest": "",
+            "price": "",
+            "help": "",
+            "blog": "",
+            "confidence": "",
+            "conditions": "",
+            "cookie": ""
+        },
+        "disclaimer": ""
+    }
+}
