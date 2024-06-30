@@ -56,11 +56,6 @@ export const GrowForm = () => {
                     min={0}
                     max={10}
                     className={cn('range range-xs text-orange-50', styles.range)}
-                    style={{
-                        // Нужен для добавления переменной
-                        // @ts-ignore
-                        '--range-shdw': '#f96c41',
-                    }}
                     {...register('investPeriod')}
                 />
             </div>
