@@ -88,7 +88,7 @@ export const HowItWorks = () => {
 
                         <div className={'flex flex-col gap-4'}>
                             <Button>
-                                {t('how-it-works.button')}
+                                <span>{t('how-it-works.button')}</span>
                                 <Image src={ArrowRight} alt={'arrow right'} />
                             </Button>
 
