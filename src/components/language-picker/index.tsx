@@ -4,6 +4,7 @@ import i18next from 'i18next';
 import Image from 'next/image';
 import { ChangeEventHandler } from 'react';
 
+import ArrowDown from '@/assets/icons/arrow-down.svg';
 import { languageIcons, languages } from '@/i18n/languages';
 
 export const LanguagePicker = () => {
@@ -21,7 +22,7 @@ export const LanguagePicker = () => {
 
             <select
                 className={
-                    'bg-transparent text-white border-solid border-[1px] border-white border-opacity-20 outline-none w-full h-10 rounded-xl pr-5 pl-12 text-[13px] font-bold uppercase'
+                    'bg-transparent text-white border-solid border-[1px] border-white border-opacity-20 outline-none w-full h-10 rounded-xl pr-5 px-12 text-[13px] font-bold uppercase appearance-none'
                 }
                 onChange={handleOnChange}
                 value={i18next.language}
@@ -32,6 +33,8 @@ export const LanguagePicker = () => {
                     </option>
                 ))}
             </select>
+
+            <Image src={ArrowDown} alt={'arrow'} className={'absolute right-4 top-3'} />
         </div>
     );
 };
