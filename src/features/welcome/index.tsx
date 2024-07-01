@@ -53,7 +53,11 @@ export const Welcome = () => {
                         </Button>
                     </div>
 
-                    <Image src={Hand} alt={'hand with IPhone'} className={'mt-16 -ml-20'} />
+                    <Image
+                        src={Hand}
+                        alt={'hand with IPhone'}
+                        className={'mt-16 -ml-20 max-w-[50%]'}
+                    />
                 </div>
             </section>
         </div>
