@@ -37,14 +37,18 @@ export const Welcome = () => {
                     }
                 />
 
-                <div className={'container lg:flex lg:flex-row-reverse lg:gap-16 lg:items-center'}>
+                <div
+                    className={
+                        'container flex flex-col lg:flex-row-reverse lg:gap-16 lg:items-center'
+                    }
+                >
                     <div className={'flex flex-col gap-8 lg:max-w-[50%] lg:items-start lg:pl-8'}>
                         <h2
                             className={'text-[28px] font-semibold lg:text-5xl/tight lg:max-w-[80%]'}
                         >
                             {t('welcome.title')}
                         </h2>
-                        <p className={'text-primary-neutral-[16px]/snug lg:text-lg'}>
+                        <p className={'text-primary-neutral text-[16px]/snug lg:text-lg'}>
                             {t('welcome.description')}
                         </p>
                         <Button className={'mt-2'}>
@@ -56,7 +60,7 @@ export const Welcome = () => {
                     <Image
                         src={Hand}
                         alt={'hand with IPhone'}
-                        className={'mt-16 -ml-20 max-w-[50%]'}
+                        className={'mt-16 -ml-20 lg:max-w-[50%]'}
                     />
                 </div>
             </section>

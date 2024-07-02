@@ -14,7 +14,7 @@ export const BestMinds = () => {
     const { t } = useTranslation();
 
     return (
-        <section className={'pt-20 pb-40 relative overflow-hidden bg-primary-neutral lg:py-32'}>
+        <section className={'pt-20 pb-40 relative overflow-hidden bg-background lg:py-32'}>
             <div
                 className={
                     'absolute bg-blue-800 w-[200px] h-80 opacity-20 blur-[70px] -top-[15px] left-[30px]'

@@ -24,6 +24,7 @@ const config: Config = {
         extend: {
             gradientColorStops: {},
             colors: {
+                background: '#F7F7F7',
                 red: {
                     600: '#ef2823',
                 },
@@ -33,7 +34,7 @@ const config: Config = {
                 },
                 primary: {
                     400: '#9293A0',
-                    neutral: '#f7f7f7',
+                    neutral: '#7f7f7f',
                 },
                 orange: {
                     100: '#f96c41',

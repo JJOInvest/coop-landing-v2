@@ -56,7 +56,7 @@ export const Footer = () => {
                             ))}
                         </div>
 
-                        <div className={'flex flex-col gap-8 w-min'}>
+                        <div className={'flex flex-col gap-8 w-max'}>
                             {links.slice(5).map((link) => (
                                 <Link
                                     key={link.labelKey}

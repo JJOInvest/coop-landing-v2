@@ -39,12 +39,14 @@ export const HowItWorks = () => {
             />
 
             <div className={'container'}>
-                <h2 className={'text-2xl font-medium'}>{t('how-it-works.title')}</h2>
+                <h2 className={'text-2xl font-medium lg:text-5xl/normal'}>
+                    {t('how-it-works.title')}
+                </h2>
 
                 <div className={'flex flex-col gap-12 mt-12 lg:mt-10 lg:flex-row-reverse'}>
                     <div className={'lg:ml-auto lg:mr-16'}>diagram</div>
 
-                    <div className={'flex flex-col gap-10 lg:max-w-[460px]'}>
+                    <div className={'flex flex-col gap-10 lg:max-w-[460px] lg:items-start'}>
                         <div className={'flex flex-col gap-12'}>
                             {steps.map((step, index) => (
                                 <div key={step.name} className={'flex gap-5'}>
@@ -75,10 +77,14 @@ export const HowItWorks = () => {
                                     </div>
 
                                     <div>
-                                        <h5 className={'text-xl'}>
+                                        <h5 className={'text-xl lg:text-[22px]/snug'}>
                                             {t(`how-it-works.steps.${step.name}.name`)}
                                         </h5>
-                                        <p className={'text-neutral-400 text-[16px]/snug mt-2'}>
+                                        <p
+                                            className={
+                                                'text-neutral-400 text-[16px]/snug mt-2 lg:text-lg'
+                                            }
+                                        >
                                             {t(`how-it-works.steps.${step.name}.description`)}
                                         </p>
                                     </div>
@@ -86,14 +92,10 @@ export const HowItWorks = () => {
                             ))}
                         </div>
 
-                        <div className={'flex flex-col gap-4'}>
-                            <Button>
-                                <span>{t('how-it-works.button')}</span>
-                                <Image src={ArrowRight} alt={'arrow right'} />
-                            </Button>
-
-                            <p className={'text-sm text-neutral-400'}>{t('how-it-works.remark')}</p>
-                        </div>
+                        <Button>
+                            <span>{t('how-it-works.button')}</span>
+                            <Image src={ArrowRight} alt={'arrow right'} />
+                        </Button>
                     </div>
                 </div>
             </div>
