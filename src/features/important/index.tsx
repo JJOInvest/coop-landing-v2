@@ -49,7 +49,7 @@ export const ImportantKnowledge = () => {
                         <h2 className={'text-2xl font-medium lg:text-5xl'}>
                             {t('important-knowledge.title')}
                         </h2>
-                        <p className={'text-[16p]/snug lg:text-lg'}>
+                        <p className={'text-[16p]/snug lg:text-lg font-light'}>
                             {t('important-knowledge.description')}
                         </p>
                         <Button className={'invert lg:invert-0'}>

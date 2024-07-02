@@ -1,37 +1,50 @@
 'use client';
 
+import cn from 'classnames';
 import i18next from 'i18next';
 import Image from 'next/image';
-import { ChangeEventHandler } from 'react';
+import { useState } from 'react';
+import { useOutsideClickRef } from 'rooks';
 
-import { languageIcons, languages } from '@/i18n/languages';
+import ArrowIcon from '@/assets/header/language-picker/arrow.svg';
+import { languageIcons } from '@/i18n/languages';
+
+import { LanguageMenu } from './language-menu';
 
 export const LanguagePicker = () => {
-    const handleOnChange: ChangeEventHandler<HTMLSelectElement> = (event) => {
-        i18next.changeLanguage(event.target.value);
-    };
+    const [isOpened, setIsOpened] = useState(false);
+
+    const handleClick = () => setIsOpened((isOpened) => !isOpened);
+
+    const [ref] = useOutsideClickRef(() => {
+        if (isOpened) {
+            setIsOpened(false);
+        }
+    });
 
     return (
         <div className={'relative'}>
-            <Image
-                src={languageIcons[i18next.language]}
-                alt={i18next.language}
-                className={'absolute left-5 top-[14px]'}
-            />
-
-            <select
+            asdfasd
+            <button
+                onClick={handleClick}
                 className={
-                    'bg-transparent border-grey-60 border-solid border-2 outline-none w-full h-12 rounded-xl pr-5 pl-12 text-[13px] font-bold uppercase'
+                    'flex items-center gap-3 h-10 border-solid border-[1px] border-black border-opacity-5 px-4 rounded-lg'
                 }
-                onChange={handleOnChange}
-                value={i18next.language}
             >
-                {languages.map((language) => (
-                    <option key={language.value} value={language.value}>
-                        {language.name}
-                    </option>
-                ))}
-            </select>
+                <Image src={languageIcons[i18next.language]} alt={'arrow'} />
+                <Image src={ArrowIcon} alt={'arrow'} />
+            </button>
+            <div
+                className={cn(
+                    // 'absolute top-[56px] left-0 -translate-x-[50%] ml-[50%] transition-all duration-200',
+                    {
+                        'opacity-0 invisible': !isOpened,
+                        'opacity-100 visible': isOpened,
+                    },
+                )}
+            >
+                <LanguageMenu ref={ref} />
+            </div>
         </div>
     );
 };
