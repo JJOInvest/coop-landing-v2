@@ -2,9 +2,9 @@ import cn from 'classnames';
 import Link from 'next/link';
 
 interface Props {
-    activeArticleId: string;
+    activeArticleId: number;
     articles: {
-        id: string;
+        id: number;
         name: string;
     }[];
 }

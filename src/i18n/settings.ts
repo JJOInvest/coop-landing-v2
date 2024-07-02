@@ -13,7 +13,7 @@ export const languages = [
     'ru',
     'sp',
     'tu',
-    'en',
+    'en-gb',
     've',
 ];
 export const defaultNS = 'translation';
@@ -21,7 +21,7 @@ export const cookieName = 'language';
 
 export const getOptions = (lng = fallbackLng, ns: string | string[] = defaultNS) => {
     return {
-        debug: process.env.NODE_ENV === 'development',
+        debug: false,
         supportedLngs: languages,
         // preload: languages,
         fallbackLng,

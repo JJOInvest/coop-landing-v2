@@ -1,5 +1,7 @@
 export interface Article {
-    id: string;
+    id: number;
+    url: string;
     name: string;
-    content: string;
+    title: string;
+    body: string;
 }
