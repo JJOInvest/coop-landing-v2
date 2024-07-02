@@ -13,5 +13,5 @@ export default function Invest({
         articleId: string;
     };
 }) {
-    return <InvestPage articleId={searchParams.articleId} />;
+    return <InvestPage articleId={+searchParams.articleId} />;
 }

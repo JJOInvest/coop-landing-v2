@@ -28,7 +28,7 @@ export const languages = [
     { name: 'Русский', value: 'ru', icon: RussiaFlagIcon },
     { name: 'Español', value: 'sp', icon: SpainFlagIcon },
     { name: 'Türkçe', value: 'tu', icon: TurkeyFlagIcon },
-    { name: 'English', value: 'en', icon: UkFlagIcon },
+    { name: 'English', value: 'en-gb', icon: UkFlagIcon },
     { name: 'Tiếng Việt', value: 've', icon: VietnameseFlagIcon },
 ];
 
