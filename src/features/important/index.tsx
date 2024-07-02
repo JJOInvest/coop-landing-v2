@@ -37,7 +37,7 @@ export const ImportantKnowledge = () => {
                 <div className={'container'}>
                     <div
                         className={
-                            'absolute w-[70%] lg:w-[40%] bg-violet-800 opacity-60 h-[200px] -top-[100px] left-0 blur-[140px] lg:-top-[150px] -z-10'
+                            'absolute w-[70%] lg:w-[40%] bg-violet-800 opacity-45 h-[200px] -top-[100px] left-0 blur-[140px] lg:-top-[150px] -z-10'
                         }
                     />
 
