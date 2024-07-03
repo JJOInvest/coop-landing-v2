@@ -16,6 +16,14 @@ body {
     @apply lg:max-w-[1120px] mx-auto max-w-full px-6 lg:px-0 h-full;
 }
 
+.input {
+    @apply text-black-100 font-semibold outline-0;
+}
+
+.input:focus, .input:focus-within {
+    @apply outline-0;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;

@@ -33,6 +33,7 @@ const config: Config = {
                     800: '#5404db',
                 },
                 primary: {
+                    100: '#F0F0F2',
                     400: '#9293A0',
                     neutral: '#7f7f7f',
                 },
@@ -49,6 +50,8 @@ const config: Config = {
                 black: {
                     DEFAULT: '#000',
                     10: '#f5f5f7cc',
+                    80: '#343548',
+                    100: '#18192E',
                 },
                 blue: {
                     10: '#f3f5fd',
