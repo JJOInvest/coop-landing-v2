@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { SyntheticEvent, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
@@ -9,7 +9,7 @@ import { Chart } from './chart';
 import styles from './styles.module.css';
 import { getChartProfitData } from './utils';
 
-export interface IChartData {
+export interface ChartData {
     investment: number;
     profitability: number;
     date: string;
@@ -40,7 +40,7 @@ export const Calculator = () => {
     const profitPercent = watch('profitPercent');
     const period = watch('period');
 
-    const [chartData, setChartData] = useState<IChartData[]>();
+    const [chartData, setChartData] = useState<ChartData[]>();
 
     const buttonEnabled = deposit > 0 && profitPercent > 0;
 
@@ -54,11 +54,7 @@ export const Calculator = () => {
             replenishments: Number(replenishment),
         });
 
-        console.log(data);
-
         setChartData(data);
-
-        console.log(chartData);
     };
 
     useEffect(() => {
