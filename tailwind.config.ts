@@ -63,6 +63,8 @@ const config: Config = {
                 },
                 grey: {
                     60: '#cfd5e5',
+                    70: '#b0bad4',
+                    100: '#6074a9',
                     500: '#4e4e4e',
                 },
                 cyan: {
@@ -83,6 +85,7 @@ const config: Config = {
                 'market-grow-2': 'linear-gradient(48deg, #6EA7B3, #0684A1)',
                 'start-whenever': 'linear-gradient(135deg, #fde4e3, #eee7ff)',
                 'best-minds': 'linear-gradient(48deg, #6EA7B3 6.08%, #0684A1 104.31%)',
+                auth: 'linear-gradient(135deg, #efc2c1, #efefef, #ccd4ef)',
             },
             boxShadow: {
                 box: '0px 5px 15px 0px #DFE6F070',

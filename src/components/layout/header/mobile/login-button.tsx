@@ -7,7 +7,7 @@ export const LoginButton = () => {
     const { t } = useTranslation();
     const router = useRouter();
     const handleClick = () => {
-        router.push('/sign-up');
+        router.push('/auth');
     };
 
     return (
