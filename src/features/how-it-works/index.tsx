@@ -1,10 +1,8 @@
 'use client';
 
 import cn from 'classnames';
-import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
-import ArrowRight from '@/assets/icons/arrow-right.svg';
 import { Button } from '@/components/button';
 
 interface Step {
@@ -92,9 +90,8 @@ export const HowItWorks = () => {
                             ))}
                         </div>
 
-                        <Button>
+                        <Button arrow>
                             <span>{t('how-it-works.button')}</span>
-                            <Image src={ArrowRight} alt={'arrow right'} />
                         </Button>
                     </div>
                 </div>

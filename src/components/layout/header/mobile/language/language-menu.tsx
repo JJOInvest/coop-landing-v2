@@ -7,16 +7,25 @@ import { forwardRef } from 'react';
 
 import { languages } from '@/i18n/languages';
 
+export type Props = {
+    close: () => void;
+};
+
 // eslint-disable-next-line react/display-name
-export const LanguageMenu = forwardRef<HTMLDivElement>((_, ref) => {
-    const handleClick = (lang: string) => () => i18next.changeLanguage(lang);
+export const LanguageMenu = forwardRef<HTMLDivElement, Props>(({ close }, ref) => {
+    const handleClick = (lang: string) => () => {
+        i18next.changeLanguage(lang);
+        close();
+    };
 
     return (
         <div
-            className={'bg-white rounded-lg p-4 flex gap-3 w-max shadow-black/10 drop-shadow-xl'}
+            className={
+                'fixed top-14 left-0 bg-white p-4 flex w-screen h-[calc(100vh-56px)] shadow-black/10 drop-shadow-xl z-10'
+            }
             ref={ref}
         >
-            <div className={'grid grid-cols-2 gap-4'}>
+            <div className={'grid grid-cols-2 gap-4 w-full h-min'}>
                 {languages.map((language) => (
                     <button
                         key={language.value}

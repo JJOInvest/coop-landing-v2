@@ -24,7 +24,6 @@ export const LanguagePicker = () => {
 
     return (
         <div className={'relative'}>
-            asdfasd
             <button
                 onClick={handleClick}
                 className={
@@ -34,16 +33,14 @@ export const LanguagePicker = () => {
                 <Image src={languageIcons[i18next.language]} alt={'arrow'} />
                 <Image src={ArrowIcon} alt={'arrow'} />
             </button>
+
             <div
-                className={cn(
-                    // 'absolute top-[56px] left-0 -translate-x-[50%] ml-[50%] transition-all duration-200',
-                    {
-                        'opacity-0 invisible': !isOpened,
-                        'opacity-100 visible': isOpened,
-                    },
-                )}
+                className={cn('transition-all duration-200', {
+                    'opacity-0 invisible': !isOpened,
+                    'opacity-100 visible': isOpened,
+                })}
             >
-                <LanguageMenu ref={ref} />
+                <LanguageMenu ref={ref} close={handleClick} />
             </div>
         </div>
     );

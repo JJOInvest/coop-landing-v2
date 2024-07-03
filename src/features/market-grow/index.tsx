@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
 import Blob3 from '@/assets/blobs/blob-3.svg';
-import ArrowRight from '@/assets/icons/arrow-right.svg';
 import Rocket from '@/assets/market-grow/rocket.png';
 import { Button } from '@/components/button';
 
@@ -29,9 +28,8 @@ export const MarketGrow = () => {
                     <p className={'text-[16px]/snug text-grey-500 lg:text-lg/normal'}>
                         {t('market-grow.description')}
                     </p>
-                    <Button className={'mt-2 lg:self-start'}>
+                    <Button className={'mt-2 lg:self-start'} arrow>
                         Узнать больше
-                        <Image src={ArrowRight} alt={'arrow right'} />
                     </Button>
                 </div>
 
