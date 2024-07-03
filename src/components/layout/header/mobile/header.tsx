@@ -5,8 +5,8 @@ import { useContext } from 'react';
 
 import BurgerIcon from '@/assets/header/burger.svg';
 import { mobileHeaderContext } from '@/components/layout/header/mobile/context';
-import { LanguagePicker } from '@/components/layout/header/monitor/language-picker';
 
+import { LanguagePicker } from './language/language-picker';
 import JJO from '@/assets/jjo-text.svg';
 
 export const Header = () => {
