@@ -98,7 +98,7 @@ export const GrowForm = () => {
                 </label>
             </div>
 
-            <Button className={'max-h-14 p-0 lg:p-0'}>Расчитать</Button>
+            <Button className={'max-h-14 p-0 lg:p-0'}>{t('potential.form.button')}</Button>
 
             <div className={'flex flex-col gap-2 items-center lg:hidden'}>
                 <span
