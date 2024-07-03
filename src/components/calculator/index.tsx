@@ -1,7 +1,6 @@
 import cn from 'classnames';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useTranslation } from 'react-i18next';
 
 import { TextInput } from '@/components/text-input';
 
@@ -30,8 +29,6 @@ const defaultFormData: FormData = {
 };
 
 export const Calculator = () => {
-    const { t } = useTranslation();
-
     const { register, watch, handleSubmit } = useForm({
         defaultValues: defaultFormData,
     });
