@@ -1,4 +1,5 @@
 import { useMutation } from '@tanstack/react-query';
+import { setCookie } from 'cookies-next';
 import { ChangeEventHandler, FormEventHandler, useContext, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -51,6 +52,7 @@ export const Confirm = () => {
 
         const res = await mutateAsync();
         const accessToken = res.data.accessToken;
+        setCookie('accessToken', accessToken);
 
         nextStep();
     };
