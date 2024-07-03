@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
-import ArrowRight from '@/assets/icons/arrow-right.svg';
 import HeroIconFlash from '@/assets/icons/hero-icon-flash.svg';
 import HeroIconM from '@/assets/icons/hero-icon-m.svg';
 import HeroIconSteps from '@/assets/icons/hero-icon-steps.svg';
@@ -43,9 +42,8 @@ export const SimpleApproach = () => {
                         {t('simple-approach.description')}
                     </p>
 
-                    <Button className={'mt-2 lg:self-start'}>
+                    <Button className={'mt-2 lg:self-start'} arrow>
                         {t('simple-approach.button')}
-                        <Image src={ArrowRight} alt={'arrow right'} />
                     </Button>
                 </div>
 

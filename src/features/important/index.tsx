@@ -1,9 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
-import ArrowRight from '@/assets/icons/arrow-right.svg';
 import { Button } from '@/components/button';
 
 export const ImportantKnowledge = () => {
@@ -52,9 +50,8 @@ export const ImportantKnowledge = () => {
                         <p className={'text-[16p]/snug lg:text-lg font-light'}>
                             {t('important-knowledge.description')}
                         </p>
-                        <Button className={'invert lg:invert-0'}>
+                        <Button className={'invert lg:invert-0'} arrow>
                             {t('important-knowledge.button')}
-                            <Image src={ArrowRight} alt={'arrow right'} />
                         </Button>
                     </div>
                 </div>

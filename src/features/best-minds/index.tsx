@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
 import Blob2 from '@/assets/blobs/blob-2.svg';
-import ArrowRight from '@/assets/icons/arrow-right.svg';
 import SmartMan from '@/assets/smartest/smart-man.png';
 import { Button } from '@/components/button';
 
@@ -29,9 +28,8 @@ export const BestMinds = () => {
                     <p className={'text-[16px]/snug text-grey-500 lg:text-lg/normal'}>
                         {t('best-minds.description')}
                     </p>
-                    <Button className={'mt-2 lg:self-start'}>
+                    <Button className={'mt-2 lg:self-start'} arrow>
                         {t('best-minds.button')}
-                        <Image src={ArrowRight} alt={'arrow right'} />
                     </Button>
                 </div>
 

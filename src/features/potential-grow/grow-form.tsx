@@ -22,18 +22,29 @@ export const GrowForm = () => {
     return (
         <form className={'bg-white rounded-xl p-6 lg:max-w-[400px] flex flex-col gap-6 shadow-box'}>
             <div className={'flex flex-col gap-2'}>
-                <span className={'text-brand-400'}>{t('potential.form.start-deposit')}</span>
+                <span className={'text-brand-400 text-[14px]/normal font-light tracking-wide'}>
+                    {t('potential.form.start-deposit')}
+                </span>
 
                 <label className={'input input-bordered flex items-center gap-2 text-black'}>
                     <div className={'text-primary-400 text-lg/relaxed font-medium font-decorate'}>
                         $
                     </div>
-                    <input type={'number'} placeholder={'100 000'} {...register('startDeposit')} />
+                    <input
+                        type={'number'}
+                        placeholder={'100 000'}
+                        className={'appearance-none'}
+                        {...register('startDeposit')}
+                    />
                 </label>
             </div>
 
             <div className={'flex flex-col gap-2'}>
-                <span className={'text-brand-400 flex items-center gap-0.5 lg:justify-between'}>
+                <span
+                    className={
+                        'text-brand-400 flex items-center gap-0.5 lg:justify-between text-[14px]/normal font-light tracking-wide'
+                    }
+                >
                     {t('potential.form.monthly-deposit')}
                     <span>({t('potential.form.optional')})</span>
                 </span>
@@ -42,12 +53,21 @@ export const GrowForm = () => {
                     <div className={'text-primary-400 text-lg/relaxed font-medium font-decorate'}>
                         $
                     </div>
-                    <input type={'number'} placeholder={'500'} {...register('monthlyDeposit')} />
+                    <input
+                        type={'number'}
+                        placeholder={'500'}
+                        className={'appearance-none'}
+                        {...register('monthlyDeposit')}
+                    />
                 </label>
             </div>
 
             <div className={'flex flex-col gap-2'}>
-                <span className={'text-brand-400 flex items-center justify-between'}>
+                <span
+                    className={
+                        'text-brand-400 flex items-center justify-between text-[14px]/normal font-light tracking-wide'
+                    }
+                >
                     {t('potential.form.period')}
                     <span className={'text-black'}>{`5 ${t('potential.form.years')}`}</span>
                 </span>
@@ -55,19 +75,26 @@ export const GrowForm = () => {
                     type={'range'}
                     min={0}
                     max={10}
-                    className={cn('range range-xs text-orange-50', styles.range)}
+                    className={cn('range range-xs text-orange-50 appearance-none', styles.range)}
                     {...register('investPeriod')}
                 />
             </div>
 
             <div className={'flex flex-col gap-2'}>
-                <span className={'text-brand-400'}>{t('potential.form.average')}</span>
+                <span className={'text-brand-400 text-[14px]/normal font-light tracking-wide'}>
+                    {t('potential.form.average')}
+                </span>
 
                 <label className={'input input-bordered flex items-center gap-2 text-black'}>
                     <div className={'text-primary-400 text-lg/relaxed font-medium font-decorate'}>
                         %
                     </div>
-                    <input type={'number'} placeholder={'500'} {...register('averageJJO')} />
+                    <input
+                        type={'number'}
+                        placeholder={'500'}
+                        className={'appearance-none'}
+                        {...register('averageJJO')}
+                    />
                 </label>
             </div>
 

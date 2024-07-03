@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
-import ArrowRight from '@/assets/icons/arrow-right.svg';
 import Hand from '@/assets/welcome/hand.png';
 import { Button } from '@/components/button';
 
@@ -51,9 +50,8 @@ export const Welcome = () => {
                         <p className={'text-primary-neutral text-[16px]/snug lg:text-lg'}>
                             {t('welcome.description')}
                         </p>
-                        <Button className={'mt-2'}>
+                        <Button className={'mt-2'} arrow>
                             {t('welcome.button')}
-                            <Image src={ArrowRight} alt={'arrow right'} />
                         </Button>
                     </div>
 
