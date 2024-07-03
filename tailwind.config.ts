@@ -88,6 +88,7 @@ const config: Config = {
         },
         backgroundImage: {
             'hero-pattern': "url('/hero/hero-image.png')",
+            'hero-pattern-small': "url('/hero/hero-image-small.png')",
             'smart-pattern': "url('/smartest/smart-man.png')",
             'full-control-pattern': "url('/full-control/bg.png')",
             'important-pattern': "url('/important-knowledge/woman.png')",

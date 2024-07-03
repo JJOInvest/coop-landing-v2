@@ -8,7 +8,11 @@ export const Hero = () => {
     const { t } = useTranslation();
 
     return (
-        <section className={'h-screen w-screen bg-hero-pattern bg-bottom bg-cover pt-14'}>
+        <section
+            className={
+                'h-screen w-screen lg:bg-hero-pattern bg-hero-pattern-small bg-bottom bg-cover pt-14'
+            }
+        >
             <div className="container flex flex-col items-center justify-center max-h-[50%]">
                 <h1
                     className={
