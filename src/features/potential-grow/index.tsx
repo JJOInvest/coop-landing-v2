@@ -2,6 +2,7 @@
 
 import { useTranslation } from 'react-i18next';
 
+import { Calculator } from '@/components/calculator';
 import { GrowDiagram } from '@/features/potential-grow/grow-diagram';
 import { GrowForm } from '@/features/potential-grow/grow-form';
 import { PercentGrow } from '@/features/potential-grow/percent-grow';
@@ -33,8 +34,7 @@ export const PotentialGrow = () => {
                 <PercentGrow />
 
                 <div className={'flex flex-col lg:flex-row lg:gap-6 gap-8'}>
-                    <GrowForm />
-                    <GrowDiagram />
+                    <Calculator />
                 </div>
 
                 <p
