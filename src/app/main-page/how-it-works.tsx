@@ -1,7 +1,11 @@
-import cn from 'classnames';
+'use client';
 
+import cn from 'classnames';
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { Diagram, GetStartedStep } from '@/app/main-page/diagram';
 import { Button } from '@/components/button';
-import { getServerTranslations } from '@/i18n/server';
 
 interface Step {
     decorate: boolean;
@@ -23,8 +27,30 @@ const steps: Step[] = [
     },
 ];
 
-export async function HowItWorks() {
-    const { t } = await getServerTranslations();
+export function HowItWorks() {
+    const { t } = useTranslation();
+
+    const [step, setStep] = useState<GetStartedStep>('register');
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (step === 'register') {
+                setStep('invest');
+                return;
+            }
+
+            if (step === 'invest') {
+                setStep('plan-your-future');
+                return;
+            }
+
+            setStep('register');
+        }, 7000);
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, [step]);
 
     return (
         <section className="relative py-20 overflow-hidden">
@@ -36,7 +62,9 @@ export async function HowItWorks() {
                 </h2>
 
                 <div className="flex flex-col gap-12 mt-12 lg:mt-10 lg:flex-row-reverse">
-                    <div className="lg:ml-auto lg:mr-16">diagram</div>
+                    <div className="lg:ml-auto lg:mr-16">
+                        <Diagram step={step} />
+                    </div>
 
                     <div className="flex flex-col gap-10 lg:max-w-[460px] lg:items-start">
                         <div className="flex flex-col gap-12">
