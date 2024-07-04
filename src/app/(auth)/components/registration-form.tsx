@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 
-import { authApi, BaseUserParams } from '@/api/auth';
+import { authApi } from '@/api/auth';
 import { PasswordNote } from '@/app/(auth)/components/password-note';
 import { Switcher } from '@/app/(auth)/components/switcher';
 import { useAuthStore, useStepStore } from '@/app/(auth)/store/use-auth-store';
