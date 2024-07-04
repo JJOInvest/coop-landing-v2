@@ -28,6 +28,9 @@ const config: Config = {
                 red: {
                     600: '#ef2823',
                 },
+                green: {
+                    120: '#00C18A',
+                },
                 violet: {
                     400: '#9368ff',
                     800: '#5404db',
@@ -50,6 +53,7 @@ const config: Config = {
                 black: {
                     DEFAULT: '#000',
                     10: '#f5f5f7cc',
+                    60: '#6B6C80',
                     80: '#343548',
                     100: '#18192E',
                 },

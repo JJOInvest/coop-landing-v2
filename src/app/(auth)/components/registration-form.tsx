@@ -8,6 +8,7 @@ import { z } from 'zod';
 
 import { authApi } from '@/api/auth';
 import { PasswordNote } from '@/app/(auth)/components/password-note';
+import { Stepper } from '@/app/(auth)/components/stepper';
 import { Switcher } from '@/app/(auth)/components/switcher';
 import { useAuthStore, useStepStore } from '@/app/(auth)/store/use-auth-store';
 import { Button } from '@/components/button';
@@ -80,6 +81,7 @@ export const RegistrationForm = () => {
     return (
         <>
             <Switcher />
+            <Stepper activeIndex={1} />
             <form
                 className="px-8 lg:px-16 py-6 lg:py-10 w-full flex flex-col"
                 onSubmit={handleSubmit(onSubmit)}

@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 
 import { authApi } from '@/api/auth';
+import { Stepper } from '@/app/(auth)/components/stepper';
 import { Switcher } from '@/app/(auth)/components/switcher';
 import { useAuthStore, usePinCodeStore, useStepStore } from '@/app/(auth)/store/use-auth-store';
 import { Button } from '@/components/button';
@@ -57,6 +58,7 @@ export const RegistrationFinishForm = () => {
     return (
         <>
             <Switcher />
+            <Stepper activeIndex={3} />
             <form
                 className="px-8 lg:px-16 py-6 lg:py-10 w-full flex flex-col"
                 onSubmit={handleSubmit(onSubmit)}
