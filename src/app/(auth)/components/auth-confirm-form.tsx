@@ -6,6 +6,7 @@ import { ChangeEventHandler, FormEventHandler, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { authApi } from '@/api/auth';
+import { Stepper } from '@/app/(auth)/components/stepper';
 import { useAuthStore, usePinCodeStore, useStepStore } from '@/app/(auth)/store/use-auth-store';
 import { Button } from '@/components/button';
 
@@ -85,28 +86,34 @@ export const AuthConfirm = () => {
     }
 
     return (
-        <form className="px-8 lg:px-16 py-6 lg:py-10 w-full flex flex-col" onSubmit={handleSubmit}>
-            <div className="text-[16px]/normal flex flex-col gap-1 mx-auto">
-                <p>{t('auth.form.new-code')}</p>
-                <p className="text-blue-100">{authData.email}</p>
-            </div>
+        <>
+            {stepData.step === 'register-confirm' && <Stepper activeIndex={2} />}
+            <form
+                className="px-8 lg:px-16 py-6 lg:py-10 w-full flex flex-col"
+                onSubmit={handleSubmit}
+            >
+                <div className="text-[16px]/normal flex flex-col gap-1 mx-auto">
+                    <p>{t('auth.form.new-code')}</p>
+                    <p className="text-blue-100">{authData.email}</p>
+                </div>
 
-            <div className="flex items-center gap-5 mx-auto max-w-full mt-6" ref={textBase}>
-                {new Array(OPT_LENGTH).fill(null).map((_, index) => {
-                    return (
-                        <input
-                            key={index}
-                            type="number"
-                            onChange={focusNext}
-                            className="border-[1px] rounded-xl border-grey-60 px-5 w-min max-w-16 py-6 text-[32px] text-center"
-                        />
-                    );
-                })}
-            </div>
+                <div className="flex items-center gap-5 mx-auto max-w-full mt-6" ref={textBase}>
+                    {new Array(OPT_LENGTH).fill(null).map((_, index) => {
+                        return (
+                            <input
+                                key={index}
+                                type="number"
+                                onChange={focusNext}
+                                className="border-[1px] rounded-xl border-grey-60 px-5 w-min max-w-16 py-6 text-[32px] text-center"
+                            />
+                        );
+                    })}
+                </div>
 
-            <Button className="mt-10" block disabled={!isValid} type="submit">
-                {t('auth.form.button')}
-            </Button>
-        </form>
+                <Button className="mt-10" block disabled={!isValid} type="submit">
+                    {t('auth.form.button')}
+                </Button>
+            </form>
+        </>
     );
 };
