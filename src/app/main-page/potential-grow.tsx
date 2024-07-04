@@ -24,9 +24,7 @@ export async function PotentialGrow() {
                     <span>+212 %</span>
                 </div>
 
-                <div className="flex flex-col lg:flex-row lg:gap-6 gap-8">
-                    <Calculator />
-                </div>
+                <Calculator />
 
                 <p className="mt-8 lg:mt-6 text-center text-xs/snug lg:text-[16px] lg:leading-normal font-light">
                     {t('potential.remark')}
