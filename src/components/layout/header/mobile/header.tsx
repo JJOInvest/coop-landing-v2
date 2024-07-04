@@ -13,15 +13,15 @@ export const Header = () => {
     const { openOrClose } = useContext(mobileHeaderContext);
 
     return (
-        <header className={'top-0 lg:hidden w-screen fixed bg-white z-20 py-2'}>
+        <header className="top-0 lg:hidden w-screen fixed bg-white z-20 py-2">
             <div className="container flex items-center justify-between">
-                <Image src={JJO} alt={'jjo'} className={'invert'} width={52} />
+                <Image src={JJO} alt="jjo" className="invert" width={52} />
 
-                <div className={'flex items-center gap-6'}>
+                <div className="flex items-center gap-6">
                     <LanguagePicker />
 
                     <button onClick={openOrClose}>
-                        <Image src={BurgerIcon} alt={'burger'} />
+                        <Image src={BurgerIcon} alt="burger" />
                     </button>
                 </div>
             </div>

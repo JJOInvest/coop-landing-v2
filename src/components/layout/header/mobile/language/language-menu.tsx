@@ -20,12 +20,10 @@ export const LanguageMenu = forwardRef<HTMLDivElement, Props>(({ close }, ref) =
 
     return (
         <div
-            className={
-                'fixed top-14 left-0 bg-white p-4 flex w-screen h-[calc(100vh-56px)] shadow-black/10 drop-shadow-xl z-10'
-            }
+            className="fixed top-14 left-0 bg-white p-4 flex w-screen h-[calc(100vh-56px)] shadow-black/10 drop-shadow-xl z-10"
             ref={ref}
         >
-            <div className={'grid grid-cols-2 gap-4 w-full h-min'}>
+            <div className="grid grid-cols-2 gap-4 w-full h-min">
                 {languages.map((language) => (
                     <button
                         key={language.value}
@@ -41,7 +39,7 @@ export const LanguageMenu = forwardRef<HTMLDivElement, Props>(({ close }, ref) =
                         )}
                     >
                         <Image src={language.icon} alt={i18next.language} />
-                        <span className={'w-full text-left text-sm/tight'}>{language.name}</span>
+                        <span className="w-full text-left text-sm/tight">{language.name}</span>
                     </button>
                 ))}
             </div>

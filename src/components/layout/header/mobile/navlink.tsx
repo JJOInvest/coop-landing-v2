@@ -20,15 +20,13 @@ export const Navlink = ({ href, label }: Props) => {
         <Link
             href={href}
             onClick={openOrClose}
-            className={'w-full text-lg text-center py-3 rounded-xl border-black border-[1px]'}
+            className="w-full text-lg text-center py-3 rounded-xl border-black border-[1px]"
         >
             {label}
 
             {isActive && (
                 <span
-                    className={
-                        'absolute mx-auto bottom-0 left-0 right-0 w-[55%] bg-orange-120 h-0.5'
-                    }
+                    className="absolute mx-auto bottom-0 left-0 right-0 w-[55%] bg-orange-120 h-0.5"
                 />
             )}
         </Link>

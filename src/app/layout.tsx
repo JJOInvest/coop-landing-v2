@@ -80,7 +80,7 @@ export default async function RootLayout({ children }: Props) {
     return (
         <I18nProvider language={lng}>
             <ReactQueryProvider>
-                <html lang={lng} dir={dir(lng)} data-theme={'jjo'}>
+                <html lang={lng} dir={dir(lng)} data-theme="jjo">
                     <body className={cn([sfPro.className, cormorant.className, mulish.variable])}>
                         <Header />
                         <MobileHeader />

@@ -1,73 +1,78 @@
-import { api } from '@/api/api';
+import { apiPostRequest } from '@/api/api';
 
-// Register
-export type RegisterDto = {
+const register = async (params: RegisterParams): Promise<CodeRepeatResponse> =>
+    apiPostRequest<CodeRepeatResponse>({
+        path: '/users/register',
+        params,
+    });
+
+const registerConfirm = async (params: RegisterConfirmParams): Promise<void> =>
+    apiPostRequest<void>({
+        path: '/users/register-confirm',
+        params,
+    });
+
+const registerFinish = async (params: RegisterFinishParams): Promise<AccessTokenResponse> =>
+    apiPostRequest<AccessTokenResponse>({
+        path: '/users/register-finish',
+        params,
+    });
+
+const login = async (params: BaseUserParams): Promise<CodeRepeatResponse> =>
+    apiPostRequest<CodeRepeatResponse>({
+        path: '/users/login',
+        params,
+    });
+
+const loginConfirm = async (params: LoginConfirmParams): Promise<AccessTokenResponse> =>
+    apiPostRequest<AccessTokenResponse>({
+        path: '/users/login-confirm',
+        params,
+    });
+
+export interface BaseUserParams {
     email: string;
     password: string;
+}
+
+interface LoginConfirmParams extends BaseUserParams {
+    code: string;
+}
+
+interface AccessTokenResponse {
+    accessToken: string;
+}
+
+interface CodeRepeatResponse {
+    code_repeat_at: 'string';
+    tz: 'string';
+}
+
+interface RegisterParams extends BaseUserParams {
     countryCodeIso?: string;
     referralCode?: string;
     isSubscribed: boolean;
-    languageCodeIso?: string;
-    // "yandexClientId","googleClientId","utms"
+    languageCodeIso?: string; // "yandexClientId","googleClientId","utms"
     retargetData?: string;
-};
-
-export type AuthResponse = {
-    data: {
-        // Для отображения времени повторнтого запроса кода
-        code_repeat_at: string;
-        tz: string;
-    };
-};
-
-export async function register(dto: RegisterDto): Promise<AuthResponse> {
-    const { data } = await api.post<AuthResponse>('/users/register', dto);
-    return data;
 }
 
-export type ConfirmRegisterDto = {};
-
-export async function confirmRegister(dto: ConfirmRegisterDto): Promise<void> {
-    await api.post<void>('/users/register-confirm', dto);
-}
-
-export type FinishRegisterDto = {
+interface RegisterConfirmParams {
     email: string;
-    code: string; // 0000 for dev
+    code: string;
+}
+
+interface RegisterFinishParams {
+    email: string;
+    code: string;
     surname: string;
     name: string;
     countryCodeIso: string;
-};
-
-export async function finishRegister(dto: FinishRegisterDto): Promise<void> {
-    await api.post<void>('/users/register-finish', dto);
 }
 
-// Login
-
-export type LoginDto = {
-    email: string;
-    password: string;
+export const authApi = {
+    login,
+    loginConfirm,
+    register,
+    registerConfirm,
+    registerFinish,
 };
-
-export async function login(dto: LoginDto): Promise<AuthResponse> {
-    const { data } = await api.post<AuthResponse>('/users/login', dto);
-    return data;
-}
-
-export type ConfirmLoginDto = {
-    email: string;
-    password: string;
-    code: string;
-};
-
-export type ConfirmLoginResponse = {
-    data: {
-        accessToken: string;
-    };
-};
-
-export async function confirmLogin(dto: ConfirmLoginDto): Promise<ConfirmLoginResponse> {
-    const { data } = await api.post<ConfirmLoginResponse>('/users/login-confirm', dto);
-    return data;
-}
