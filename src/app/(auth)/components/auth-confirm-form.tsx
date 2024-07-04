@@ -1,7 +1,6 @@
 'use client';
 
 import { useMutation } from '@tanstack/react-query';
-import { setCookie } from 'cookies-next';
 import { ChangeEventHandler, FormEventHandler, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -46,6 +45,17 @@ export const AuthConfirm = () => {
         },
     });
 
+    const { mutateAsync: onReset } = useMutation({
+        mutationFn: async () =>
+            await authApi.resetPasswordConfirm({
+                email: authData.email,
+                code: pinCodeData.code,
+            }),
+        onSuccess: (data) => {
+            setStepData({ step: 'reset-finish' });
+        },
+    });
+
     const focusNext: ChangeEventHandler<HTMLInputElement> = (event) => {
         const inputs = [...textBase.current!.childNodes] as HTMLInputElement[];
         const currentIndex = inputs.indexOf(event.target);
@@ -76,12 +86,18 @@ export const AuthConfirm = () => {
             await onLogin();
         } else if (stepData.step === 'register-confirm') {
             await onRegister();
+        } else if (stepData.step === 'reset-confirm') {
+            await onReset();
         }
     };
 
     const isValid = pinCodeData.code.length === OPT_LENGTH;
 
-    if (stepData.step !== 'login-confirm' && stepData.step !== 'register-confirm') {
+    if (
+        stepData.step !== 'login-confirm' &&
+        stepData.step !== 'register-confirm' &&
+        stepData.step !== 'reset-confirm'
+    ) {
         return null;
     }
 

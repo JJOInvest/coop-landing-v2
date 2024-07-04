@@ -10,7 +10,7 @@ const pinCodeInitialState: PinCodeData = {
 };
 
 const stepInitialState: StepData = {
-    step: null,
+    step: 'reset-done',
 };
 
 export const useAuthStore = create<State<AuthData>>((set) => ({
@@ -31,7 +31,13 @@ export const useStepStore = create<State<StepData>>((set) => ({
     resetData: () => set({ data: stepInitialState }),
 }));
 
-type Step = 'login-confirm' | 'register-confirm' | 'register-finish';
+type Step =
+    | 'login-confirm'
+    | 'register-confirm'
+    | 'register-finish'
+    | 'reset-confirm'
+    | 'reset-finish'
+    | 'reset-done';
 
 interface AuthData {
     email: string;

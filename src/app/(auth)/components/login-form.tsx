@@ -2,6 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
+import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
@@ -81,9 +82,12 @@ export const LoginForm = () => {
                     {t('auth.form.button')}
                 </Button>
 
-                {/*<button className={'mt-5 mx-auto text-grey-100 text-sm font-light'}>*/}
-                {/*    {t('auth.form.forgot-password')}*/}
-                {/*</button>*/}
+                <Link
+                    href="/password-reset"
+                    className="mt-5 mx-auto text-grey-100 text-sm font-light"
+                >
+                    {t('auth.form.forgot-password')}
+                </Link>
             </form>
         </>
     );

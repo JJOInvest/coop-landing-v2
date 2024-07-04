@@ -30,6 +30,26 @@ const loginConfirm = async (params: LoginConfirmParams): Promise<AccessTokenResp
         params,
     });
 
+const resetPassword = async (params: Pick<BaseUserParams, 'email'>): Promise<void> =>
+    apiPostRequest<void>({
+        path: '/users/recovery',
+        params,
+    });
+
+const resetPasswordConfirm = async (params: RegisterConfirmParams): Promise<void> =>
+    apiPostRequest<void>({
+        path: '/users/recovery-confirm',
+        params,
+    });
+
+const resetPasswordFinish = async (
+    params: ResetPasswordFinishParams,
+): Promise<AccessTokenResponse> =>
+    apiPostRequest<AccessTokenResponse>({
+        path: '/users/recovery-password',
+        params,
+    });
+
 export interface BaseUserParams {
     email: string;
     password: string;
@@ -69,10 +89,23 @@ interface RegisterFinishParams {
     countryCodeIso: string;
 }
 
+export interface ResetPasswordParams {
+    email: string;
+}
+
+export interface ResetPasswordFinishParams {
+    email: string;
+    code: string;
+    password: string;
+}
+
 export const authApi = {
     login,
     loginConfirm,
     register,
     registerConfirm,
     registerFinish,
+    resetPassword,
+    resetPasswordConfirm,
+    resetPasswordFinish,
 };

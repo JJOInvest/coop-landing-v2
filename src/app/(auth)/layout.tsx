@@ -1,8 +1,6 @@
-import { ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 
-import { Switcher } from '@/app/(auth)/components/switcher';
-
-export default async function AuthLayout({ children }: { children: ReactNode }) {
+export default function AuthLayout({ children }: PropsWithChildren) {
     return (
         <section className="h-screen py-40 bg-auth">
             <div className="container flex items-center justify-center">

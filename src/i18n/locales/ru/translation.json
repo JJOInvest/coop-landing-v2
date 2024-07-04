@@ -151,7 +151,14 @@
             "name": "Имя",
             "surname": "Фамилия",
             "country": "Страна проживания",
-            "register-finish": "Завершить регистрацию"
+            "register-finish": "Завершить регистрацию",
+            "go-on": "Продолжить",
+            "create-new-password": "Создайте новый пароль",
+            "new-password": "Новый пароль",
+            "new-password-again": "Новый пароль еще раз",
+            "create-password": "Создать пароль",
+            "password-changed": "Пароль изменен",
+            "can-login":"Поздравляем! Теперь вы можете войти в систему с новым паролем"
         }
     },
     "password-note": {
