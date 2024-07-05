@@ -35,8 +35,16 @@ export async function FullControl() {
     const { t } = await getServerTranslations();
 
     return (
-        <section className="bg-black text-white pt-20 mb-[500px] pb-48 lg:py-20 relative lg:mb-32 isolate">
+        <section className="text-white py-20 relative isolate lg:pt-24 lg:pb-0 lg:mb-20">
+            {/* White figure */}
             <div className="hidden lg:block absolute bg-blue-100 w-[60%] h-[300px] -left-[80px] -top-[100px] blur-[140px] opacity-50" />
+            {/*<div className="hidden lg:block absolute h-full bg-white w-[20%] right-0 top-0 -z-10" />*/}
+
+            {/* Black background */}
+            <div
+                className="absolute bg-black top-0 left-0 w-full h-2/3 -z-20
+                            lg:rounded-r-xl lg:h-[calc(100%-80px)] lg:w-[calc(100%-((100%-1170px)/2)-100px)]"
+            />
 
             <Image
                 src={FullControlBg}
@@ -44,35 +52,31 @@ export async function FullControl() {
                 className="hidden lg:block absolute opacity-50 top-0 left-0"
             />
 
-            <div className="container relative">
-                <div className="flex flex-col gap-6 lg:gap-8 lg:max-w-[60%]">
-                    <h2 className="text-2xl lg:text-5xl/tight font-medium">
-                        {t('full-control.title')}
-                    </h2>
-                    <p className="text-[16px]/snug lg:text-lg/normal">
-                        {t('full-control.description')}
-                    </p>
+            <div className="container relative flex flex-col lg:flex-row lg:justify-between">
+                <div className="lg:max-w-[670px]">
+                    <div className="flex flex-col gap-6 lg:gap-8">
+                        <h2 className="text-2xl lg:text-5xl/tight font-medium">
+                            {t('full-control.title')}
+                        </h2>
+                        <p className="text-[16px]/snug lg:leading-normal">
+                            {t('full-control.description')}
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-2 lg:grid-cols-4 mt-16 lg:gap-6 lg:mt-10">
+                        {logos.map((logo) => (
+                            <div
+                                key={logo.src}
+                                className="flex items-center justify-center h-16 w-full lg:h-8"
+                            >
+                                <Image src={logo} alt={logo.src} />
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
-                <div className="grid grid-cols-2 lg:grid-cols-4 mt-16 lg:max-w-[60%] lg:mt-10">
-                    {logos.map((logo) => (
-                        <div
-                            key={logo.src}
-                            className="flex items-center justify-center h-16 w-full"
-                        >
-                            <Image src={logo} alt={logo.src} />
-                        </div>
-                    ))}
-                </div>
-
-                <Image
-                    src={RobotImage}
-                    alt="robot"
-                    className="absolute rounded-xl mx-auto left-0 right-0 mt-12 -mb-[145px] lg:inset-0 lg:my-auto lg:mr-[60px] lg:-bottom-[220px]"
-                />
+                <Image src={RobotImage} alt="robot" className="rounded-xl mt-16 lg:m-0" />
             </div>
-
-            <div className="hidden lg:block absolute h-full bg-white w-[20%] right-0 top-0 -z-10" />
         </section>
     );
 }

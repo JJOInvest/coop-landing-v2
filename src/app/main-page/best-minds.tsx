@@ -11,7 +11,7 @@ export async function BestMinds() {
     const { t } = await getServerTranslations();
 
     return (
-        <section className="pt-20 pb-40 relative overflow-hidden bg-background lg:py-32">
+        <section className="pt-20 pb-40 relative overflow-hidden bg-background lg:py-40">
             <div className="absolute bg-blue-800 w-[200px] h-80 opacity-20 blur-[70px] -top-[15px] left-[30px]" />
 
             <div className="container flex flex-col gap-32 lg:flex-row">
@@ -19,7 +19,7 @@ export async function BestMinds() {
                     <h2 className="text-2xl lg:text-5xl/tight font-medium">
                         {t('best-minds.title')}
                     </h2>
-                    <p className="text-[16px]/snug text-grey-500 lg:text-lg/normal">
+                    <p className="text-[16px]/snug text-grey-500 font-light lg:text-lg/normal">
                         {t('best-minds.description')}
                     </p>
                     <Button className="mt-2 lg:self-start" arrow>

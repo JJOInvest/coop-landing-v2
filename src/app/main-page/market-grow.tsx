@@ -11,7 +11,7 @@ export async function MarketGrow() {
     const { t } = await getServerTranslations();
 
     return (
-        <section className="pt-20 pb-40 relative overflow-hidden lg:py-32">
+        <section className="pt-20 pb-40 relative overflow-hidden lg:py-40">
             <div className="absolute bg-cyan w-52 h-80 opacity-20 blur-[85px] rotate-[135deg] top-9 -right-[50px] lg:top-80 lg:right-[50px]" />
 
             <div className="container flex flex-col gap-32 lg:flex-row-reverse">
@@ -19,7 +19,7 @@ export async function MarketGrow() {
                     <h2 className="text-2xl lg:text-5xl/tight font-medium">
                         {t('market-grow.title')}
                     </h2>
-                    <p className="text-[16px]/snug text-grey-500 lg:text-lg/normal">
+                    <p className="text-[16px]/snug text-grey-500 lg:text-lg/normal font-light">
                         {t('market-grow.description')}
                     </p>
                     <Button className="mt-2 lg:self-start" arrow>
@@ -28,7 +28,7 @@ export async function MarketGrow() {
                 </div>
 
                 <div className="relative isolate">
-                    <div className="absolute bg-blue-800 w-[200px] h-80 opacity-30 blur-[70px] -top-[15px] -right-[30px] -z-10 lg:-right-[240px] lg:top-[260px] lg:opacity-20" />
+                    <div className="lg:hidden bsolute bg-blue-800 w-[200px] h-80 opacity-30 blur-[70px] -top-[15px] -right-[30px] -z-10 lg:-right-[240px] lg:top-[260px] lg:opacity-20" />
 
                     <Image
                         src={Blob3}

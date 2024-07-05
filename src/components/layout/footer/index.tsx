@@ -34,11 +34,9 @@ export const Footer = () => {
     ];
 
     return (
-        <footer className="bg-black pt-24 pb-10 lg:pt-16">
+        <footer className="bg-black pt-20 pb-10 lg:pb-20">
             <div className="container flex flex-col gap-10">
-                <div
-                    className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-16"
-                >
+                <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
                     <Image src={JJOIcon} alt={"j'jo"} />
 
                     <div className="flex justify-between lg:justify-center lg:gap-24">

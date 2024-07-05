@@ -20,7 +20,7 @@ export async function SimpleApproach() {
             <div className="absolute top-[200px] -rotate-[150deg] w-[310px] h-[200px] -z-10 bg-cyan rounded-full -right-[120px] lg:top-[450px] lg:-right-[40px] opacity-15 blur-[100px] lg:opacity-25" />
 
             <div className="container lg:flex lg:flex-row-reverse lg:items-center gap-32">
-                <div className="flex flex-col gap-6 lg:gap-8 lg:max-w-[60%]">
+                <div className="flex flex-col gap-6 lg:gap-8 lg:ml-auto lg:max-w-[640px]">
                     <h2 className="text-2xl lg:text-5xl/tight font-medium w-full">
                         {t('simple-approach.title')}
                     </h2>
