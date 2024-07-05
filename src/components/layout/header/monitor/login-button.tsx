@@ -12,7 +12,7 @@ export const LoginButton = () => {
 
     return (
         <button
-            className="btn px-14 py-3 text-[16px]/[100%] text-white bg-black hover:bg-black hover"
+            className="bg-black px-14 h-10 text-[16px]/[100%] text-white hover:bg-transparent hover:text-black hover transition-all duration-300 border-black border-[1px] rounded-lg"
             onClick={handleClick}
         >
             {t('layout.header.button')}

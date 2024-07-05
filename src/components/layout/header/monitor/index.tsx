@@ -17,7 +17,7 @@ export const Header = () => {
     return (
         <header className="top-0 lg:block hidden w-screen fixed bg-white z-20">
             <div className="container flex items-center justify-between">
-                <div className="flex items-center">
+                <div className="flex items-center overflow-hidden">
                     <Link href="/">
                         <Image src={JJO} alt="JJO" className="invert" />
                     </Link>
