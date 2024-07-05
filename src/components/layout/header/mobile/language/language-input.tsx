@@ -13,17 +13,15 @@ export const LanguageInput = () => {
     };
 
     return (
-        <div className={'relative'}>
+        <div className="relative">
             <Image
                 src={languageIcons[i18next.language]}
                 alt={i18next.language}
-                className={'absolute left-5 top-0 bottom-0 my-auto'}
+                className="absolute left-5 top-0 bottom-0 my-auto"
             />
 
             <select
-                className={
-                    'bg-transparent text-black border-solid border-[1px] border-grey-60 outline-none w-full py-4 rounded-xl pr-5 pl-12 text-[13px] font-bold uppercase appearance-none'
-                }
+                className="bg-transparent text-black border-solid border-[1px] border-grey-60 outline-none w-full py-4 rounded-xl pr-5 pl-12 text-[13px] font-bold uppercase appearance-none"
                 onChange={handleOnChange}
                 value={i18next.language}
             >
@@ -36,8 +34,8 @@ export const LanguageInput = () => {
 
             <Image
                 src={ArrowDown}
-                alt={'arrow'}
-                className={'absolute top-0 bottom-0 my-auto right-4 invert'}
+                alt="arrow"
+                className="absolute top-0 bottom-0 my-auto right-4 invert"
             />
         </div>
     );

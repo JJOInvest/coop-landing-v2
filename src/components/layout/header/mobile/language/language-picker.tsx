@@ -23,15 +23,13 @@ export const LanguagePicker = () => {
     });
 
     return (
-        <div className={'relative'}>
+        <div className="relative">
             <button
                 onClick={handleClick}
-                className={
-                    'flex items-center gap-3 h-10 border-solid border-[1px] border-black border-opacity-5 px-4 rounded-lg'
-                }
+                className="flex items-center gap-3 h-10 border-solid border-[1px] border-black border-opacity-5 px-4 rounded-lg"
             >
-                <Image src={languageIcons[i18next.language]} alt={'arrow'} />
-                <Image src={ArrowIcon} alt={'arrow'} />
+                <Image src={languageIcons[i18next.language]} alt="arrow" />
+                <Image src={ArrowIcon} alt="arrow" />
             </button>
 
             <div

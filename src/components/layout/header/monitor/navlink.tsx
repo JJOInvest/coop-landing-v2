@@ -25,9 +25,7 @@ export const Navlink = ({ href, label }: Props) => {
 
             {isActive && (
                 <span
-                    className={
-                        'absolute mx-auto bottom-0 left-0 right-0 w-[55%] bg-orange-120 h-0.5'
-                    }
+                    className="absolute mx-auto bottom-0 left-0 right-0 w-[55%] bg-orange-120 h-0.5"
                 />
             )}
         </Link>

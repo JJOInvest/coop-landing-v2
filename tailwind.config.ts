@@ -28,6 +28,9 @@ const config: Config = {
                 red: {
                     600: '#ef2823',
                 },
+                green: {
+                    120: '#00C18A',
+                },
                 violet: {
                     400: '#9368ff',
                     800: '#5404db',
@@ -50,6 +53,7 @@ const config: Config = {
                 black: {
                     DEFAULT: '#000',
                     10: '#f5f5f7cc',
+                    60: '#6B6C80',
                     80: '#343548',
                     100: '#18192E',
                 },
@@ -63,6 +67,8 @@ const config: Config = {
                 },
                 grey: {
                     60: '#cfd5e5',
+                    70: '#b0bad4',
+                    100: '#6074a9',
                     500: '#4e4e4e',
                 },
                 cyan: {
@@ -83,10 +89,13 @@ const config: Config = {
                 'market-grow-2': 'linear-gradient(48deg, #6EA7B3, #0684A1)',
                 'start-whenever': 'linear-gradient(135deg, #fde4e3, #eee7ff)',
                 'best-minds': 'linear-gradient(48deg, #6EA7B3 6.08%, #0684A1 104.31%)',
+                auth: 'linear-gradient(135deg, #efc2c1, #efefef, #ccd4ef)',
             },
             boxShadow: {
                 box: '0px 5px 15px 0px #DFE6F070',
                 button: '0px 1px 2px 0px rgba(77, 84, 94, 0.05), 2px 4px 10px 0px rgba(77, 84, 94, 0.10)',
+                checkbox:
+                    '0px 2px 4px -1px rgba(27, 10, 82, 0.12), 0px 8px 8px -4px rgba(78, 117, 246, 0.12)',
             },
         },
         backgroundImage: {

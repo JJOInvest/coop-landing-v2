@@ -19,15 +19,15 @@ export const Menu = () => {
     if (!isOpened) return null;
 
     return (
-        <div className={'fixed w-screen h-screen bg-white z-30'}>
-            <div className={'container flex flex-col gap-6'}>
-                <div className={'py-4 flex items-center justify-between'}>
-                    <Image src={JJO} alt={'JJO'} width={52} className={'invert'} />
+        <div className="fixed w-screen h-screen bg-white z-30">
+            <div className="container flex flex-col gap-6">
+                <div className="py-4 flex items-center justify-between">
+                    <Image src={JJO} alt="JJO" width={52} className="invert" />
                     <button onClick={openOrClose}>
-                        <Image src={CloseIcon} alt={'close'} />
+                        <Image src={CloseIcon} alt="close" />
                     </button>
                 </div>
-                <nav className={'flex flex-col gap-3'}>
+                <nav className="flex flex-col gap-3">
                     {points.map((point) => (
                         <Navlink key={point.href} {...point} label={t(point.labelKey)} />
                     ))}

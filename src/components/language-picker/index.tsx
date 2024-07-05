@@ -13,17 +13,15 @@ export const LanguagePicker = () => {
     };
 
     return (
-        <div className={'relative'}>
+        <div className="relative">
             <Image
                 src={languageIcons[i18next.language]}
                 alt={i18next.language}
-                className={'absolute left-5 top-[11px]'}
+                className="absolute left-5 top-[11px]"
             />
 
             <select
-                className={
-                    'bg-transparent text-white border-solid border-[1px] border-white border-opacity-20 outline-none w-full h-10 rounded-xl pr-5 px-12 text-[13px] font-bold uppercase appearance-none'
-                }
+                className="bg-transparent text-white border-solid border-[1px] border-white border-opacity-20 outline-none w-full h-10 rounded-xl pr-5 px-12 text-[13px] font-bold uppercase appearance-none"
                 onChange={handleOnChange}
                 value={i18next.language}
             >
@@ -34,7 +32,7 @@ export const LanguagePicker = () => {
                 ))}
             </select>
 
-            <Image src={ArrowDown} alt={'arrow'} className={'absolute right-4 top-3'} />
+            <Image src={ArrowDown} alt="arrow" className="absolute right-4 top-3" />
         </div>
     );
 };

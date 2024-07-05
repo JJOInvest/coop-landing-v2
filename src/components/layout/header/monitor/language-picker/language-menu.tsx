@@ -13,10 +13,10 @@ export const LanguageMenu = forwardRef<HTMLDivElement>((_, ref) => {
 
     return (
         <div
-            className={'bg-white rounded-lg p-4 flex gap-3 w-max shadow-black/10 drop-shadow-xl'}
+            className="bg-white rounded-lg p-4 flex gap-3 w-max shadow-black/10 drop-shadow-xl"
             ref={ref}
         >
-            <div className={'grid grid-cols-2 gap-4'}>
+            <div className="grid grid-cols-2 gap-4">
                 {languages.map((language) => (
                     <button
                         key={language.value}
@@ -32,7 +32,7 @@ export const LanguageMenu = forwardRef<HTMLDivElement>((_, ref) => {
                         )}
                     >
                         <Image src={language.icon} alt={i18next.language} />
-                        <span className={'w-full text-left text-sm/tight'}>{language.name}</span>
+                        <span className="w-full text-left text-sm/tight">{language.name}</span>
                     </button>
                 ))}
             </div>
