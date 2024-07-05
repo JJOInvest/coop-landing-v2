@@ -13,7 +13,8 @@ export const Stepper = ({ activeIndex }: Props) => {
                 <div
                     key={index}
                     className={cn([
-                        'text-base text-center text-black-60 py-1.5 border-b border-grey-60 w-1/3',
+                        'text-base text-center text-black-60 py-1.5 w-1/3',
+                        index + 1 !== activeIndex && 'border-b border-grey-60',
                         index + 1 === activeIndex && 'border-green-120 border-b-2',
                     ])}
                 >

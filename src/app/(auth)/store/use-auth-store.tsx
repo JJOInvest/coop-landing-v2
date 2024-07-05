@@ -10,7 +10,7 @@ const pinCodeInitialState: PinCodeData = {
 };
 
 const stepInitialState: StepData = {
-    step: 'reset-done',
+    step: null,
 };
 
 export const useAuthStore = create<State<AuthData>>((set) => ({
