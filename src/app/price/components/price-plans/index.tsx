@@ -110,7 +110,7 @@ export const PricePlans = () => {
                     </p>
 
                     <Button
-                        className="mt-6 border-black border-[1px] bg-white"
+                        className="mt-6 border-black border-[1px] bg-white text-black hover:border-white"
                         block
                         variant="outline"
                     >

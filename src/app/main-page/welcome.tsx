@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import BgLines from '@/assets/welcome/bg-lines.svg';
+import BG from '@/assets/welcome/bg.png';
 import HandLg from '@/assets/welcome/hand-lg.png';
 import Hand from '@/assets/welcome/hand.png';
 import { Button } from '@/components/button';
@@ -13,12 +14,13 @@ export async function Welcome() {
         <div className="relative">
             <div className="absolute bg-black hidden lg:block h-32 w-screen bottom-0 left-0 -z-20" />
 
-            <section className="pt-20 relative bg-white lg:rounded-xl lg:mx-20 overflow-hidden isolate">
-                <div className="absolute bg-[#ef2823] -left-24 -top-24 w-4/5 h-72 opacity-25 blur-3xl -z-20 -rotate-[15deg]" />
-                <div className="absolute bg-[#3862ef] top-0 -right-12 w-1/4 h-2/3 blur-3xl opacity-20 -z-20" />
-                <div className="absolute bg-[#3862ef] bottom-0 -left-12 w-1/4 h-2/3 blur-3xl opacity-15 -z-20" />
-
-                <Image src={BgLines} alt="lines" className="absolute top-0 left-0 -z-10" />
+            <section className="pt-20 relative lg:rounded-xl lg:mx-20 overflow-hidden isolate bg-white">
+                <Image
+                    src={BgLines}
+                    alt="lines"
+                    className="lg:block hidden absolute top-0 left-0 -z-10"
+                />
+                <Image src={BG} alt="bg" className="absolute top-0 left-0 w-full h-full -z-20" />
 
                 <div className="container flex flex-col lg:flex-row-reverse lg:gap-16 lg:items-center">
                     <div className="flex flex-col gap-8 lg:ml-auto lg:max-w-[470px] lg:items-start">

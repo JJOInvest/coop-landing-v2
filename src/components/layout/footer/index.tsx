@@ -40,7 +40,7 @@ export const Footer = () => {
                     <Image src={JJOIcon} alt={"j'jo"} />
 
                     <div className="flex justify-between lg:justify-center lg:gap-24">
-                        <div className="flex flex-col gap-8 max-w-[50%]">
+                        <div className="flex flex-col gap-8 w-full max-w-1/2">
                             {links.slice(0, 5).map((link) => (
                                 <Link
                                     key={link.labelKey}
@@ -52,7 +52,7 @@ export const Footer = () => {
                             ))}
                         </div>
 
-                        <div className="flex flex-col gap-8 w-max">
+                        <div className="flex flex-col gap-8 w-max max-w-1/2">
                             {links.slice(5).map((link) => (
                                 <Link
                                     key={link.labelKey}
