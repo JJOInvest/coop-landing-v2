@@ -33,7 +33,7 @@ export async function SimpleApproach() {
                 </div>
 
                 <div className="mx-auto mt-40 lg:mt-0 flex items-center justify-center relative lg:flex-grow">
-                    <Image className="z-10" src={IPhone} alt="iphone" />
+                    <Image className="z-10 max-w-[290px]" src={IPhone} alt="iphone" />
 
                     <div className="absolute w-[290px] h-[585px] bg-blue-900 opacity-15 blur-[20px] -mb-8 -mr-8" />
 

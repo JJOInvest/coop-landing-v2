@@ -28,7 +28,7 @@ export async function MarketGrow() {
                 </div>
 
                 <div className="relative isolate">
-                    <div className="lg:hidden bsolute bg-blue-800 w-[200px] h-80 opacity-30 blur-[70px] -top-[15px] -right-[30px] -z-10 lg:-right-[240px] lg:top-[260px] lg:opacity-20" />
+                    <div className="lg:hidden absolute bg-blue-800 w-[200px] h-80 opacity-30 blur-[70px] -top-[15px] -right-[30px] -z-10 lg:-right-[240px] lg:top-[260px] lg:opacity-20" />
 
                     <Image
                         src={Blob3}
