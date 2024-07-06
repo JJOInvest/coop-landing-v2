@@ -1,0 +1,11 @@
+.button {
+    .arrow {
+        @apply transition-transform duration-300;
+    }
+
+    &:hover {
+        .arrow {
+            @apply -translate-x-1;
+        }
+    }
+}

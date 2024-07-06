@@ -11,10 +11,10 @@ export async function MarketGrow() {
     const { t } = await getServerTranslations();
 
     return (
-        <section className="pt-20 pb-40 relative overflow-hidden lg:py-40">
+        <section className="pt-20 pb-40 relative overflow-hidden lg:p-0 lg:min-h-screen lg:flex lg:items-center">
             <div className="absolute bg-cyan w-52 h-80 opacity-20 blur-[85px] rotate-[135deg] top-9 -right-[50px] lg:top-80 lg:right-[50px]" />
 
-            <div className="container flex flex-col gap-32 lg:flex-row-reverse">
+            <div className="container flex flex-col gap-32 lg:flex-row-reverse lg:items-center">
                 <div className="flex flex-col gap-6 lg:gap-8 lg:max-w-[570px] lg:items-center">
                     <h2 className="text-2xl lg:text-5xl/tight font-medium">
                         {t('market-grow.title')}

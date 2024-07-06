@@ -98,7 +98,9 @@ export const PricePlans = () => {
                     <h5 className="text-xl">{pricePlan.name}</h5>
                     <div className="flex gap-2 items-end mt-7">
                         <p className="text-5xl">{`$${t(pricePlan.price)}`}</p>
-                        <p className="text-[16px]/normal">{`/${t('price.month')}`}</p>
+                        {Number(pricePlan.price) !== 0 && (
+                            <p className="text-[16px]/normal">{`/${t('price.month')}`}</p>
+                        )}
                     </div>
                     <p
                         className={cn('text-[15px]/snug mt-2', {

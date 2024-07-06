@@ -11,10 +11,10 @@ export async function BestMinds() {
     const { t } = await getServerTranslations();
 
     return (
-        <section className="pt-20 pb-40 relative overflow-hidden bg-background lg:py-40">
+        <section className="pt-20 pb-40 relative overflow-hidden bg-background lg:p-0 lg:flex lg:items-center min-h-screen">
             <div className="absolute bg-blue-800 w-[200px] h-80 opacity-20 blur-[70px] -top-[15px] left-[30px]" />
 
-            <div className="container flex flex-col gap-32 lg:flex-row">
+            <div className="container flex flex-col gap-32 lg:flex-row lg:items-center">
                 <div className="flex flex-col gap-6 lg:gap-8 lg:max-w-[570px] lg:items-center">
                     <h2 className="text-2xl lg:text-5xl/tight font-medium">
                         {t('best-minds.title')}
@@ -40,6 +40,7 @@ export async function BestMinds() {
                         <Image src={JJO} alt="index" />
                         {t('INDEX')}
                     </div>
+
                     <Image src={SmartMan} alt="smart man" className="rounded-xl" />
                 </div>
             </div>

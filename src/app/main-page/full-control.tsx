@@ -55,7 +55,7 @@ export async function FullControl() {
             <div className="container relative flex flex-col lg:flex-row lg:justify-between">
                 <div className="lg:max-w-[670px]">
                     <div className="flex flex-col gap-6 lg:gap-8">
-                        <h2 className="text-2xl lg:text-5xl/tight font-medium">
+                        <h2 className="text-2xl lg:text-5xl/tight font-medium lg:max-w-[85%]">
                             {t('full-control.title')}
                         </h2>
                         <p className="text-[16px]/snug lg:leading-normal">

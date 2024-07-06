@@ -113,7 +113,7 @@ export const Calculator = () => {
                         }}
                     />
                     <button
-                        className="bg-black rounded-xl py-6 text-center text-sm uppercase text-white/90 font-semibold"
+                        className="bg-black rounded-xl py-5 text-center text-sm uppercase text-white/90 font-semibold border-[1px] border-black duration-300 hover:bg-transparent hover:text-black"
                         type="submit"
                         disabled={!buttonEnabled}
                     >
