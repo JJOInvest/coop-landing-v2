@@ -4,6 +4,7 @@ import cn from 'classnames';
 import { HTMLProps, PropsWithChildren } from 'react';
 
 import { ArrowRight } from './arrow-right';
+import styles from './styles.module.css';
 
 export interface Props extends PropsWithChildren, Omit<HTMLProps<HTMLButtonElement>, 'type'> {
     variant?: 'solid' | 'outline';
@@ -26,7 +27,8 @@ export const Button = ({
             disabled={disabled}
             {...props}
             className={cn(
-                'flex items-center justify-center gap-3 uppercase lg:h-[60px] h-[50px] lg:px-8 text-sm lg:py-5 rounded-[10px] transition-all duration-200',
+                'flex items-center justify-center gap-3 uppercase lg:h-[60px] h-[50px] lg:px-8 text-sm lg:py-5 rounded-[10px] duration-300',
+                styles.button,
                 {
                     'bg-black text-white hover:bg-transparent hover:text-black':
                         variant === 'solid' && !disabled,

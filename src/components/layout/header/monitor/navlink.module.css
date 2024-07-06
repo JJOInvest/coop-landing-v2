@@ -1,0 +1,27 @@
+.navlink {
+    @apply opacity-50;
+
+    .navlinkUnderscore {
+        @apply opacity-0 translate-y-full;
+    }
+
+    &:hover {
+        @apply opacity-100;
+        .navlinkUnderscore {
+            @apply opacity-100 translate-y-0;
+        }
+    }
+
+    &.active {
+        @apply opacity-100;
+        .navlinkUnderscore {
+            @apply opacity-100 translate-y-0;
+        }
+    }
+
+    @apply duration-300;
+}
+
+.navlinkUnderscore {
+    @apply duration-300;
+}

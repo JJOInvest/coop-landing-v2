@@ -105,7 +105,7 @@ const config: Config = {
             'full-control-pattern': "url('/full-control/bg.png')",
             'important-pattern': "url('/important-knowledge/woman.png')",
             'important-pattern-small': "url('/important-knowledge/woman-small.png')",
-            'welcome-pattern': "url('/welcome/bg.svg')",
+            'welcome-pattern': "url('/welcome/bg.png')",
         },
     },
     plugins: [require('daisyui')],

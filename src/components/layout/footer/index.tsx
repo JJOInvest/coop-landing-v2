@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 
+import SecurityImage from '@/assets/footer/security.svg';
 import FacebookIcon from '@/assets/footer/social-media-icons/facebook.svg';
 import MediumIcon from '@/assets/footer/social-media-icons/medium.svg';
 import TelegramIcon from '@/assets/footer/social-media-icons/telegram.svg';
@@ -34,15 +35,19 @@ export const Footer = () => {
     ];
 
     return (
-        <footer className="bg-black pt-24 pb-10 lg:pt-16">
+        <footer className="bg-black pt-20 pb-10 lg:pb-20">
             <div className="container flex flex-col gap-10">
-                <div
-                    className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-16"
-                >
-                    <Image src={JJOIcon} alt={"j'jo"} />
+                <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
+                    <div>
+                        <Image src={JJOIcon} alt={"j'jo"} />
+                        <div className="hidden lg:flex mt-32 rounded-xl py-2.5 px-4 bg-white bg-opacity-10 items-center text-white gap-2 text-xs">
+                            <Image src={SecurityImage} alt="security" />
+                            {t('footer.security')}
+                        </div>
+                    </div>
 
                     <div className="flex justify-between lg:justify-center lg:gap-24">
-                        <div className="flex flex-col gap-8 max-w-[50%]">
+                        <div className="flex flex-col gap-8 w-full max-w-1/2">
                             {links.slice(0, 5).map((link) => (
                                 <Link
                                     key={link.labelKey}
@@ -54,7 +59,7 @@ export const Footer = () => {
                             ))}
                         </div>
 
-                        <div className="flex flex-col gap-8 w-max">
+                        <div className="flex flex-col gap-8 w-max max-w-1/2">
                             {links.slice(5).map((link) => (
                                 <Link
                                     key={link.labelKey}
