@@ -10,6 +10,7 @@ on:
 env:
   SERVICE_NAME: coop-landing-v2
   ZENDESK_URL: https://jjoapp.zendesk.com/api/v2/help_center
+  NEXT_PUBLIC_API_DOMAIN: https://api-dev.jjo.finance
 
 jobs:
   build:

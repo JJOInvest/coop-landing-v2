@@ -2,6 +2,7 @@ FROM node:20-alpine AS base
 
 ARG ZENDESK_URL
 ARG ZENDESK_TOKEN
+ARG NEXT_PUBLIC_API_DOMAIN
 
 FROM base AS deps
 RUN apk add --no-cache libc6-compat
@@ -18,12 +19,12 @@ RUN \
 FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
-COPY . ./
+COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED 1
 ENV ZENDESK_URL=$ZENDESK_URL
 ENV ZENDESK_TOKEN=$ZENDESK_TOKEN
-ENV NEXT_PUBLIC_API_DOMAIN=https://api-dev.jjo.finance
+ENV NEXT_PUBLIC_API_DOMAIN=$NEXT_PUBLIC_API_DOMAIN
 
 RUN \
   if [ -f yarn.lock ]; then yarn run build; \
@@ -44,10 +45,4 @@ RUN chown nextjs:nodejs .next
 
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-USER nextjs
-
-EXPOSE 3000
-
-ENV PORT 3000
-
-CMD HOSTNAME="0.0.0.0" node server.js
+CMD [ "yarn", "start" ]
