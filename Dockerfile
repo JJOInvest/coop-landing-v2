@@ -1,8 +1,9 @@
-FROM node:20-alpine
+FROM node:20.13-alpine
 
 ARG ZENDESK_URL
 ARG ZENDESK_TOKEN
 ARG NEXT_PUBLIC_API_DOMAIN
+ARG NEXT_SHARP_PATH
 
 RUN apk add --no-cache git
 
@@ -10,12 +11,16 @@ WORKDIR /app
 
 COPY . ./
 
+RUN yarn install --frozen-lockfile
+
+ENV NODE_ENV production
+ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_PUBLIC_SHARP_PATH $NEXT_SHARP_PATH
+
 ENV ZENDESK_URL=$ZENDESK_URL
 ENV ZENDESK_TOKEN=$ZENDESK_TOKEN
 ENV NEXT_PUBLIC_API_DOMAIN=$NEXT_PUBLIC_API_DOMAIN
 
-RUN yarn install --frozen-lockfile
-
 RUN yarn build
 
-CMD [ "yarn", "dev" ]
+CMD [ "yarn", "start" ]
