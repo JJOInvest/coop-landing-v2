@@ -92,6 +92,8 @@ const config: Config = {
                 'start-whenever': 'linear-gradient(135deg, #fde4e3, #eee7ff)',
                 'best-minds': 'linear-gradient(48deg, #6EA7B3 6.08%, #0684A1 104.31%)',
                 auth: 'linear-gradient(135deg, #efc2c1, #efefef, #ccd4ef)',
+                investArticle:
+                    'linear-gradient(90deg, #EBEFFF 5.21%, rgba(248, 248, 248, 0.00) 43.87%), linear-gradient(96deg, rgba(248, 248, 248, 0.00) 68.68%, #DEE3F7 95.19%)',
             },
             boxShadow: {
                 box: '0px 5px 15px 0px #DFE6F070',
