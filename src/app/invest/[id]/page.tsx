@@ -15,11 +15,8 @@ interface Props {
     };
 }
 
-export async function getStaticPaths() {
-    return {
-        paths: investPagesIds.map((id) => ({ params: { id: id.toString() } })),
-        fallback: false,
-    };
+export async function generateStaticParams() {
+    return investPagesIds.map((id) => ({ id: id.toString() }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
