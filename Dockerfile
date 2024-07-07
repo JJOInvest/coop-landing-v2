@@ -3,6 +3,7 @@ FROM node:20-alpine AS base
 ARG ZENDESK_URL
 ARG ZENDESK_TOKEN
 ARG NEXT_PUBLIC_API_DOMAIN
+ARG NEXT_SHARP_PATH
 
 FROM base AS deps
 RUN apk add --no-cache libc6-compat
@@ -19,9 +20,12 @@ RUN \
 FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
-COPY . .
+COPY . ./
 
 ENV NEXT_TELEMETRY_DISABLED 1
+ENV NODE_ENV production
+ENV NEXT_SHARP_PATH $NEXT_SHARP_PATH
+
 ENV ZENDESK_URL=$ZENDESK_URL
 ENV ZENDESK_TOKEN=$ZENDESK_TOKEN
 ENV NEXT_PUBLIC_API_DOMAIN=$NEXT_PUBLIC_API_DOMAIN
@@ -32,17 +36,5 @@ RUN \
   elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm run build; \
   else echo "Lockfile not found." && exit 1; \
   fi
-
-FROM base AS runner
-WORKDIR /app
-ENV NODE_ENV production
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-
-COPY --from=builder /app/public ./public
-RUN mkdir .next
-RUN chown nextjs:nodejs .next
-
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 CMD [ "yarn", "start" ]
