@@ -1,61 +1,26 @@
-FROM node:20.13-alpine AS base
+FROM node:20.13-alpine
 
-FROM base AS deps
-RUN apk add --no-cache git libc6-compat
+ARG ZENDESK_URL
+ARG ZENDESK_TOKEN
+ARG NEXT_PUBLIC_API_DOMAIN
+ARG NEXT_SHARP_PATH
+
+RUN apk add --no-cache git
+
 WORKDIR /app
 
-COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
-RUN \
-  if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
-  elif [ -f package-lock.json ]; then npm ci; \
-  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i --frozen-lockfile; \
-  else echo "Lockfile not found." && exit 1; \
-  fi
+COPY . ./
 
-
-# Rebuild the source code only when needed
-FROM base AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
-COPY . .
-
-ENV NEXT_TELEMETRY_DISABLED 1
-ENV ZENDESK_URL=$ZENDESK_URL
-ENV ZENDESK_TOKEN=$ZENDESK_TOKEN
-ENV NEXT_PUBLIC_API_DOMAIN=$NEXT_PUBLIC_API_DOMAIN
-ENV NEXT_PUBLIC_SHARP_PATH=$NEXT_SHARP_PATH
-
-RUN \
-  if [ -f yarn.lock ]; then yarn run build; \
-  elif [ -f package-lock.json ]; then npm run build; \
-  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm run build; \
-  else echo "Lockfile not found." && exit 1; \
-  fi
-
-FROM base AS runner
-WORKDIR /app
+RUN yarn install --frozen-lockfile
 
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_PUBLIC_SHARP_PATH $NEXT_SHARP_PATH
+
 ENV ZENDESK_URL=$ZENDESK_URL
 ENV ZENDESK_TOKEN=$ZENDESK_TOKEN
 ENV NEXT_PUBLIC_API_DOMAIN=$NEXT_PUBLIC_API_DOMAIN
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+RUN yarn build
 
-COPY --from=builder /app/public ./public
-
-RUN mkdir .next
-RUN chown nextjs:nodejs .next
-
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
-USER nextjs
-
-EXPOSE 3000
-
-ENV PORT 3000
-
-CMD HOSTNAME="0.0.0.0" node server.js
+CMD [ "yarn", "start" ]
