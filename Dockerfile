@@ -6,10 +6,6 @@ ARG NEXT_PUBLIC_API_DOMAIN
 ARG NEXT_SHARP_PATH
 
 RUN apk add --no-cache libc6-compat
-WORKDIR /app
-
-COPY yarn.lock* ./
-RUN yarn install --frozen-lockfile
 
 WORKDIR /app
 COPY . ./
@@ -21,6 +17,8 @@ ENV NEXT_SHARP_PATH $NEXT_SHARP_PATH
 ENV ZENDESK_URL=$ZENDESK_URL
 ENV ZENDESK_TOKEN=$ZENDESK_TOKEN
 ENV NEXT_PUBLIC_API_DOMAIN=$NEXT_PUBLIC_API_DOMAIN
+
+RUN yarn install --frozen-lockfile
 
 RUN yarn build
 
