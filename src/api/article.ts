@@ -26,6 +26,5 @@ export async function getArticleById(
     const { data } = await zendesk.get<{ article: Article }>(
         `${options.language}/articles/${id}.json`,
     );
-    console.log(data.article);
     return data.article;
 }

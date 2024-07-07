@@ -10,7 +10,7 @@ export const points: Point[] = [
     },
     {
         labelKey: 'layout.navbar.invest',
-        href: '/invest',
+        href: '/invest/33961919663385',
     },
     {
         labelKey: 'layout.navbar.price',

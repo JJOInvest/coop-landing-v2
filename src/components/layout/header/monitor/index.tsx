@@ -15,7 +15,7 @@ export const Header = () => {
     const { t } = useTranslation();
 
     return (
-        <header className="top-0 lg:block hidden w-screen fixed bg-white z-20">
+        <header className="top-0 lg:block hidden w-screen sticky bg-white z-20">
             <div className="container flex items-center justify-between">
                 <div className="flex items-center overflow-hidden">
                     <Link href="/">
