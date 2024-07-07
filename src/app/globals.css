@@ -33,3 +33,19 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
 }
+
+.zendesk-content p, .zendesk-content li {
+    @apply my-8 text-black/60 text-base;
+}
+
+.zendesk-content li {
+    @apply list-disc ml-4;
+}
+
+.zendesk-content a {
+    @apply text-blue-120;
+}
+
+.zendesk-content h2 {
+    @apply text-black-120 font-semibold text-2xl my-6;
+}

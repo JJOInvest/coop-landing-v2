@@ -33,8 +33,6 @@ export const PasswordResetForm = () => {
     const stepData = useStepStore((state) => state.data);
     const setStepData = useStepStore((state) => state.setData);
 
-    console.log(stepData);
-
     const goToLogin = () => router.push('/login');
 
     const { mutateAsync } = useMutation({

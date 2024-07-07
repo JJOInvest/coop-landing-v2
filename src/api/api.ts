@@ -15,6 +15,9 @@ export interface Request extends RequestToken {
 
 export const api = axios.create({
     baseURL: baseUrl,
+    headers: {
+        'Cache-Control': 'force-cache',
+    },
 });
 
 export const apiPostRequest = async <T>({ path, params, token, jsonBody }: Request): Promise<T> => {
