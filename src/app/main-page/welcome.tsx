@@ -5,6 +5,7 @@ import BG from '@/assets/welcome/bg.png';
 import HandLg from '@/assets/welcome/hand-lg.png';
 import Hand from '@/assets/welcome/hand.png';
 import { Button } from '@/components/button';
+import { ResponseImage } from '@/components/response-image';
 import { getServerTranslations } from '@/i18n/server';
 
 export async function Welcome() {
@@ -16,11 +17,25 @@ export async function Welcome() {
 
             <section className="pt-20 relative lg:rounded-xl lg:mx-20 overflow-hidden isolate bg-white">
                 <Image
+                    alt=""
                     src={BgLines}
-                    alt="lines"
-                    className="lg:block hidden absolute top-0 left-0 -z-10"
+                    quality={100}
+                    fill
+                    style={{
+                        objectFit: 'cover',
+                    }}
+                    className="-z-10"
                 />
-                <Image src={BG} alt="bg" className="absolute top-0 left-0 w-full h-full -z-20" />
+                <Image
+                    alt=""
+                    src={BG}
+                    placeholder="blur"
+                    quality={100}
+                    fill
+                    style={{
+                        objectFit: 'cover',
+                    }}
+                />
 
                 <div className="container flex flex-col lg:flex-row-reverse lg:gap-16 lg:items-center">
                     <div className="flex flex-col gap-8 lg:ml-auto lg:max-w-[470px] lg:items-start">
@@ -34,16 +49,10 @@ export async function Welcome() {
                             {t('welcome.button')}
                         </Button>
                     </div>
-
-                    <Image
-                        src={Hand}
-                        alt="hand with IPhone"
-                        className="lg:hidden mt-16 -ml-20 max-w-[375px] lg:max-w-[575px]"
-                    />
-                    <Image
-                        src={HandLg}
-                        alt="hand with IPhone"
-                        className="hidden lg:block mt-16 -ml-20 max-w-[375px] lg:max-w-[575px]"
+                    <ResponseImage
+                        mobile={Hand}
+                        desktop={HandLg}
+                        className="mt-16 -ml-20 max-w-[375px] lg:max-w-[575px]"
                     />
                 </div>
             </section>
