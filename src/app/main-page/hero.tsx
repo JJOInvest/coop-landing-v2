@@ -1,12 +1,16 @@
+import { SectionBackground } from '@/app/main-page/section-background';
 import { Button } from '@/components/button';
 import { getServerTranslations } from '@/i18n/server';
+
+import bgMobile from './assets/hero-image.png';
+import bgDesktop from './assets/hero-image.png';
 
 export async function Hero() {
     const { t } = await getServerTranslations();
 
     return (
-        <section className="h-screen w-screen lg:bg-hero-pattern bg-hero-pattern-small bg-bottom bg-cover pt-14">
-            <div className="container flex flex-col items-center justify-center max-h-[65%]">
+        <section className="h-screen w-screen pt-14">
+            <div className="container flex flex-col items-center justify-center max-h-[65%] relative z-10">
                 <h1 className="max-w-full lg:max-w-[544px] lg:text-5xl/tight text-3xl/snug font-medium lg:text-center">
                     {t('hero.title')}
                 </h1>
@@ -28,6 +32,7 @@ export async function Hero() {
                     </Button>
                 </div>
             </div>
+            <SectionBackground desktop={bgDesktop} mobile={bgMobile} />
         </section>
     );
 }
