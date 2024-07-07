@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import { redirect } from 'next/navigation';
 
 import { getArticleById } from '@/api/article';
 import { InvestHeader } from '@/app/invest/components/header';
@@ -32,18 +31,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-export default async function Page({ params }: Props) {
-    const { t } = await getServerTranslations();
+async function getArticle(params: { id: string }, articleId: number) {
     const language = await detectLanguage();
 
-    const articleId = parseInt(params.id, 10);
-    let article;
+    return await getArticleById(articleId, { language });
+}
 
-    try {
-        article = await getArticleById(articleId, { language });
-    } catch (error) {
-        redirect(`/invest`);
-    }
+export default async function Page({ params }: Props) {
+    const { t } = await getServerTranslations();
+    const articleId = parseInt(params.id, 10);
+
+    const article = await getArticle(params, articleId);
 
     return (
         <>
