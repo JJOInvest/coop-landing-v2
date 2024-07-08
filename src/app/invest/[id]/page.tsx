@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 
 import { getArticleById } from '@/api/article';
+import { News } from '@/app/invest/components/news';
 import { investPagesIds } from '@/app/invest/constants';
 import { detectLanguage } from '@/i18n/server';
 
@@ -45,6 +46,7 @@ export default async function Page({ params }: Props) {
                 className="mt-6 lg:mt-10 zendesk-content"
                 dangerouslySetInnerHTML={{ __html: article.body }}
             />
+            {params.id === '33181283962009' && <News />}
         </div>
     );
 }
