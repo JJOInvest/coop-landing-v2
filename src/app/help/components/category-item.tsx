@@ -33,10 +33,9 @@ export const CategoryItem = ({ id, name, questions }: Props) => {
                     })}
                 />
             </button>
-
-            <div className="pl-2 border-violet-500 border-l-2 flex flex-col gap-4">
-                {isOpened &&
-                    questions.map((question) => (
+            {isOpened && (
+                <div className="pl-2 border-violet-500 border-l-2 flex flex-col gap-4">
+                    {questions.map((question) => (
                         <Link
                             href={`/help?questionId=${question.id}`}
                             key={question.id}
@@ -48,7 +47,8 @@ export const CategoryItem = ({ id, name, questions }: Props) => {
                             {question.name}
                         </Link>
                     ))}
-            </div>
+                </div>
+            )}
         </div>
     );
 };
