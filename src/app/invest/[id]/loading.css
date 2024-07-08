@@ -8,6 +8,10 @@
     border-radius: 5px;
 }
 
+.load-wrapper.big {
+    height: 120px;
+}
+
 .activity {
     position: absolute;
     left: -45%;
