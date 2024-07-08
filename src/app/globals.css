@@ -5,7 +5,11 @@
 *,
 *:before,
 *:after {
-    box-sizing: border-box;
+    @apply box-border;
+}
+
+html {
+    @apply whitespace-pre-line;
 }
 
 body {

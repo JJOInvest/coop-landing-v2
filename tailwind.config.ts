@@ -33,6 +33,7 @@ const config: Config = {
                 },
                 violet: {
                     400: '#9368ff',
+                    500: '#7c5e9c',
                     800: '#5404db',
                 },
                 primary: {
@@ -83,6 +84,7 @@ const config: Config = {
                 decorate: ['var(--font-mulish)'],
             },
             backgroundImage: {
+                help: 'linear-gradient(60deg, #ff7f57, #d8575f)',
                 price: 'linear-gradient(60deg, #00d598, #4ad56d)',
                 'important-knowledge':
                     'linear-gradient(to bottom, black, transparent, transparent, black)',

@@ -18,7 +18,7 @@ export const points: Point[] = [
     },
     {
         labelKey: 'layout.navbar.ƒaq',
-        href: '/ƒaq',
+        href: '/help',
     },
     {
         labelKey: 'layout.navbar.blog',
