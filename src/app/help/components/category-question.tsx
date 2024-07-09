@@ -21,7 +21,8 @@ export const CategoryQuestion = async ({ id, name, updatedAt, isLast }: Props) =
     const updateText = `Обн. ${dayjs(updatedAt).fromNow()}`;
 
     return (
-        <div
+        <Link
+            href={`/help?questionId=${id}`}
             className={cn('py-3', {
                 'border-b-[1px] border-black/10': !isLast,
             })}
@@ -33,14 +34,11 @@ export const CategoryQuestion = async ({ id, name, updatedAt, isLast }: Props) =
                         {updateText}
                     </div>
 
-                    <Link
-                        href={`/help?questionId=${id}`}
-                        className="rounded-full flex items-center justify-center w-6 h-6 border-neutral-300 border-[1px]"
-                    >
+                    <div className="rounded-full flex items-center justify-center w-6 h-6 border-neutral-300 border-[1px]">
                         <Image src={ArrowRight} alt="" className="w-4" />
-                    </Link>
+                    </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };

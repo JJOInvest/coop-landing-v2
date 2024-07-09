@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import { getAllCategories, getQuestionById } from '@/api/help';
 import { CategoriesList } from '@/app/help/components/categories-list';
 import { CategoryBody } from '@/app/help/components/category-body';
+import { MobileCategories } from '@/app/help/components/mobile-categories';
 import { QuestionBody } from '@/app/help/components/question-body';
 import { Search } from '@/app/help/components/search';
 import { getServerTranslations } from '@/i18n/server';
@@ -42,10 +43,12 @@ export default async function Page({ searchParams }: Props) {
 
             <div className="py-16 lg:py-24">
                 <div className="container">
-                    <div className="flex justify-between">
-                        <div className="hidden lg:block">
-                            <CategoriesList categories={categories} />
-                        </div>
+                    <div className="lg:hidden block">
+                        <MobileCategories categories={categories} />
+                    </div>
+
+                    <div className="lg:flex hidden justify-between">
+                        <CategoriesList categories={categories} />
 
                         <div className="max-w-[770px] w-full">
                             {!!searchParams.questionId ? (

@@ -29,12 +29,10 @@ export const LanguageMenu = forwardRef<HTMLDivElement, Props>(({ close }, ref) =
                         key={language.value}
                         onClick={handleClick(language.value)}
                         className={cn(
-                            'flex items-center gap-3 min-w-40 h-12 pl-3 rounded-xl border-transparent border-[1px] transition-all duration-150',
+                            'flex items-center gap-3 min-w-40 h-12 pl-3 rounded-xl transition-all duration-150',
                             {
                                 'bg-blue-10 border-blue-60 border-[1px]':
                                     language.value === i18next.language,
-                                'hover:bg-black-10 hover:border-black/20':
-                                    language.value !== i18next.language,
                             },
                         )}
                     >

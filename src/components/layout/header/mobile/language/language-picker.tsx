@@ -4,7 +4,6 @@ import cn from 'classnames';
 import i18next from 'i18next';
 import Image from 'next/image';
 import { useState } from 'react';
-import { useOutsideClickRef } from 'rooks';
 
 import ArrowIcon from '@/assets/header/language-picker/arrow.svg';
 import { languageIcons } from '@/i18n/languages';
@@ -13,14 +12,7 @@ import { LanguageMenu } from './language-menu';
 
 export const LanguagePicker = () => {
     const [isOpened, setIsOpened] = useState(false);
-
     const handleClick = () => setIsOpened((isOpened) => !isOpened);
-
-    const [ref] = useOutsideClickRef(() => {
-        if (isOpened) {
-            setIsOpened(false);
-        }
-    });
 
     return (
         <div className="relative">
@@ -38,7 +30,7 @@ export const LanguagePicker = () => {
                     'opacity-100 visible': isOpened,
                 })}
             >
-                <LanguageMenu ref={ref} close={handleClick} />
+                <LanguageMenu close={handleClick} />
             </div>
         </div>
     );
