@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 
 import { getArticleById } from '@/api/article';
 import { getArticle } from '@/api/help';
-import { News } from '@/app/invest/components/news';
-import { investPagesIds } from '@/app/invest/constants';
+import { News } from '@/app/[lng]/invest/components/news';
+import { investPagesIds } from '@/app/[lng]/invest/constants';
 import { detectLanguage } from '@/i18n/server';
 
 interface Props {
