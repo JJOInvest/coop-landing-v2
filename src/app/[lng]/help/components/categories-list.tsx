@@ -1,5 +1,5 @@
 import { Category } from '@/api/help';
-import { CategoryItem } from '@/app/help/components/category-item';
+import { CategoryItem } from '@/app/[lng]/help/components/category-item';
 
 export type Props = {
     categories: Category[];

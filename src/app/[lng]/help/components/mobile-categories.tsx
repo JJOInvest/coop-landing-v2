@@ -1,5 +1,5 @@
 import { Category } from '@/api/help';
-import { MobileQuestion } from '@/app/help/components/mobile-question';
+import { MobileQuestion } from '@/app/[lng]/help/components/mobile-question';
 
 export type Props = {
     categories: Category[];

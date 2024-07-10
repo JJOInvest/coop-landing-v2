@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 
 import { getAllCategories, getQuestionById } from '@/api/help';
-import { CategoriesList } from '@/app/help/components/categories-list';
-import { CategoryBody } from '@/app/help/components/category-body';
-import { MobileCategories } from '@/app/help/components/mobile-categories';
-import { QuestionBody } from '@/app/help/components/question-body';
-import { Search } from '@/app/help/components/search';
+import { CategoriesList } from '@/app/[lng]/help/components/categories-list';
+import { CategoryBody } from '@/app/[lng]/help/components/category-body';
+import { MobileCategories } from '@/app/[lng]/help/components/mobile-categories';
+import { QuestionBody } from '@/app/[lng]/help/components/question-body';
+import { Search } from '@/app/[lng]/help/components/search';
 import QuestionIcon from '@/assets/help/question.svg';
 import { getServerTranslations } from '@/i18n/server';
 

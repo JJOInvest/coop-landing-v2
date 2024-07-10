@@ -1,5 +1,5 @@
 import { Question } from '@/api/help';
-import { CategoryQuestion } from '@/app/help/components/category-question';
+import { CategoryQuestion } from '@/app/[lng]/help/components/category-question';
 
 export type Props = {
     id: number;
