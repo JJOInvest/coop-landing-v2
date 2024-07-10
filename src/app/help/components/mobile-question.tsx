@@ -1,16 +1,21 @@
 'use client';
 
 import cn from 'classnames';
+import Link from 'next/link';
 import { useState } from 'react';
 
-import { Question } from '@/api/help';
+import { Article } from '@/api/help';
+import { QuestionBody } from '@/app/help/components/question-body';
+interface Props {
+    topArticles?: Article[];
+    name: string;
+    id: number;
+}
 
-export type Props = Question;
-
-export const MobileQuestion = ({ name, answer }: Props) => {
+export const MobileQuestion = ({ name, id, topArticles }: Props) => {
     const [isOpened, setIsOpened] = useState(false);
+    const article = topArticles?.find((topArticle) => topArticle.id === id);
     const toggleOpened = () => setIsOpened((isOpened) => !isOpened);
-
     return (
         <div className="border-b-[1px] border-black/10 py-4">
             <div className="flex gap-8 justify-between items-center" onClick={toggleOpened}>
@@ -25,7 +30,11 @@ export const MobileQuestion = ({ name, answer }: Props) => {
                 </div>
             </div>
 
-            {isOpened && <p className="text-black/50 text-[16px]/snug font-light mt-4">{answer}</p>}
+            {isOpened && (
+                <p className="text-black/50 text-[16px]/snug font-light mt-4">
+                    <QuestionBody article={article as Article} />
+                </p>
+            )}
         </div>
     );
 };

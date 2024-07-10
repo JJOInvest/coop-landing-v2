@@ -6,12 +6,13 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 
-import { Category } from '@/api/help';
+import { SectionWithTopArticles } from '@/api/help';
+import { Category } from '@/api/help3';
 import ArrowDown from '@/assets/icons/arrow-down.svg';
 
-export type Props = Category;
+export type Props = SectionWithTopArticles;
 
-export const CategoryItem = ({ id, name, questions }: Props) => {
+export const CategoryItem = ({ id, name, topArticles }: Props) => {
     const searchParams = useSearchParams();
     const [isOpened, setIsOpened] = useState(false);
     const toggleOpened = () => setIsOpened((isOpened) => !isOpened);
@@ -35,7 +36,7 @@ export const CategoryItem = ({ id, name, questions }: Props) => {
             </button>
             {isOpened && (
                 <div className="pl-2 border-violet-500 border-l-2 flex flex-col gap-4">
-                    {questions.map((question) => (
+                    {topArticles.map((question) => (
                         <Link
                             href={`/help?questionId=${question.id}`}
                             key={question.id}

@@ -1,12 +1,21 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 
-import { getAllCategories, getQuestionById } from '@/api/help';
+import {
+    Article,
+    getArticle,
+    getArticles,
+    getSectionArticles,
+    getSections,
+    searchArticles,
+    SectionWithTopArticles,
+} from '@/api/help';
 import { CategoriesList } from '@/app/help/components/categories-list';
 import { CategoryBody } from '@/app/help/components/category-body';
 import { MobileCategories } from '@/app/help/components/mobile-categories';
 import { QuestionBody } from '@/app/help/components/question-body';
 import { Search } from '@/app/help/components/search';
+import { SearchResult } from '@/app/help/components/search-result';
 import QuestionIcon from '@/assets/help/question.svg';
 import { getServerTranslations } from '@/i18n/server';
 
@@ -20,14 +29,39 @@ export async function generateMetadata(): Promise<Metadata> {
 interface Props {
     searchParams: {
         questionId?: string;
+        query?: string;
     };
+}
+
+async function getSectionsWithTopArticles(locale: string): Promise<SectionWithTopArticles[]> {
+    const sections = await getSections(locale);
+
+    return Promise.all(
+        sections.map(async (section) => {
+            const articles = await getSectionArticles(locale, section.id, 3);
+
+            return {
+                ...section,
+                topArticles: articles.map(({ id, name }) => ({ id, name })),
+            };
+        }),
+    );
 }
 
 export default async function Page({ searchParams }: Props) {
     const { t } = await getServerTranslations();
-    const categories = await getAllCategories();
-    const question = searchParams.questionId
-        ? await getQuestionById(Number(searchParams.questionId))
+    const locale = 'ru';
+    const [topArticles, sections] = await Promise.all([
+        getArticles(locale, 100),
+        getSectionsWithTopArticles(locale),
+    ]);
+
+    const article = searchParams.questionId
+        ? await getArticle(locale, searchParams.questionId)
+        : null;
+
+    const articlesFromSearch = !!searchParams.query
+        ? await searchArticles({ query: searchParams.query, locale, pageSize: 25 })
         : null;
 
     return (
@@ -50,21 +84,28 @@ export default async function Page({ searchParams }: Props) {
             <div className="py-16 lg:py-24">
                 <div className="container">
                     <div className="lg:hidden block">
-                        <MobileCategories categories={categories} />
+                        <MobileCategories
+                            sections={sections}
+                            topArticles={topArticles as Article[]}
+                        />
                     </div>
 
                     <div className="lg:flex hidden justify-between">
-                        <CategoriesList categories={categories} />
+                        <CategoriesList sections={sections} />
 
                         <div className="max-w-[770px] w-full">
-                            {!!searchParams.questionId ? (
-                                <QuestionBody
-                                    id={question!.id}
-                                    name={question!.name}
-                                    answer={question!.answer}
+                            {!!searchParams.questionId && (
+                                <QuestionBody article={article as Article} />
+                            )}
+                            {!!searchParams.query && (
+                                <SearchResult
+                                    articles={articlesFromSearch as Article[]}
+                                    query={searchParams.query}
                                 />
-                            ) : (
-                                <CategoryBody {...categories[0]} />
+                            )}
+
+                            {!searchParams.questionId && !searchParams.questionId && (
+                                <CategoryBody articles={topArticles.slice(0, 7) as Article[]} />
                             )}
                         </div>
                     </div>

@@ -1,0 +1,108 @@
+.article {
+	color: rgba(0, 0, 0, 0.5);
+	word-wrap: break-word;
+	font-size: 16px;
+	line-height: 26px;
+}
+
+.article p {
+	margin: 15px 0;
+}
+
+.article ul,
+.article ol {
+	list-style-position: outside;
+	margin: 20px 0 20px 20px;
+	padding-left: 20px;
+	padding: 0 0 0 20px;
+}
+
+.article ul {
+	list-style-type: disc;
+}
+
+.article ol {
+	list-style-type: decimal;
+}
+
+.article blockquote {
+	border-left: 1px solid #ddd;
+	color: #666;
+	font-style: italic;
+	margin: 15px 24px;
+	padding: 0 15px;
+}
+
+.article h1 {
+	margin: 15px 0;
+	font-weight: 400;
+	font-size: 32px;
+}
+
+.article h2 {
+	margin: 15px 0;
+	font-weight: 400;
+	font-size: 22px;
+}
+
+.article h3 {
+	margin: 15px 0;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.article h4 {
+	margin: 15px 0;
+	font-weight: 400;
+	font-size: 16px;
+}
+
+.article a {
+	color: #1f73b7;
+	text-decoration: none;
+}
+
+.article a:hover,
+.article a:active,
+.article a:focus {
+	text-decoration: underline;
+}
+
+.article ul > ul,
+.article ol > ol,
+.article ol > ul,
+.article ul > ol,
+.article li > ul,
+.article li > ol {
+	margin: 0;
+}
+
+.article a:visited {
+	color: #4b61c3;
+}
+
+.article code {
+	background: #f7f7f7;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 0 5px;
+	margin: 0 2px;
+}
+
+.article pre {
+	background: #f7f7f7;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 10px 15px;
+	overflow: auto;
+	white-space: pre;
+}
+
+.article img {
+	height: auto;
+	max-width: 100%;
+}
+
+.article > p:last-child {
+	margin-bottom: 0;
+}
