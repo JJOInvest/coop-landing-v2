@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 import { Article, getArticles } from '@/api/help';
 import { CategoryBody } from '@/app/help/components/category-body';
-import { Layout } from '@/app/help/components/layout';
+import { LayoutHelp } from '@/app/help/components/layoutHelp';
 import { getServerTranslations } from '@/i18n/server';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -24,8 +24,8 @@ export default async function Page({ searchParams }: Props) {
     const [topArticles] = await Promise.all([getArticles(locale, 8)]);
 
     return (
-        <Layout>
+        <LayoutHelp>
             <CategoryBody articles={topArticles as Article[]} />
-        </Layout>
+        </LayoutHelp>
     );
 }

@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
     const articleId = parseInt(params.id, 10);
 
-    const article = await getArticle(params, articleId);
+    const article = await getArticle('ru', articleId);
 
     return (
         <div className="container py-20 lg:p-0 lg:max-w-[870px]">

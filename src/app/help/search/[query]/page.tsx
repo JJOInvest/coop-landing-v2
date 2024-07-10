@@ -1,5 +1,5 @@
 import { searchArticles } from '@/api/help';
-import { Layout } from '@/app/help/components/layout';
+import { LayoutHelp } from '@/app/help/components/layoutHelp';
 import { SearchResult } from '@/app/help/components/search-result';
 
 interface Props {
@@ -13,8 +13,8 @@ export default async function Page({ params }: Props) {
     const decodedQuery = decodeURIComponent(params.query);
     const articles = await searchArticles({ query: decodedQuery, locale, pageSize: 25 });
     return (
-        <Layout>
+        <LayoutHelp>
             <SearchResult articles={articles} query={decodedQuery} />
-        </Layout>
+        </LayoutHelp>
     );
 }

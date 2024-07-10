@@ -11,7 +11,7 @@ interface Props {
     forArticles?: boolean;
 }
 
-export async function Layout({ children, forArticles }: Props) {
+export async function LayoutHelp({ children, forArticles }: Props) {
     const { t } = await getServerTranslations();
 
     return (
