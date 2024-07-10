@@ -1,16 +1,22 @@
-import { Category } from '@/api/help';
+import { ReactNode } from 'react';
+
+import { getSectionsWithTopArticles } from '@/api/help';
 import { CategoryItem } from '@/app/[lng]/help/components/category-item';
 
-export type Props = {
-    categories: Category[];
-};
+interface Props {
+    children: ReactNode;
+}
 
-export const CategoriesList = ({ categories }: Props) => {
+export async function CategoriesList({ children }: Props) {
+    const sections = await getSectionsWithTopArticles('ru');
+
     return (
-        <div className="flex flex-col gap-6 w-[270px]">
-            {categories.map((category) => (
-                <CategoryItem key={category.id} {...category} />
+        <div className="flex flex-col gap-6 lg:w-[270px]">
+            {sections.map((category) => (
+                <CategoryItem key={category.id} {...category}>
+                    {children}
+                </CategoryItem>
             ))}
         </div>
     );
-};
+}

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { redirect, useParams, useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
@@ -19,9 +19,10 @@ export const Search = () => {
     const router = useRouter();
 
     const onSubmit = (data: FormData) => {
-        const params = new URLSearchParams();
-        params.set('query', data.query);
-        router.push(`/help?${params.toString()}`);
+        console.log(data);
+        // const params = new URLSearchParams();
+        // params.set('query', data.query);
+        router.push(`/help/search/${data.query}`);
     };
 
     return (

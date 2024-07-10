@@ -5,12 +5,12 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Question } from '@/api/help';
+import { Article } from '@/api/help';
 import ArrowRight from '@/assets/icons/arrow-right.svg';
 import { getServerTranslations } from '@/i18n/server';
 
-export type Props = Question & {
-    isLast: boolean;
+export type Props = Article & {
+    isLast?: boolean;
 };
 
 dayjs.extend(relativeTime);
@@ -22,7 +22,7 @@ export const CategoryQuestion = async ({ id, name, updatedAt, isLast }: Props) =
 
     return (
         <Link
-            href={`/help?questionId=${id}`}
+            href={`/help/${id}`}
             className={cn('py-3', {
                 'border-b-[1px] border-black/10': !isLast,
             })}
