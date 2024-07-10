@@ -1,5 +1,6 @@
 /* eslint-disable max-classes-per-file */
 import fetchBuilder from 'fetch-retry-ts';
+// @ts-ignore
 import urlcat, { join, ParamMap } from 'urlcat';
 
 export interface Section {
