@@ -3,13 +3,15 @@
 import cn from 'classnames';
 import i18next from 'i18next';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { forwardRef } from 'react';
 
 import { languages } from '@/i18n/languages';
 
 // eslint-disable-next-line react/display-name
 export const LanguageMenu = forwardRef<HTMLDivElement>((_, ref) => {
-    const handleClick = (lang: string) => () => i18next.changeLanguage(lang);
+    const path = usePathname();
 
     return (
         <div
@@ -18,9 +20,12 @@ export const LanguageMenu = forwardRef<HTMLDivElement>((_, ref) => {
         >
             <div className="grid grid-cols-2 gap-4">
                 {languages.map((language) => (
-                    <button
+                    <Link
+                        href={`/${language.value}/${path.split('/').slice(2).join('/')}`}
                         key={language.value}
-                        onClick={handleClick(language.value)}
+                        onClick={() => {
+                            i18next.changeLanguage(language.value);
+                        }}
                         className={cn(
                             'flex items-center gap-3 min-w-40 h-12 pl-3 rounded-xl border-[1px] transition-all',
                             {
@@ -32,7 +37,7 @@ export const LanguageMenu = forwardRef<HTMLDivElement>((_, ref) => {
                     >
                         <Image src={language.icon} alt={i18next.language} />
                         <span className="w-full text-left text-sm/tight">{language.name}</span>
-                    </button>
+                    </Link>
                 ))}
             </div>
         </div>
