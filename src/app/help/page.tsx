@@ -1,23 +1,8 @@
 import { Metadata } from 'next';
-import Image from 'next/image';
 
-import {
-    Article,
-    getArticle,
-    getArticles,
-    getSectionArticles,
-    getSections,
-    searchArticles,
-    SectionWithTopArticles,
-} from '@/api/help';
-import { CategoriesList } from '@/app/help/components/categories-list';
+import { Article, getArticles } from '@/api/help';
 import { CategoryBody } from '@/app/help/components/category-body';
 import { Layout } from '@/app/help/components/layout';
-import { MobileCategories } from '@/app/help/components/mobile-categories';
-import { QuestionBody } from '@/app/help/components/question-body';
-import { Search } from '@/app/help/components/search';
-import { SearchResult } from '@/app/help/components/search-result';
-import QuestionIcon from '@/assets/help/question.svg';
 import { getServerTranslations } from '@/i18n/server';
 
 export async function generateMetadata(): Promise<Metadata> {

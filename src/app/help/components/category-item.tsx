@@ -40,11 +40,13 @@ export const CategoryItem = ({ id, name, topArticles, children }: Props) => {
             {isOpened && (
                 <div className="pl-2 lg:border-violet-500 lg:border-l-2 flex flex-col lg:gap-4">
                     {topArticles.map((question, index) => (
-                        <div className="flex justify-between items-center border-t-[1px] border-black/10 lg:border-0">
+                        <div
+                            className="flex justify-between items-center border-t-[1px] border-black/10 lg:border-0"
+                            key={question.id}
+                        >
                             <Link
                                 // href={`/help?questionId=${question.id}`}
                                 href={`/help/${question.id}`}
-                                key={question.id}
                                 className={cn('font-light text-sm py-4 lg:py-0', {
                                     'text-black': questionId === question.id,
                                     'text-primary-neutral': questionId !== question.id,
