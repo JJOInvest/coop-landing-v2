@@ -1,8 +1,6 @@
 import { getArticle, getSectionArticles, getSections } from '@/api/help';
 import ArticleLayout from '@/app/[lng]/help/[id]/article-layout';
 
-import { investPagesIds } from '@/app/invest/constants';
-
 type Params = {
     id: string;
 };
