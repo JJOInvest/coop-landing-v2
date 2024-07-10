@@ -173,3 +173,20 @@ export async function getArticle(locale: string, articleId: number | string): Pr
 
     return article;
 }
+
+export async function getSectionsWithTopArticles(
+    locale: string,
+): Promise<SectionWithTopArticles[]> {
+    const sections = await getSections(locale);
+
+    return Promise.all(
+        sections.map(async (section) => {
+            const articles = await getSectionArticles(locale, section.id, 50);
+
+            return {
+                ...section,
+                topArticles: articles.map(({ id, name }) => ({ id, name })),
+            };
+        }),
+    );
+}

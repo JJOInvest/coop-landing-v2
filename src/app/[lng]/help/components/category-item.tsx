@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useParams, useSearchParams } from 'next/navigation';
 import { ReactNode, useState } from 'react';
+import { isMobile } from 'react-device-detect';
 
 import { SectionWithTopArticles } from '@/api/help';
 import ArrowDown from '@/assets/icons/arrow-down.svg';
@@ -17,7 +18,6 @@ export const CategoryItem = ({ id, name, topArticles, children }: Props) => {
     const searchParams = useSearchParams();
     const params = useParams();
     const [isOpened, setIsOpened] = useState(true);
-    const [isOpenedArticle, setIsOpenedArticle] = useState(false);
     const toggleOpened = () => setIsOpened((isOpened) => !isOpened);
 
     const questionId = Number(searchParams.get('questionId'));

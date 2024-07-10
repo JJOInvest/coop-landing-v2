@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 import { Article, getArticles } from '@/api/help';
-import { CategoryBody } from '@/app/help/components/category-body';
-import { LayoutHelp } from '@/app/help/components/layoutHelp';
+import { CategoryBody } from '@/app/[lng]/help/components/category-body';
+import { LayoutHelp } from '@/app/[lng]/help/components/layoutHelp';
 import { getServerTranslations } from '@/i18n/server';
 
 export async function generateMetadata(): Promise<Metadata> {

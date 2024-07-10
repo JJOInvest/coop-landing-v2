@@ -1,23 +1,7 @@
 import { ReactNode } from 'react';
 
-import { getSectionArticles, getSections, SectionWithTopArticles } from '@/api/help';
-import { CategoryItem } from '@/app/help/components/category-item';
-
-//todo убрать
-async function getSectionsWithTopArticles(locale: string): Promise<SectionWithTopArticles[]> {
-    const sections = await getSections(locale);
-
-    return Promise.all(
-        sections.map(async (section) => {
-            const articles = await getSectionArticles(locale, section.id, 50);
-
-            return {
-                ...section,
-                topArticles: articles.map(({ id, name }) => ({ id, name })),
-            };
-        }),
-    );
-}
+import { getSectionsWithTopArticles } from '@/api/help';
+import { CategoryItem } from '@/app/[lng]/help/components/category-item';
 
 interface Props {
     children: ReactNode;

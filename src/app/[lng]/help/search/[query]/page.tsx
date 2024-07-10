@@ -1,6 +1,6 @@
 import { searchArticles } from '@/api/help';
-import { LayoutHelp } from '@/app/help/components/layoutHelp';
-import { SearchResult } from '@/app/help/components/search-result';
+import { LayoutHelp } from '@/app/[lng]/help/components/layoutHelp';
+import { SearchResult } from '@/app/[lng]/help/components/search-result';
 
 interface Props {
     params: {

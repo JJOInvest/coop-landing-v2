@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { ReactNode } from 'react';
 
-import { CategoriesList } from '@/app/help/components/categories-list';
-import { Search } from '@/app/help/components/search';
+import { CategoriesList } from '@/app/[lng]/help/components/categories-list';
+import { Search } from '@/app/[lng]/help/components/search';
 import QuestionIcon from '@/assets/help/question.svg';
 import { getServerTranslations } from '@/i18n/server';
 
