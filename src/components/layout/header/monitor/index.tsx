@@ -12,7 +12,7 @@ import { points } from '@/components/layout/header/points';
 import JJO from '@/assets/jjo-text.svg';
 
 export const Header = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     return (
         <header className="top-0 lg:block hidden w-screen sticky bg-white z-20">
@@ -23,7 +23,11 @@ export const Header = () => {
                     </Link>
                     <nav className="flex gap-5 items-center ml-16">
                         {points.map((point) => (
-                            <Navlink key={point.href} {...point} label={t(point.labelKey)} />
+                            <Navlink
+                                key={`${i18n.language}point.href`}
+                                href={`/${i18n.language}${point.href}`}
+                                label={t(point.labelKey)}
+                            />
                         ))}
                     </nav>
                 </div>
