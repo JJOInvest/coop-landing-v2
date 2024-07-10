@@ -1,5 +1,4 @@
 import { SectionWithTopArticles } from '@/api/help';
-import { Category } from '@/api/help3';
 import { CategoryItem } from '@/app/help/components/category-item';
 
 export type Props = {

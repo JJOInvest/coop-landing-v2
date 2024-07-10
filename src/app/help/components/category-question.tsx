@@ -6,7 +6,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Article } from '@/api/help';
-import { Question } from '@/api/help3';
 import ArrowRight from '@/assets/icons/arrow-right.svg';
 import { getServerTranslations } from '@/i18n/server';
 

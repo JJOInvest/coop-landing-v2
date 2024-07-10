@@ -1,5 +1,4 @@
 import { Article } from '@/api/help';
-import { Question } from '@/api/help3';
 import { CategoryQuestion } from '@/app/help/components/category-question';
 
 export type Props = {

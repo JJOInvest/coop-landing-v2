@@ -1,5 +1,4 @@
 import { Article, SectionWithTopArticles } from '@/api/help';
-import { Category } from '@/api/help3';
 import { MobileQuestion } from '@/app/help/components/mobile-question';
 
 export type Props = {
