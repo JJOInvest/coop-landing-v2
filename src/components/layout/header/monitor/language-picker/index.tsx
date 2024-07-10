@@ -3,7 +3,7 @@
 import cn from 'classnames';
 import i18next from 'i18next';
 import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { useOutsideClickRef } from 'rooks';
 
 import ArrowIcon from '@/assets/header/language-picker/arrow.svg';
@@ -13,7 +13,6 @@ import { LanguageMenu } from './language-menu';
 
 export const LanguagePicker = () => {
     const [isOpened, setIsOpened] = useState(false);
-    const button = useRef<HTMLButtonElement>(null);
 
     const handleClick = () => setIsOpened((isOpened) => !isOpened);
 

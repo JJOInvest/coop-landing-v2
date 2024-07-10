@@ -1,5 +1,6 @@
 export const fallbackLng = 'ru';
 export const languages = [
+    fallbackLng,
     'bz',
     'ch',
     'fr',
@@ -10,7 +11,6 @@ export const languages = [
     'ja',
     'ko',
     'pi',
-    'ru',
     'sp',
     'tu',
     'en-gb',
