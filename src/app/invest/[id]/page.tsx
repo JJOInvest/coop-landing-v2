@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     const articleId = parseInt(params.id, 10);
     // const article = await getArticleById(articleId, { language });
-    const article = await getArticle({ language }, articleId);
+    const article = await getArticle(language, articleId);
 
     const { title } = article;
 
