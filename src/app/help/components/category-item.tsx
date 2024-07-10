@@ -7,7 +7,6 @@ import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 
 import { SectionWithTopArticles } from '@/api/help';
-import { Category } from '@/api/help3';
 import ArrowDown from '@/assets/icons/arrow-down.svg';
 
 export type Props = SectionWithTopArticles;
