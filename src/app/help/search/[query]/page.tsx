@@ -10,11 +10,11 @@ interface Props {
 
 export default async function Page({ params }: Props) {
     const locale = 'ru';
-    console.log(params.query);
-    const articles = await searchArticles({ query: params.query, locale, pageSize: 25 });
+    const decodedQuery = decodeURIComponent(params.query);
+    const articles = await searchArticles({ query: decodedQuery, locale, pageSize: 25 });
     return (
         <Layout>
-            <SearchResult articles={articles} query={params.query} />
+            <SearchResult articles={articles} query={decodedQuery} />
         </Layout>
     );
 }

@@ -38,14 +38,6 @@ export default async function Page({ searchParams }: Props) {
     const locale = 'ru';
     const [topArticles] = await Promise.all([getArticles(locale, 8)]);
 
-    const article = searchParams.questionId
-        ? await getArticle(locale, searchParams.questionId)
-        : null;
-
-    const articlesFromSearch = !!searchParams.query
-        ? await searchArticles({ query: searchParams.query, locale, pageSize: 25 })
-        : null;
-
     return (
         <Layout>
             <CategoryBody articles={topArticles as Article[]} />

@@ -14,5 +14,5 @@ interface Props {
 export default async function ArticleLayout({ children }: Props) {
     const { t } = await getServerTranslations();
 
-    return <Layout>{children}</Layout>;
+    return <Layout forArticles>{children}</Layout>;
 }

@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import { getSectionArticles, getSections, SectionWithTopArticles } from '@/api/help';
 import { CategoryItem } from '@/app/help/components/category-item';
 
@@ -7,7 +9,7 @@ async function getSectionsWithTopArticles(locale: string): Promise<SectionWithTo
 
     return Promise.all(
         sections.map(async (section) => {
-            const articles = await getSectionArticles(locale, section.id, 3);
+            const articles = await getSectionArticles(locale, section.id, 50);
 
             return {
                 ...section,
@@ -17,13 +19,19 @@ async function getSectionsWithTopArticles(locale: string): Promise<SectionWithTo
     );
 }
 
-export async function CategoriesList() {
+interface Props {
+    children: ReactNode;
+}
+
+export async function CategoriesList({ children }: Props) {
     const sections = await getSectionsWithTopArticles('ru');
 
     return (
-        <div className="flex flex-col gap-6 w-[270px]">
+        <div className="flex flex-col gap-6 lg:w-[270px]">
             {sections.map((category) => (
-                <CategoryItem key={category.id} {...category} />
+                <CategoryItem key={category.id} {...category}>
+                    {children}
+                </CategoryItem>
             ))}
         </div>
     );

@@ -3,17 +3,21 @@
 import cn from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
-import { useState } from 'react';
+import { useParams, useSearchParams } from 'next/navigation';
+import { ReactNode, useState } from 'react';
 
 import { SectionWithTopArticles } from '@/api/help';
 import ArrowDown from '@/assets/icons/arrow-down.svg';
 
-export type Props = SectionWithTopArticles;
+interface Props extends SectionWithTopArticles {
+    children: ReactNode;
+}
 
-export const CategoryItem = ({ id, name, topArticles }: Props) => {
+export const CategoryItem = ({ id, name, topArticles, children }: Props) => {
     const searchParams = useSearchParams();
-    const [isOpened, setIsOpened] = useState(false);
+    const params = useParams();
+    const [isOpened, setIsOpened] = useState(true);
+    const [isOpenedArticle, setIsOpenedArticle] = useState(false);
     const toggleOpened = () => setIsOpened((isOpened) => !isOpened);
 
     const questionId = Number(searchParams.get('questionId'));
@@ -24,7 +28,7 @@ export const CategoryItem = ({ id, name, topArticles }: Props) => {
                 className="flex items-center justify-between cursor-pointer uppercase"
                 onClick={toggleOpened}
             >
-                <h5>{name}</h5>
+                <h5 className="text-[28px]/tight font-semibold lg:text-base">{name}</h5>
                 <Image
                     src={ArrowDown}
                     alt=""
@@ -34,19 +38,33 @@ export const CategoryItem = ({ id, name, topArticles }: Props) => {
                 />
             </button>
             {isOpened && (
-                <div className="pl-2 border-violet-500 border-l-2 flex flex-col gap-4">
-                    {topArticles.map((question) => (
-                        <Link
-                            // href={`/help?questionId=${question.id}`}
-                            href={`/help/${question.id}`}
-                            key={question.id}
-                            className={cn('font-light text-sm', {
-                                'text-black': questionId === question.id,
-                                'text-primary-neutral': questionId !== question.id,
-                            })}
-                        >
-                            {question.name}
-                        </Link>
+                <div className="pl-2 lg:border-violet-500 lg:border-l-2 flex flex-col lg:gap-4">
+                    {topArticles.map((question, index) => (
+                        <div className="flex justify-between items-center border-t-[1px] border-black/10 lg:border-0">
+                            <Link
+                                // href={`/help?questionId=${question.id}`}
+                                href={`/help/${question.id}`}
+                                key={question.id}
+                                className={cn('font-light text-sm py-4 lg:py-0', {
+                                    'text-black': questionId === question.id,
+                                    'text-primary-neutral': questionId !== question.id,
+                                })}
+                            >
+                                {question.name}
+                                {question.id.toString() === params.id && children}
+                            </Link>
+                            <div className="relative border-black/5 rounded-full border-[1px] h-6 min-w-6 lg:hidden self-start mt-4">
+                                <span className="absolute w-2.5 h-[1px] bg-black inset-0 m-auto" />
+                                <span
+                                    className={cn(
+                                        'absolute w-2.5 h-[1px] bg-black inset-0 m-auto',
+                                        {
+                                            'rotate-90': question.id.toString() !== params.id,
+                                        },
+                                    )}
+                                />
+                            </div>
+                        </div>
                     ))}
                 </div>
             )}

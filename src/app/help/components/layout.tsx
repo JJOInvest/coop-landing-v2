@@ -13,9 +13,10 @@ import { getServerTranslations } from '@/i18n/server';
 
 interface Props {
     children: ReactNode;
+    forArticles?: boolean;
 }
 
-export async function Layout({ children }: Props) {
+export async function Layout({ children, forArticles }: Props) {
     const { t } = await getServerTranslations();
 
     return (
@@ -37,17 +38,14 @@ export async function Layout({ children }: Props) {
 
             <div className="py-16 lg:py-24">
                 <div className="container">
-                    <div className="lg:hidden block">
-                        {/*<MobileCategories*/}
-                        {/*    sections={sections}*/}
-                        {/*    topArticles={topArticles as Article[]}*/}
-                        {/*/>*/}
-                    </div>
+                    <div className="lg:hidden block">{!forArticles && children}</div>
 
-                    <div className="lg:flex hidden justify-between">
-                        <CategoriesList />
+                    <div className="lg:flex justify-between">
+                        <CategoriesList>
+                            {forArticles && <div className="lg:hidden">{children}</div>}
+                        </CategoriesList>
 
-                        <div className="max-w-[770px] w-full">{children}</div>
+                        <div className="hidden lg:flex max-w-[770px] w-full">{children}</div>
                     </div>
                 </div>
             </div>

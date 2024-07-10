@@ -23,7 +23,6 @@ export const CategoryQuestion = async ({ id, name, updatedAt, isLast }: Props) =
     return (
         <Link
             href={`/help/${id}`}
-            // href={`/help?questionId=${id}`}
             className={cn('py-3', {
                 'border-b-[1px] border-black/10': !isLast,
             })}
