@@ -37,7 +37,8 @@ export const CategoryItem = ({ id, name, topArticles }: Props) => {
                 <div className="pl-2 border-violet-500 border-l-2 flex flex-col gap-4">
                     {topArticles.map((question) => (
                         <Link
-                            href={`/help?questionId=${question.id}`}
+                            // href={`/help?questionId=${question.id}`}
+                            href={`/help/${question.id}`}
                             key={question.id}
                             className={cn('font-light text-sm', {
                                 'text-black': questionId === question.id,

@@ -21,7 +21,7 @@ export const Search = () => {
     const onSubmit = (data: FormData) => {
         const params = new URLSearchParams();
         params.set('query', data.query);
-        router.push(`/help?${params.toString()}`);
+        router.push(`/help/search/${params.toString()}`);
     };
 
     return (
