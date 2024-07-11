@@ -4,6 +4,7 @@ import cn from 'classnames';
 import Image from 'next/image';
 import { useParams, useSearchParams } from 'next/navigation';
 import { ReactNode, useState } from 'react';
+import { isMobile } from 'react-device-detect';
 
 import { SectionWithTopArticles } from '@/api/help';
 import { ArticleItem } from '@/app/[lng]/help/components/article-item';
@@ -16,7 +17,7 @@ interface Props extends SectionWithTopArticles {
 export const CategoryItem = ({ id, name, topArticles, children }: Props) => {
     const searchParams = useSearchParams();
     const params = useParams();
-    const [isOpened, setIsOpened] = useState(true);
+    const [isOpened, setIsOpened] = useState(isMobile);
     const toggleOpened = () => setIsOpened((isOpened) => !isOpened);
 
     const questionId = Number(searchParams.get('questionId'));
