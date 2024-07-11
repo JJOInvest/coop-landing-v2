@@ -15,11 +15,11 @@ export async function MarketGrow() {
             <div className="absolute bg-cyan w-52 h-80 opacity-20 blur-[85px] rotate-[135deg] top-9 -right-[50px] lg:top-80 lg:right-[50px]" />
 
             <div className="container flex flex-col gap-32 lg:flex-row-reverse lg:items-center">
-                <div className="flex flex-col gap-6 lg:gap-8 lg:max-w-[570px] lg:items-center">
+                <div className="flex flex-col gap-6 lg:gap-8 lg:max-w-[570px] w-full lg:items-center">
                     <h2 className="text-2xl lg:text-5xl/tight font-medium">
                         {t('market-grow.title')}
                     </h2>
-                    <p className="text-[16px]/snug text-grey-500 lg:text-lg/normal font-light">
+                    <p className="text-[16px]/snug text-grey-slate lg:text-lg/normal">
                         {t('market-grow.description')}
                     </p>
                     <Button className="mt-2 lg:self-start" arrow>

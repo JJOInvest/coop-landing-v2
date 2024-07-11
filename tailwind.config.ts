@@ -73,6 +73,7 @@ const config: Config = {
                     70: '#b0bad4',
                     100: '#6074a9',
                     500: '#4e4e4e',
+                    slate: '#464646',
                 },
                 cyan: {
                     DEFAULT: '#00ffff',

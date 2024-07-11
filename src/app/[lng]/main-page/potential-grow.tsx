@@ -15,11 +15,13 @@ export async function PotentialGrow() {
             <div className="bg-violet-800/65 absolute w-[150%] h-[200px] bottom-0 top-0 my-auto lg:m-0 -z-10 blur-[80px] opacity-50 lg:top-auto lg:w-full lg:h-[120px]" />
 
             <div className="container flex flex-col">
-                <h2 className="text-2xl lg:text-5xl lg:text-center">{t('potential.title')}</h2>
-                <p className="text-lg lg:text-xl lg:text-center mt-6 font-light opacity-80">
+                <h2 className="text-2xl lg:text-5xl font-medium lg:text-center">
+                    {t('potential.title')}
+                </h2>
+                <p className="text-lg lg:text-xl lg:text-center mt-6 font-normal opacity-80">
                     {t('potential.description')}
                 </p>
-                <div className="my-6 py-2 px-4 text-[16px] font-bold bg-opacity-20 bg-white text-white flex gap-2 rounded-md justify-center self-center">
+                <div className="my-8 py-2 px-4 text-[16px] font-bold bg-opacity-20 bg-white text-white flex gap-2 rounded-md justify-center self-center">
                     <Image src={JJO} alt={"j'jo"} />
                     <span>+212 %</span>
                 </div>

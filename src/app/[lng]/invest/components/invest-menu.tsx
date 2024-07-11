@@ -3,6 +3,7 @@
 import cn from 'classnames';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import { useTranslation } from 'react-i18next';
 
 import { investPages } from '@/app/[lng]/invest/constants';
 
@@ -10,12 +11,13 @@ export function InvestMenu() {
     const params = useParams();
 
     const articleId = parseInt(params.id as any, 10);
+    const { t, i18n } = useTranslation();
 
     return (
         <div className="py-12 text-white flex flex-col gap-4 pr-8 bg-invest">
             {investPages.map((item) => (
                 <Link
-                    href={`/invest/${item.id}`}
+                    href={`/${i18n.language}/invest/${item.id}`}
                     key={item.id}
                     className={cn(
                         'text-[16px]/normal flex items-center transition-all duration-150 max-w-full',

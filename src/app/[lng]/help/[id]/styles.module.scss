@@ -1,8 +1,10 @@
+/* Article typography based on Zendesk styles */
 .article {
 	color: rgba(0, 0, 0, 0.5);
 	word-wrap: break-word;
 	font-size: 16px;
 	line-height: 26px;
+	white-space: normal;
 }
 
 .article p {
@@ -13,7 +15,6 @@
 .article ol {
 	list-style-position: outside;
 	margin: 20px 0 20px 20px;
-	padding-left: 20px;
 	padding: 0 0 0 20px;
 }
 
@@ -105,4 +106,19 @@
 
 .article > p:last-child {
 	margin-bottom: 0;
+}
+
+
+.mainHeader {
+	font-size: 36px;
+	font-weight: 600;
+	line-height: 44px;
+	margin-bottom: 36px;
+	@media (max-width: 767px) {
+		margin-bottom: 20px;
+	}
+}
+
+.copyContainer {
+	margin-left: -40px;
 }

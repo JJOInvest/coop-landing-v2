@@ -15,11 +15,11 @@ export async function BestMinds() {
             <div className="absolute bg-blue-800 w-[200px] h-80 opacity-20 blur-[70px] -top-[15px] left-[30px]" />
 
             <div className="container flex flex-col gap-32 lg:flex-row lg:items-center">
-                <div className="flex flex-col gap-6 lg:gap-8 lg:max-w-[570px] lg:items-center">
+                <div className="flex flex-col gap-6 lg:gap-8 lg:max-w-[570px] w-full lg:items-center">
                     <h2 className="text-2xl lg:text-5xl/tight font-medium">
                         {t('best-minds.title')}
                     </h2>
-                    <p className="text-[16px]/snug text-grey-500 font-light lg:text-lg/normal">
+                    <p className="text-[16px]/snug text-grey-slate lg:text-lg/normal">
                         {t('best-minds.description')}
                     </p>
                     <Button className="mt-2 lg:self-start" arrow>

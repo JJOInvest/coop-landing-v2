@@ -32,6 +32,15 @@ export async function ImportantKnowledge() {
                 </div>
             </div>
             <SectionBackground desktop={bgDesktop} mobile={bgMobile} />
+
+            <div
+                className="lg:hidden h-40 w-full bg-black -mt-48"
+                style={{
+                    background: 'linear-gradient(180deg, #00000000, #000000)',
+                }}
+            />
+
+            <div className="lg:hidden h-32 w-full bg-black" />
         </section>
     );
 }
