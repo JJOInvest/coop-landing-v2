@@ -19,6 +19,7 @@ export const SectionBackground = ({ desktop, mobile }: Props) => {
             quality={100}
             fill
             sizes="100vw"
+            className="-z-10"
             style={{
                 objectFit: 'cover',
             }}

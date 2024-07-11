@@ -1,33 +1,33 @@
 import Image from 'next/image';
 
 import FullControlBg from '@/assets/full-control/bg.png';
-import BinanceLogo from '@/assets/full-control/logos/binance.png';
-import Bkex1Logo from '@/assets/full-control/logos/bkex-1.png';
-import BkexLogo from '@/assets/full-control/logos/bkex.png';
-import Coinbase1Logo from '@/assets/full-control/logos/coinbase-1.png';
-import CoinbaseLogo from '@/assets/full-control/logos/coinbase.png';
-import Cryptocom1Logo from '@/assets/full-control/logos/cryptocom-1.png';
-import CryptocomLogo from '@/assets/full-control/logos/cryptocom.png';
-import Huobi1Logo from '@/assets/full-control/logos/huobi-1.png';
-import Huobi2Logo from '@/assets/full-control/logos/huobi-2.png';
-import HuobiLogo from '@/assets/full-control/logos/huobi.png';
-import Kucoin1Logo from '@/assets/full-control/logos/kucoin-1.png';
-import KucoinLogo from '@/assets/full-control/logos/kucoin.png';
+import BinanceLogo from '@/assets/full-control/logos/binance.svg';
+import Bkex1Logo from '@/assets/full-control/logos/bkex-1.svg';
+import BkexLogo from '@/assets/full-control/logos/bkex.svg';
+import Coinbase1Logo from '@/assets/full-control/logos/coinbase-1.svg';
+import CoinbaseLogo from '@/assets/full-control/logos/coinbase.svg';
+import Cryptocom1Logo from '@/assets/full-control/logos/cryptocom-1.svg';
+import CryptocomLogo from '@/assets/full-control/logos/cryptocom.svg';
+import Huobi1Logo from '@/assets/full-control/logos/huobi-1.svg';
+import Huobi2Logo from '@/assets/full-control/logos/huobi-2.svg';
+import HuobiLogo from '@/assets/full-control/logos/huobi.svg';
+import Kucoin1Logo from '@/assets/full-control/logos/kucoin-1.svg';
+import KucoinLogo from '@/assets/full-control/logos/kucoin.svg';
 import RobotImage from '@/assets/full-control/robot.png';
 import { getServerTranslations } from '@/i18n/server';
 
 const logos = [
     BinanceLogo,
-    BkexLogo,
-    Bkex1Logo,
-    CoinbaseLogo,
-    Coinbase1Logo,
-    CryptocomLogo,
-    Cryptocom1Logo,
     HuobiLogo,
     Huobi1Logo,
     Huobi2Logo,
+    CoinbaseLogo,
+    CryptocomLogo,
+    BkexLogo,
     KucoinLogo,
+    Coinbase1Logo,
+    Cryptocom1Logo,
+    Bkex1Logo,
     Kucoin1Logo,
 ];
 
@@ -63,7 +63,7 @@ export async function FullControl() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-2 lg:grid-cols-4 mt-16 lg:gap-6 lg:mt-10">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 mt-16 lg:gap-6 lg:mt-10 lg:-ml-6">
                         {logos.map((logo) => (
                             <div
                                 key={logo.src}

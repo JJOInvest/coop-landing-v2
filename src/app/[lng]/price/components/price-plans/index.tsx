@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 
 import { Button } from '@/components/button';
 
+import styles from './styles.module.css';
+
 interface PricePlan {
     name: string;
     price: string;
@@ -77,7 +79,8 @@ export const PricePlans = () => {
                 <div
                     key={pricePlan.name}
                     className={cn(
-                        'relative p-8 flex-grow rounded-[16px] overflow-hidden drop-shadow-xl',
+                        'relative p-8 flex-grow rounded-[16px] overflow-hidden',
+                        styles.shadow,
                         {
                             'bg-black text-white': pricePlan.name !== 'FREE',
                             'bg-white text-black': pricePlan.name === 'FREE',
