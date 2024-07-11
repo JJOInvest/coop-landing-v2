@@ -78,7 +78,12 @@ export const Chart = ({ data, appliedPeriod }: Props) => {
                         style={{ fillOpacity: 0.8 }}
                     />
                     <Tooltip />
-                    <Bar barSize={32} dataKey="investment" stackId="a" fill="#F96C41" />
+                    <Bar
+                        barSize={isMobile ? 16 : 64}
+                        dataKey="investment"
+                        stackId="a"
+                        fill="#F96C41"
+                    />
                     <Bar
                         dataKey="profitability"
                         stackId="a"

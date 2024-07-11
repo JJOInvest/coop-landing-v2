@@ -12,6 +12,8 @@
     border-radius: 20px;
     box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.12);
     gap: 20px;
+
+    @media (max-width: 1180px) { box-shadow: 0px 5px 15px 0px rgba(223, 230, 240, 0.70); }
 }
 
 .blockWrapper[data-block="form"] {
@@ -34,6 +36,7 @@
     padding: 16px 24px;
     max-width: 720px;
     gap: 5px;
+    @media (max-width: 1180px) { display: none }
 }
 
 .chartDescription {
