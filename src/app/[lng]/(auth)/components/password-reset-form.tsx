@@ -41,7 +41,7 @@ export const PasswordResetForm = () => {
                 email: data.email,
             }),
         onError: () => {
-            console.log('Error during password reset 123');
+            console.log('Error during password reset');
         },
     });
 

@@ -63,7 +63,7 @@ export const RegistrationForm = () => {
                 isSubscribed: data.subscribed,
             }),
         onError: () => {
-            console.log('Error during login 123');
+            console.log('Error during login');
         },
     });
 

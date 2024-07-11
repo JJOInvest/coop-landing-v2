@@ -3,35 +3,30 @@
 import cn from 'classnames';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useRef } from 'react';
-
-import styles from './navlink.module.css';
 
 export interface Props {
     href: string;
     label: string;
+    target?: string;
 }
 
-export const Navlink = ({ href, label }: Props) => {
+export const NavLink = ({ href, label, target }: Props) => {
     const pathname = usePathname();
-    const isActive = pathname === href;
-    const ref = useRef<HTMLAnchorElement>(null);
+    const isActive = pathname === href || `${pathname}/` === href;
 
     return (
         <Link
-            ref={ref}
             href={href}
-            className={cn('text-[16px]/[110%] font-light py-5 relative', styles.navlink, {
-                [styles.active]: isActive,
-            })}
+            className={cn(
+                'text-base font-light py-5 relative border-b-2 hover:opacity-100 hover:border-orange-120 duration-300',
+                {
+                    'opacity-100 border-orange-120': isActive,
+                    'border-transparent opacity-50': !isActive,
+                },
+            )}
+            target={target}
         >
             {label}
-            <span
-                className={cn(
-                    'absolute mx-auto bottom-0 left-0 right-0 w-[55%] bg-orange-120 h-0.5',
-                    styles.navlinkUnderscore,
-                )}
-            />
         </Link>
     );
 };

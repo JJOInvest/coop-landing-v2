@@ -6,7 +6,6 @@ import localFont from 'next/font/local';
 import { ReactNode } from 'react';
 
 import { Footer } from '@/components/layout/footer';
-import { MobileHeader } from '@/components/layout/header/mobile';
 import { Header } from '@/components/layout/header/monitor';
 import { I18nProvider } from '@/i18n/i18n-context';
 import { getServerTranslations } from '@/i18n/server';
@@ -89,7 +88,6 @@ export default async function RootLayout({ children, params: { lng } }: Props) {
                 <html lang={lng} dir={dir(lng)} data-theme="jjo">
                     <body className={cn([sfPro.className, cormorant.className, mulish.variable])}>
                         <Header />
-                        <MobileHeader />
                         <main>{children}</main>
                         <Footer />
                     </body>
