@@ -47,7 +47,7 @@ export const Calculator = () => {
         const { deposit, period, replenishment, profitPercent } = formData;
 
         const data = getChartProfitData({
-            deposit,
+            deposit: Number(deposit),
             period: Number(period),
             percent: Number(profitPercent),
             replenishments: Number(replenishment),
