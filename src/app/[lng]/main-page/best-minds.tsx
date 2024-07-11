@@ -19,7 +19,7 @@ export async function BestMinds() {
                     <h2 className="text-2xl lg:text-5xl/tight font-medium">
                         {t('best-minds.title')}
                     </h2>
-                    <p className="text-[16px]/snug text-grey-500 font-light lg:text-lg/normal">
+                    <p className="text-[16px]/snug text-grey-slate lg:text-lg/normal">
                         {t('best-minds.description')}
                     </p>
                     <Button className="mt-2 lg:self-start" arrow>

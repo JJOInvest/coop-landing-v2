@@ -17,7 +17,7 @@ export default async function InvestLayout({ children }: Props) {
         <>
             <InvestHeader />
             <div className="flex flex-col lg:flex-row bg-white my-24 gap-7">
-                <div className="lg:max-w-96">
+                <div className="lg:max-w-[355px]">
                     <div className="overflow-hidden lg:rounded-r-xl">
                         <InvestMenu />
                     </div>

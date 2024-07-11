@@ -20,7 +20,7 @@ export async function LayoutHelp({ children, forArticles }: Props) {
                 <div className="container">
                     <div className="flex justify-between w-full items-center">
                         <div className="text-white flex flex-col gap-10 lg:max-w-[870px] flex-grow">
-                            <h2 className="text-[32px]/[36px] font-semibold whitespace-pre-line lg:text-7xl">
+                            <h2 className="text-[32px]/[36px] font-medium whitespace-pre-line lg:text-7xl">
                                 {t('help.title')}
                             </h2>
                             <Search />

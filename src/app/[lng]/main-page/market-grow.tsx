@@ -19,7 +19,7 @@ export async function MarketGrow() {
                     <h2 className="text-2xl lg:text-5xl/tight font-medium">
                         {t('market-grow.title')}
                     </h2>
-                    <p className="text-[16px]/snug text-grey-500 lg:text-lg/normal font-light">
+                    <p className="text-[16px]/snug text-grey-slate lg:text-lg/normal">
                         {t('market-grow.description')}
                     </p>
                     <Button className="mt-2 lg:self-start" arrow>
