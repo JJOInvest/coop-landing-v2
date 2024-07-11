@@ -67,7 +67,7 @@ export const ResetFinishForm = () => {
                 email: authData.email,
             }),
         onError: () => {
-            console.log('Error during login 123');
+            console.log('Error during login');
         },
     });
 

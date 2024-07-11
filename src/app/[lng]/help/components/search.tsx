@@ -19,9 +19,6 @@ export const Search = () => {
     const router = useRouter();
 
     const onSubmit = (data: FormData) => {
-        console.log(data);
-        // const params = new URLSearchParams();
-        // params.set('query', data.query);
         router.push(`/help/search/${data.query}`);
     };
 
