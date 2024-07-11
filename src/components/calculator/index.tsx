@@ -64,6 +64,22 @@ export const Calculator = () => {
         onCalculate(data);
     });
 
+    const renderBalance = () => {
+        return (
+            <>
+                <span className="text-brand-400/80 font-medium mb-1.5">Потенциальный баланс:</span>
+                <div className="flex gap-2.5 items-center text-4xl">
+                    <span className="text-primary-400">$</span>
+                    <span className="text-[40px] lg:text-4xl text-black-100">
+                        {chartData?.length
+                            ? (chartData.at(-1)?.profitability || 0) +
+                              (chartData.at(-1)?.investment || 0)
+                            : 0}
+                    </span>
+                </div>
+            </>
+        );
+    };
     return (
         <form onSubmit={onSubmit}>
             <div className={styles.formWrapper}>
@@ -119,6 +135,16 @@ export const Calculator = () => {
                     >
                         Рассчитать
                     </button>
+                    <div className="flex justify-center flex-col items-center md:hidden">
+                        {renderBalance()}
+                    </div>
+                </div>
+
+                <div
+                    className={cn(styles.blockWrapper, 'hidden lg:flex items-center')}
+                    data-block="sum"
+                >
+                    {renderBalance()}
                 </div>
 
                 <div className={styles.blockWrapper} data-block="chart">
@@ -127,21 +153,6 @@ export const Calculator = () => {
                         На графике показан потенциал роста инвестиций с течением времени на основе
                         исторических данных: начальный депозит, график пополнения, период
                         инвестирования и процентная ставка.
-                    </div>
-                </div>
-
-                <div className={cn(styles.blockWrapper, 'flex items-center')} data-block="sum">
-                    <span className="text-brand-400/80 font-medium mb-1.5">
-                        Потенциальный баланс:
-                    </span>
-                    <div className="flex gap-2.5 items-center text-4xl">
-                        <span className="text-primary-400">$</span>
-                        <span className="text-black-100">
-                            {chartData?.length
-                                ? (chartData.at(-1)?.profitability || 0) +
-                                  (chartData.at(-1)?.investment || 0)
-                                : 0}
-                        </span>
                     </div>
                 </div>
             </div>
