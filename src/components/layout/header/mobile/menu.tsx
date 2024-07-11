@@ -13,7 +13,7 @@ import { useMobileMenuStore } from '@/components/layout/header/use-mobile-menu-s
 import JJO from '@/assets/jjo-text.svg';
 
 export const Menu = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     const isOpened = useMobileMenuStore((state) => state.data.isOpened);
     const toggleMenu = useMobileMenuStore((state) => state.toggleMenu);
