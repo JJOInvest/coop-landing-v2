@@ -13,7 +13,6 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-    console.log(investPagesIds.map((id) => ({ id: id.toString() })));
     return investPagesIds.map((id) => ({ id: id.toString() }));
 }
 
