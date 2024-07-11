@@ -24,7 +24,7 @@ export async function SimpleApproach() {
                     <h2 className="text-2xl lg:text-5xl/tight font-medium w-full">
                         {t('simple-approach.title')}
                     </h2>
-                    <p className="text-[16px]/snug lg:text-lg/normal font-light w-full lg:max-w-[570px] text-neutral-700">
+                    <p className="text-[16px]/snug lg:text-lg/normal font-normal w-full lg:max-w-[570px] text-grey-slate">
                         {t('simple-approach.description')}
                     </p>
                     <Button className="mt-2 lg:self-start" arrow>
