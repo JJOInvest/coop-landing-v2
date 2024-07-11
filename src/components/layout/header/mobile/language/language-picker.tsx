@@ -21,7 +21,13 @@ export const LanguagePicker = () => {
                 className="flex items-center gap-3 h-10 border-solid border-[1px] border-black border-opacity-5 px-4 rounded-lg"
             >
                 <Image src={languageIcons[i18next.language]} alt="arrow" />
-                <Image src={ArrowIcon} alt="arrow" />
+                <Image
+                    src={ArrowIcon}
+                    alt="arrow"
+                    className={cn('duration-300', {
+                        'rotate-180': isOpened,
+                    })}
+                />
             </button>
 
             <div
