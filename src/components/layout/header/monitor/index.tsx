@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { isMobile } from 'react-device-detect';
 import { useTranslation } from 'react-i18next';
 import { useMediaMatch } from 'rooks';
 
@@ -15,7 +16,6 @@ import JJO from '@/assets/jjo-text.svg';
 
 export const Header = () => {
     const { t, i18n } = useTranslation();
-    const isMobile = useMediaMatch('(max-width: 1024px)');
 
     if (isMobile) return <MobileHeader />;
 
