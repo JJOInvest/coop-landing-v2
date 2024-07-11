@@ -20,8 +20,7 @@ export const Diagram = ({ step }: Props) => {
         >
             <div>
                 <svg
-                    width="462"
-                    height="451"
+                    className="w-60 mx-auto lg:m-none lg:w-full lg:min-w-[460px]"
                     viewBox="0 0 462 451"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
