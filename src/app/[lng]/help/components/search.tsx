@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
@@ -15,8 +16,15 @@ interface FormData {
 
 export const Search = () => {
     const { t } = useTranslation();
-    const { register, handleSubmit } = useForm<FormData>();
+    const { register, handleSubmit, watch, resetField } = useForm<FormData>();
     const router = useRouter();
+    const [showResetButton, setShowResetButton] = useState(false);
+
+    const queryValue = watch('query', '');
+
+    useEffect(() => {
+        setShowResetButton(queryValue !== '');
+    }, [queryValue]);
 
     const onSubmit = (data: FormData) => {
         router.push(`/help/search/${data.query}`);
@@ -35,9 +43,15 @@ export const Search = () => {
                     placeholder={t('help.search.label')}
                     {...register('query')}
                 />
-                <button type="reset">
-                    <Image src={CrossIcon} alt="cross" className="hidden lg:block cursor-pointer" />
-                </button>
+                {showResetButton && (
+                    <button type="reset" onClick={() => resetField('query')}>
+                        <Image
+                            src={CrossIcon}
+                            alt="cross"
+                            className="hidden lg:block cursor-pointer"
+                        />
+                    </button>
+                )}
             </div>
 
             <div className="bg-black">
