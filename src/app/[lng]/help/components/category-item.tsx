@@ -2,7 +2,7 @@
 
 import cn from 'classnames';
 import Image from 'next/image';
-import { useParams, useSearchParams } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import { ReactNode, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 
@@ -15,12 +15,12 @@ interface Props extends SectionWithTopArticles {
 }
 
 export const CategoryItem = ({ id, name, topArticles, children }: Props) => {
-    const searchParams = useSearchParams();
     const params = useParams();
-    const [isOpened, setIsOpened] = useState(isMobile);
+    const openedArticle = Boolean(
+        topArticles.find((article) => article.id.toString() === params.id),
+    );
+    const [isOpened, setIsOpened] = useState(isMobile || openedArticle);
     const toggleOpened = () => setIsOpened((isOpened) => !isOpened);
-
-    const questionId = Number(searchParams.get('questionId'));
 
     return (
         <div className="flex flex-col gap-6">
@@ -43,7 +43,6 @@ export const CategoryItem = ({ id, name, topArticles, children }: Props) => {
                         <ArticleItem
                             article={article}
                             articleIdUrl={params.id as string}
-                            questionId={questionId}
                             key={article.id}
                         >
                             {children}

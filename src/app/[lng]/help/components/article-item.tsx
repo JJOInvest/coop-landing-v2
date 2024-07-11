@@ -7,14 +7,17 @@ interface Props {
         id: number;
         name: string;
     };
-    questionId: number;
     children: ReactNode;
     articleIdUrl: string;
 }
 
-export const ArticleItem = ({ article, children, questionId, articleIdUrl }: Props) => {
+export const ArticleItem = ({ article, children, articleIdUrl }: Props) => {
     const [isOpened, setIsOpened] = useState(true);
     const toggleOpened = () => setIsOpened((isOpened) => !isOpened);
+
+    if (articleIdUrl === article.id.toString()) {
+        console.log(articleIdUrl === article.id.toString());
+    }
 
     return (
         <Link
@@ -25,8 +28,8 @@ export const ArticleItem = ({ article, children, questionId, articleIdUrl }: Pro
         >
             <div
                 className={cn('font-light text-sm py-4 lg:py-0', {
-                    'text-black': questionId === article.id,
-                    'text-primary-neutral': questionId !== article.id,
+                    'text-black font-normal': articleIdUrl === article.id.toString(),
+                    'text-primary-neutral': articleIdUrl !== article.id.toString(),
                 })}
             >
                 {article.name}
