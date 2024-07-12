@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
 import BgLines from '@/assets/welcome/bg-lines.svg';
@@ -5,8 +6,14 @@ import BG from '@/assets/welcome/bg.png';
 import HandLg from '@/assets/welcome/hand-lg.png';
 import Hand from '@/assets/welcome/hand.png';
 import { Button } from '@/components/button';
-import { ResponseImage } from '@/components/response-image';
 import { getServerTranslations } from '@/i18n/server';
+
+const ResponseImage = dynamic(
+    () => import('@/components/response-image').then((mod) => mod.ResponseImage),
+    {
+        ssr: false,
+    },
+);
 
 export async function Welcome() {
     const { t } = await getServerTranslations();
