@@ -1,5 +1,8 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+import { useTranslation } from 'react-i18next';
+
 import { Article } from '@/api/help';
 
 import styles from './styles.module.scss';
