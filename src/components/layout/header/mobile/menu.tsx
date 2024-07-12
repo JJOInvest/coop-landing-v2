@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 
 import CloseIcon from '@/assets/header/close.svg';
@@ -17,6 +18,12 @@ export const Menu = () => {
 
     const isOpened = useMobileMenuStore((state) => state.data.isOpened);
     const toggleMenu = useMobileMenuStore((state) => state.toggleMenu);
+
+    const router = useRouter();
+    const handleClick = () => {
+        router.push('/login');
+        toggleMenu();
+    };
 
     if (!isOpened) return null;
 
@@ -41,7 +48,9 @@ export const Menu = () => {
 
                 <LanguageInput />
 
-                <Button block>{t('layout.header.button')}</Button>
+                <Button onClick={handleClick} block>
+                    {t('layout.header.button')}
+                </Button>
             </div>
         </div>
     );
