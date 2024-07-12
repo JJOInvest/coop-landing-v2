@@ -15,10 +15,6 @@ export const ArticleItem = ({ article, children, articleIdUrl }: Props) => {
     const [isOpened, setIsOpened] = useState(true);
     const toggleOpened = () => setIsOpened((isOpened) => !isOpened);
 
-    if (articleIdUrl === article.id.toString()) {
-        console.log(articleIdUrl === article.id.toString());
-    }
-
     return (
         <Link
             className="flex justify-between items-center border-t-[1px] border-black/10 lg:border-0"
