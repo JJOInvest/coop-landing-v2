@@ -19,6 +19,13 @@ const ArticleLayout = ({ article }: Props) => {
     const [articleBody, setArticleBody] = useState(body);
 
     useEffect(() => {
+        const element = document.getElementById('target-element');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }, []);
+
+    useEffect(() => {
         if (article.section_id === 19613933802265) {
             setArticleBody(
                 replaceInstructionBody(article.body, t('ip_addresses_can_be_found'), article.id),
@@ -28,6 +35,7 @@ const ArticleLayout = ({ article }: Props) => {
 
     return (
         <div className="flex flex-col gap-6 lg:gap-8">
+            <div id="target-element" />
             <h3 className="hidden lg:flex text-[28px]/tight lg:text-4xl">{name}</h3>
             <div className={styles.article} dangerouslySetInnerHTML={{ __html: articleBody }} />
         </div>
