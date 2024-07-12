@@ -27,7 +27,7 @@ export const Search = () => {
     }, [queryValue]);
 
     const onSubmit = (data: FormData) => {
-        router.push(`/help/search/${data.query}`);
+        data.query && router.push(`/help/search/${data.query}`);
     };
 
     return (
