@@ -45,6 +45,7 @@ export const LoginForm = () => {
 
     const onSubmit = async (data: FormData) => {
         await mutateAsync(data);
+        // await authApi.login(data);
 
         setAuthData(data);
         setStepData({ step: 'login-confirm' });

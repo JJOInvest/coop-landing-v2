@@ -7,14 +7,18 @@ export interface RequestToken {
 
 const baseUrl = process.env.NEXT_PUBLIC_API_DOMAIN;
 
+if (!baseUrl) {
+    throw new Error('NEXT_PUBLIC_API_DOMAIN is not defined');
+}
+
 export interface Request extends RequestToken {
     path: string;
     params?: Record<string, any>;
     jsonBody?: boolean;
 }
 
-export const api = axios.create({
-    baseURL: baseUrl,
+export const axiosInstance = axios.create({
+    baseURL: baseUrl.startsWith('http') ? baseUrl : `https://${baseUrl}`,
     headers: {
         'Cache-Control': 'force-cache',
     },
@@ -22,15 +26,16 @@ export const api = axios.create({
 
 export const apiPostRequest = async <T>({ path, params, token, jsonBody }: Request): Promise<T> => {
     try {
-        const result = await axios({
+        const result = await axiosInstance({
             method: 'POST',
             data: jsonBody ? params : qs.stringify(params),
-            url: `${baseUrl}${path}`,
+            url: path,
             headers: {
                 'Content-Type': jsonBody ? 'application/json' : 'application/x-www-form-urlencoded',
+                Authorization: token ? `Bearer ${token}` : '',
             },
         });
-        const { data } = await result.data;
+        const { data } = result.data;
         return data;
     } catch (error: any) {
         if (axios.isAxiosError(error) && error.response) {
