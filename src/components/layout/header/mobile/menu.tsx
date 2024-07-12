@@ -13,7 +13,7 @@ import { useMobileMenuStore } from '@/components/layout/header/use-mobile-menu-s
 import JJO from '@/assets/jjo-text.svg';
 
 export const Menu = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     const isOpened = useMobileMenuStore((state) => state.data.isOpened);
     const toggleMenu = useMobileMenuStore((state) => state.toggleMenu);
@@ -30,8 +30,12 @@ export const Menu = () => {
                     </button>
                 </div>
                 <nav className="flex flex-col gap-3">
-                    {headerMenuItems.map((point) => (
-                        <NavLink key={point.href} {...point} label={t(point.text)} />
+                    {headerMenuItems.map((link) => (
+                        <NavLink
+                            key={`${i18n.language}${link.href}`}
+                            href={link.isExternal ? link.href : `/${i18n.language}${link.href}`}
+                            label={t(link.text)}
+                        />
                     ))}
                 </nav>
 
