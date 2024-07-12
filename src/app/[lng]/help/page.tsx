@@ -19,13 +19,14 @@ interface Props {
 }
 
 export default async function Page({ params }: Props) {
-    console.log(params);
     const locale = params.lng;
     const [topArticles] = await Promise.all([getArticles(locale, 8)]);
 
     return (
         <LayoutHelp>
-            <CategoryBody articles={topArticles as Article[]} />
+            <div className="hidden">
+                <CategoryBody articles={topArticles as Article[]} />
+            </div>
         </LayoutHelp>
     );
 }
