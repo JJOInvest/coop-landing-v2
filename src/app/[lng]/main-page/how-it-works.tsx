@@ -1,6 +1,5 @@
 'use client';
 
-import cn from 'classnames';
 import { useEffect, useState } from 'react';
 import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import { useTranslation } from 'react-i18next';
@@ -66,7 +65,11 @@ export function HowItWorks() {
                     <div className="flex flex-col gap-10 lg:max-w-[460px] lg:items-start">
                         <div className="flex flex-col gap-12">
                             {steps.map((s, index) => (
-                                <div key={s.name} className="flex gap-5 items-start">
+                                <div
+                                    key={s.name}
+                                    className="flex gap-5 items-start cursor-pointer"
+                                    onClick={setStep.bind(window, s.name)}
+                                >
                                     <div className="relative min-w-10 max-w-10 mt-2 lg:min-w-[60px] lg:max-w-[60px]">
                                         <div className="absolute inset-0 m-auto w-min h-min text-xl lg:text-[22px]/snug">
                                             {index + 1}
