@@ -32,7 +32,7 @@ export interface Article {
     position: number;
     voteSum: number;
     voteCount: number;
-    sectionId: number;
+    section_id: number;
     createdAt: string;
     updatedAt: string;
     name: string;

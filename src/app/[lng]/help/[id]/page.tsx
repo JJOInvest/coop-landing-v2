@@ -1,8 +1,11 @@
+import { useTranslation } from 'react-i18next';
+
 import { getArticle, getSectionArticles, getSections } from '@/api/help';
 import ArticleLayout from '@/app/[lng]/help/[id]/article-layout';
 
 type Params = {
     id: string;
+    lng: string;
 };
 
 interface Props {
@@ -10,8 +13,8 @@ interface Props {
 }
 
 export default async function Page({ params }: Props) {
-    const { id } = params;
-    const article = await getArticle('ru', id);
+    const { id, lng } = params;
+    const article = await getArticle(lng, id);
 
     return <ArticleLayout article={article} />;
 }

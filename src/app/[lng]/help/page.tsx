@@ -13,14 +13,14 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 interface Props {
-    searchParams: {
-        questionId?: string;
-        query?: string;
+    params: {
+        lng: string;
     };
 }
 
-export default async function Page({ searchParams }: Props) {
-    const locale = 'ru';
+export default async function Page({ params }: Props) {
+    console.log(params);
+    const locale = params.lng;
     const [topArticles] = await Promise.all([getArticles(locale, 8)]);
 
     return (

@@ -38,6 +38,11 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
+/*//todo стили дублируются, на хелпе тоже стили для статей*/
+.zendesk-content {
+    white-space: normal;
+}
+
 .zendesk-content p, .zendesk-content li {
     @apply my-8 text-black/60 text-base;
 }
