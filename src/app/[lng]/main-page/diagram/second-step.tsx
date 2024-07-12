@@ -1,3 +1,4 @@
+// @ts-ignore
 import { motion } from 'framer-motion';
 
 import { GetStartedStep } from '@/app/[lng]/main-page/diagram/index';
