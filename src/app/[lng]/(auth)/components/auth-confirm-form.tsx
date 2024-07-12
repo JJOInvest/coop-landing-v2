@@ -1,6 +1,8 @@
 'use client';
 
 import { useMutation } from '@tanstack/react-query';
+import { setCookie } from 'cookies-next';
+import { useRouter } from 'next/navigation';
 import { ChangeEventHandler, FormEventHandler, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -14,11 +16,13 @@ import {
 import { Button } from '@/components/button';
 
 const OPT_LENGTH = 4;
+const DASHBOARD_LINK = process.env.NEXT_PUBLIC_DOMAIN;
 
 export const AuthConfirm = () => {
     const { t } = useTranslation();
 
     const textBase = useRef<HTMLDivElement>(null);
+    const router = useRouter();
 
     const stepData = useStepStore((state) => state.data);
     const setStepData = useStepStore((state) => state.setData);
@@ -35,6 +39,8 @@ export const AuthConfirm = () => {
             }),
         onSuccess: (data) => {
             console.log('accessToken', data.accessToken);
+            setCookie('accessToken', data.accessToken);
+            router.push(DASHBOARD_LINK as string);
         },
     });
 

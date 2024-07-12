@@ -19,7 +19,6 @@ const ArticleLayout = ({ article }: Props) => {
     const [articleBody, setArticleBody] = useState(body);
 
     useEffect(() => {
-        console.log(article.section_id === 19613933802265);
         if (article.section_id === 19613933802265) {
             setArticleBody(
                 replaceInstructionBody(article.body, t('ip_addresses_can_be_found'), article.id),
