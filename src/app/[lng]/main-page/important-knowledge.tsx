@@ -1,9 +1,17 @@
-import { SectionBackground } from '@/app/[lng]/main-page/section-background';
+import dynamic from 'next/dynamic';
+
 import { Button } from '@/components/button';
 import { getServerTranslations } from '@/i18n/server';
 
 import bgMobile from './assets/woman-small.png';
 import bgDesktop from './assets/woman.png';
+
+const SectionBackground = dynamic(
+    () => import('@/app/[lng]/main-page/section-background').then((mod) => mod.SectionBackground),
+    {
+        ssr: false,
+    },
+);
 
 export async function ImportantKnowledge() {
     const { t } = await getServerTranslations();

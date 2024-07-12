@@ -1,9 +1,17 @@
-import { SectionBackground } from '@/app/[lng]/main-page/section-background';
+import dynamic from 'next/dynamic';
+
 import { Button } from '@/components/button';
 import { getServerTranslations } from '@/i18n/server';
 
 import bgMobile from './assets/hero-image.png';
 import bgDesktop from './assets/hero-image.png';
+
+const SectionBackground = dynamic(
+    () => import('@/app/[lng]/main-page/section-background').then((mod) => mod.SectionBackground),
+    {
+        ssr: false,
+    },
+);
 
 export async function Hero() {
     const { t } = await getServerTranslations();
