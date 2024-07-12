@@ -21,6 +21,8 @@
     grid-area: form;
     padding: 24px 30px;
     margin-right: 8px;
+    @media (max-width: 1180px) {   min-width: 324px; }
+
 }
 
 .blockWrapper[data-block="chart"] {
