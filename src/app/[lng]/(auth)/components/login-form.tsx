@@ -72,6 +72,7 @@ export const LoginForm = () => {
                     <TextInput
                         id="password"
                         register={register}
+                        type="password"
                         labels={{
                             main: t('auth.form.password'),
                         }}
