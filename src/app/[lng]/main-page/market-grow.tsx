@@ -11,7 +11,7 @@ export async function MarketGrow() {
     const { t } = await getServerTranslations();
 
     return (
-        <section className="pt-20 pb-40 relative overflow-hidden lg:p-0 lg:min-h-screen lg:flex lg:items-center">
+        <section className="pt-20 pb-48 relative overflow-hidden lg:p-0 lg:min-h-screen lg:flex lg:items-center">
             <div className="absolute bg-cyan w-52 h-80 opacity-20 blur-[85px] rotate-[135deg] top-9 -right-[50px] lg:top-80 lg:right-[50px]" />
 
             <div className="container flex flex-col gap-32 lg:flex-row-reverse lg:items-center">

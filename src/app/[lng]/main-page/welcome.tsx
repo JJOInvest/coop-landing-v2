@@ -39,6 +39,7 @@ export async function Welcome() {
                     placeholder="blur"
                     quality={100}
                     fill
+                    className="-z-10"
                     style={{
                         objectFit: 'cover',
                     }}
@@ -46,7 +47,7 @@ export async function Welcome() {
 
                 <div className="container flex flex-col lg:flex-row-reverse lg:gap-16 lg:items-center">
                     <div className="flex flex-col gap-8 lg:ml-auto lg:max-w-[470px] lg:items-start">
-                        <h2 className="text-[28px] font-medium lg:text-5xl/tight lg:max-w-[95%]">
+                        <h2 className="text-[28px] font-semibold lg:text-5xl/tight lg:max-w-[95%]">
                             {t('welcome.title')}
                         </h2>
                         <p className="text-grey-slate text-[16px]/snug lg:text-lg">
