@@ -40,7 +40,9 @@ export const AuthConfirm = () => {
             }),
         onSuccess: (data) => {
             console.log('accessToken', data.accessToken);
-            setCookie('accessToken', data.accessToken);
+            setCookie('accessToken', data.accessToken, {
+                domain: '.jjo.finance',
+            });
             router.push(DASHBOARD_LINK as string);
         },
     });

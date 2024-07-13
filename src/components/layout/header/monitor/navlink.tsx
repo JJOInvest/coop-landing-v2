@@ -12,7 +12,19 @@ export interface Props {
 
 export const NavLink = ({ href, label, target }: Props) => {
     const pathname = usePathname();
-    const isActive = pathname === href || `${pathname}/` === href;
+
+    const extractBasePath = (path: string) => {
+        if (path.startsWith('http')) {
+            return path;
+        }
+        const parts = path.split('/');
+        return `/${parts[1]}/${parts[2] || ''}`;
+    };
+
+    const basePathname = extractBasePath(pathname);
+    const baseHref = extractBasePath(href);
+
+    const isActive = basePathname === baseHref;
 
     return (
         <Link
