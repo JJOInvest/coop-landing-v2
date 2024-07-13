@@ -24,7 +24,7 @@ export default async function Page({ params }: Props) {
 
     return (
         <LayoutHelp>
-            <div className="hidden">
+            <div className="hidden lg:block">
                 <CategoryBody articles={topArticles as Article[]} />
             </div>
         </LayoutHelp>

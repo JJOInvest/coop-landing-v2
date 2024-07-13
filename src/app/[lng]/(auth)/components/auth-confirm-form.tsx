@@ -16,7 +16,8 @@ import {
 import { Button } from '@/components/button';
 
 const OPT_LENGTH = 4;
-const DASHBOARD_LINK = process.env.NEXT_PUBLIC_DOMAIN;
+//todo костыль в случае отсутствия env на тесте, попрвить
+const DASHBOARD_LINK = process.env.NEXT_PUBLIC_DOMAIN || 'https://dashboard-test.jjo.finance/';
 
 export const AuthConfirm = () => {
     const { t } = useTranslation();
