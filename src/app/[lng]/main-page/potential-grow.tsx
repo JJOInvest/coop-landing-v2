@@ -28,7 +28,7 @@ export async function PotentialGrow() {
 
                 <Calculator />
 
-                <p className="mt-8 lg:mt-6 text-center text-xs/snug lg:text-[16px] lg:leading-normal font-light">
+                <p className="mt-8 lg:mt-6 text-center text-xs/snug lg:text-[16px] lg:leading-normal font-light text-white/80">
                     *{t('calculator_and_chart')}
                 </p>
             </div>

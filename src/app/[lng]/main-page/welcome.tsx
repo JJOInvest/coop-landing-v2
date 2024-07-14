@@ -29,9 +29,9 @@ export async function Welcome() {
                     quality={100}
                     fill
                     style={{
-                        objectFit: 'cover',
+                        objectFit: 'contain',
                     }}
-                    className="-z-10"
+                    className="top-0 left-0 -z-10"
                 />
                 <Image
                     alt=""

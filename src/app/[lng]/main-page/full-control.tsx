@@ -75,7 +75,11 @@ export async function FullControl() {
                     </div>
                 </div>
 
-                <Image src={RobotImage} alt="robot" className="rounded-xl mt-16 lg:m-0" />
+                <Image
+                    src={RobotImage}
+                    alt="robot"
+                    className="rounded-xl mt-16 lg:m-0 max-w-[370px]"
+                />
             </div>
         </section>
     );

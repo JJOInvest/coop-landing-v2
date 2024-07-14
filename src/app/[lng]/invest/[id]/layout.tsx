@@ -21,9 +21,11 @@ export default async function InvestLayout({ children }: Props) {
                     <div className="overflow-hidden lg:rounded-r-xl">
                         <InvestMenu />
                     </div>
-                    <Button className="mt-2 lg:mt-4 lg:block hidden" block>
-                        {t('Постройте свое финансовое будущее')}
-                    </Button>
+                    <div className="bg-black rounded-r-lg">
+                        <Button className="mt-2 lg:mt-4 lg:block hidden" block>
+                            {t('Постройте свое финансовое будущее')}
+                        </Button>
+                    </div>
                 </div>
 
                 <div className="container py-20 lg:p-0 lg:max-w-[870px]">{children}</div>
