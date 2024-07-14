@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { getSectionsWithTopArticles } from '@/api/help';
 import { CategoryItem } from '@/app/[lng]/help/components/category-item';
@@ -16,8 +15,8 @@ export async function CategoriesList({ children }: Props) {
 
     return (
         <div className="flex flex-col gap-6 lg:w-[270px]">
-            {sections.map((category) => (
-                <CategoryItem key={category.id} {...category}>
+            {sections.map((category, index) => (
+                <CategoryItem key={category.id} defaultOpened={index === 0} {...category}>
                     {children}
                 </CategoryItem>
             ))}

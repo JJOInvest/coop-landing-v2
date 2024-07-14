@@ -21,7 +21,7 @@ export default async function Price() {
                 <h3 className="lg:text-center mt-8 lg:text-[22px]/snug text-lg/normal">
                     {t('your_financial_prosperity')}
                 </h3>
-                <p className="lg:text-center mt-3 lg:text-lg text-[16px]/normal font-light">
+                <p className="lg:text-center mt-3 lg:text-lg text-[16px]/normal font-light opacity-80">
                     {t('high_fees')}
                 </p>
             </div>

@@ -98,7 +98,7 @@ const config: Config = {
                 investAvgProfit:
                     'linear-gradient(48deg, rgba(255, 127, 87, 0.50) 6.08%, rgba(216, 87, 95, 0.50) 104.31%);',
                 investArticle:
-                    'linear-gradient(90deg, #EBEFFF 5.21%, rgba(248, 248, 248, 0.00) 43.87%), linear-gradient(96deg, rgba(248, 248, 248, 0.00) 68.68%, #DEE3F7 95.19%)',
+                    'linear-gradient(90deg, #EBEFFF 5.21%, rgba(248, 248, 248, 1) 43.87%), linear-gradient(96deg, rgba(248, 248, 248, 0.00) 68.68%, #DEE3F7 95.19%)',
             },
             boxShadow: {
                 box: '0px 5px 15px 0px #DFE6F070',
