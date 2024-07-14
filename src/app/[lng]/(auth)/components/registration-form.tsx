@@ -96,6 +96,7 @@ export const RegistrationForm = () => {
                     />
                     <TextInput
                         id="password"
+                        type="password"
                         register={register}
                         labels={{
                             main: t('password'),

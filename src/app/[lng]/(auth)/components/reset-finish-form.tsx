@@ -90,6 +90,7 @@ export const ResetFinishForm = () => {
                 <div className="flex flex-col gap-5 mt-6">
                     <TextInput
                         id="password"
+                        type="password"
                         register={register}
                         labels={{
                             main: t('new_password'),
