@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-import { Article, getArticles } from '@/api/help';
+import { getArticles } from '@/api/help';
 import { CategoryBody } from '@/app/[lng]/help/components/category-body';
 import { LayoutHelp } from '@/app/[lng]/help/components/layoutHelp';
 import { getServerTranslations } from '@/i18n/server';
@@ -20,12 +20,12 @@ interface Props {
 
 export default async function Page({ params }: Props) {
     const locale = params.lng;
-    const [topArticles] = await Promise.all([getArticles(locale, 8)]);
+    const topArticles = await getArticles(locale, 8);
 
     return (
         <LayoutHelp>
             <div className="hidden lg:block">
-                <CategoryBody articles={topArticles as Article[]} />
+                <CategoryBody articles={topArticles} />
             </div>
         </LayoutHelp>
     );
