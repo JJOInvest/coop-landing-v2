@@ -48,13 +48,13 @@ export async function Welcome() {
                 <div className="container flex flex-col lg:flex-row-reverse lg:gap-16 lg:items-center">
                     <div className="flex flex-col gap-8 lg:ml-auto lg:max-w-[470px] lg:items-start">
                         <h2 className="text-[28px] font-semibold lg:text-5xl/tight lg:max-w-[95%]">
-                            {t('welcome.title')}
+                            {t('welcome_to_jjo')}
                         </h2>
                         <p className="text-grey-slate text-[16px]/snug lg:text-lg">
-                            {t('welcome.description')}
+                            {t('all_you_need')}
                         </p>
                         <Button className="mt-2" arrow>
-                            {t('welcome.button')}
+                            {t('try_for_free')}
                         </Button>
                     </div>
                     <ResponseImage

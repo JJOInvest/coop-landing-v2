@@ -72,26 +72,26 @@ export const RegistrationFinishForm = () => {
                         id="name"
                         register={register}
                         labels={{
-                            main: t('auth.form.name'),
+                            main: t('first_name'),
                         }}
                     />
                     <TextInput
                         id="surname"
                         register={register}
                         labels={{
-                            main: t('auth.form.surname'),
+                            main: t('last_name'),
                         }}
                     />
                     <TextInput
                         id="countryCodeIso"
                         register={register}
                         labels={{
-                            main: t('auth.form.country'),
+                            main: t('country_of_residence'),
                         }}
                     />
                 </div>
                 <Button className="mt-10" block disabled={!formState.isValid} type="submit">
-                    {t('auth.form.register-finish')}
+                    {t('complete_registration')}
                 </Button>
             </form>
         </>

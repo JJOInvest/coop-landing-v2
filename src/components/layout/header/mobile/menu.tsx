@@ -49,7 +49,7 @@ export const Menu = () => {
                 <LanguageInput />
 
                 <Button onClick={handleClick} block>
-                    {t('layout.header.button')}
+                    {t('login')}
                 </Button>
             </div>
         </div>

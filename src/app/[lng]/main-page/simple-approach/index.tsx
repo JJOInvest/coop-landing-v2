@@ -22,13 +22,13 @@ export async function SimpleApproach() {
             <div className="container lg:flex lg:flex-row-reverse lg:items-center gap-32">
                 <div className="flex flex-col gap-6 lg:gap-8 lg:ml-auto lg:max-w-[640px]">
                     <h2 className="text-2xl lg:text-5xl/tight font-medium w-full">
-                        {t('simple-approach.title')}
+                        {t('a_simple_approach')}
                     </h2>
                     <p className="text-[16px]/snug lg:text-lg/normal font-normal w-full lg:max-w-[570px] text-grey-slate">
-                        {t('simple-approach.description')}
+                        {t('jjo_doea_not')}
                     </p>
                     <Button className="mt-2 lg:self-start" arrow>
-                        {t('simple-approach.button')}
+                        {t('learn_more')}
                     </Button>
                 </div>
 

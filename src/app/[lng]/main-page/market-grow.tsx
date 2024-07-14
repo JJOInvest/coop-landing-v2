@@ -17,10 +17,10 @@ export async function MarketGrow() {
             <div className="container flex flex-col gap-32 lg:flex-row-reverse lg:items-center">
                 <div className="flex flex-col gap-6 lg:gap-8 lg:max-w-[570px] w-full lg:items-center">
                     <h2 className="text-2xl lg:text-5xl/tight font-medium">
-                        {t('market-grow.title')}
+                        {t('crypto_market_growth_potential')}
                     </h2>
                     <p className="text-[16px]/snug text-grey-slate lg:text-lg/normal">
-                        {t('market-grow.description')}
+                        {t('tech_growth_interest')}
                     </p>
                     <Button className="mt-2 lg:self-start" arrow>
                         Узнать больше

@@ -40,7 +40,7 @@ export const Search = () => {
                 <input
                     type="text"
                     className="w-full placeholder:text-primary-neutral text-black outline-none py-2.5"
-                    placeholder={t('help.search.label')}
+                    placeholder={t('Найдите ваш вопрос...')}
                     {...register('query')}
                 />
                 {showResetButton && (
@@ -55,7 +55,7 @@ export const Search = () => {
             </div>
 
             <div className="bg-black">
-                <Button className="px-5 hover:text-white">{t('help.search.button')}</Button>
+                <Button className="px-5 hover:text-white">{t('Поиск')}</Button>
             </div>
         </form>
     );

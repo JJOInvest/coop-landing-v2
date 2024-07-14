@@ -122,7 +122,7 @@ export const AuthConfirm = () => {
                 onSubmit={handleSubmit}
             >
                 <div className="text-[16px]/normal flex flex-col gap-1 mx-auto">
-                    <p>{t('auth.form.new-code')}</p>
+                    <p>{t('enter_code')}</p>
                     <p className="text-blue-100">{authData.email}</p>
                 </div>
 
@@ -140,7 +140,7 @@ export const AuthConfirm = () => {
                 </div>
 
                 <Button className="mt-10" block disabled={!isValid} type="submit">
-                    {t('auth.form.button')}
+                    {t('login')}
                 </Button>
             </form>
         </>

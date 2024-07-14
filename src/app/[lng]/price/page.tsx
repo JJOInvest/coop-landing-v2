@@ -16,13 +16,13 @@ export default async function Price() {
 
             <div className="container">
                 <h2 className="lg:text-center lg:text-[54px]/tight text-[32px]/snug font-semibold">
-                    {t('prices.title')}
+                    {t('choose_the_plan')}
                 </h2>
                 <h3 className="lg:text-center mt-8 lg:text-[22px]/snug text-lg/normal">
-                    {t('prices.subtitle')}
+                    {t('your_financial_prosperity')}
                 </h3>
                 <p className="lg:text-center mt-3 lg:text-lg text-[16px]/normal font-light">
-                    {t('prices.description')}
+                    {t('high_fees')}
                 </p>
             </div>
 

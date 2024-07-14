@@ -17,10 +17,10 @@ export const Switcher = () => {
     return (
         <div className="h-16 border-grey-70 border-b-[1px] flex">
             <SwitcherLink href="/register" isActivate={lastSegment === 'register'}>
-                {t('auth.form.sign-up')}
+                {t('registration')}
             </SwitcherLink>
             <SwitcherLink href="/login" isActivate={lastSegment === 'login'}>
-                {t('auth.form.sign-in')}
+                {t('login')}
             </SwitcherLink>
         </div>
     );

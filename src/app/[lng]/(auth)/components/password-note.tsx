@@ -7,13 +7,6 @@ interface Props {
     password: string;
 }
 
-const items = [
-    'must_contain_at_least_characters',
-    'one_lowercase_or_uppercase_letter',
-    'one_digit',
-    'special_character',
-];
-
 export const PasswordNote = ({ password }: Props) => {
     const { t } = useTranslation();
 
@@ -26,17 +19,13 @@ export const PasswordNote = ({ password }: Props) => {
     return (
         <div className="text-black-80">
             <div className={cn([hasLength && 'text-green-500'])}>
-                • {t('password-note.at-least-12-characters')}.
+                • {t('at_least_12_characters')}.
             </div>
             <div className={cn([hasLetter && hasUpperLetter && 'text-green-500'])}>
-                • {t('password-note.one-low-and-upper-letter')}.
+                • {t('one_upper_lower_case')}.
             </div>
-            <div className={cn([hasNumber && 'text-green-500'])}>
-                • {t('password-note.one-digit')}.
-            </div>
-            <div className={cn([hasSpecial && 'text-green-500'])}>
-                • {t('password-note.special-characters')}.
-            </div>
+            <div className={cn([hasNumber && 'text-green-500'])}>• {t('one_digit')}.</div>
+            <div className={cn([hasSpecial && 'text-green-500'])}>• {t('special_character')}.</div>
         </div>
     );
 };

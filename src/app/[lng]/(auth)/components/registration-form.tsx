@@ -91,14 +91,14 @@ export const RegistrationForm = () => {
                         id="email"
                         register={register}
                         labels={{
-                            main: t('auth.form.email'),
+                            main: t('email_address'),
                         }}
                     />
                     <TextInput
                         id="password"
                         register={register}
                         labels={{
-                            main: t('auth.form.password'),
+                            main: t('password'),
                         }}
                     />
                     <PasswordNote password={password} />
@@ -106,27 +106,19 @@ export const RegistrationForm = () => {
                         id="referralCode"
                         register={register}
                         labels={{
-                            main: t('Реферальный код (опционально)'),
+                            main: t('referral_code_optional'),
                         }}
                     />
                 </div>
 
                 <div className="my-5">
-                    <Checkbox
-                        register={register}
-                        id="subscribed"
-                        label="Я хочу получать обновления, новости и советы на электронный адрес"
-                    />
+                    <Checkbox register={register} id="subscribed" label={t('receive_updates')} />
 
-                    <Checkbox
-                        register={register}
-                        id="termsAccepted"
-                        label="Я принимаю Условия использования и Политику конфиденциальности J’JO "
-                    />
+                    <Checkbox register={register} id="termsAccepted" label={t('accept_terms')} />
                 </div>
 
                 <Button block disabled={!formState.isValid} type="submit">
-                    {t('auth.form.sign-up')}
+                    {t('registration')}
                 </Button>
             </form>
         </>

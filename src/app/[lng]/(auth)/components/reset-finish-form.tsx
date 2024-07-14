@@ -85,16 +85,14 @@ export const ResetFinishForm = () => {
                 className="px-8 lg:px-16 py-6 lg:py-10 w-full flex flex-col"
                 onSubmit={handleSubmit(onSubmit)}
             >
-                <h3 className="font-semibold text-xl text-center">
-                    {t('auth.form.create-new-password')}
-                </h3>
+                <h3 className="font-semibold text-xl text-center">{t('create_password')}</h3>
 
                 <div className="flex flex-col gap-5 mt-6">
                     <TextInput
                         id="password"
                         register={register}
                         labels={{
-                            main: t('auth.form.new-password'),
+                            main: t('new_password'),
                         }}
                     />
                     <PasswordNote password={password} />
@@ -102,13 +100,13 @@ export const ResetFinishForm = () => {
                         id="passwordConfirm"
                         register={register}
                         labels={{
-                            main: t('auth.form.new-password-again'),
+                            main: t('new_password_again'),
                         }}
                     />
                 </div>
 
                 <Button className="mt-10" block disabled={!formState.isValid} type="submit">
-                    {t('auth.form.create-password')}
+                    {t('create_password')}
                 </Button>
             </form>
         </>

@@ -16,14 +16,12 @@ export async function BestMinds() {
 
             <div className="container flex flex-col gap-32 lg:flex-row lg:items-center">
                 <div className="flex flex-col gap-6 lg:gap-8 lg:max-w-[570px] w-full lg:items-center">
-                    <h2 className="text-2xl lg:text-5xl/tight font-medium">
-                        {t('best-minds.title')}
-                    </h2>
+                    <h2 className="text-2xl lg:text-5xl/tight font-medium">{t('top_minds')}</h2>
                     <p className="text-[16px]/snug text-grey-slate lg:text-lg/normal">
-                        {t('best-minds.description')}
+                        {t('experience_analysis')}
                     </p>
                     <Button className="mt-2 lg:self-start" arrow>
-                        {t('best-minds.button')}
+                        {t('learn_more')}
                     </Button>
                 </div>
 
