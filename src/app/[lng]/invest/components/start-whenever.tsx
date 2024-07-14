@@ -11,12 +11,12 @@ export async function StartWhenever() {
             <section className="py-20 lg:mx-20 lg:rounded-xl bg-start-whenever">
                 <div className="container flex flex-col gap-8 lg:items-center">
                     <h3 className="text-3xl font-medium lg:text-5xl lg:text-center lg:max-w-[760px]">
-                        {t('start-whenever.title')}
+                        {t('Вы можете начать когда захотите. Например, прямо сейчас!')}
                     </h3>
                     <p className="text-black opacity-40 font-medium text-[16px]/snug lg:hidden">
-                        {t('start-whenever.description')}
+                        {t('all_you_need')}
                     </p>
-                    <Button className="mt-2">{t('start-whenever.button')}</Button>
+                    <Button className="mt-2">{t('Начать сейчас')}</Button>
                 </div>
             </section>
         </div>

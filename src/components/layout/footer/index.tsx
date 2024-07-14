@@ -21,20 +21,20 @@ const socialMedias = [
 ];
 
 const links = [
-    { href: '/', text: 'footer.menu.main' },
-    { href: '/invest/33961919663385', text: 'footer.menu.invest' },
-    { href: '/price', text: 'footer.menu.price' },
-    { href: '/help', text: 'footer.menu.help' },
-    { href: 'https://blog.jjo.finance/', text: 'footer.menu.blog' },
+    { href: '/', text: 'dashboard' },
+    { href: '/invest/33961919663385', text: 'invest' },
+    { href: '/price', text: 'prices' },
+    { href: '/help', text: 'help' },
+    { href: 'https://blog.jjo.finance/', text: 'blog' },
     {
         href: 'https://dashboard.jjo.finance/docs/privacy-policy-jjo.pdf?_gl=1*1jzm9qy*crossdomain_ga*MjA3NTI3MTc0MC4xNzA4NzcxNTc1*crossdomain_ga_WXJ9H0E4GB*MTcyMDc5MDM3NS4zMTAuMS4xNzIwNzkwNDIwLjE1LjAuMA..',
-        text: 'footer.menu.confidence',
+        text: 'privacy_policy',
     },
     {
         href: 'https://dashboard.jjo.finance/docs/terms-of-use-jjo.pdf?_gl=1*peeuuv*crossdomain_ga*MjA3NTI3MTc0MC4xNzA4NzcxNTc1*crossdomain_ga_WXJ9H0E4GB*MTcyMDc5MDM3NS4zMTAuMS4xNzIwNzkwNDA0LjMxLjAuMA..',
-        text: 'footer.menu.conditions',
+        text: 'terms_of_use',
     },
-    { href: '/documents/cookie-policy-jjo.pdf', text: 'footer.menu.cookie' },
+    { href: '/documents/cookie-policy-jjo.pdf', text: 'cookie_policy' },
 ];
 
 export const Footer = () => {
@@ -48,7 +48,7 @@ export const Footer = () => {
                         <Image src={JJOIcon} alt={"j'jo"} />
                         <div className="hidden lg:flex mt-32 rounded-xl py-2.5 px-4 bg-white bg-opacity-10 items-center text-white gap-2 text-xs">
                             <Image src={SecurityImage} alt="security" />
-                            {t('footer.security')}
+                            {t('Отчет о безопасности 2023')}
                         </div>
                     </div>
 
@@ -96,7 +96,9 @@ export const Footer = () => {
                 </div>
 
                 <p className="text-primary-neutral text-xs/tight opacity-40">
-                    {t('footer.disclaimer')}
+                    {t(
+                        'Disclaimer: JJO-ONE PTE. LTD. (registration code - 202304367C, registered address 10 ANSON ROAD #20-05 INTERNATIONAL PLAZA SINGAPORE (079903)) do not provide investment or assets management services of any kind or services of investment advisers. Using the Website, you confirm that you are solely responsible for all transactions made within the Website, including but not limited to the risks associated with cryptocurrency trading as activity with high-level risk (see more in our Term of Use) JJO Finance LTD (registration code -13165223, registered address 91 battersea Park Road, London, England, SW8 4DU) is a Payment Agent of JJO-ONE PTE. LTD.\nYou should consider whether you understand how cryptocurrencies and their sets work, and whether you can afford to take the high risk of losing your money while trading in cryptomarkets. Cryptocurrency is a digital representation of value that functions as a medium of exchange, a unit of account, or a store of value, but it does not have legal tender status and is not generally backed or supported by any government or central bank. Due to the fact the legality cryptocurrency holding or trading is not always clear. Cryptocurrency markets and exchanges are not regulated with the same provisions or customer protections applicable to equity, option, futures, or foreign exchange investing. Legislative and regulatory changes or actions at the state or international level may adversely affect the use, transfer, exchange, and value of cryptocurrency. User will be subject to any applicable law which may apply to the blockchain. When seeing any graphics and indicators of cryptomarkets growth, you should remember ast performance is not an indication of future results, and such markets have a high volatility level. You should seek advice from an independent and suitably licensed financial advisor and ensure that you have the risk appetite, relevant experience and knowledge before you decide to use the instruments JJO provides to the users. Before starting usage of the JJO site, please read our Terms of Use and Risk Disclosure Statement. You expressly agree that your use of the software and/or service is at your sole risk. JJO is not liable for any loss or damage arising from your participation in the cryptocurrency trading, including within the use of the JJO platform.',
+                    )}
                 </p>
             </div>
         </footer>

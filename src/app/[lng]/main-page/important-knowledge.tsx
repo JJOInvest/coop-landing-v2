@@ -28,14 +28,10 @@ export async function ImportantKnowledge() {
                 <div className="absolute w-[70%] lg:w-[40%] bg-violet-800 opacity-45 h-[200px] -top-[100px] left-0 blur-[140px] lg:-top-[150px] -z-10" />
 
                 <div className="flex flex-col gap-8 lg:max-w-[50%] lg:ml-auto lg:items-start lg:pr-16">
-                    <h2 className="text-2xl font-medium lg:text-5xl">
-                        {t('important-knowledge.title')}
-                    </h2>
-                    <p className="text-[16p]/snug lg:text-lg font-light">
-                        {t('important-knowledge.description')}
-                    </p>
+                    <h2 className="text-2xl font-medium lg:text-5xl">{t('important_to_know')}</h2>
+                    <p className="text-[16p]/snug lg:text-lg font-light">{t('jjo_function')}</p>
                     <Button className="invert lg:invert-0" arrow>
-                        {t('important-knowledge.button')}
+                        {t('Зарегистрироваться')}
                     </Button>
                 </div>
             </div>

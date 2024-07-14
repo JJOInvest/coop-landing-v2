@@ -23,6 +23,18 @@ const steps: Step[] = [
     },
 ];
 
+const stepsHeaders = {
+    register: 'sign_up',
+    invest: 'use_service',
+    'plan-your-future': 'plan_future',
+};
+
+const stepsDescriptions = {
+    register: 'sign_up_and_connect',
+    invest: 'buy_subscription',
+    'plan-your-future': 'choose_index',
+};
+
 export function HowItWorks() {
     const { t } = useTranslation();
 
@@ -53,9 +65,7 @@ export function HowItWorks() {
             <div className="absolute bg-red-600 h-[80%] w-[200px] top-[10%] -right-[100px] blur-[80px] opacity-15 -z-10" />
 
             <div className="container">
-                <h2 className="text-2xl font-medium lg:text-5xl/normal">
-                    {t('how-it-works.title')}
-                </h2>
+                <h2 className="text-2xl font-medium lg:text-5xl/normal">{t('how_jjo_works')}</h2>
 
                 <div className="flex flex-col gap-12 mt-4 lg:mt-10 lg:flex-row-reverse">
                     <div className="lg:ml-auto lg:mr-16">
@@ -68,7 +78,7 @@ export function HowItWorks() {
                                 <div
                                     key={s.name}
                                     className="flex gap-5 items-start cursor-pointer"
-                                    onClick={setStep.bind(window, s.name)}
+                                    onClick={() => setStep(s.name)}
                                 >
                                     <div className="relative min-w-10 max-w-10 mt-2 lg:min-w-[60px] lg:max-w-[60px]">
                                         <div className="absolute inset-0 m-auto w-min h-min text-xl lg:text-[22px]/snug">
@@ -93,10 +103,10 @@ export function HowItWorks() {
 
                                     <div>
                                         <h5 className="text-xl lg:text-[22px]/snug">
-                                            {t(`how-it-works.steps.${s.name}.name`)}
+                                            {t(stepsHeaders[s.name])}
                                         </h5>
                                         <p className="text-neutral-400 text-[16px]/snug mt-2 lg:text-lg">
-                                            {t(`how-it-works.steps.${s.name}.description`)}
+                                            {t(stepsDescriptions[s.name])}
                                         </p>
                                     </div>
                                 </div>
@@ -104,7 +114,7 @@ export function HowItWorks() {
                         </div>
 
                         <Button arrow>
-                            <span>{t('how-it-works.button')}</span>
+                            <span>{t('try_for_free')}</span>
                         </Button>
                     </div>
                 </div>

@@ -27,9 +27,9 @@ export const languages = [
     { name: 'Pilipinas', value: 'pi', icon: PilipinasFlagIcon },
     { name: 'Русский', value: 'ru', icon: RussiaFlagIcon },
     { name: 'Español', value: 'sp', icon: SpainFlagIcon },
-    { name: 'Türkçe', value: 'tu', icon: TurkeyFlagIcon },
-    { name: 'English', value: 'en-gb', icon: UkFlagIcon },
-    { name: 'Tiếng Việt', value: 've', icon: VietnameseFlagIcon },
+    { name: 'Türkçe', value: 'tr', icon: TurkeyFlagIcon },
+    { name: 'English', value: 'en', icon: UkFlagIcon },
+    { name: 'Tiếng Việt', value: 'vi', icon: VietnameseFlagIcon },
 ];
 
 export const languageNames = Object.fromEntries(

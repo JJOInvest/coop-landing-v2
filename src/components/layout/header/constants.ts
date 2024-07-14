@@ -6,23 +6,23 @@ interface MenuItem {
 
 export const headerMenuItems: MenuItem[] = [
     {
-        text: 'layout.navbar.main',
+        text: 'dashboard',
         href: '/',
     },
     {
-        text: 'layout.navbar.invest',
+        text: 'invest',
         href: '/invest/33961919663385',
     },
     {
-        text: 'layout.navbar.price',
+        text: 'prices',
         href: '/price',
     },
     {
-        text: 'layout.navbar.ƒaq',
+        text: 'help',
         href: '/help',
     },
     {
-        text: 'layout.navbar.blog',
+        text: 'blog',
         href: 'https://blog.jjo.finance/',
         isExternal: true,
     },

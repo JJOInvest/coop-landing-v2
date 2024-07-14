@@ -22,50 +22,50 @@ const pricePlans: PricePlan[] = [
     {
         name: 'FREE',
         price: '0.0',
-        markKey: 'price.plans.free.mark',
+        markKey: 'forever',
         advantageKeys: [
-            'price.plans.advantages.only-1',
-            'price.plans.advantages.index-jjo-only',
-            'price.plans.advantages.max-500',
-            'price.plans.advantages.personal-support',
+            'connecting_no_more_than',
+            'access_only_to_the_index',
+            'maximum_investment_amount',
+            'personal_support',
         ],
     },
     {
         name: 'ULTRA-6',
         price: '13.33',
-        markKey: 'price.plans.ultra-6.mark',
+        markKey: 'six_month_subscription_for',
         advantageKeys: [
-            'price.plans.advantages.no-limit',
-            'price.plans.advantages.all-indexes',
-            'price.plans.advantages.index-create',
-            'price.plans.advantages.rebalance',
-            'price.plans.advantages.backtests',
-            'price.plans.advantages.max-no-limit',
-            'price.plans.advantages.referal-jjo',
-            'price.plans.advantages.personal-support',
+            'connecting_all_exchanges_without_limitation',
+            'access_to_all_indexes',
+            'creating_an_unlimited_number',
+            'threshold_rebalancing',
+            'unlimited_backtesting',
+            'the_maximum_investment_amount',
+            'access_to_the_jjoreferral_program',
+            'personal_support',
         ],
         label: {
             color: '#4a6ee2',
-            textKey: 'price.popular',
+            textKey: 'popular',
         },
     },
     {
         name: 'ULTRA-12',
         price: '11.66',
-        markKey: 'price.plans.ultra-12.mark',
+        markKey: 'twelve_month_subscription_for',
         advantageKeys: [
-            'price.plans.advantages.no-limit',
-            'price.plans.advantages.all-indexes',
-            'price.plans.advantages.index-create',
-            'price.plans.advantages.rebalance',
-            'price.plans.advantages.backtests',
-            'price.plans.advantages.max-no-limit',
-            'price.plans.advantages.referal-jjo',
-            'price.plans.advantages.personal-support',
+            'connecting_all_exchanges_without_limitation',
+            'access_to_all_indexes',
+            'creating_an_unlimited_number',
+            'threshold_rebalancing',
+            'unlimited_backtesting',
+            'the_maximum_investment_amount',
+            'access_to_the_jjoreferral_program',
+            'personal_support',
         ],
         label: {
             color: '#f94162',
-            textKey: 'price.profitable',
+            textKey: 'savings',
         },
     },
 ];
@@ -102,7 +102,7 @@ export const PricePlans = () => {
                     <div className="flex gap-2 items-end mt-7">
                         <p className="text-5xl">{`$${t(pricePlan.price)}`}</p>
                         {Number(pricePlan.price) !== 0 && (
-                            <p className="text-[16px]/normal">{`/${t('price.month')}`}</p>
+                            <p className="text-[16px]/normal">{`/${t('1 месяц')}`}</p>
                         )}
                     </div>
                     <p
@@ -119,7 +119,7 @@ export const PricePlans = () => {
                         block
                         variant="outline"
                     >
-                        {t(pricePlan.name === 'FREE' ? 'price.try-free' : 'price.connect')}
+                        {t(pricePlan.name === 'FREE' ? 'Попробовать бесплатно' : 'connect')}
                     </Button>
 
                     <div className="flex flex-col gap-2 mt-6">

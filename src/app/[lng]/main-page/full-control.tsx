@@ -56,10 +56,10 @@ export async function FullControl() {
                 <div className="lg:max-w-[670px]">
                     <div className="flex flex-col gap-6 lg:gap-8">
                         <h2 className="text-2xl lg:text-5xl/tight font-medium lg:max-w-[85%]">
-                            {t('full-control.title')}
+                            {t('full_control')}
                         </h2>
                         <p className="text-[16px]/snug lg:leading-normal">
-                            {t('full-control.description')}
+                            {t('no_fund_transfer')}
                         </p>
                     </div>
 

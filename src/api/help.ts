@@ -83,7 +83,7 @@ export async function helpCenterRequest<T>({
         retryOn: [429],
     });
 
-    let localePath = locale === 'ru' ? locale : 'en-GB';
+    let localePath = locale === 'ru' ? locale : 'en-gb';
 
     if (search) localePath = '';
 

@@ -22,16 +22,16 @@ export const ResetDone = () => {
 
     return (
         <div className="px-8 lg:px-16 py-6 lg:py-10 w-full flex flex-col gap-6 items-center">
-            <h3 className="font-semibold text-xl text-center">{t('auth.form.password-changed')}</h3>
+            <h3 className="font-semibold text-xl text-center">{t('password_changed')}</h3>
 
             <Image src={EmailIcon} alt="email" />
 
             <p className="max-w-72 text-[15px] font-light text-center">
-                {t('auth.form.can-login')}
+                {t('congratulations_new_password')}
             </p>
 
             <Button className="mt-4" block onClick={handleClick} type="button">
-                {t('auth.form.button')}
+                {t('login')}
             </Button>
         </div>
     );

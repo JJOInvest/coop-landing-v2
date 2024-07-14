@@ -22,7 +22,7 @@ export default async function InvestLayout({ children }: Props) {
                         <InvestMenu />
                     </div>
                     <Button className="mt-2 lg:mt-4 lg:block hidden" block>
-                        {t('invest.button')}
+                        {t('Постройте свое финансовое будущее')}
                     </Button>
                 </div>
 

@@ -16,10 +16,10 @@ export async function PotentialGrow() {
 
             <div className="container flex flex-col">
                 <h2 className="text-2xl lg:text-5xl font-medium lg:text-center">
-                    {t('potential.title')}
+                    {t('see_your_growth_potential')}
                 </h2>
                 <p className="text-lg lg:text-xl lg:text-center mt-6 font-normal opacity-80">
-                    {t('potential.description')}
+                    {t('the_average')}
                 </p>
                 <div className="my-8 py-2 px-4 text-[16px] font-bold bg-opacity-20 bg-white text-white flex gap-2 rounded-md justify-center self-center">
                     <Image src={JJO} alt={"j'jo"} />
@@ -29,7 +29,7 @@ export async function PotentialGrow() {
                 <Calculator />
 
                 <p className="mt-8 lg:mt-6 text-center text-xs/snug lg:text-[16px] lg:leading-normal font-light">
-                    {t('potential.remark')}
+                    *{t('calculator_and_chart')}
                 </p>
             </div>
         </section>

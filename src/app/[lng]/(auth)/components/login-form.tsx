@@ -67,7 +67,7 @@ export const LoginForm = () => {
                         id="email"
                         register={register}
                         labels={{
-                            main: t('auth.form.email'),
+                            main: t('email_address'),
                         }}
                     />
                     <TextInput
@@ -75,20 +75,20 @@ export const LoginForm = () => {
                         register={register}
                         type="password"
                         labels={{
-                            main: t('auth.form.password'),
+                            main: t('password'),
                         }}
                     />
                 </div>
 
                 <Button className="mt-10" block disabled={!formState.isValid} type="submit">
-                    {t('auth.form.button')}
+                    {t('login')}
                 </Button>
 
                 <Link
                     href="/password-reset"
                     className="mt-5 mx-auto text-grey-100 text-sm font-light"
                 >
-                    {t('auth.form.forgot-password')}
+                    {t('forgot_password')}
                 </Link>
             </form>
         </>

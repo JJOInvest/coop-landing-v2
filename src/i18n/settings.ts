@@ -12,9 +12,9 @@ export const languages = [
     'ko',
     'pi',
     'sp',
-    'tu',
-    'en-gb',
-    've',
+    'tr',
+    'en',
+    'vi',
 ];
 export const defaultNS = 'translation';
 export const cookieName = 'language';

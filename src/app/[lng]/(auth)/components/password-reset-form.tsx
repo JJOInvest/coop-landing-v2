@@ -74,7 +74,7 @@ export const PasswordResetForm = () => {
                 </button>
 
                 <h3 className="mx-auto text-xl font-medium -translate-x-4">
-                    {t('auth.form.forgot-password')}
+                    {t('forgot_password')}
                 </h3>
             </div>
 
@@ -85,13 +85,13 @@ export const PasswordResetForm = () => {
                     id="email"
                     register={register}
                     labels={{
-                        main: t('auth.form.email'),
+                        main: t('email_address'),
                     }}
                 />
             </div>
 
             <Button className="mt-4" block disabled={!formState.isValid} type="submit">
-                {t('auth.form.go-on')}
+                {t('continue')}
             </Button>
         </form>
     );
