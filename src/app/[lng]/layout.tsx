@@ -6,7 +6,7 @@ import localFont from 'next/font/local';
 import { ReactNode } from 'react';
 
 import { Footer } from '@/components/layout/footer';
-import { Header } from '@/components/layout/header/desktop';
+import { Header } from '@/components/layout/header';
 import { I18nProvider } from '@/i18n/i18n-context';
 import { getServerTranslations } from '@/i18n/server';
 import { languages } from '@/i18n/settings';
