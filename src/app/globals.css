@@ -58,3 +58,26 @@ input[type=number] {
 .zendesk-content h2 {
     @apply text-black-120 font-semibold text-2xl my-6;
 }
+
+@font-face {
+    font-family: 'ArialCustom';
+    src: local('Arial');
+    ascent-override: 114.53%;
+    descent-override: 33.94%;
+    line-gap-override: 0.00%;
+    size-adjust: 93.79%;
+}
+
+/*@media not all and (min-resolution: .001dpcm) {*/
+/*    @supports (-webkit-appearance: none) {*/
+/*        .safari-only {*/
+/*            font-family: 'ArialCustom', Arial, sans-serif;*/
+/*            color: red;*/
+/*        }*/
+/*    }*/
+/*}*/
+
+/*.safari-only {*/
+/*    font-family: 'ArialCustom', Arial, sans-serif;*/
+/*}*/
+

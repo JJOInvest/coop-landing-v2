@@ -34,27 +34,27 @@ const mulish = Mulish({
 const sfPro = localFont({
     src: [
         {
-            path: '../fonts/sf-pro-display-light.woff2',
+            path: '../fonts/SF-Pro-Display-Light.otf',
             weight: '300',
             style: 'normal',
         },
         {
-            path: '../fonts/sf-pro-display-regular.woff2',
+            path: '../fonts/SF-Pro-Display-Regular.otf',
             weight: '400',
             style: 'normal',
         },
         {
-            path: '../fonts/sf-pro-display-medium.woff2',
+            path: '../fonts/SF-Pro-Display-Medium.otf',
             weight: '500',
             style: 'normal',
         },
         {
-            path: '../fonts/sf-pro-display-semibold.woff2',
+            path: '../fonts/SF-Pro-Display-Semibold.otf',
             weight: '600',
             style: 'normal',
         },
         {
-            path: '../fonts/sf-pro-display-bold.woff2',
+            path: '../fonts/SF-Pro-Display-Bold.otf',
             weight: '700',
             style: 'normal',
         },
@@ -86,7 +86,14 @@ export default async function RootLayout({ children, params: { lng } }: Props) {
         <I18nProvider language={lng}>
             <ReactQueryProvider>
                 <html lang={lng} dir={dir(lng)} data-theme="jjo">
-                    <body className={cn([sfPro.className, cormorant.className, mulish.variable])}>
+                    <body
+                        className={cn([
+                            sfPro.className,
+                            cormorant.className,
+                            mulish.variable,
+                            'safari-only',
+                        ])}
+                    >
                         <Header />
                         <main>{children}</main>
                         <Footer />
