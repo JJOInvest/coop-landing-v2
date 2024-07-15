@@ -1,3 +1,4 @@
+import cn from 'classnames';
 import Image from 'next/image';
 import { InputHTMLAttributes, SyntheticEvent, useState } from 'react';
 import { RegisterOptions, UseFormRegister } from 'react-hook-form';
@@ -14,6 +15,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
         alt?: string;
     };
     startAdornment?: string;
+    error?: string;
 }
 
 export const TextInput = ({
@@ -23,6 +25,7 @@ export const TextInput = ({
     registerOptions,
     startAdornment,
     type,
+    error,
     ...inputProps
 }: Props) => {
     const [currentType, setCurrentType] = useState(type ?? 'text');
@@ -39,7 +42,11 @@ export const TextInput = ({
                 <span>{labels?.main}</span>
                 <span>{labels?.alt}</span>
             </div>
-            <label className="relative input input-bordered flex items-center gap-2  h-[52px]">
+            <label
+                className={cn('relative input input-bordered flex items-center gap-2 h-[52px]', {
+                    'border-red-600': error,
+                })}
+            >
                 {startAdornment && (
                     <div className="text-primary-400 font-medium">{startAdornment}</div>
                 )}
@@ -62,6 +69,7 @@ export const TextInput = ({
                     </button>
                 )}
             </label>
+            {error && <div className="text-red-600 text-sm mt-1">{error}</div>}
         </div>
     );
 };

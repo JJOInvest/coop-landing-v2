@@ -3,8 +3,8 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
 import Link from 'next/link';
-import { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
+import { useEffect, useState } from 'react';
+import { useForm, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 
@@ -15,14 +15,15 @@ import { Button } from '@/components/button';
 import { TextInput } from '@/components/text-input';
 
 const schema = z.object({
-    email: z.string().email(),
-    password: z.string().min(1),
+    email: z.string().email('email_must_be_valid').nonempty('enter_email'),
+    password: z.string().nonempty('password_is_required'),
 });
 
 type FormData = z.infer<typeof schema>;
 
 export const LoginForm = () => {
     const { t } = useTranslation();
+    const [error, setError] = useState<string | null>(null);
 
     const step = useStepStore((state) => state.data.step);
     const setAuthData = useAuthStore((state) => state.setData);
@@ -35,7 +36,12 @@ export const LoginForm = () => {
         }
     }, [setStepData]);
 
-    const { register, handleSubmit, formState } = useForm<FormData>({
+    const {
+        control,
+        handleSubmit,
+        formState: { errors, isValid },
+    } = useForm<FormData>({
+        mode: 'onChange',
         reValidateMode: 'onChange',
         resolver: zodResolver(schema),
     });
@@ -48,6 +54,7 @@ export const LoginForm = () => {
             }),
         onError: () => {
             console.log('Error during login');
+            setError(t('wrong_username_and_or_password'));
         },
     });
 
@@ -70,29 +77,43 @@ export const LoginForm = () => {
                 onSubmit={handleSubmit(onSubmit)}
             >
                 <div className="flex flex-col gap-5">
-                    <TextInput
-                        id="email"
-                        register={register}
-                        labels={{
-                            main: t('email_address'),
-                        }}
+                    <Controller
+                        name="email"
+                        control={control}
+                        render={({ field }) => (
+                            <TextInput
+                                id="email"
+                                {...field}
+                                labels={{
+                                    main: t('email_address'),
+                                }}
+                                error={errors.email?.message}
+                            />
+                        )}
                     />
-                    <TextInput
-                        id="password"
-                        register={register}
-                        type="password"
-                        labels={{
-                            main: t('password'),
-                        }}
+                    <Controller
+                        name="password"
+                        control={control}
+                        render={({ field }) => (
+                            <TextInput
+                                id="password"
+                                {...field}
+                                type="password"
+                                labels={{
+                                    main: t('password'),
+                                }}
+                                error={errors.password?.message}
+                            />
+                        )}
                     />
                 </div>
+                {error && (
+                    <div className="mt-4 rounded-md bg-red-100 text-center text-red-600 text-sm leading-tight p-2">
+                        {error}
+                    </div>
+                )}
 
-                <Button
-                    className="mt-10 font-semibold"
-                    block
-                    disabled={!formState.isValid}
-                    type="submit"
-                >
+                <Button className="mt-10 font-semibold" block disabled={!isValid} type="submit">
                     {t('login')}
                 </Button>
 
