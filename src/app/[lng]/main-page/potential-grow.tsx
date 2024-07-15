@@ -19,7 +19,7 @@ export async function PotentialGrow() {
                     {t('see_your_growth_potential')}
                 </h2>
                 <p className="text-lg lg:text-xl lg:text-center mt-6 font-normal opacity-80">
-                    {t('the_average')}
+                    {t('the_average')}.
                 </p>
                 <div className="my-8 py-2 px-4 text-[16px] font-bold bg-opacity-20 bg-white text-white flex gap-2 rounded-md justify-center self-center">
                     <Image src={JJO} alt={"j'jo"} />

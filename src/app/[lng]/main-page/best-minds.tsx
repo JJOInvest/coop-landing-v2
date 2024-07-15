@@ -18,7 +18,7 @@ export async function BestMinds() {
                 <div className="flex flex-col gap-6 lg:gap-8 lg:max-w-[570px] w-full lg:items-center">
                     <h2 className="text-2xl lg:text-5xl/tight font-medium">{t('top_minds')}</h2>
                     <p className="text-[16px]/snug text-grey-slate lg:text-lg/normal">
-                        {t('experience_analysis')}
+                        {t('experience_analysis')}.
                     </p>
                     <Button className="mt-2 lg:self-start" arrow>
                         {t('learn_more')}

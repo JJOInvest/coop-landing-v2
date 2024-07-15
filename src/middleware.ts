@@ -7,7 +7,9 @@ acceptLanguage.languages(languages);
 
 export const config = {
     // matcher: '/:lng*'
-    matcher: ['/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js|site.webmanifest).*)'],
+    matcher: [
+        '/((?!api|_next/static|_next/image|public|assets|favicon.ico|sw.js|site.webmanifest).*)',
+    ],
 };
 
 export function middleware(req: NextRequest) {
@@ -31,7 +33,8 @@ export function middleware(req: NextRequest) {
 
     if (
         !languages.some((loc) => req.nextUrl.pathname.startsWith(`/${loc}`)) &&
-        !req.nextUrl.pathname.startsWith('/_next')
+        !req.nextUrl.pathname.startsWith('/_next') &&
+        !req.nextUrl.pathname.startsWith('/static')
     ) {
         return NextResponse.redirect(new URL(`/${lng}${req.nextUrl.pathname}`, req.url));
     }

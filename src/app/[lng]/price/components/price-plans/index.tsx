@@ -102,7 +102,7 @@ export const PricePlans = () => {
                     <div className="flex gap-2 items-end mt-7">
                         <p className="text-5xl">{`$${t(pricePlan.price)}`}</p>
                         {Number(pricePlan.price) !== 0 && (
-                            <p className="text-[16px]/normal">{`/${t('one_month')}`}</p>
+                            <p className="text-[16px]/normal">{`/ ${t('one_month')}`}</p>
                         )}
                     </div>
                     <p

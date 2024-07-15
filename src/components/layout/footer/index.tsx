@@ -20,25 +20,25 @@ const socialMedias = [
     { icon: TwitterIcon, href: 'https://twitter.com/jjo_media' },
 ];
 
-const links = [
-    { href: '/', text: 'dashboard' },
-    { href: '/invest/33961919663385', text: 'invest' },
-    { href: '/price', text: 'prices' },
-    { href: '/help', text: 'help' },
-    { href: 'https://blog.jjo.finance/', text: 'blog' },
-    {
-        href: 'https://dashboard.jjo.finance/docs/privacy-policy-jjo.pdf?_gl=1*1jzm9qy*crossdomain_ga*MjA3NTI3MTc0MC4xNzA4NzcxNTc1*crossdomain_ga_WXJ9H0E4GB*MTcyMDc5MDM3NS4zMTAuMS4xNzIwNzkwNDIwLjE1LjAuMA..',
-        text: 'privacy_policy',
-    },
-    {
-        href: 'https://dashboard.jjo.finance/docs/terms-of-use-jjo.pdf?_gl=1*peeuuv*crossdomain_ga*MjA3NTI3MTc0MC4xNzA4NzcxNTc1*crossdomain_ga_WXJ9H0E4GB*MTcyMDc5MDM3NS4zMTAuMS4xNzIwNzkwNDA0LjMxLjAuMA..',
-        text: 'terms_of_use',
-    },
-    { href: '/documents/cookie-policy-jjo.pdf', text: 'cookie_policy' },
-];
-
 export const Footer = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+
+    const links = [
+        { href: '/', text: 'dashboard' },
+        { href: `/${i18n.language}/invest/33961919663385`, text: 'invest' },
+        { href: '/price', text: 'price' },
+        { href: `/${i18n.language}/help`, text: 'help' },
+        { href: 'https://blog.jjo.finance/', text: 'blog' },
+        {
+            href: 'https://dashboard.jjo.finance/docs/privacy-policy-jjo.pdf?_gl=1*1jzm9qy*crossdomain_ga*MjA3NTI3MTc0MC4xNzA4NzcxNTc1*crossdomain_ga_WXJ9H0E4GB*MTcyMDc5MDM3NS4zMTAuMS4xNzIwNzkwNDIwLjE1LjAuMA..',
+            text: 'privacy_policy',
+        },
+        {
+            href: 'https://dashboard.jjo.finance/docs/terms-of-use-jjo.pdf?_gl=1*peeuuv*crossdomain_ga*MjA3NTI3MTc0MC4xNzA4NzcxNTc1*crossdomain_ga_WXJ9H0E4GB*MTcyMDc5MDM3NS4zMTAuMS4xNzIwNzkwNDA0LjMxLjAuMA..',
+            text: 'terms_of_use',
+        },
+        { href: '/static/cookie-policy-jjo.pdf', text: 'cookie_policy' },
+    ];
 
     return (
         <footer className="bg-black pt-20 pb-10 lg:pb-20">
@@ -46,10 +46,14 @@ export const Footer = () => {
                 <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
                     <div>
                         <Image src={JJOIcon} alt={"j'jo"} />
-                        <div className="hidden lg:flex mt-32 rounded-xl py-2.5 px-4 bg-white bg-opacity-10 items-center text-white gap-2 text-xs">
+                        <Link
+                            href="https://skynet.certik.com/projects/jjo"
+                            target="_blank"
+                            className="hidden lg:flex mt-32 rounded-xl py-2.5 px-4 bg-white bg-opacity-10 items-center text-white gap-2 text-xs"
+                        >
                             <Image src={SecurityImage} alt="security" />
                             {t('security_report_2023')}
-                        </div>
+                        </Link>
                     </div>
 
                     <div className="flex justify-between lg:justify-center lg:gap-24">
@@ -87,6 +91,7 @@ export const Footer = () => {
                                     key={k}
                                     href={socialMedia.href}
                                     className="flex items-center justify-center bg-white rounded-full w-10 h-10"
+                                    target="_blank"
                                 >
                                     <Image src={socialMedia.icon} alt={socialMedia.href} />
                                 </Link>
