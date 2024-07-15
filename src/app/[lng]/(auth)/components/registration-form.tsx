@@ -83,10 +83,7 @@ export const RegistrationForm = () => {
             <Switcher />
             <Stepper activeIndex={1} />
             <div className="text-center font-semibold text-xl">{t('create_new_account')}</div>
-            <form
-                className="px-8 lg:px-16 py-6 lg:pb-10 lg:pt-6 w-full flex flex-col"
-                onSubmit={handleSubmit(onSubmit)}
-            >
+            <form className="auth-form w-full" onSubmit={handleSubmit(onSubmit)}>
                 <div className="flex flex-col gap-5">
                     <TextInput
                         id="email"

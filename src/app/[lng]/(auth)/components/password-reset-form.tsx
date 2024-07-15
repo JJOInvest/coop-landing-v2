@@ -61,10 +61,7 @@ export const PasswordResetForm = () => {
     }
 
     return (
-        <form
-            className="mx-16 my-8 flex flex-col gap-5 items-center"
-            onSubmit={handleSubmit(onSubmit)}
-        >
+        <form className="auth-form gap-5 items-center" onSubmit={handleSubmit(onSubmit)}>
             <div className="flex items-center w-full">
                 <button
                     className="bg-neutral-100 rounded-full h-8 w-8 flex items-center justify-center"
