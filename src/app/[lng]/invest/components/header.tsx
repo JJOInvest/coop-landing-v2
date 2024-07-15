@@ -10,7 +10,11 @@ export async function InvestHeader() {
     return (
         <div className="w-screen bg-investArticle">
             <div className="container py-[90px] relative flex flex-col gap-6 lg:flex-row lg:justify-between">
-                <Image src={Blob} alt="" className="absolute bottom-0 right-80 translate-y-1/2" />
+                <Image
+                    src={Blob}
+                    alt=""
+                    className="absolute bottom-0 right-10 lg:right-80 translate-y-1/2 z-10"
+                />
 
                 <div className="text-[32px]/snug font-medium lg:text-[64px] leading-[1.2] max-w-[500px]">
                     {t('build_financial_future')}
