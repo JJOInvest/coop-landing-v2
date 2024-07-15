@@ -10,7 +10,7 @@ export async function InvestCalculator() {
 
     return (
         <div>
-            <div className="mb-6 text-center font-bold text-black-100">{t('the_average')}</div>
+            <div className="mb-6 text-center font-bold text-black-100">{t('the_average')}.</div>
             <div className="flex items-center justify-center">
                 <div className="my-8 py-2 px-4 text-[16px] font-bold bg-opacity-20 bg-white gap-2 justify-center self-center mx-auto inline-flex rounded-md bg-investAvgProfit p-0.5">
                     <Image src={JJO} alt={"j'jo"} />

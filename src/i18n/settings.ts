@@ -23,7 +23,7 @@ export const getOptions = (lng = fallbackLng, ns: string | string[] = defaultNS)
     return {
         debug: false,
         supportedLngs: languages,
-        // preload: languages,
+        preload: languages,
         fallbackLng,
         lng,
         fallbackNS: defaultNS,
