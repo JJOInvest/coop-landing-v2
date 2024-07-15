@@ -11,7 +11,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 export const Checkbox = ({ id, registerOptions, register, label, ...inputProps }: Props) => {
     return (
         <div className="my-2">
-            <label className="cursor-pointer flex items-start gap-1.5">
+            <label className="cursor-pointer flex items-start gap-2.5">
                 <input
                     type="checkbox"
                     className="mt-1 checkbox checkbox-xs [--chkfg:white] [--chkbg:#4E75F6] checked:shadow-checkbox rounded"
