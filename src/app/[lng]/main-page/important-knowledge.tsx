@@ -31,7 +31,7 @@ export async function ImportantKnowledge() {
                     <h2 className="text-2xl font-medium lg:text-5xl">{t('important_to_know')}</h2>
                     <p className="text-[16p]/snug lg:text-lg font-light">{t('jjo_function')}</p>
                     <Button className="invert lg:invert-0" arrow>
-                        {t('register')}
+                        {t('sign_up')}
                     </Button>
                 </div>
             </div>

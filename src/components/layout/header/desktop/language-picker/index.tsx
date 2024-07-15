@@ -28,7 +28,11 @@ export const LanguagePicker = () => {
         <div className="relative" ref={ref}>
             <button
                 onClick={handleClick}
-                className="flex items-center gap-3 h-10 border-solid border-[1px] border-black border-opacity-5 px-4 rounded-lg"
+                className="
+                    flex items-center gap-3 h-10 border-solid border-[1px]
+                    border-black border-opacity-5 hover:border-opacity-20 px-4 rounded-lg
+                    transition-all duration-300
+                "
             >
                 <Image src={languageIcons[currentLanguage as string]} alt="" />
                 <Image

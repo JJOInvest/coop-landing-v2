@@ -7,6 +7,7 @@ import { Diagram, GetStartedStep } from '@/app/[lng]/main-page/diagram';
 import { Button } from '@/components/button';
 
 import './progress.css';
+import { useMediaMatch } from 'rooks';
 
 interface Step {
     name: GetStartedStep;
@@ -38,6 +39,7 @@ const stepsDescriptions = {
 
 export function HowItWorks() {
     const { t } = useTranslation();
+    const isMobile = useMediaMatch('(max-width: 1024px)');
 
     const [step, setStep] = useState<GetStartedStep>('register');
 
@@ -89,8 +91,8 @@ export function HowItWorks() {
                                         <svg
                                             className="circle-chart"
                                             viewBox="0 0 33.83098862 33.83098862"
-                                            width="60"
-                                            height="60"
+                                            width={isMobile ? 40 : 60}
+                                            height={isMobile ? 40 : 60}
                                             xmlns="http://www.w3.org/2000/svg"
                                         >
                                             <circle

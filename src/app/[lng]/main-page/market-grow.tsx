@@ -20,7 +20,7 @@ export async function MarketGrow() {
                         {t('crypto_market_growth_potential')}
                     </h2>
                     <p className="text-[16px]/snug text-grey-slate lg:text-lg/normal">
-                        {t('tech_growth_interest')}
+                        {t('tech_growth_interest')}.
                     </p>
                     <Button className="mt-2 lg:self-start" arrow>
                         Узнать больше

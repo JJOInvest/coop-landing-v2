@@ -25,7 +25,7 @@ export async function SimpleApproach() {
                         {t('a_simple_approach')}
                     </h2>
                     <p className="text-[16px]/snug lg:text-lg/normal font-normal w-full lg:max-w-[570px] text-grey-slate">
-                        {t('jjo_doea_not')}
+                        {t('no_special_knowledge')}
                     </p>
                     <Button className="mt-2 lg:self-start" arrow>
                         {t('learn_more')}

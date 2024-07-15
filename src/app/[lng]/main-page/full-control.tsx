@@ -59,7 +59,7 @@ export async function FullControl() {
                             {t('full_control')}
                         </h2>
                         <p className="text-[16px]/snug lg:leading-normal">
-                            {t('no_fund_transfer')}
+                            {t('no_fund_transfer')}.
                         </p>
                     </div>
 
@@ -78,7 +78,7 @@ export async function FullControl() {
                 <Image
                     src={RobotImage}
                     alt="robot"
-                    className="rounded-xl mt-16 lg:m-0 max-w-[370px]"
+                    className="rounded-xl mt-16 mx-auto max-w-[325px] lg:m-0 lg:max-w-[370px]"
                 />
             </div>
         </section>
