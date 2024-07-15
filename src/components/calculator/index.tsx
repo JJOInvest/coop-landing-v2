@@ -31,7 +31,11 @@ const defaultFormData: FormData = {
     period: 5,
 };
 
-export const Calculator = () => {
+interface Props {
+    small?: boolean;
+}
+
+export const Calculator = ({ small }: Props) => {
     const { t } = useTranslation();
 
     const { register, watch, handleSubmit } = useForm({
@@ -156,7 +160,14 @@ export const Calculator = () => {
 
                 <div className={styles.blockWrapper} data-block="chart">
                     <Chart data={chartData || []} appliedPeriod={2} />
-                    <div className="bg-primary-100 rounded-xl py-2 px-11 text-black-80 text-sm text-center mx-5">
+                    <div
+                        className={cn(
+                            'bg-primary-100 rounded-xl py-2 px-11 text-black-80 text-sm text-center mx-5',
+                            {
+                                'text-xs px-6': small,
+                            },
+                        )}
+                    >
                         {t('growth_potential_chart')}
                     </div>
                 </div>
