@@ -5,7 +5,7 @@ import { CategoryItem } from '@/app/[lng]/help/components/category-item';
 import { getServerTranslations } from '@/i18n/server';
 
 interface Props {
-    children: ReactNode;
+    children?: ReactNode;
 }
 
 export async function CategoriesList({ children }: Props) {
@@ -16,7 +16,7 @@ export async function CategoriesList({ children }: Props) {
     return (
         <div className="flex flex-col gap-6 lg:w-[270px]">
             {sections.map((category, index) => (
-                <CategoryItem key={category.id} defaultOpened={index === 0} {...category}>
+                <CategoryItem {...category} key={category.id} defaultOpened={index === 0}>
                     {children}
                 </CategoryItem>
             ))}

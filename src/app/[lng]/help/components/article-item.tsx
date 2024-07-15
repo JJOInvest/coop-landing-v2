@@ -1,5 +1,6 @@
 import cn from 'classnames';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { ReactNode, useState } from 'react';
 
 interface Props {
@@ -12,7 +13,7 @@ interface Props {
 }
 
 export const ArticleItem = ({ article, children, articleIdUrl }: Props) => {
-    const [isOpened, setIsOpened] = useState(true);
+    const [isOpened, setIsOpened] = useState(false || articleIdUrl === article.id.toString());
     const toggleOpened = () => setIsOpened((isOpened) => !isOpened);
 
     return (
@@ -30,7 +31,9 @@ export const ArticleItem = ({ article, children, articleIdUrl }: Props) => {
             >
                 {article.name}
                 {article.id.toString() === articleIdUrl && isOpened && (
-                    <div id="target-element">{children}</div>
+                    <div className="lg:hidden" id="target-element">
+                        {children}
+                    </div>
                 )}
             </div>
             <div className="relative border-black/5 rounded-full border-[1px] h-6 min-w-6 lg:hidden self-start mt-4">
