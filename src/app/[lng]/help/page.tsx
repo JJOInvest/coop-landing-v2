@@ -5,12 +5,12 @@ import { CategoryBody } from '@/app/[lng]/help/components/category-body';
 import { LayoutHelp } from '@/app/[lng]/help/components/layoutHelp';
 import { getServerTranslations } from '@/i18n/server';
 
-export async function generateMetadata(): Promise<Metadata> {
-    const { t } = await getServerTranslations();
-    return {
-        title: t('help'),
-    };
-}
+// export async function generateMetadata(): Promise<Metadata> {
+//     const { t } = await getServerTranslations();
+//     return {
+//         title: t('help'),
+//     };
+// }
 
 interface Props {
     params: {
