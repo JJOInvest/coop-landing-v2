@@ -1,0 +1,44 @@
+.circle-chart circle {
+    box-sizing: border-box;
+    opacity: 0.1;
+}
+
+.circle-chart__circle {
+    transform: rotate(-90deg);
+    transform-origin: center;
+    stroke: #000;
+}
+
+.slick-active .circle-chart {
+    opacity: 1;
+}
+
+.slick-active .circle-chart__circle {
+    animation: circle-chart-fill 7s reverse;
+    animation-timing-function: linear;
+}
+
+.second-btn {
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+@keyframes circle-chart-fill {
+    to {
+        stroke-dasharray: 0 100;
+    }
+}
+
+.circle-chart {
+    opacity: 1;
+}
+
+.circle-chart__circle {
+    animation: circle-chart-fill 7s reverse;
+    animation-timing-function: linear;
+    stroke: #FF7F57;
+}
+
+.circle-chart circle {
+    opacity: 1;
+}
