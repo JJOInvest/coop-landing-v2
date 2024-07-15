@@ -17,7 +17,7 @@ export async function StartWhenever() {
                         {t('all_you_need')}
                     </p>
                     <Button className="mt-2" arrow>
-                        {t('start_now')}
+                        {t('try_for_free')}
                     </Button>
                 </div>
             </section>
