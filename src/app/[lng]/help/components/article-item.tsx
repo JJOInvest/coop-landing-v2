@@ -31,7 +31,9 @@ export const ArticleItem = ({ article, children, articleIdUrl }: Props) => {
             >
                 {article.name}
                 {article.id.toString() === articleIdUrl && isOpened && (
-                    <div id="target-element">{children}</div>
+                    <div className="lg:hidden" id="target-element">
+                        {children}
+                    </div>
                 )}
             </div>
             <div className="relative border-black/5 rounded-full border-[1px] h-6 min-w-6 lg:hidden self-start mt-4">

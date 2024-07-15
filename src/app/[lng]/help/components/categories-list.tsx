@@ -5,7 +5,7 @@ import { CategoryItem } from '@/app/[lng]/help/components/category-item';
 import { getServerTranslations } from '@/i18n/server';
 
 interface Props {
-    children: ReactNode;
+    children?: ReactNode;
 }
 
 export async function CategoriesList({ children }: Props) {
