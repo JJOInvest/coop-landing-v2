@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useMediaMatch } from 'rooks';
 
 import { Diagram, GetStartedStep } from '@/app/[lng]/main-page/diagram';
 import { Button } from '@/components/button';
 
 import './progress.css';
-import { useMediaMatch } from 'rooks';
 
 interface Step {
     name: GetStartedStep;

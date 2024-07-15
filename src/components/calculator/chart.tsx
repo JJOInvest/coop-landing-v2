@@ -32,7 +32,7 @@ export const Chart = ({ data, appliedPeriod }: Props) => {
                 {payload.map(({ value, color }) => (
                     <div className="flex items-center gap-2 text-xs text-primary-400" key={value}>
                         <div className="size-2.5 rounded-xl" style={{ background: color }} />
-                        <div>{t(value)}</div>
+                        <div>{value === 'investment' ? t('investments') : t(value)}</div>
                     </div>
                 ))}
             </div>
