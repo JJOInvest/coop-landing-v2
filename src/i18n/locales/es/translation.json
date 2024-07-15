@@ -119,6 +119,13 @@
     "start_anytime": "Puedes comenzar cuando quieras. ¡Por ejemplo, ahora mismo!",
     "start_now": "Comienza ahora",
     "security_report_2023": "Informe de seguridad 2023",
-    "one_month": "1 mes"
+    "one_month": "1 mes",
+    "start_investing_now": "Comienza a invertir ahora",
+    "index_investing_growth": "Invertir en un índice permite al inversor crecer con el mercado. El reequilibrio automático, que actualiza la composición del índice de acuerdo con los cambios en el mercado de criptomonedas, es otra herramienta del servicio JJO que mejora la eficiencia de sus inversiones.",
+    "years_number": "(1)[año];(2-4)[años];(5-inf)[años];",
+    "start_investing_cryptocurrency": "Comienza a invertir en el creciente mercado de criptomonedas sin conocimientos especiales y pérdida de tiempo, utilizando carteras de índices listas para usar.",
+    "warren_buffet_strategy": "El multimillonario Warren Buffett sigue esta estrategia de inversión de bajo costo que cualquiera puede probar.",
+    "financial_professionals_choose": "Incluso los profesionales financieros eligen la inversión indexada para sus ahorros.",
+    "index_funds_recommended": "Los fondos indexados son la herramienta de inversión más recomendada por Warren Buffett para los inversores individuales."
 
 }
