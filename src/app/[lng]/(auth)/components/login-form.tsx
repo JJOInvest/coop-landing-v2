@@ -65,10 +65,7 @@ export const LoginForm = () => {
     return (
         <>
             <Switcher />
-            <form
-                className="px-8 lg:px-16 py-6 lg:py-10 w-full flex flex-col"
-                onSubmit={handleSubmit(onSubmit)}
-            >
+            <form className="auth-form w-full" onSubmit={handleSubmit(onSubmit)}>
                 <div className="flex flex-col gap-5">
                     <TextInput
                         id="email"

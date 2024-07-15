@@ -39,7 +39,7 @@ export const TextInput = ({
                 <span>{labels?.main}</span>
                 <span>{labels?.alt}</span>
             </div>
-            <label className="relative input input-bordered flex items-center gap-2  h-[52px]">
+            <label className="relative input input-bordered flex items-center gap-2 h-[52px]">
                 {startAdornment && (
                     <div className="text-primary-400 font-medium">{startAdornment}</div>
                 )}

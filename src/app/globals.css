@@ -20,11 +20,11 @@ body {
     @apply lg:max-w-[1170px] mx-auto max-w-full px-6 lg:px-0 h-full;
 }
 
-.input {
+.input, .select {
     @apply text-black-100 font-semibold outline-0;
 }
 
-.input:focus, .input:focus-within {
+.input:focus, .input:focus-within, .select:focus, .select:focus-within {
     @apply outline-0;
 }
 
@@ -59,3 +59,7 @@ input[type=number] {
     @apply text-black-120 font-semibold text-2xl my-6;
 }
 
+
+.auth-form {
+    @apply px-5 lg:px-16 py-10 flex flex-col;
+}
