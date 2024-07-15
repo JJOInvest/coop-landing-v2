@@ -8,7 +8,7 @@ export async function StartWhenever() {
         <div className="relative">
             <div className="absolute bg-black hidden lg:block h-32 w-screen bottom-0 left-0 -z-20" />
 
-            <section className="py-32 lg:mx-20 lg:rounded-xl bg-start-whenever">
+            <section className="py-20 lg:py-32 lg:mx-20 lg:rounded-xl bg-start-whenever">
                 <div className="container flex flex-col gap-8 lg:items-center">
                     <h3 className="text-3xl font-medium lg:text-5xl lg:text-center lg:max-w-[760px]">
                         {t('start_anytime')}

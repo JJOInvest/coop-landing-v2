@@ -31,7 +31,7 @@ export async function News() {
 
     return (
         <div>
-            <div className="flex gap-x-7">
+            <div className="flex flex-col lg:flex-row gap-12 lg:gap-x-7">
                 {links.map((link, index) => (
                     <Link
                         className="flex flex-col gap-y-5 flex-1"
@@ -43,7 +43,7 @@ export async function News() {
                             <Image src={link.image} alt={link.title} />
                         </div>
                         <div>{t(link.title)}</div>
-                        <div className="flex gap-2 items-center mt-auto uppercase text-[13px] font-bold">
+                        <div className="flex gap-2 items-center mt-auto uppercase text-[13px] font-bold mt-12">
                             {t('more_details')}
                             <Image src={arrow} width={16} height={16} alt="arrow" />
                         </div>
