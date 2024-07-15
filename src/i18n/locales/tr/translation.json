@@ -119,5 +119,12 @@
     "start_anytime": "İstediğiniz zaman başlayabilirsiniz. Örneğin, hemen şimdi!",
     "start_now": "Şimdi başla",
     "security_report_2023": "2023 Güvenlik Raporu",
-    "one_month": "1 ay"
+    "one_month": "1 ay",
+    "start_investing_now": "Şimdi yatırım yapmaya başlayın",
+    "index_investing_growth": "Bir endekse yatırım yapmak, yatırımcının piyasayla birlikte büyümesini sağlar. Kripto para piyasasındaki değişikliklere göre endeks bileşimini güncelleyen otomatik yeniden dengeleme, yatırımlarınızın verimliliğini artıran JJO hizmetinin bir başka aracıdır.",
+    "years_number": "(1)[yıl];(2-4)[yıl];(5-inf)[yıl];",
+    "start_investing_cryptocurrency": "Özel bilgi ve zaman kaybı olmadan, hazır endeks portföylerini kullanarak büyüyen kripto para piyasasına yatırım yapmaya başlayın.",
+    "warren_buffet_strategy": "Milyarder Warren Buffett, herkesin deneyebileceği bu düşük maliyetli yatırım stratejisine bağlı kalıyor.",
+    "financial_professionals_choose": "Finansal profesyoneller bile birikimleri için endeks yatırımını tercih ediyor.",
+    "index_funds_recommended": "Endeks fonları, Warren Buffett tarafından bireysel yatırımcılara en çok önerilen yatırım aracıdır."
 }

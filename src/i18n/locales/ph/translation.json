@@ -119,5 +119,12 @@
     "start_anytime": "Maaari kang magsimula kahit kailan mo gusto. Halimbawa, ngayon na!",
     "start_now": "Simulan na ngayon",
     "security_report_2023": "Ulat sa seguridad 2023",
-    "one_month": "1 buwan"
+    "one_month": "1 buwan",
+    "start_investing_now": "Simulan na ang pag-invest ngayon",
+    "index_investing_growth": "Ang pamumuhunan sa isang index ay nagpapahintulot sa mamumuhunan na lumago kasama ang merkado. Ang awtomatikong rebalancing, na nag-a-update ng komposisyon ng index ayon sa mga pagbabago sa merkado ng cryptocurrency, ay isa pang tool ng serbisyo ng JJO na nagpapataas ng kahusayan ng iyong mga pamumuhunan.",
+    "years_number": "(1)[taon];(2-4)[taon];(5-inf)[taon];",
+    "start_investing_cryptocurrency": "Simulan ang pag-invest sa lumalagong merkado ng cryptocurrency nang walang espesyal na kaalaman at pagkawala ng oras, gamit ang mga handang index na portfolio.",
+    "warren_buffet_strategy": "Ang bilyonaryong si Warren Buffett ay sumusunod sa murang investment strategy na ito na maaaring subukan ng kahit sino.",
+    "financial_professionals_choose": "Maging ang mga propesyonal sa pananalapi ay pumipili ng index investing para sa kanilang mga ipon.",
+    "index_funds_recommended": "Ang mga index fund ang pinakainirerekomendang investment tool ni Warren Buffett para sa mga indibidwal na mamumuhunan."
 }

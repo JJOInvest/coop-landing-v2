@@ -87,7 +87,12 @@ export const LoginForm = () => {
                     />
                 </div>
 
-                <Button className="mt-10" block disabled={!formState.isValid} type="submit">
+                <Button
+                    className="mt-10 font-semibold"
+                    block
+                    disabled={!formState.isValid}
+                    type="submit"
+                >
                     {t('login')}
                 </Button>
 

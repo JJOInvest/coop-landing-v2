@@ -7,6 +7,7 @@ import { ChangeEventHandler, FormEventHandler, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { authApi } from '@/api/auth';
+import { Countdown } from '@/app/[lng]/(auth)/components/countdown';
 import { Stepper } from '@/app/[lng]/(auth)/components/stepper';
 import {
     useAuthStore,
@@ -122,27 +123,39 @@ export const AuthConfirm = () => {
                 className="px-8 lg:px-16 py-6 lg:py-10 w-full flex flex-col"
                 onSubmit={handleSubmit}
             >
-                <div className="text-[16px]/normal flex flex-col gap-1 mx-auto">
-                    <p>{t('enter_code')}</p>
-                    <p className="text-blue-100">{authData.email}</p>
+                <div className="text-[16px]/normal flex flex-col gap-1 mx-auto text-center">
+                    <div className="text-xl font-semibold mb-6">{t('confirm_email')}</div>
+                    <div className="text-black-80">{t('enter_code')}</div>
+                    <div className="text-blue-200">{authData.email}</div>
                 </div>
 
-                <div className="flex items-center gap-5 mx-auto max-w-full mt-6" ref={textBase}>
+                <div
+                    className="flex items-center gap-2 lg:gap-5 mx-auto max-w-full mt-6"
+                    ref={textBase}
+                >
                     {new Array(OPT_LENGTH).fill(null).map((_, index) => {
                         return (
                             <input
                                 key={index}
                                 type="number"
                                 onChange={focusNext}
-                                className="border-[1px] rounded-xl border-grey-60 px-5 w-min max-w-16 py-6 text-[32px] text-center"
+                                className="
+                                    input input-bordered
+                                    border rounded-xl border-grey-60 flex-1
+                                    text-[32px] leading-none max-w-[60px] h-20
+                                    focus-visible:border-blue-200 px-5
+                                 "
                             />
                         );
                     })}
                 </div>
 
-                <Button className="mt-10" block disabled={!isValid} type="submit">
+                <Button className="mt-10" small block disabled={!isValid} type="submit">
                     {t('login')}
                 </Button>
+                <div className="text-center mt-5 text-15 text-grey-100 leading-5">
+                    {t('resend_code')} <Countdown />
+                </div>
             </form>
         </>
     );

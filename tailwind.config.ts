@@ -27,6 +27,9 @@ const config: Config = {
                     sans: ['var(--font-sf-pro)'],
                 },
             },
+            fontSize: {
+                15: '15px',
+            },
             gradientColorStops: {},
             colors: {
                 background: '#F7F7F7',
@@ -69,6 +72,7 @@ const config: Config = {
                     60: '#b8c8fb',
                     100: '#9ea8df',
                     120: '#3862EF',
+                    200: '#4E75F6',
                     400: '#6079fd',
                     800: '#3862ef',
                     900: '#1d2a3e',

@@ -119,6 +119,13 @@
     "start_anytime": "Vous pouvez commencer quand vous voulez. Par exemple, dès maintenant!",
     "start_now": "Commencez maintenant",
     "security_report_2023": "Rapport de sécurité 2023",
-    "one_month": "1 mois"
-
+    "one_month": "1 mois",
+    "start_investing_now": "Commencez à investir maintenant",
+    "index_investing_growth": "Investir dans un indice permet à l'investisseur de croître avec le marché. Le rééquilibrage automatique, qui met à jour la composition de l'indice en fonction des changements sur le marché des cryptomonnaies, est un autre outil du service JJO qui améliore l'efficacité de vos investissements.",
+    "years_number": "(1)[an];(2-4)[ans];(5-inf)[ans];",
+    "start_investing_cryptocurrency": "Commencez à investir dans le marché des cryptomonnaies en pleine croissance sans connaissances particulières ni perte de temps, en utilisant des portefeuilles d'indices prêts à l'emploi.",
+    "warren_buffet_strategy": "Le milliardaire Warren Buffett adhère à cette stratégie d'investissement à faible coût que tout le monde peut essayer.",
+    "financial_professionals_choose": "Même les professionnels de la finance choisissent l'investissement indiciel pour leurs économies.",
+    "index_funds_recommended": "Les fonds indiciels sont l'outil d'investissement le plus recommandé par Warren Buffett pour les investisseurs individuels."
 }
+

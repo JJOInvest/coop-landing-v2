@@ -62,7 +62,7 @@ export const PasswordResetForm = () => {
 
     return (
         <form
-            className="mx-16 my-8 flex flex-col gap-6 items-center"
+            className="mx-16 my-8 flex flex-col gap-5 items-center"
             onSubmit={handleSubmit(onSubmit)}
         >
             <div className="flex items-center w-full">
@@ -73,12 +73,12 @@ export const PasswordResetForm = () => {
                     <Image src={ArrowDown} alt="arrow down" className="invert rotate-90 h-4" />
                 </button>
 
-                <h3 className="mx-auto text-xl font-medium -translate-x-4">
+                <div className="mx-auto text-xl text-black-100 font-medium -translate-x-4">
                     {t('forgot_password')}
-                </h3>
+                </div>
             </div>
 
-            <Image src={PasswordIcon} alt="password" />
+            <Image src={PasswordIcon} alt="password" className="mt-3" />
 
             <div className="w-full">
                 <TextInput
@@ -90,7 +90,7 @@ export const PasswordResetForm = () => {
                 />
             </div>
 
-            <Button className="mt-4" block disabled={!formState.isValid} type="submit">
+            <Button className="mt-5 lg:h-[52px]" block disabled={!formState.isValid} type="submit">
                 {t('continue')}
             </Button>
         </form>

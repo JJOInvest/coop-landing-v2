@@ -16,9 +16,7 @@ export async function InvestHeader() {
                     {t('build_financial_future')}
                 </div>
                 <p className="text-black/60 text-lg max-w-96 pr-5">
-                    {t(
-                        'Начните инвестировать в растущий рынок криптовалют без специальных знаний и потери времени, используя готовые индексные портфели.',
-                    )}
+                    {t('start_investing_cryptocurrency')}
                 </p>
                 <Button className="mt-2 lg:hidden" block>
                     {t('build_financial_future')}

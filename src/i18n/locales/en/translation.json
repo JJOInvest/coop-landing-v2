@@ -119,6 +119,13 @@
     "start_anytime": "You can start whenever you want. For example, right now!",
     "start_now": "Start now",
     "security_report_2023": "Security report 2023",
-    "one_month": "1 month"
+    "one_month": "1 month",
+    "start_investing_now": "Start investing now",
+    "index_investing_growth": "Investing in an index allows the investor to grow with the market. Automatic rebalancing, which updates the index composition according to changes in the cryptocurrency market, is another tool of the JJO service that enhances the efficiency of your investments.",
+    "years_number": "(1)[year];(2-4)[years];(5-inf)[years];",
+    "start_investing_cryptocurrency": "Start investing in the growing cryptocurrency market without special knowledge and time loss, using ready-made index portfolios.",
+    "warren_buffet_strategy": "Billionaire Warren Buffett adheres to this low-cost investment strategy that anyone can try.",
+    "financial_professionals_choose": "Even financial professionals choose index investing for their savings.",
+    "index_funds_recommended": "Index funds are the most recommended investment tool by Warren Buffett for individual investors."
 }
 

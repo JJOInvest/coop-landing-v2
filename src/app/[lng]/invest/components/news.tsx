@@ -10,17 +10,17 @@ import forbes from '../assets/forbes.png';
 
 const links = [
     {
-        title: 'Миллиардер Уоррен Баффет придерживается этой недорогой стратегии инвестирования, которую может попробовать каждый',
+        title: 'warren_buffet_strategy',
         href: 'https://www.cnbc.com/2022/10/03/billionaire-warren-buffett-swears-by-this-inexpensive-investing-strategy-that-anyone-can-try.html',
         image: cnbc,
     },
     {
-        title: 'Даже финансовые профессионалы выбирают индексное инвестирование для своих сбережений',
+        title: 'financial_professionals_choose',
         href: 'https://www.bloomberg.com/news/articles/2015-04-29/even-financial-pros-choose-indexing-for-retirement-savings?leadSource=uverify%20wall',
         image: bloomberg,
     },
     {
-        title: 'Индексные фонды - это наиболее рекомендуемый Уорреном Баффетом инвестиционный инструмент для частных инвесторов',
+        title: 'index_funds_recommended',
         href: 'https://www.forbes.com/sites/camilomaldonado/2018/09/11/5-reasons-you-should-include-index-funds-in-your-401k-or-ira/?sh=2b2477f6fd67',
         image: forbes,
     },
@@ -50,12 +50,7 @@ export async function News() {
                     </Link>
                 ))}
             </div>
-            <div className="mt-10 text-[#1D1D1B] opacity-60">
-                Инвестирование в индекс позволяет инвестору расти вместе с рынком. Автоматическая
-                ребалансировка, которая обновляет состав индекса в соответствии с изменениями на
-                рынке криптовалют, это еще один инструмент сервиса JJO, который повышает
-                эффективность ваших инвестиций.
-            </div>
+            <div className="mt-10 text-[#1D1D1B] opacity-60">{t('index_investing_growth')}</div>
         </div>
     );
 }

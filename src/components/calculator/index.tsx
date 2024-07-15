@@ -118,7 +118,11 @@ export const Calculator = ({ small }: Props) => {
                                 {t('investment_period')}
                             </span>
                             <span className="text-black-100 font-semibold">
-                                {Number(period)} лет
+                                {Number(period)}{' '}
+                                {t('years_number', {
+                                    count: Number(period),
+                                    postProcess: 'interval',
+                                })}
                             </span>
                         </div>
                         <input
