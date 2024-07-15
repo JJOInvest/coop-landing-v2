@@ -44,7 +44,7 @@ input[type=number] {
 }
 
 .zendesk-content p, .zendesk-content li {
-    @apply my-8 text-black/60 text-base;
+    @apply my-8 text-black/60 text-base font-light;
 }
 
 .zendesk-content li {
@@ -58,3 +58,4 @@ input[type=number] {
 .zendesk-content h2 {
     @apply text-black-120 font-semibold text-2xl my-6;
 }
+

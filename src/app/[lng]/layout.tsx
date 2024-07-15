@@ -86,7 +86,14 @@ export default async function RootLayout({ children, params: { lng } }: Props) {
         <I18nProvider language={lng}>
             <ReactQueryProvider>
                 <html lang={lng} dir={dir(lng)} data-theme="jjo">
-                    <body className={cn([sfPro.className, cormorant.className, mulish.variable])}>
+                    <body
+                        className={cn([
+                            sfPro.className,
+                            cormorant.className,
+                            mulish.variable,
+                            'safari-only',
+                        ])}
+                    >
                         <Header />
                         <main>{children}</main>
                         <Footer />

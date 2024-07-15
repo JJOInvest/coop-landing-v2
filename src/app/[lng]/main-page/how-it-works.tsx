@@ -123,7 +123,7 @@ export function HowItWorks() {
                                         <h5 className="text-xl lg:text-[22px]/snug">
                                             {t(stepsHeaders[s.name])}
                                         </h5>
-                                        <p className="text-neutral-400 text-[16px]/snug mt-2 lg:text-lg">
+                                        <p className="text-grey-light text-[16px]/snug mt-2 lg:text-lg">
                                             {t(stepsDescriptions[s.name])}
                                         </p>
                                     </div>
