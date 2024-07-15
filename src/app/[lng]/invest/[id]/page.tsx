@@ -1,13 +1,10 @@
 import { Metadata } from 'next';
-import Image from 'next/image';
 
 import { getArticle } from '@/api/help';
+import { InvestCalculator } from '@/app/[lng]/invest/[id]/components/invest-calculator';
 import { News } from '@/app/[lng]/invest/components/news';
 import { investPagesIds } from '@/app/[lng]/invest/constants';
-import { Calculator } from '@/components/calculator';
 import { detectLanguage } from '@/i18n/server';
-
-import JJO from '@/assets/jjo.svg';
 
 interface Props {
     params: {
@@ -46,18 +43,7 @@ export default async function Page({ params }: Props) {
                 dangerouslySetInnerHTML={{ __html: article.body }}
             />
             {params.id === '33181283962009' && <News />}
-            {params.id === '33181863366425' && (
-                <div>
-                    <div className="mb-6 text-center font-bold text-black-100">the_average</div>
-                    <div className="flex items-center justify-center">
-                        <div className="my-8 py-2 px-4 text-[16px] font-bold bg-opacity-20 bg-white flex gap-2 rounded-md justify-center self-center mx-auto inline-flex rounded-md bg-investAvgProfit p-0.5">
-                            <Image src={JJO} alt={"j'jo"} />
-                            <span>+212 %</span>
-                        </div>
-                    </div>
-                    <Calculator />
-                </div>
-            )}
+            {params.id === '33181863366425' && <InvestCalculator />}
         </div>
     );
 }

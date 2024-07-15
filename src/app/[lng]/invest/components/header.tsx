@@ -13,7 +13,7 @@ export async function InvestHeader() {
                 <Image src={Blob} alt="" className="absolute bottom-0 right-80 translate-y-1/2" />
 
                 <div className="text-[32px]/snug font-medium lg:text-[64px] leading-[1.2] max-w-[500px]">
-                    {t('Постройте свое финансовое будущее')}
+                    {t('build_financial_future')}
                 </div>
                 <p className="text-black/60 text-lg max-w-96 pr-5">
                     {t(
@@ -21,7 +21,7 @@ export async function InvestHeader() {
                     )}
                 </p>
                 <Button className="mt-2 lg:hidden" block>
-                    {t('Постройте свое финансовое будущее')}
+                    {t('build_financial_future')}
                 </Button>
             </div>
         </div>

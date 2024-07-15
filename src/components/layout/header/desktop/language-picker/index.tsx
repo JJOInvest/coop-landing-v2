@@ -1,8 +1,8 @@
 'use client';
 
 import cn from 'classnames';
-import i18next from 'i18next';
 import Image from 'next/image';
+import { useParams } from 'next/navigation';
 import { useState } from 'react';
 import { useOutsideClickRef } from 'rooks';
 
@@ -12,6 +12,10 @@ import { languageIcons } from '@/i18n/languages';
 import { LanguageMenu } from './language-menu';
 
 export const LanguagePicker = () => {
+    const params = useParams();
+
+    const currentLanguage = params?.lng ?? 'ru';
+
     const [isOpened, setIsOpened] = useState(false);
 
     const handleClick = () => setIsOpened((isOpened) => !isOpened);
@@ -26,7 +30,7 @@ export const LanguagePicker = () => {
                 onClick={handleClick}
                 className="flex items-center gap-3 h-10 border-solid border-[1px] border-black border-opacity-5 px-4 rounded-lg"
             >
-                <Image src={languageIcons[i18next.language]} alt="arrow" />
+                <Image src={languageIcons[currentLanguage as string]} alt="" />
                 <Image
                     src={ArrowIcon}
                     alt="arrow"

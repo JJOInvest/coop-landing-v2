@@ -4,7 +4,7 @@ import cn from 'classnames';
 import i18next from 'i18next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useParams, usePathname, useRouter } from 'next/navigation';
 import { forwardRef } from 'react';
 
 import { languages } from '@/i18n/languages';
@@ -12,6 +12,9 @@ import { languages } from '@/i18n/languages';
 // eslint-disable-next-line react/display-name
 export const LanguageMenu = forwardRef<HTMLDivElement>((_, ref) => {
     const path = usePathname();
+    const params = useParams();
+
+    const currentLanguage = params?.lng ?? 'ru';
 
     return (
         <div
@@ -29,13 +32,13 @@ export const LanguageMenu = forwardRef<HTMLDivElement>((_, ref) => {
                         className={cn(
                             'flex items-center gap-3 min-w-40 h-12 pl-3 rounded-xl border-[1px] transition-all',
                             {
-                                'bg-blue-10 border-blue-60': language.value === i18next.language,
+                                'bg-blue-10 border-blue-60': language.value === currentLanguage,
                                 'border-transparent hover:bg-black-10 hover:border-black/20':
-                                    language.value !== i18next.language,
+                                    language.value !== currentLanguage,
                             },
                         )}
                     >
-                        <Image src={language.icon} alt={i18next.language} />
+                        <Image src={language.icon} alt="" />
                         <span className="w-full text-left text-sm/tight">{language.name}</span>
                     </Link>
                 ))}

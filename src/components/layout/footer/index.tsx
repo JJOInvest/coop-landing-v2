@@ -48,7 +48,7 @@ export const Footer = () => {
                         <Image src={JJOIcon} alt={"j'jo"} />
                         <div className="hidden lg:flex mt-32 rounded-xl py-2.5 px-4 bg-white bg-opacity-10 items-center text-white gap-2 text-xs">
                             <Image src={SecurityImage} alt="security" />
-                            {t('Отчет о безопасности 2023')}
+                            {t('security_report_2023')}
                         </div>
                     </div>
 
@@ -82,9 +82,9 @@ export const Footer = () => {
                         <LanguagePicker />
 
                         <div className="flex items-center justify-between">
-                            {socialMedias.map((socialMedia) => (
+                            {socialMedias.map((socialMedia, k) => (
                                 <Link
-                                    key={socialMedia.href}
+                                    key={k}
                                     href={socialMedia.href}
                                     className="flex items-center justify-center bg-white rounded-full w-10 h-10"
                                 >
