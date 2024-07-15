@@ -16,7 +16,7 @@ export async function CategoriesList({ children }: Props) {
     return (
         <div className="flex flex-col gap-6 lg:w-[270px]">
             {sections.map((category, index) => (
-                <CategoryItem key={category.id} defaultOpened={index === 0} {...category}>
+                <CategoryItem {...category} key={category.id} defaultOpened={index === 0}>
                     {children}
                 </CategoryItem>
             ))}

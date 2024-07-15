@@ -7,5 +7,5 @@ interface Props {
 }
 
 export default async function ArticleLayout({ children }: Props) {
-    return <LayoutHelp forArticles>{children}</LayoutHelp>;
+    return <div>{children}</div>;
 }

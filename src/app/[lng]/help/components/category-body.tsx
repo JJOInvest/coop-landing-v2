@@ -13,9 +13,8 @@ export async function CategoryBody({ articles }: Props) {
         <div className="flex flex-col gap-6 lg:gap-8">
             <h3 className="text-[28px]/tight lg:text-4xl">{t('С чего начать?')}</h3>
             <div className="flex flex-col">
-                {articles.map((article) => (
-                    <CategoryQuestion key={article.id} {...article} />
-                ))}
+                {articles &&
+                    articles.map((article) => <CategoryQuestion key={article.id} {...article} />)}
             </div>
         </div>
     );

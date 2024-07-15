@@ -1,5 +1,3 @@
-import { useTranslation } from 'react-i18next';
-
 import { getArticle, getSectionArticles, getSections } from '@/api/help';
 import ArticleLayout from '@/app/[lng]/help/[id]/article-layout';
 

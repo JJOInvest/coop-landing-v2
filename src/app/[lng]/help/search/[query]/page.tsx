@@ -13,9 +13,5 @@ export default async function Page({ params }: Props) {
     const locale = params.lng;
     const decodedQuery = decodeURIComponent(params.query);
     const articles = await searchArticles({ query: decodedQuery, locale, pageSize: 25 });
-    return (
-        <LayoutHelp>
-            <SearchResult articles={articles} query={decodedQuery} />
-        </LayoutHelp>
-    );
+    return <SearchResult articles={articles} query={decodedQuery} />;
 }

@@ -1,5 +1,6 @@
 import cn from 'classnames';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { ReactNode, useState } from 'react';
 
 interface Props {
@@ -12,7 +13,7 @@ interface Props {
 }
 
 export const ArticleItem = ({ article, children, articleIdUrl }: Props) => {
-    const [isOpened, setIsOpened] = useState(true);
+    const [isOpened, setIsOpened] = useState(false || articleIdUrl === article.id.toString());
     const toggleOpened = () => setIsOpened((isOpened) => !isOpened);
 
     return (
