@@ -85,7 +85,7 @@ export const ResetFinishForm = () => {
                 className="px-8 lg:px-16 py-6 lg:py-10 w-full flex flex-col"
                 onSubmit={handleSubmit(onSubmit)}
             >
-                <h3 className="font-semibold text-xl text-center">{t('create_password')}</h3>
+                <h3 className="font-semibold text-xl text-center">{t('create_new_password')}</h3>
 
                 <div className="flex flex-col gap-5 mt-6">
                     <TextInput
