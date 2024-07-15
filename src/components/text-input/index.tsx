@@ -36,7 +36,7 @@ export const TextInput = ({
         setCurrentType((currentType) => (currentType === 'password' ? 'text' : 'password'));
     };
 
-    console.log('for pull request');
+    console.log('for pull request[2}');
 
     return (
         <div>
