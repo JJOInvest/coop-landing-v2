@@ -90,6 +90,7 @@ export function HowItWorks() {
                                             strokeWidth={2}
                                             styles={buildStyles({
                                                 // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+                                                pathTransition: '7s',
                                                 strokeLinecap: 'butt',
                                                 // Text size
                                                 textSize: '32px',
