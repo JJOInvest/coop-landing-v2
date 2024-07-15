@@ -17,7 +17,7 @@ export async function Hero() {
     const { t } = await getServerTranslations();
 
     return (
-        <section className="h-screen w-screen pt-14">
+        <section className="h-screen w-screen pt-14 relative">
             <div className="container flex flex-col items-center justify-center max-h-[65%] relative z-10">
                 <h1 className="max-w-full lg:max-w-[544px] lg:text-5xl/tight text-3xl/snug font-medium lg:text-center">
                     {t('growth_starts_here')}

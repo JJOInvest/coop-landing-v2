@@ -1,17 +1,16 @@
-'use client';
-
 import cn from 'classnames';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
-import { useTranslation } from 'react-i18next';
 
 import { investPages } from '@/app/[lng]/invest/constants';
+import { getServerTranslations } from '@/i18n/server';
 
-export function InvestMenu() {
-    const params = useParams();
+interface Props {
+    id: string;
+}
 
-    const articleId = parseInt(params.id as any, 10);
-    const { t, i18n } = useTranslation();
+export async function InvestMenu({ id }: Props) {
+    const articleId = parseInt(id as any, 10);
+    const { t, i18n } = await getServerTranslations();
 
     return (
         <div className="py-12 text-white flex flex-col gap-4 pr-8 bg-invest">
@@ -34,7 +33,7 @@ export function InvestMenu() {
                         })}
                     />
 
-                    {item.title}
+                    {t(item.title)}
                 </Link>
             ))}
         </div>

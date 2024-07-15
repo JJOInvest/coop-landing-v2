@@ -14,7 +14,7 @@ export const headerMenuItems: MenuItem[] = [
         href: '/invest/33961919663385',
     },
     {
-        text: 'prices',
+        text: 'price',
         href: '/price',
     },
     {

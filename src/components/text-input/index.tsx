@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { InputHTMLAttributes, useState } from 'react';
+import { InputHTMLAttributes, SyntheticEvent, useState } from 'react';
 import { RegisterOptions, UseFormRegister } from 'react-hook-form';
 
 import EyeOf from '@/assets/password/eye-off.svg';
@@ -27,8 +27,11 @@ export const TextInput = ({
 }: Props) => {
     const [currentType, setCurrentType] = useState(type ?? 'text');
     const isPassword = type === 'password';
-    const togglePasswordShow = () =>
+
+    const togglePasswordShow = (e: SyntheticEvent) => {
+        e.preventDefault();
         setCurrentType((currentType) => (currentType === 'password' ? 'text' : 'password'));
+    };
 
     return (
         <div>

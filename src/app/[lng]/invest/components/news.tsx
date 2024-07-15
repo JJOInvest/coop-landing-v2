@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { getServerTranslations } from '@/i18n/server';
+
 import arrow from '../assets/arrow.png';
 import bloomberg from '../assets/bloomberg.png';
 import cnbc from '../assets/cnbc.png';
@@ -24,7 +26,9 @@ const links = [
     },
 ];
 
-export const News = () => {
+export async function News() {
+    const { t } = await getServerTranslations();
+
     return (
         <div>
             <div className="flex gap-x-7">
@@ -38,9 +42,9 @@ export const News = () => {
                         <div className="flex items-center border border-[#F1F1F1] py-5 px-10 rounded-xl h-[180px]">
                             <Image src={link.image} alt={link.title} />
                         </div>
-                        <div>{link.title}</div>
+                        <div>{t(link.title)}</div>
                         <div className="flex gap-2 items-center mt-auto uppercase text-[13px] font-bold">
-                            Подробнее
+                            {t('more_details')}
                             <Image src={arrow} width={16} height={16} alt="arrow" />
                         </div>
                     </Link>
@@ -54,4 +58,4 @@ export const News = () => {
             </div>
         </div>
     );
-};
+}

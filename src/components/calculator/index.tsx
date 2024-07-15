@@ -3,6 +3,7 @@
 import cn from 'classnames';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 
 import { TextInput } from '@/components/text-input';
 
@@ -31,6 +32,8 @@ const defaultFormData: FormData = {
 };
 
 export const Calculator = () => {
+    const { t } = useTranslation();
+
     const { register, watch, handleSubmit } = useForm({
         defaultValues: defaultFormData,
     });
@@ -67,7 +70,9 @@ export const Calculator = () => {
     const renderBalance = () => {
         return (
             <>
-                <span className="text-brand-400/80 font-medium mb-1.5">Потенциальный баланс:</span>
+                <span className="text-brand-400/80 font-medium mb-1.5">
+                    {t('projected_balance')}
+                </span>
                 <div className="flex gap-2.5 items-center text-4xl">
                     <span className="text-primary-400">$</span>
                     <span className="text-[40px] lg:text-4xl text-black-100">
@@ -89,7 +94,7 @@ export const Calculator = () => {
                         type="number"
                         startAdornment="$"
                         labels={{
-                            main: 'Стартовый депозит',
+                            main: t('initial_deposit'),
                         }}
                         register={register}
                     />
@@ -99,13 +104,15 @@ export const Calculator = () => {
                         type="number"
                         startAdornment="$"
                         labels={{
-                            main: 'Ежемесячное пополнение',
-                            alt: '(опционально)',
+                            main: t('monthly_deposit'),
+                            alt: t('optional'),
                         }}
                     />
                     <div>
                         <div className="flex items-baseline justify-between mb-2">
-                            <span className="text-sm text-brand-400/80">Инвестиционный период</span>
+                            <span className="text-sm text-brand-400/80">
+                                {t('investment_period')}
+                            </span>
                             <span className="text-black-100 font-semibold">
                                 {Number(period)} лет
                             </span>
@@ -125,7 +132,7 @@ export const Calculator = () => {
                         type="number"
                         startAdornment="%"
                         labels={{
-                            main: 'Среднегодовой % J’JO35',
+                            main: t('average'),
                         }}
                     />
                     <button
@@ -133,7 +140,7 @@ export const Calculator = () => {
                         type="submit"
                         disabled={!buttonEnabled}
                     >
-                        Рассчитать
+                        {t('calculate_')}
                     </button>
                     <div className="flex justify-center flex-col items-center md:hidden">
                         {renderBalance()}
@@ -150,9 +157,7 @@ export const Calculator = () => {
                 <div className={styles.blockWrapper} data-block="chart">
                     <Chart data={chartData || []} appliedPeriod={2} />
                     <div className="bg-primary-100 rounded-xl py-2 px-11 text-black-80 text-sm text-center mx-5">
-                        На графике показан потенциал роста инвестиций с течением времени на основе
-                        исторических данных: начальный депозит, график пополнения, период
-                        инвестирования и процентная ставка.
+                        {t('growth_potential_chart')}
                     </div>
                 </div>
             </div>

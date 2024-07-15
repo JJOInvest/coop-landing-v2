@@ -32,10 +32,6 @@ export const languages = [
     { name: 'Tiếng Việt', value: 'vi', icon: VietnameseFlagIcon },
 ];
 
-export const languageNames = Object.fromEntries(
-    languages.map((language) => [language.value, language.name]),
-);
-
 export const languageIcons = Object.fromEntries(
     languages.map((language) => [language.value, language.icon]),
 );

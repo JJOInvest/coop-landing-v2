@@ -8,9 +8,12 @@ import { getServerTranslations } from '@/i18n/server';
 
 interface Props {
     children: ReactNode;
+    params: {
+        id: string;
+    };
 }
 
-export default async function InvestLayout({ children }: Props) {
+export default async function InvestLayout({ children, params }: Props) {
     const { t } = await getServerTranslations();
 
     return (
@@ -18,13 +21,15 @@ export default async function InvestLayout({ children }: Props) {
             <InvestHeader />
             <div className="flex flex-col lg:flex-row bg-white lg:my-24 gap-7">
                 <div className="lg:max-w-[355px]">
-                    <div className="overflow-hidden lg:rounded-r-xl">
-                        <InvestMenu />
-                    </div>
-                    <div className="bg-black rounded-r-lg">
-                        <Button className="mt-2 lg:mt-4 lg:block hidden" block>
-                            {t('Постройте свое финансовое будущее')}
-                        </Button>
+                    <div className="sticky top-24">
+                        <div className="overflow-hidden lg:rounded-r-xl">
+                            <InvestMenu id={params.id} />
+                        </div>
+                        <div className="bg-black rounded-r-lg">
+                            <Button className="mt-2 lg:mt-4 lg:block hidden" block>
+                                {t('build_financial_future')}
+                            </Button>
+                        </div>
                     </div>
                 </div>
 

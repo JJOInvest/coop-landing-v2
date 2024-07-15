@@ -16,8 +16,8 @@ import {
 import { Button } from '@/components/button';
 
 const OPT_LENGTH = 4;
-//todo костыль в случае отсутствия env на тесте, попрвить
-const DASHBOARD_LINK = process.env.NEXT_PUBLIC_DOMAIN || 'https://dashboard-test.jjo.finance/';
+
+const DASHBOARD_LINK = process.env.NEXT_PUBLIC_DOMAIN;
 
 export const AuthConfirm = () => {
     const { t } = useTranslation();
@@ -39,11 +39,12 @@ export const AuthConfirm = () => {
                 code: pinCodeData.code,
             }),
         onSuccess: (data) => {
-            console.log('accessToken', data.accessToken);
             setCookie('accessToken', data.accessToken, {
                 domain: '.jjo.finance',
             });
-            router.push(DASHBOARD_LINK as string);
+            if (DASHBOARD_LINK) {
+                router.push(DASHBOARD_LINK as string);
+            }
         },
     });
 

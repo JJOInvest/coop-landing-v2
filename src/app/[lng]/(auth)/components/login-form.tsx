@@ -3,6 +3,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
@@ -23,9 +24,16 @@ type FormData = z.infer<typeof schema>;
 export const LoginForm = () => {
     const { t } = useTranslation();
 
+    const step = useStepStore((state) => state.data.step);
     const setAuthData = useAuthStore((state) => state.setData);
     const stepData = useStepStore((state) => state.data);
     const setStepData = useStepStore((state) => state.setData);
+
+    useEffect(() => {
+        if (step) {
+            setStepData({ step: null });
+        }
+    }, [setStepData]);
 
     const { register, handleSubmit, formState } = useForm<FormData>({
         reValidateMode: 'onChange',
@@ -45,7 +53,6 @@ export const LoginForm = () => {
 
     const onSubmit = async (data: FormData) => {
         await mutateAsync(data);
-        // await authApi.login(data);
 
         setAuthData(data);
         setStepData({ step: 'login-confirm' });
