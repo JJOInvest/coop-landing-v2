@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
 
 import { authApi } from '@/api/auth';
+import { COUNTRIES_LIST } from '@/app/[lng]/(auth)/components/constants';
 import { Stepper } from '@/app/[lng]/(auth)/components/stepper';
 import { Switcher } from '@/app/[lng]/(auth)/components/switcher';
 import {
@@ -25,8 +26,10 @@ const schema = z.object({
 
 type FormData = z.infer<typeof schema>;
 
+const countries = [...COUNTRIES_LIST].sort((a, b) => a.titleEn.localeCompare(b.titleEn));
+
 export const RegistrationFinishForm = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     const authData = useAuthStore((state) => state.data);
     const stepData = useStepStore((state) => state.data);
@@ -52,7 +55,8 @@ export const RegistrationFinishForm = () => {
     });
 
     const onSubmit = async (data: FormData) => {
-        await mutateAsync(data);
+        // await mutateAsync(data);
+        console.log(data);
     };
 
     if (stepData.step !== 'register-finish') {
@@ -63,10 +67,7 @@ export const RegistrationFinishForm = () => {
         <>
             <Switcher />
             <Stepper activeIndex={3} />
-            <form
-                className="px-8 lg:px-16 py-6 lg:py-10 w-full flex flex-col"
-                onSubmit={handleSubmit(onSubmit)}
-            >
+            <form className="auth-form w-full" onSubmit={handleSubmit(onSubmit)}>
                 <div className="flex flex-col gap-5">
                     <TextInput
                         id="name"
@@ -82,13 +83,22 @@ export const RegistrationFinishForm = () => {
                             main: t('last_name'),
                         }}
                     />
-                    <TextInput
-                        id="countryCodeIso"
-                        register={register}
-                        labels={{
-                            main: t('country_of_residence'),
-                        }}
-                    />
+                    <div>
+                        <div className="text-brand-400/80 text-sm flex justify-between">
+                            <span>{t('country_of_residence')}</span>
+                        </div>
+                        <select
+                            className="select select-bordered w-full max-w-xs mt-2 h-[52px]"
+                            {...register('countryCodeIso')}
+                        >
+                            <option selected value="" disabled />
+                            {countries.map((item) => (
+                                <option key={item.titleEn} value={item.codeIso}>
+                                    {item.title}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
                 </div>
                 <Button className="mt-10" block disabled={!formState.isValid} type="submit">
                     {t('complete_registration')}

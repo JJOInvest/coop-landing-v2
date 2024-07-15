@@ -119,7 +119,7 @@ export const PricePlans = () => {
                         block
                         variant="outline"
                     >
-                        {t(pricePlan.name === 'FREE' ? 'Попробовать бесплатно' : 'connect')}
+                        {t(pricePlan.name === 'FREE' ? 'try_for_free' : 'connect')}
                     </Button>
 
                     <div className="flex flex-col gap-2 mt-6">
