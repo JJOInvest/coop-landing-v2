@@ -1,11 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import { useTranslation } from 'react-i18next';
 
 import { Diagram, GetStartedStep } from '@/app/[lng]/main-page/diagram';
 import { Button } from '@/components/button';
+
+import './progress.css';
 
 interface Step {
     name: GetStartedStep;
@@ -85,21 +86,37 @@ export function HowItWorks() {
                                             {index + 1}
                                         </div>
 
-                                        <CircularProgressbar
-                                            value={s.name === step ? 75 : 0}
-                                            strokeWidth={2}
-                                            styles={buildStyles({
-                                                // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
-                                                pathTransition: '7s',
-                                                strokeLinecap: 'butt',
-                                                // Text size
-                                                textSize: '32px',
-                                                // Colors
-                                                pathColor: `#ff7f57`,
-                                                textColor: '#000',
-                                                trailColor: 'rgba(0, 0, 0, .20)',
-                                            })}
-                                        />
+                                        <svg
+                                            className="circle-chart"
+                                            viewBox="0 0 33.83098862 33.83098862"
+                                            width="60"
+                                            height="60"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <circle
+                                                className="circle-chart__background"
+                                                stroke="#000"
+                                                strokeWidth="0.5"
+                                                fill="none"
+                                                cx="16.91549431"
+                                                cy="16.91549431"
+                                                r="15.91549431"
+                                                style={{ strokeOpacity: 0.3 }}
+                                            />
+                                            {step === s.name && (
+                                                <circle
+                                                    className="circle-chart__circle"
+                                                    stroke="red"
+                                                    strokeWidth="1"
+                                                    strokeDasharray="100,100"
+                                                    strokeLinecap="round"
+                                                    fill="none"
+                                                    cx="16.91549431"
+                                                    cy="16.91549431"
+                                                    r="15.91549431"
+                                                />
+                                            )}
+                                        </svg>
                                     </div>
 
                                     <div>

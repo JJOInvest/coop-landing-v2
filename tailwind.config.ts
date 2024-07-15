@@ -22,6 +22,11 @@ const config: Config = {
     content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
     theme: {
         extend: {
+            extend: {
+                fontFamily: {
+                    sans: ['var(--font-sf-pro)'],
+                },
+            },
             gradientColorStops: {},
             colors: {
                 background: '#F7F7F7',
