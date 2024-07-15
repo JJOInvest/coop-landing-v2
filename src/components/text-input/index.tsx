@@ -36,6 +36,8 @@ export const TextInput = ({
         setCurrentType((currentType) => (currentType === 'password' ? 'text' : 'password'));
     };
 
+    console.log('for pull request');
+
     return (
         <div>
             <div className="text-brand-400/80 text-sm mb-2 flex justify-between">
