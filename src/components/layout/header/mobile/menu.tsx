@@ -28,7 +28,7 @@ export const Menu = () => {
     if (!isOpened) return null;
 
     return (
-        <div className="fixed w-screen h-screen bg-white z-30">
+        <div className="fixed w-screen h-screen bg-white z-30 top-0">
             <div className="container flex flex-col gap-6">
                 <div className="py-4 flex items-center justify-between">
                     <Image src={JJO} alt="JJO" width={52} className="invert" />
