@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import { useMediaMatch } from 'rooks';
 
 import CrossIcon from '@/assets/icons/cross.svg';
 import SearchIcon from '@/assets/icons/search.svg';
@@ -21,6 +22,8 @@ export const Search = () => {
     const [showResetButton, setShowResetButton] = useState(false);
 
     const queryValue = watch('query', '');
+
+    const isMobile = useMediaMatch('(max-width: 1024px)');
 
     useEffect(() => {
         setShowResetButton(queryValue !== '');
@@ -55,7 +58,9 @@ export const Search = () => {
             </div>
 
             <div className="bg-black">
-                <Button className="px-5 hover:text-white">{t('Поиск')}</Button>
+                <Button arrow={!isMobile} className="px-5 hover:text-white gap-8">
+                    {t('Поиск')}
+                </Button>
             </div>
         </form>
     );

@@ -11,7 +11,7 @@ export default async function Price() {
     const { t } = await getServerTranslations();
 
     return (
-        <section className="relative pt-36 pb-20 isolate">
+        <section className="relative pt-20 pb-20 isolate">
             <div className="absolute top-0 left-0 w-screen h-[60%] -z-10 bg-price" />
 
             <div className="container">
