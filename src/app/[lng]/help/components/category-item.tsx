@@ -4,7 +4,7 @@ import cn from 'classnames';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { ReactNode, useState } from 'react';
-import { isMobile } from 'react-device-detect';
+import { useMediaMatch } from 'rooks';
 
 import { SectionWithTopArticles } from '@/api/help';
 import { ArticleItem } from '@/app/[lng]/help/components/article-item';
@@ -17,6 +17,8 @@ interface Props extends SectionWithTopArticles {
 
 export const CategoryItem = ({ id, name, topArticles, children, defaultOpened }: Props) => {
     const params = useParams();
+    const isMobile = useMediaMatch('(max-width: 1024px)');
+
     const openedArticle = Boolean(
         topArticles.find((article) => article.id.toString() === params.id),
     );

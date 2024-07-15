@@ -1,6 +1,5 @@
 'use client';
 
-import { isMobile } from 'react-device-detect';
 import { useTranslation } from 'react-i18next';
 import {
     Bar,
@@ -13,6 +12,7 @@ import {
     YAxis,
 } from 'recharts';
 import type { Payload } from 'recharts/types/component/DefaultLegendContent';
+import { useMediaMatch } from 'rooks';
 
 import { ChartData } from './types';
 import { convertToInternationalCurrencySystem, getXAxisFontSize } from './utils';
@@ -24,6 +24,7 @@ interface Props {
 
 export const Chart = ({ data, appliedPeriod }: Props) => {
     const { t } = useTranslation();
+    const isMobile = useMediaMatch('(max-width: 1024px)');
 
     const renderLegend = ({ payload }: { payload: Payload[] }) => {
         return (
