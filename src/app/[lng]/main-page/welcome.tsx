@@ -16,7 +16,7 @@ const ResponseImage = dynamic(
 );
 
 export async function Welcome() {
-    const { t } = await getServerTranslations();
+    const { t, i18n } = await getServerTranslations();
 
     return (
         <div className="relative">
@@ -53,7 +53,12 @@ export async function Welcome() {
                         <p className="text-grey-slate text-[16px]/snug lg:text-lg">
                             {t('all_you_need')}
                         </p>
-                        <Button className="mt-2" arrow>
+                        <Button
+                            className="mt-2"
+                            arrow
+                            as="link"
+                            href={`/${i18n.language}/register`}
+                        >
                             {t('try_for_free')}
                         </Button>
                     </div>

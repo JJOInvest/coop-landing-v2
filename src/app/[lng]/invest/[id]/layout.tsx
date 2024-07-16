@@ -14,7 +14,7 @@ interface Props {
 }
 
 export default async function InvestLayout({ children, params }: Props) {
-    const { t } = await getServerTranslations();
+    const { t, i18n } = await getServerTranslations();
 
     return (
         <>
@@ -25,9 +25,14 @@ export default async function InvestLayout({ children, params }: Props) {
                         <div className="overflow-hidden lg:rounded-r-xl">
                             <InvestMenu id={params.id} />
                         </div>
-                        <div className="bg-black rounded-r-lg">
-                            <Button className="mt-2 lg:mt-4 lg:block hidden" block>
-                                {t('build_financial_future')}
+                        <div className="bg-black hover:bg-white rounded-r-lg">
+                            <Button
+                                className="mt-2 lg:mt-4 lg:block hidden"
+                                block
+                                as="link"
+                                href={`/${i18n.language}/register`}
+                            >
+                                {t('start_investing_now')}
                             </Button>
                         </div>
                     </div>

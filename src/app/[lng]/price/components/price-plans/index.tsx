@@ -71,7 +71,7 @@ const pricePlans: PricePlan[] = [
 ];
 
 export const PricePlans = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     return (
         <div className="container grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -118,6 +118,8 @@ export const PricePlans = () => {
                         className="mt-6 border-black border-[1px] bg-white text-black hover:border-white"
                         block
                         variant="outline"
+                        as="link"
+                        href={`/${i18n.language}/register`}
                     >
                         {t(pricePlan.name === 'FREE' ? 'try_for_free' : 'connect')}
                     </Button>
