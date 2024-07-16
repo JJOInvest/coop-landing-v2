@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 
+import { WatchVideoButton } from '@/app/[lng]/main-page/watch-video-button';
 import { Button } from '@/components/button';
 import { getServerTranslations } from '@/i18n/server';
 
@@ -14,7 +15,7 @@ const SectionBackground = dynamic(
 );
 
 export async function Hero() {
-    const { t } = await getServerTranslations();
+    const { t, i18n } = await getServerTranslations();
 
     return (
         <section className="h-screen w-screen pt-14 relative">
@@ -27,17 +28,15 @@ export async function Hero() {
                 </p>
 
                 <div className="flex gap-4 lg:gap-5 mt-8 items-center lg:flex-row-reverse flex-col lg:w-min w-full">
-                    <Button type="button" className="lg:w-72 w-full lg:justify-between" arrow>
-                        {t('try_for_free')}
-                    </Button>
                     <Button
-                        type="button"
-                        variant="outline"
-                        className="lg:w-72 w-full lg:justify-between lg:order-2"
+                        as="link"
+                        href={`/${i18n.language}/register`}
+                        className="lg:w-72 w-full lg:justify-between"
                         arrow
                     >
-                        {t('watch_video')}
+                        {t('try_for_free')}
                     </Button>
+                    <WatchVideoButton />
                 </div>
             </div>
             <SectionBackground desktop={bgDesktop} mobile={bgMobile} />

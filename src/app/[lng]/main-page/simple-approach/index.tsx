@@ -11,7 +11,7 @@ import { getServerTranslations } from '@/i18n/server';
 import { BlobIcon } from './blob-icon';
 
 export async function SimpleApproach() {
-    const { t } = await getServerTranslations();
+    const { t, i18n } = await getServerTranslations();
 
     return (
         <section className="pt-20 relative isolate overflow-hidden pb-56 lg:py-32">
@@ -27,7 +27,12 @@ export async function SimpleApproach() {
                     <p className="text-[16px]/snug lg:text-lg/normal font-normal w-full lg:max-w-[570px] text-grey-slate">
                         {t('no_special_knowledge')}
                     </p>
-                    <Button className="mt-2 lg:self-start" arrow>
+                    <Button
+                        as="link"
+                        href={`/${i18n.language}/invest/33961919663385`}
+                        className="mt-2 lg:self-start"
+                        arrow
+                    >
                         {t('learn_more')}
                     </Button>
                 </div>

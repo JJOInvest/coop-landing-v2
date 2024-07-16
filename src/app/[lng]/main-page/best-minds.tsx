@@ -8,7 +8,7 @@ import { getServerTranslations } from '@/i18n/server';
 import JJO from '@/assets/jjo.svg';
 
 export async function BestMinds() {
-    const { t } = await getServerTranslations();
+    const { t, i18n } = await getServerTranslations();
 
     return (
         <section className="pt-20 pb-40 relative overflow-hidden bg-background lg:p-0 lg:flex lg:items-center min-h-screen">
@@ -20,7 +20,12 @@ export async function BestMinds() {
                     <p className="text-[16px]/snug text-grey-slate lg:text-lg/normal">
                         {t('experience_analysis')}.
                     </p>
-                    <Button className="mt-2 lg:self-start" arrow>
+                    <Button
+                        as="link"
+                        href={`/${i18n.language}/invest/33181283962009`}
+                        className="mt-2 lg:self-start"
+                        arrow
+                    >
                         {t('learn_more')}
                     </Button>
                 </div>

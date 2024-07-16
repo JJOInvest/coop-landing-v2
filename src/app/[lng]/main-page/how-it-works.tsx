@@ -1,13 +1,18 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useMediaMatch } from 'rooks';
 
 import { Diagram, GetStartedStep } from '@/app/[lng]/main-page/diagram';
 import { Button } from '@/components/button';
 
-import './progress.css';
+const CircleChart = dynamic(
+    () => import('@/app/[lng]/main-page/circle-chart').then((mod) => mod.CircleChart),
+    {
+        ssr: false,
+    },
+);
 
 interface Step {
     name: GetStartedStep;
@@ -38,8 +43,7 @@ const stepsDescriptions = {
 };
 
 export function HowItWorks() {
-    const { t } = useTranslation();
-    const isMobile = useMediaMatch('(max-width: 1024px)');
+    const { t, i18n } = useTranslation();
 
     const [step, setStep] = useState<GetStartedStep>('register');
 
@@ -87,38 +91,7 @@ export function HowItWorks() {
                                         <div className="absolute inset-0 m-auto w-min h-min text-xl lg:text-[22px]/snug">
                                             {index + 1}
                                         </div>
-
-                                        <svg
-                                            className="circle-chart"
-                                            viewBox="0 0 33.83098862 33.83098862"
-                                            width={isMobile ? 40 : 60}
-                                            height={isMobile ? 40 : 60}
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <circle
-                                                className="circle-chart__background"
-                                                stroke="#000"
-                                                strokeWidth="0.5"
-                                                fill="none"
-                                                cx="16.91549431"
-                                                cy="16.91549431"
-                                                r="15.91549431"
-                                                style={{ strokeOpacity: 0.3 }}
-                                            />
-                                            {step === s.name && (
-                                                <circle
-                                                    className="circle-chart__circle"
-                                                    stroke="red"
-                                                    strokeWidth="1"
-                                                    strokeDasharray="100,100"
-                                                    strokeLinecap="round"
-                                                    fill="none"
-                                                    cx="16.91549431"
-                                                    cy="16.91549431"
-                                                    r="15.91549431"
-                                                />
-                                            )}
-                                        </svg>
+                                        <CircleChart isActive={step === s.name} />
                                     </div>
 
                                     <div>
@@ -133,7 +106,7 @@ export function HowItWorks() {
                             ))}
                         </div>
 
-                        <Button arrow>
+                        <Button as="link" href={`/${i18n.language}/register`} arrow>
                             <span>{t('try_for_free')}</span>
                         </Button>
                     </div>

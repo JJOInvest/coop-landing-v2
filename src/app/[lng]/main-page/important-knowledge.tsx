@@ -14,7 +14,7 @@ const SectionBackground = dynamic(
 );
 
 export async function ImportantKnowledge() {
-    const { t } = await getServerTranslations();
+    const { t, i18n } = await getServerTranslations();
 
     return (
         <section className="text-white isolate bg-cover pt-52 bg-left-top relative overflow-hidden lg:rounded-xl lg:py-32 lg:mx-20 bg-black">
@@ -30,7 +30,12 @@ export async function ImportantKnowledge() {
                 <div className="flex flex-col gap-8 lg:max-w-[50%] lg:ml-auto lg:items-start lg:pr-16">
                     <h2 className="text-2xl font-medium lg:text-5xl">{t('important_to_know')}</h2>
                     <p className="text-[16p]/snug lg:text-lg font-light">{t('jjo_function')}</p>
-                    <Button className="invert lg:invert-0" arrow>
+                    <Button
+                        as="link"
+                        href={`/${i18n.language}/register`}
+                        className="invert lg:invert-0"
+                        arrow
+                    >
                         {t('registration')}
                     </Button>
                 </div>
