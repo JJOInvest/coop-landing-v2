@@ -23,7 +23,7 @@ export async function PotentialGrow() {
                 </p>
                 <div className="my-8 py-2 px-4 text-[16px] font-bold bg-opacity-20 bg-white text-white flex gap-2 rounded-md justify-center self-center">
                     <Image src={JJO} alt={"j'jo"} />
-                    <span>+212 %</span>
+                    <span>+67 %</span>
                 </div>
 
                 <Calculator />

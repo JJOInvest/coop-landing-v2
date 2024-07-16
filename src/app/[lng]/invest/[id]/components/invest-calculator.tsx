@@ -14,7 +14,7 @@ export async function InvestCalculator() {
             <div className="flex items-center justify-center">
                 <div className="my-6 py-2 px-4 text-[16px] font-bold bg-opacity-20 bg-white gap-2 justify-center self-center mx-auto inline-flex rounded-md bg-investAvgProfit p-0.5">
                     <Image src={JJO} alt={"j'jo"} />
-                    <span>+212 %</span>
+                    <span>+67 %</span>
                 </div>
             </div>
             <Calculator small />

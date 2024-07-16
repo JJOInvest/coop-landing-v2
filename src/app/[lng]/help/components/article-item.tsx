@@ -24,7 +24,7 @@ export const ArticleItem = ({ article, children, articleIdUrl }: Props) => {
             onClick={toggleOpened}
         >
             <div
-                className={cn('font-light text-sm py-4 lg:py-0', {
+                className={cn('font-light text-sm py-4 lg:py-0 hover:text-black', {
                     'text-black font-normal': articleIdUrl === article.id.toString(),
                     'text-primary-neutral': articleIdUrl !== article.id.toString(),
                 })}
