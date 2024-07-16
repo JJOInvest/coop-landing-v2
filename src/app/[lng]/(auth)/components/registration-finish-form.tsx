@@ -55,8 +55,7 @@ export const RegistrationFinishForm = () => {
     });
 
     const onSubmit = async (data: FormData) => {
-        // await mutateAsync(data);
-        console.log(data);
+        await mutateAsync(data);
     };
 
     if (stepData.step !== 'register-finish') {
@@ -88,7 +87,7 @@ export const RegistrationFinishForm = () => {
                             <span>{t('country_of_residence')}</span>
                         </div>
                         <select
-                            className="select select-bordered w-full max-w-xs mt-2 h-[52px]"
+                            className="select select-bordered w-full max-w-[560px] mt-2 h-[52px]"
                             {...register('countryCodeIso')}
                         >
                             <option selected value="" disabled />
