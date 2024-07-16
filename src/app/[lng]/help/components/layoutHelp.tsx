@@ -21,7 +21,7 @@ export async function LayoutHelp({ children, forArticles }: Props) {
                     <div className="flex justify-between w-full items-center">
                         <div className="text-white flex flex-col gap-10 lg:max-w-[870px] flex-grow">
                             <h2 className="text-[32px]/[36px] font-medium whitespace-pre-line lg:text-7xl">
-                                {t('Вопрос?\nМы здесь, чтобы помочь')}
+                                {t('question')}
                             </h2>
                             <Search />
                         </div>
