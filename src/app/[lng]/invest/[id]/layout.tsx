@@ -27,7 +27,7 @@ export default async function InvestLayout({ children, params }: Props) {
                         </div>
                         <div className="bg-black hover:bg-white rounded-r-lg">
                             <Button
-                                className="hover:rounded-l-none mt-2 lg:mt-4 lg:block hidden duration-0"
+                                className="hover:rounded-l-none mt-2 lg:mt-4 lg:block hidden duration-0 text-center"
                                 block
                                 as="link"
                                 href={`/${i18n.language}/register`}
