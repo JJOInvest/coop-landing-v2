@@ -2,12 +2,17 @@
 
 import i18next from 'i18next';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import { ChangeEventHandler } from 'react';
 
 import ArrowDown from '@/assets/icons/arrow-down.svg';
 import { languageIcons, languages } from '@/i18n/languages';
 
 export const LanguageInput = () => {
+    const path = usePathname();
+    const router = useRouter();
+
     const handleOnChange: ChangeEventHandler<HTMLSelectElement> = (event) => {
         i18next.changeLanguage(event.target.value);
     };
@@ -27,7 +32,9 @@ export const LanguageInput = () => {
             >
                 {languages.map((language) => (
                     <option key={language.value} value={language.value}>
-                        {language.name}
+                        <Link href={`/${language.value}/${path.split('/').slice(2).join('/')}`}>
+                            {language.name}
+                        </Link>
                     </option>
                 ))}
             </select>
