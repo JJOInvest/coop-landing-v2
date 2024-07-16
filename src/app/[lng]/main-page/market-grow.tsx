@@ -8,7 +8,7 @@ import { getServerTranslations } from '@/i18n/server';
 import JJO from '@/assets/jjo.svg';
 
 export async function MarketGrow() {
-    const { t } = await getServerTranslations();
+    const { t, i18n } = await getServerTranslations();
 
     return (
         <section className="pt-20 pb-48 relative overflow-hidden lg:p-0 lg:min-h-screen lg:flex lg:items-center">
@@ -22,8 +22,13 @@ export async function MarketGrow() {
                     <p className="text-[16px]/snug text-grey-slate lg:text-lg/normal">
                         {t('tech_growth_interest')}.
                     </p>
-                    <Button className="mt-2 lg:self-start" arrow>
-                        Узнать больше
+                    <Button
+                        as="link"
+                        href={`/${i18n.language}/invest/33181863366425`}
+                        className="mt-2 lg:self-start"
+                        arrow
+                    >
+                        {t('learn_more')}
                     </Button>
                 </div>
 

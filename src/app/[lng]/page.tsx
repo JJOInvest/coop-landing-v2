@@ -7,6 +7,7 @@ import { HowItWorks } from '@/app/[lng]/main-page/how-it-works';
 import { ImportantKnowledge } from '@/app/[lng]/main-page/important-knowledge';
 import { MarketGrow } from '@/app/[lng]/main-page/market-grow';
 import { PotentialGrow } from '@/app/[lng]/main-page/potential-grow';
+import { PromoVideo } from '@/app/[lng]/main-page/promo-video';
 import { SimpleApproach } from '@/app/[lng]/main-page/simple-approach';
 import { Welcome } from '@/app/[lng]/main-page/welcome';
 
@@ -26,6 +27,7 @@ export default function Main() {
             <ImportantKnowledge />
             <HowItWorks />
             <Welcome />
+            <PromoVideo />
         </>
     );
 }

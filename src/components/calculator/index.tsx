@@ -1,15 +1,17 @@
 'use client';
 
 import cn from 'classnames';
+import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { TextInput } from '@/components/text-input';
 
-import { Chart } from './chart';
 import styles from './styles.module.css';
 import { getChartProfitData } from './utils';
+
+const Chart = dynamic(() => import('./chart').then((mod) => mod.Chart), { ssr: false });
 
 export interface ChartData {
     investment: number;
