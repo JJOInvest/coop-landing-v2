@@ -1,6 +1,7 @@
 'use client';
 
 import i18next from 'i18next';
+import { logAppDirError } from 'next/dist/server/dev/log-app-dir-error';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
@@ -15,6 +16,7 @@ export const LanguageInput = () => {
 
     const handleOnChange: ChangeEventHandler<HTMLSelectElement> = (event) => {
         i18next.changeLanguage(event.target.value);
+        router.push(`/${event.target.value}/${path.split('/').slice(2).join('/')}`);
     };
 
     return (
@@ -32,9 +34,7 @@ export const LanguageInput = () => {
             >
                 {languages.map((language) => (
                     <option key={language.value} value={language.value}>
-                        <Link href={`/${language.value}/${path.split('/').slice(2).join('/')}`}>
-                            {language.name}
-                        </Link>
+                        {language.name}
                     </option>
                 ))}
             </select>
