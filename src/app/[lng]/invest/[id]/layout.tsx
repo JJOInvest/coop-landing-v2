@@ -38,7 +38,7 @@ export default async function InvestLayout({ children, params }: Props) {
                     </div>
                 </div>
 
-                <div className="container  lg:py-20 lg:p-0 lg:max-w-[870px]">{children}</div>
+                <div className="container lg:p-0 lg:max-w-[870px]">{children}</div>
             </div>
             <StartWhenever />
         </>
