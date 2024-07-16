@@ -27,7 +27,6 @@ export default function Main() {
             <ImportantKnowledge />
             <HowItWorks />
             <Welcome />
-            <PromoVideo />
         </>
     );
 }
