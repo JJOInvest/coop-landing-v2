@@ -2,6 +2,8 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
+import { setCookie } from 'cookies-next';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { z } from 'zod';
@@ -17,6 +19,8 @@ import {
 } from '@/app/[lng]/(auth)/store/use-auth-store';
 import { Button } from '@/components/button';
 import { TextInput } from '@/components/text-input';
+
+const DASHBOARD_LINK = process.env.NEXT_PUBLIC_DOMAIN;
 
 const schema = z.object({
     name: z.string().min(1),
@@ -40,6 +44,8 @@ export const RegistrationFinishForm = () => {
         resolver: zodResolver(schema),
     });
 
+    const router = useRouter();
+
     const { mutateAsync } = useMutation({
         mutationFn: async (data: FormData) =>
             await authApi.registerFinish({
@@ -48,9 +54,18 @@ export const RegistrationFinishForm = () => {
                 surname: data.surname,
                 code: pinCodeData.code,
                 countryCodeIso: data.countryCodeIso,
+                phone: '',
             }),
         onError: () => {
             console.log('Error during login');
+        },
+        onSuccess: (data) => {
+            setCookie('accessToken', data.accessToken, {
+                domain: '.jjo.finance',
+            });
+            if (DASHBOARD_LINK) {
+                router.push(DASHBOARD_LINK as string);
+            }
         },
     });
 

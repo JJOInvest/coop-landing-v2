@@ -87,6 +87,7 @@ interface RegisterFinishParams {
     surname: string;
     name: string;
     countryCodeIso: string;
+    phone: string;
 }
 
 export interface ResetPasswordParams {
