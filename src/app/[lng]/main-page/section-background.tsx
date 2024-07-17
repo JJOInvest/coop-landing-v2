@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const SectionBackground = ({ desktop, mobile }: Props) => {
-    const isMobile = useMediaMatch('(max-width: 1024px)');
+    const isMobile = useMediaMatch('(max-width: 767px)');
 
     return (
         <Image
