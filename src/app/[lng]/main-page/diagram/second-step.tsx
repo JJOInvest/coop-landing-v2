@@ -113,15 +113,30 @@ export const SecondStep = ({ step }: Props) => {
                 fillRule="evenodd"
                 transition={{ duration: 0.4, to: thirdPathNext }}
             />
-            <motion.path
-                animate={{
-                    d: forthPathCurrent,
-                }}
-                clipRule="evenodd"
-                fill={step === 'invest' ? '#FF7F57' : '#F8F8F8'}
-                fillRule="evenodd"
-                transition={{ duration: 0.4, to: forthPathNext }}
-            />
+            <svg>
+                <defs>
+                    <linearGradient
+                        id="paint2_linear_13810_45121"
+                        x1="28"
+                        y1="0.999996"
+                        x2="263"
+                        y2="228"
+                        gradientUnits="userSpaceOnUse"
+                    >
+                        <stop stopColor="#FF7F57" />
+                        <stop offset="1" stopColor="#D8575F" />
+                    </linearGradient>
+                </defs>
+                <motion.path
+                    animate={{
+                        d: forthPathCurrent,
+                    }}
+                    clipRule="evenodd"
+                    fill={step === 'invest' ? 'url(#paint2_linear_13810_45121)' : '#F8F8F8'}
+                    fillRule="evenodd"
+                    transition={{ duration: 0.4, to: forthPathNext }}
+                />
+            </svg>
             <motion.path
                 animate={{
                     d: fifthPathCurrent,
