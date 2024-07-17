@@ -17,7 +17,7 @@ export async function ImportantKnowledge() {
     const { t, i18n } = await getServerTranslations();
 
     return (
-        <section className="text-white isolate bg-cover pt-52 bg-left-top relative overflow-hidden lg:rounded-xl lg:py-32 lg:mx-20 bg-black">
+        <section className="text-white isolate bg-cover pt-20 lg:pt-52 bg-left-top relative overflow-hidden lg:rounded-xl lg:py-32 lg:mx-20 bg-black">
             <div className="absolute w-full h-full top-0 left-0 -z-10 lg:hidden bg-important-knowledge" />
 
             <div className="absolute w-full h-full top-0 left-0 -z-10 bg-black hidden lg:block opacity-20" />

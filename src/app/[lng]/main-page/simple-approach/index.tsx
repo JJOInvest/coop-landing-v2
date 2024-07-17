@@ -14,7 +14,7 @@ export async function SimpleApproach() {
     const { t, i18n } = await getServerTranslations();
 
     return (
-        <section className="pt-20 relative isolate overflow-hidden pb-56 lg:py-32">
+        <section className="pt-20 relative isolate overflow-hidden pb-[170px] lg:py-32">
             <div className="absolute w-[475px] h-[435px] rounded-full bg-blue-400 -z-10 -top-[50px] -right-[160px] lg:top-[140px] lg:-right-[80px] opacity-10 blur-[100px]" />
 
             <div className="absolute top-[200px] -rotate-[150deg] w-[310px] h-[200px] -z-10 bg-cyan rounded-full -right-[120px] lg:top-[450px] lg:-right-[40px] opacity-15 blur-[100px] lg:opacity-25" />
@@ -37,7 +37,7 @@ export async function SimpleApproach() {
                     </Button>
                 </div>
 
-                <div className="mx-auto mt-40 lg:mt-0 flex items-center justify-center relative lg:flex-grow">
+                <div className="mx-auto mt-[130px] lg:mt-0 flex items-center justify-center relative lg:flex-grow">
                     <Image className="z-10 max-w-[290px]" src={IPhone} alt="iphone" />
 
                     <div className="absolute w-[290px] h-[585px] bg-blue-900 opacity-15 blur-[20px] -mb-8 -mr-8" />
@@ -50,7 +50,7 @@ export async function SimpleApproach() {
                     <Image
                         src={HeroIconFlash}
                         alt="flash"
-                        className="absolute -top-[100px] -right-[6px] lg:-right-[120px] lg:-top-[60px]"
+                        className="absolute -top-[100px] -right-[6px] lg:-right-[120px] lg:-top-[60px] w-12 h-12 lg:w-[72px] lg:h-[72px]"
                     />
                     <Image
                         src={HeroIconM}
