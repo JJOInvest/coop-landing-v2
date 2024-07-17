@@ -116,7 +116,7 @@ export const RegistrationForm = () => {
                     <Checkbox register={register} id="termsAccepted" label={t('accept_terms')} />
                 </div>
 
-                <Button small block disabled={!formState.isValid} type="submit">
+                <Button block disabled={!formState.isValid} type="submit">
                     {t('registration')}
                 </Button>
             </form>
