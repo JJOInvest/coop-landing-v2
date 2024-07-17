@@ -65,7 +65,7 @@ export async function Welcome() {
                     <ResponseImage
                         mobile={Hand}
                         desktop={HandLg}
-                        className="mt-16 -ml-20 max-w-[375px] lg:max-w-[575px]"
+                        className="mt-10 lg:mt-16 -ml-28 lg:-ml-20 max-w-[375px] lg:max-w-[575px]"
                     />
                 </div>
             </section>
