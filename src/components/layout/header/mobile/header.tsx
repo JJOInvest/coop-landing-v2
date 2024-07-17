@@ -13,7 +13,7 @@ export const Header = () => {
     const toggleMenu = useMobileMenuStore((state) => state.toggleMenu);
 
     return (
-        <header className="top-0 w-screen bg-white z-20 py-2">
+        <header className="top-0 w-screen bg-white z-30 py-2">
             <div className="container flex items-center justify-between">
                 <Link href="/">
                     <Image src={JJO} alt="jjo" className="invert" width={52} />
