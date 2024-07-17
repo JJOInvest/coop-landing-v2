@@ -150,7 +150,7 @@ export const AuthConfirm = () => {
                     })}
                 </div>
 
-                <Button className="mt-10" small block disabled={!isValid} type="submit">
+                <Button className="mt-10" block disabled={!isValid} type="submit">
                     {t(stepData.step === 'register-confirm' ? 'continue' : 'login')}
                 </Button>
                 <div className="text-center mt-5 text-15 text-grey-100 leading-5">
