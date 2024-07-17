@@ -20,7 +20,7 @@ export const NavLink = ({ href, label }: Props) => {
         <Link
             href={href}
             onClick={toggleMenu}
-            className="w-full text-lg text-center py-3 rounded-xl border-black border-[1px]"
+            className="w-full h-[64px] flex items-center justify-center text-lg text-center py-3 rounded-xl border-black border-[1px]"
         >
             {label}
 

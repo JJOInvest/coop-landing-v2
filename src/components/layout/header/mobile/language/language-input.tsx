@@ -28,7 +28,7 @@ export const LanguageInput = () => {
             />
 
             <select
-                className="bg-transparent text-black border-solid border-[1px] border-grey-60 outline-none w-full py-4 rounded-xl pr-5 pl-12 text-[13px] font-bold uppercase appearance-none"
+                className="bg-transparent text-black border-solid border-[1px] border-grey-60 outline-none h-[64px] w-full py-4 rounded-xl pr-5 pl-12 text-[13px] font-bold uppercase appearance-none"
                 onChange={handleOnChange}
                 value={i18next.language}
             >
