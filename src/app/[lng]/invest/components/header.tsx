@@ -21,7 +21,7 @@ export async function InvestHeader() {
                     {t('start_investing_cryptocurrency')}
                 </p>
                 <Button className="mt-2 lg:hidden" block>
-                    {t('build_financial_future')}
+                    {t('start_investing_now')}
                 </Button>
             </div>
         </div>
