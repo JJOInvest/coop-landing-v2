@@ -20,20 +20,21 @@ export default async function InvestLayout({ children, params }: Props) {
         <>
             <InvestHeader />
             <div className="flex flex-col lg:flex-row bg-white lg:my-24 gap-7">
-                <div className="lg:max-w-[355px]">
+                <div className="lg:max-w-[355px] sticky top-10">
                     <div className="sticky top-24">
                         <div className="overflow-hidden lg:rounded-r-xl">
                             <InvestMenu id={params.id} />
-                        </div>
-                        <div className="bg-black hover:bg-white rounded-r-lg">
-                            <Button
-                                className="hover:rounded-l-none mt-2 lg:mt-4 lg:block hidden duration-0 text-center"
-                                block
-                                as="link"
-                                href={`/${i18n.language}/register`}
-                            >
-                                {t('start_investing_now')}
-                            </Button>
+
+                            <div className="bg-black hover:bg-white rounded-r-lg">
+                                <Button
+                                    className="hover:rounded-l-none mt-2 lg:mt-4 lg:block hidden duration-0 text-center"
+                                    block
+                                    as="link"
+                                    href={`/${i18n.language}/register`}
+                                >
+                                    {t('start_investing_now')}
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 'use client';
 
+import cn from 'classnames';
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -98,7 +99,15 @@ export function HowItWorks() {
                                         <h5 className="text-xl lg:text-[22px]/snug">
                                             {t(stepsHeaders[s.name])}
                                         </h5>
-                                        <p className="text-grey-light text-[16px]/snug mt-2 lg:text-lg">
+                                        <p
+                                            className={cn([
+                                                'text-[16px]/snug mt-2 lg:text-lg',
+                                                {
+                                                    'text-grey-light': step !== s.name,
+                                                    'text-black': step === s.name,
+                                                },
+                                            ])}
+                                        >
                                             {t(stepsDescriptions[s.name])}
                                         </p>
                                     </div>

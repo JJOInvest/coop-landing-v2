@@ -4,7 +4,7 @@ import { WatchVideoButton } from '@/app/[lng]/main-page/watch-video-button';
 import { Button } from '@/components/button';
 import { getServerTranslations } from '@/i18n/server';
 
-import bgMobile from './assets/hero-image.png';
+import bgMobile from './assets/hero-image-small.png';
 import bgDesktop from './assets/hero-image.png';
 
 const SectionBackground = dynamic(
