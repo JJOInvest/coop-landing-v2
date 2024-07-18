@@ -1,9 +1,11 @@
 import { Metadata } from 'next';
+import Head from 'next/head';
 
 import { getArticle } from '@/api/help';
 import { InvestCalculator } from '@/app/[lng]/invest/[id]/components/invest-calculator';
 import { News } from '@/app/[lng]/invest/components/news';
 import { investPagesIds } from '@/app/[lng]/invest/constants';
+import { languages } from '@/i18n/languages';
 import { detectLanguage } from '@/i18n/server';
 
 interface Props {
@@ -36,14 +38,26 @@ export default async function Page({ params }: Props) {
     const article = await getArticle(params.lng, articleId);
 
     return (
-        <div className="px-0 py-20 lg:p-0 lg:max-w-[870px]">
-            <h1 className="text-4xl font-medium text-black">{article.name}</h1>
-            <div
-                className="mt-6 lg:mt-10 zendesk-content"
-                dangerouslySetInnerHTML={{ __html: article.body }}
-            />
-            {params.id === '33181283962009' && <News />}
-            {params.id === '33181863366425' && <InvestCalculator />}
-        </div>
+        <>
+            <Head>
+                {languages.map((lang) => (
+                    <link
+                        key={lang.isoCode}
+                        rel="alternate"
+                        hrefLang={lang.isoCode}
+                        href={`https://jjo.finance/${lang.value}/invest/${articleId}`}
+                    />
+                ))}
+            </Head>
+            <div className="px-0 py-20 lg:p-0 lg:max-w-[870px]">
+                <h1 className="text-4xl font-medium text-black">{article.name}</h1>
+                <div
+                    className="mt-6 lg:mt-10 zendesk-content"
+                    dangerouslySetInnerHTML={{ __html: article.body }}
+                />
+                {params.id === '33181283962009' && <News />}
+                {params.id === '33181863366425' && <InvestCalculator />}
+            </div>
+        </>
     );
 }

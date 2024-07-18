@@ -1,5 +1,8 @@
+import Head from 'next/head';
+
 import { getArticle, getSectionArticles, getSections } from '@/api/help';
 import ArticleLayout from '@/app/[lng]/help/[id]/article-layout';
+import { languages } from '@/i18n/languages';
 
 type Params = {
     id: string;
@@ -14,7 +17,21 @@ export default async function Page({ params }: Props) {
     const { id, lng } = params;
     const article = await getArticle(lng, id);
 
-    return <ArticleLayout article={article} />;
+    return (
+        <>
+            <Head>
+                {languages.map((lang) => (
+                    <link
+                        key={lang.isoCode}
+                        rel="alternate"
+                        hrefLang={lang.isoCode}
+                        href={`https://jjo.finance/${lang.value}/help/${id}`}
+                    />
+                ))}
+            </Head>
+            <ArticleLayout article={article} />;
+        </>
+    );
 }
 
 export async function generateStaticParams() {
