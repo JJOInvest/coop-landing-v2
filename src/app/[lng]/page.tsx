@@ -17,10 +17,19 @@ export const metadata: Metadata = {
     title: 'JJO',
 };
 
-export default function Main() {
+interface Props {
+    params: {
+        lng: string;
+    };
+}
+
+export default function Main({ params }: Props) {
+    const { lng } = params;
+    const canonicalUrl = `https://jjo.finance/${lng}`;
     return (
         <>
             <Head>
+                <link rel="canonical" href={canonicalUrl} />
                 {languages.map((lang) => (
                     <link
                         key={lang.isoCode}

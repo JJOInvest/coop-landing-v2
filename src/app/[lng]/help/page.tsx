@@ -25,9 +25,11 @@ export default async function Page({ params }: Props) {
     const locale = params.lng;
     const topArticles = await getArticles(locale, 8);
 
+    const canonicalUrl = `https://jjo.finance/${locale}/help`;
     return (
         <>
             <Head>
+                <link rel="canonical" href={canonicalUrl} />
                 {languages.map((lang) => (
                     <link
                         key={lang.isoCode}

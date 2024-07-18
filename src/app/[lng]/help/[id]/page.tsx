@@ -16,10 +16,12 @@ interface Props {
 export default async function Page({ params }: Props) {
     const { id, lng } = params;
     const article = await getArticle(lng, id);
+    const canonicalUrl = `https://jjo.finance/${lng}/help/${id}`;
 
     return (
         <>
             <Head>
+                <link rel="canonical" href={canonicalUrl} />
                 {languages.map((lang) => (
                     <link
                         key={lang.isoCode}

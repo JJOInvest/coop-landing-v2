@@ -37,9 +37,12 @@ export default async function Page({ params }: Props) {
 
     const article = await getArticle(params.lng, articleId);
 
+    const { lng } = params;
+    const canonicalUrl = `https://jjo.finance/${lng}/invest/${articleId}`;
     return (
         <>
             <Head>
+                <link rel="canonical" href={canonicalUrl} />
                 {languages.map((lang) => (
                     <link
                         key={lang.isoCode}

@@ -9,12 +9,21 @@ export const metadata: Metadata = {
     title: 'JJO Price',
 };
 
-export default async function Price() {
+interface Props {
+    params: {
+        lng: string;
+    };
+}
+
+export default async function Price({ params }: Props) {
     const { t } = await getServerTranslations();
 
+    const { lng } = params;
+    const canonicalUrl = `https://jjo.finance/${lng}/price`;
     return (
         <>
             <Head>
+                <link rel="canonical" href={canonicalUrl} />
                 {languages.map((lang) => (
                     <link
                         key={lang.isoCode}
