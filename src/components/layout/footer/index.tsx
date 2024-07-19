@@ -28,7 +28,7 @@ export const Footer = () => {
         { href: `/${i18n.language}/invest/33961919663385`, text: 'invest' },
         { href: '/price', text: 'price' },
         { href: `/${i18n.language}/help`, text: 'help' },
-        { href: 'https://blog.jjo.finance/', text: 'blog' },
+        { href: 'https://blog.jjo.finance/', text: 'blog', isExternal: true },
         {
             href: 'https://dashboard.jjo.finance/docs/privacy-policy-jjo.pdf?_gl=1*1jzm9qy*crossdomain_ga*MjA3NTI3MTc0MC4xNzA4NzcxNTc1*crossdomain_ga_WXJ9H0E4GB*MTcyMDc5MDM3NS4zMTAuMS4xNzIwNzkwNDIwLjE1LjAuMA..',
             text: 'privacy_policy',
@@ -47,6 +47,7 @@ export const Footer = () => {
                     <div>
                         <Image src={JJOIcon} alt={"j'jo"} />
                         <Link
+                            rel="nofollow"
                             href="https://skynet.certik.com/projects/jjo"
                             target="_blank"
                             className="hidden lg:flex mt-32 rounded-xl py-2.5 px-4 bg-white bg-opacity-10 items-center text-white gap-2 text-xs"
@@ -63,6 +64,7 @@ export const Footer = () => {
                                     key={link.text}
                                     href={link.href}
                                     className="text-white font-bold text-[13px] uppercase"
+                                    rel={link.isExternal ? 'nofollow' : undefined}
                                 >
                                     {t(link.text)}
                                 </Link>
@@ -75,6 +77,7 @@ export const Footer = () => {
                                     key={link.text}
                                     href={link.href}
                                     className="text-white font-bold text-[13px] uppercase"
+                                    rel={link.isExternal ? 'nofollow' : undefined}
                                 >
                                     {t(link.text)}
                                 </Link>
@@ -92,6 +95,7 @@ export const Footer = () => {
                                     href={socialMedia.href}
                                     className="flex items-center justify-center bg-white rounded-full w-10 h-10"
                                     target="_blank"
+                                    rel="nofollow"
                                 >
                                     <Image src={socialMedia.icon} alt={socialMedia.href} />
                                 </Link>

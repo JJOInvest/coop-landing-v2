@@ -42,6 +42,7 @@ export const Menu = () => {
                             key={`${i18n.language}${link.href}`}
                             href={link.isExternal ? link.href : `/${i18n.language}${link.href}`}
                             label={t(link.text)}
+                            isExternal={link.isExternal}
                         />
                     ))}
                 </nav>
