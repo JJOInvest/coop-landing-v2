@@ -40,7 +40,7 @@ export const PromoVideo = ({ open, onRequestClose }: Props) => {
 
     const overlayStyle: React.CSSProperties = {
         alignItems: 'center',
-        background: 'rgba(0, 0, 0, 0.8)',
+        background: 'rgba(0, 0, 0)',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
