@@ -4,7 +4,8 @@ import HeroIconFlash from '@/assets/icons/hero-icon-flash.svg';
 import HeroIconM from '@/assets/icons/hero-icon-m.svg';
 import HeroIconSteps from '@/assets/icons/hero-icon-steps.svg';
 import HeroIconUnicorn from '@/assets/icons/hero-icon-unicorn.svg';
-import IPhone from '@/assets/simple-approach/iphone.png';
+import IPhoneRu from '@/assets/simple-approach/iphone-en.png';
+import IPhoneEn from '@/assets/simple-approach/iphone-ru.png';
 import { Button } from '@/components/button';
 import { getServerTranslations } from '@/i18n/server';
 
@@ -12,6 +13,8 @@ import { BlobIcon } from './blob-icon';
 
 export async function SimpleApproach() {
     const { t, i18n } = await getServerTranslations();
+
+    console.log(i18n.language);
 
     return (
         <section className="pt-20 relative isolate overflow-hidden pb-[170px] lg:py-32">
@@ -38,7 +41,11 @@ export async function SimpleApproach() {
                 </div>
 
                 <div className="mx-auto mt-[130px] lg:mt-0 flex items-center justify-center relative lg:flex-grow">
-                    <Image className="z-10 max-w-[290px]" src={IPhone} alt="iphone" />
+                    <Image
+                        className="z-10 max-w-[290px]"
+                        src={i18n.language === 'ru' ? IPhoneRu : IPhoneEn}
+                        alt="iphone"
+                    />
 
                     <div className="absolute w-[290px] h-[585px] bg-blue-900 opacity-15 blur-[20px] -mb-8 -mr-8" />
 
