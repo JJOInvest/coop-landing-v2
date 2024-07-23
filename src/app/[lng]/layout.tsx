@@ -5,6 +5,7 @@ import { Cormorant, Mulish } from 'next/font/google';
 import localFont from 'next/font/local';
 import { ReactNode } from 'react';
 
+import Breadcrumbs from '@/components/breadcrumbs';
 import { Footer } from '@/components/layout/footer';
 import { Header } from '@/components/layout/header';
 import { I18nProvider } from '@/i18n/i18n-context';
@@ -95,6 +96,7 @@ export default async function RootLayout({ children, params: { lng } }: Props) {
                         ])}
                     >
                         <Header />
+                        <Breadcrumbs />
                         <main>{children}</main>
                         <Footer />
                     </body>
