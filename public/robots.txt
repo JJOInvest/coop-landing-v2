@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://jjo.finance
-
-# Sitemaps
-Sitemap: https://jjo.finance/sitemap.xml
