@@ -9,7 +9,7 @@ interface Props {
 export default async function Layout({ children }: Props) {
     return (
         <>
-            <LayoutHelp forArticles>
+            <LayoutHelp>
                 <div className="">{children}</div>
             </LayoutHelp>
         </>

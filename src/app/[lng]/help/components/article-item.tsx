@@ -24,14 +24,16 @@ export const ArticleItem = ({ article, children, articleIdUrl }: Props) => {
             onClick={toggleOpened}
         >
             <div
-                className={cn('font-light text-sm py-4 lg:py-0', {
+                className={cn('font-light text-sm py-4 lg:py-0 hover:text-black', {
                     'text-black font-normal': articleIdUrl === article.id.toString(),
                     'text-primary-neutral': articleIdUrl !== article.id.toString(),
                 })}
             >
                 {article.name}
                 {article.id.toString() === articleIdUrl && isOpened && (
-                    <div id="target-element">{children}</div>
+                    <div className="lg:hidden" id="target-element">
+                        {children}
+                    </div>
                 )}
             </div>
             <div className="relative border-black/5 rounded-full border-[1px] h-6 min-w-6 lg:hidden self-start mt-4">
