@@ -21,7 +21,7 @@ export async function LayoutHelp({ children, forArticles }: Props) {
                     <div className="flex justify-between w-full items-center">
                         <div className="text-white flex flex-col gap-10 lg:max-w-[870px] flex-grow">
                             <h2 className="text-[32px]/[36px] font-medium whitespace-pre-line lg:text-7xl">
-                                {t('question')}
+                                {t('Вопрос?\nМы здесь, чтобы помочь')}
                             </h2>
                             <Search />
                         </div>
@@ -31,20 +31,19 @@ export async function LayoutHelp({ children, forArticles }: Props) {
                 </div>
             </div>
 
-            {children}
+            <div className="py-16 lg:py-24">
+                <div className="container">
+                    <div className="lg:hidden block">{!forArticles && children}</div>
 
-            {/*<div className="py-16 lg:py-24">*/}
-            {/*    <div className="container">*/}
-            {/*        <div className="lg:hidden block">{!forArticles && children}</div>*/}
-            {/*        <div className="lg:flex justify-between">*/}
-            {/*            <CategoriesList>*/}
-            {/*                {forArticles && <div className="lg:hidden">{children}</div>}*/}
-            {/*            </CategoriesList>*/}
+                    <div className="lg:flex justify-between">
+                        <CategoriesList>
+                            {forArticles && <div className="lg:hidden">{children}</div>}
+                        </CategoriesList>
 
-            {/*            <div className="hidden lg:flex max-w-[770px] w-full">{children}</div>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
+                        <div className="hidden lg:flex max-w-[770px] w-full">{children}</div>
+                    </div>
+                </div>
+            </div>
         </section>
     );
 }
