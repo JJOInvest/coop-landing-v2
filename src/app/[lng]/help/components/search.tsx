@@ -43,7 +43,7 @@ export const Search = () => {
                 <input
                     type="text"
                     className="w-full placeholder:text-primary-neutral text-black outline-none py-2.5"
-                    placeholder={t('find_your_question')}
+                    placeholder={t('Найдите ваш вопрос...')}
                     {...register('query')}
                 />
                 {showResetButton && (
@@ -59,7 +59,7 @@ export const Search = () => {
 
             <div className="bg-black">
                 <Button arrow={!isMobile} className="px-5 hover:text-white gap-8">
-                    {t('search')}
+                    {t('Поиск')}
                 </Button>
             </div>
         </form>
