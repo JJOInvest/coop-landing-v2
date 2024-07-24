@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /search
+Clean-param: referrer&utm_source&utm_medium&utm_campaign
+
+Sitemap: https://jjo.finance/sitemap.xml
+
