@@ -15,21 +15,21 @@ import UkFlagIcon from '@/assets/languages/uk.svg';
 import VietnameseFlagIcon from '@/assets/languages/vietnamese.svg';
 
 export const languages = [
-    { name: 'Português (Brasil)', value: 'bz', icon: BrazilFlagIcon },
-    { name: '简体中文', value: 'ch', icon: ChinaFlagIcon },
-    { name: 'Français', value: 'fr', icon: FranceFlagIcon },
-    { name: 'Deutsch', value: 'de', icon: GermanyFlagIcon },
-    { name: 'Hindi (India)', value: 'hi', icon: IndiaFlagIcon },
-    { name: 'Bahasa Indonesia', value: 'in', icon: IndonesiaFlagIcon },
-    { name: 'Italiano', value: 'it', icon: ItalyFlagIcon },
-    { name: '日本語', value: 'ja', icon: JapanFlagIcon },
-    { name: '한국어', value: 'ko', icon: KoreaFlagIcon },
-    { name: 'Pilipinas', value: 'pi', icon: PilipinasFlagIcon },
-    { name: 'Русский', value: 'ru', icon: RussiaFlagIcon },
-    { name: 'Español', value: 'sp', icon: SpainFlagIcon },
-    { name: 'Türkçe', value: 'tr', icon: TurkeyFlagIcon },
-    { name: 'English', value: 'en', icon: UkFlagIcon },
-    { name: 'Tiếng Việt', value: 'vi', icon: VietnameseFlagIcon },
+    { name: 'Português (Brasil)', value: 'bz', icon: BrazilFlagIcon, isoCode: 'pt' },
+    { name: '简体中文', value: 'ch', icon: ChinaFlagIcon, isoCode: 'zh' },
+    { name: 'Français', value: 'fr', icon: FranceFlagIcon, isoCode: 'fr' },
+    { name: 'Deutsch', value: 'de', icon: GermanyFlagIcon, isoCode: 'de' },
+    { name: 'Hindi (India)', value: 'hi', icon: IndiaFlagIcon, isoCode: 'hi' },
+    { name: 'Bahasa Indonesia', value: 'in', icon: IndonesiaFlagIcon, isoCode: 'id' },
+    { name: 'Italiano', value: 'it', icon: ItalyFlagIcon, isoCode: 'it' },
+    { name: '日本語', value: 'ja', icon: JapanFlagIcon, isoCode: 'ja' },
+    { name: '한국어', value: 'ko', icon: KoreaFlagIcon, isoCode: 'ko' },
+    { name: 'Pilipinas', value: 'pi', icon: PilipinasFlagIcon, isoCode: 'fil' }, // ISO 639-2 code for Filipino
+    { name: 'Русский', value: 'ru', icon: RussiaFlagIcon, isoCode: 'ru' },
+    { name: 'Español', value: 'sp', icon: SpainFlagIcon, isoCode: 'es' },
+    { name: 'Türkçe', value: 'tr', icon: TurkeyFlagIcon, isoCode: 'tr' },
+    { name: 'English', value: 'en', icon: UkFlagIcon, isoCode: 'en' },
+    { name: 'Tiếng Việt', value: 'vi', icon: VietnameseFlagIcon, isoCode: 'vi' },
 ];
 
 export const languageIcons = Object.fromEntries(
