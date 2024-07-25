@@ -18,7 +18,8 @@ dayjs.extend(relativeTime);
 export const CategoryQuestion = async ({ id, name, updatedAt, isLast }: Props) => {
     const { i18n } = await getServerTranslations();
     dayjs.locale(i18n.language);
-    const updateText = `Обн. ${dayjs(updatedAt).fromNow()}`;
+    //todo нужен ключ
+    const updateText = `${i18n.language === 'ru' ? 'Обн.' : 'Upd.'} ${dayjs(updatedAt).fromNow()}`;
 
     return (
         <Link
