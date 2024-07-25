@@ -39,6 +39,10 @@ export const Chart = ({ data, appliedPeriod }: Props) => {
         );
     };
 
+    const formatter = (value: string, name: string) => {
+        return [`${value}`, `${name === 'investment' ? t('investments') : t(name)}`];
+    };
+
     return (
         <div className="w-full h-[325px] lg:h-full">
             <ResponsiveContainer width="99%" height="99%">
@@ -78,7 +82,12 @@ export const Chart = ({ data, appliedPeriod }: Props) => {
                         fontSize={14}
                         style={{ fillOpacity: 0.8 }}
                     />
-                    <Tooltip />
+                    <Tooltip
+                        // labelFormatter={(label) =>
+                        //     label === 'investment' ? t('investments') : t(label)
+                        // }
+                        formatter={formatter}
+                    />
                     <Bar
                         barSize={isMobile ? 16 : 64}
                         dataKey="investment"
