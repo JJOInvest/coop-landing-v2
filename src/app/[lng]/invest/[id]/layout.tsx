@@ -20,7 +20,7 @@ export default async function InvestLayout({ children, params }: Props) {
         <>
             <InvestHeader />
             <div className="flex flex-col lg:flex-row bg-white lg:my-24 gap-7">
-                <div className="lg:max-w-[355px] sticky top-10">
+                <div className="lg:max-w-[355px] sticky top-10 z-[5]">
                     <div className="sticky top-24">
                         <div className="overflow-hidden lg:rounded-r-xl">
                             <InvestMenu id={params.id} />
