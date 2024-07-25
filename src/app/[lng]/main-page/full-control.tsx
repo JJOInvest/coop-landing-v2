@@ -1,6 +1,8 @@
 import Image from 'next/image';
 
 import FullControlBg from '@/assets/full-control/bg.png';
+import AnotherEn from '@/assets/full-control/logos/another-en.svg';
+import AnotherRu from '@/assets/full-control/logos/another-ru.svg';
 import BinanceLogo from '@/assets/full-control/logos/binance.svg';
 import Bkex1Logo from '@/assets/full-control/logos/bkex-1.svg';
 import BkexLogo from '@/assets/full-control/logos/bkex.svg';
@@ -11,7 +13,6 @@ import CryptocomLogo from '@/assets/full-control/logos/cryptocom.svg';
 import Huobi1Logo from '@/assets/full-control/logos/huobi-1.svg';
 import Huobi2Logo from '@/assets/full-control/logos/huobi-2.svg';
 import HuobiLogo from '@/assets/full-control/logos/huobi.svg';
-import Kucoin1Logo from '@/assets/full-control/logos/kucoin-1.svg';
 import KucoinLogo from '@/assets/full-control/logos/kucoin.svg';
 import RobotImage from '@/assets/full-control/robot.png';
 import { getServerTranslations } from '@/i18n/server';
@@ -28,11 +29,10 @@ const logos = [
     Coinbase1Logo,
     Cryptocom1Logo,
     Bkex1Logo,
-    Kucoin1Logo,
 ];
 
 export async function FullControl() {
-    const { t } = await getServerTranslations();
+    const { t, i18n } = await getServerTranslations();
 
     return (
         <section className="text-white py-20 relative isolate lg:pt-24 lg:pb-0 lg:mb-20">
@@ -72,6 +72,16 @@ export async function FullControl() {
                                 <Image src={logo} alt={logo.src} />
                             </div>
                         ))}
+                        <div
+                            key={AnotherRu.src}
+                            className="flex items-center justify-center h-16 w-full lg:h-8"
+                        >
+                            <Image
+                                src={i18n.language === 'ru' ? AnotherRu : AnotherEn}
+                                alt={AnotherRu.src}
+                                width={110}
+                            />
+                        </div>
                     </div>
                 </div>
 
