@@ -4,16 +4,15 @@ import Head from 'next/head';
 import { getArticles } from '@/api/help';
 import { CategoriesList } from '@/app/[lng]/help/components/categories-list';
 import { CategoryBody } from '@/app/[lng]/help/components/category-body';
-import { LayoutHelp } from '@/app/[lng]/help/components/layoutHelp';
 import { languages } from '@/i18n/languages';
 import { getServerTranslations } from '@/i18n/server';
 
-// export async function generateMetadata(): Promise<Metadata> {
-//     const { t } = await getServerTranslations();
-//     return {
-//         title: t('help'),
-//     };
-// }
+export async function generateMetadata(): Promise<Metadata> {
+    const { t } = await getServerTranslations();
+    return {
+        title: t('help'),
+    };
+}
 
 interface Props {
     params: {

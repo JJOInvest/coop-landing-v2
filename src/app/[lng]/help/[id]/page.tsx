@@ -1,8 +1,10 @@
+import { Metadata } from 'next';
 import Head from 'next/head';
 
 import { getArticle, getSectionArticles, getSections } from '@/api/help';
 import ArticleLayout from '@/app/[lng]/help/[id]/article-layout';
 import { languages } from '@/i18n/languages';
+import { detectLanguage } from '@/i18n/server';
 
 type Params = {
     id: string;
@@ -11,6 +13,19 @@ type Params = {
 
 interface Props {
     params: Params;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const language = await detectLanguage();
+
+    const articleId = parseInt(params.id, 10);
+    const article = await getArticle(language, articleId);
+
+    const { title } = article;
+
+    return {
+        title: `${title} - JJO Invest`,
+    };
 }
 
 export default async function Page({ params }: Props) {
