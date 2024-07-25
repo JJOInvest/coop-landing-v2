@@ -15,18 +15,18 @@ import UkFlagIcon from '@/assets/languages/uk.svg';
 import VietnameseFlagIcon from '@/assets/languages/vietnamese.svg';
 
 export const languages = [
-    { name: 'Português (Brasil)', value: 'bz', icon: BrazilFlagIcon, isoCode: 'pt' },
-    { name: '简体中文', value: 'ch', icon: ChinaFlagIcon, isoCode: 'zh' },
+    { name: 'Português (Brasil)', value: 'pt', icon: BrazilFlagIcon, isoCode: 'pt' },
+    { name: '简体中文', value: 'cn', icon: ChinaFlagIcon, isoCode: 'zh' },
     { name: 'Français', value: 'fr', icon: FranceFlagIcon, isoCode: 'fr' },
     { name: 'Deutsch', value: 'de', icon: GermanyFlagIcon, isoCode: 'de' },
     { name: 'Hindi (India)', value: 'hi', icon: IndiaFlagIcon, isoCode: 'hi' },
-    { name: 'Bahasa Indonesia', value: 'in', icon: IndonesiaFlagIcon, isoCode: 'id' },
+    { name: 'Bahasa Indonesia', value: 'id', icon: IndonesiaFlagIcon, isoCode: 'id' },
     { name: 'Italiano', value: 'it', icon: ItalyFlagIcon, isoCode: 'it' },
     { name: '日本語', value: 'ja', icon: JapanFlagIcon, isoCode: 'ja' },
     { name: '한국어', value: 'ko', icon: KoreaFlagIcon, isoCode: 'ko' },
-    { name: 'Pilipinas', value: 'pi', icon: PilipinasFlagIcon, isoCode: 'fil' }, // ISO 639-2 code for Filipino
+    { name: 'Pilipinas', value: 'ph', icon: PilipinasFlagIcon, isoCode: 'fil' }, // ISO 639-2 code for Filipino
     { name: 'Русский', value: 'ru', icon: RussiaFlagIcon, isoCode: 'ru' },
-    { name: 'Español', value: 'sp', icon: SpainFlagIcon, isoCode: 'es' },
+    { name: 'Español', value: 'es', icon: SpainFlagIcon, isoCode: 'es' },
     { name: 'Türkçe', value: 'tr', icon: TurkeyFlagIcon, isoCode: 'tr' },
     { name: 'English', value: 'en', icon: UkFlagIcon, isoCode: 'en' },
     { name: 'Tiếng Việt', value: 'vi', icon: VietnameseFlagIcon, isoCode: 'vi' },
