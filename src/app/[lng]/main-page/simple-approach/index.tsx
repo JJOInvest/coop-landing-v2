@@ -4,8 +4,8 @@ import HeroIconFlash from '@/assets/icons/hero-icon-flash.svg';
 import HeroIconM from '@/assets/icons/hero-icon-m.svg';
 import HeroIconSteps from '@/assets/icons/hero-icon-steps.svg';
 import HeroIconUnicorn from '@/assets/icons/hero-icon-unicorn.svg';
-import IPhoneRu from '@/assets/simple-approach/iphone-en.png';
-import IPhoneEn from '@/assets/simple-approach/iphone-ru.png';
+import IPhoneEn from '@/assets/simple-approach/iphone-en.png';
+import IPhoneRu from '@/assets/simple-approach/iphone-ru.png';
 import { Button } from '@/components/button';
 import { getServerTranslations } from '@/i18n/server';
 
