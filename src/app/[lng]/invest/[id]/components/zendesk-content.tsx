@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import { Article } from '@/types/article';
@@ -13,7 +13,16 @@ export const ZendeskContent = ({ article }: Props) => {
     const { ref: startRef, inView: startInView } = useInView();
     const { ref: endRef, inView: endInView } = useInView();
 
-    const isHidden = !startInView && !endInView;
+    // const isHidden = !startInView && !endInView;
+    const [isHidden, setIsHidden] = useState(false);
+
+    useEffect(() => {
+        if (startInView) {
+            setIsHidden(true);
+        } else if (endInView) {
+            setIsHidden(false);
+        }
+    }, [startInView, endInView]);
 
     useEffect(() => {
         const header = document.getElementById('invest-menu-container');
