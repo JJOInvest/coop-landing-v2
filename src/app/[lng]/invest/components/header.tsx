@@ -8,7 +8,7 @@ export async function InvestHeader() {
     const { t } = await getServerTranslations();
 
     return (
-        <div className="w-screen bg-investArticle relative">
+        <div className="hidden lg:block w-screen bg-investArticle relative">
             <div className="container py-[90px] flex flex-col gap-6 lg:flex-row lg:justify-between">
                 <div className="absolute bottom-0 right-10 lg:right-80 translate-y-1/2 z-20">
                     <Image src={Blob} alt="" />

@@ -13,7 +13,7 @@ export async function InvestMenu({ id }: Props) {
     const { t, i18n } = await getServerTranslations();
 
     return (
-        <div className="py-12 text-white flex flex-col gap-4 pr-8 bg-invest">
+        <div className="hidden py-12 text-white lg:flex flex-col gap-4 pr-8 bg-invest">
             {investPages.map((item) => (
                 <Link
                     href={`/${i18n.language}/invest/${item.id}`}
