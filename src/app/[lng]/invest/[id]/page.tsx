@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 import { getArticle } from '@/api/help';
 import { InvestCalculator } from '@/app/[lng]/invest/[id]/components/invest-calculator';
+import { ZendeskContent } from '@/app/[lng]/invest/[id]/components/zendesk-content';
 import { News } from '@/app/[lng]/invest/components/news';
 import { investPagesIds } from '@/app/[lng]/invest/constants';
 import { languages } from '@/i18n/languages';
@@ -57,12 +58,13 @@ export default async function Page({ params }: Props) {
                     />
                 ))}
             </Head>
-            <div className="px-0 py-20 lg:p-0 lg:max-w-[870px]">
-                <h1 className="text-4xl font-medium text-black">{article.name}</h1>
-                <div
-                    className="mt-6 lg:mt-10 zendesk-content"
-                    dangerouslySetInnerHTML={{ __html: article.body }}
-                />
+            <div className="px-0 pb-20 pt-12 lg:p-0 lg:max-w-[870px]">
+                {/*<h1 className="text-4xl font-medium text-black">{article.name}</h1>*/}
+                {/*<div*/}
+                {/*    className="mt-6 lg:mt-10 zendesk-content"*/}
+                {/*    dangerouslySetInnerHTML={{ __html: article.body }}*/}
+                {/*/>*/}
+                <ZendeskContent article={article} />
                 {params.id === '33181283962009' && <News />}
                 {params.id === '33181863366425' && <InvestCalculator />}
                 {params.id === '33961919663385' && (

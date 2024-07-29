@@ -17,7 +17,10 @@ export async function InvestMenuMobile({ id }: Props) {
     const { t, i18n } = await getServerTranslations();
 
     return (
-        <div className="flex justify-between py-5 border-y border-grey-60 bg-white lg:hidden">
+        <div
+            className="flex justify-between py-5 border-y border-grey-60 bg-white lg:hidden"
+            id="invest-menu-stepper"
+        >
             <div />
             {investPages.map((item, index) => (
                 <Link href={`/${i18n.language}/invest/${item.id}`} key={item.id}>
