@@ -1,12 +1,16 @@
+'use client';
+
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 import { Calculator } from '@/components/calculator';
 import { getServerTranslations } from '@/i18n/server';
 
 import JJO from '@/assets/jjo.svg';
 
-export async function InvestCalculator() {
-    const { t } = await getServerTranslations();
+export function InvestCalculator() {
+    // const { t } = await getServerTranslations();
+    const { t } = useTranslation();
 
     return (
         <div>

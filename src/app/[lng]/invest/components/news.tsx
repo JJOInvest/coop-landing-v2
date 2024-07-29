@@ -1,5 +1,8 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
 import { getServerTranslations } from '@/i18n/server';
 
@@ -26,8 +29,8 @@ const links = [
     },
 ];
 
-export async function News() {
-    const { t } = await getServerTranslations();
+export function News() {
+    const { t } = useTranslation();
 
     return (
         <div>
