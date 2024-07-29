@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 import { InvestHeader } from '@/app/[lng]/invest/components/header';
 import { InvestMenu } from '@/app/[lng]/invest/components/invest-menu';
+import { InvestMenuMobile } from '@/app/[lng]/invest/components/invest-menu-mobile';
 import { StartWhenever } from '@/app/[lng]/invest/components/start-whenever';
 import { Button } from '@/components/button';
 import { getServerTranslations } from '@/i18n/server';
@@ -24,6 +25,7 @@ export default async function InvestLayout({ children, params }: Props) {
                     <div className="sticky top-24">
                         <div className="overflow-hidden lg:rounded-r-xl">
                             <InvestMenu id={params.id} />
+                            <InvestMenuMobile id={params.id} />
 
                             <div className="bg-black hover:bg-white rounded-r-lg">
                                 <Button
