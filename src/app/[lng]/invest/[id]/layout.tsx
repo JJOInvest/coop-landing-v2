@@ -22,7 +22,7 @@ export default async function InvestLayout({ children, params }: Props) {
             <InvestHeader />
             <div className="flex flex-col lg:flex-row bg-white lg:my-24 gap-7">
                 <div
-                    className="lg:max-w-[355px] sticky top-14 z-[50] duration-300"
+                    className="lg:max-w-[355px] sticky top-14 z-[5] duration-300"
                     id="invest-menu-container"
                 >
                     <div className="sticky top-24">
