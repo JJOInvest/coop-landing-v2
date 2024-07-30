@@ -38,8 +38,6 @@ const Breadcrumbs = () => {
         ],
     };
 
-    console.log(breadcrumbList);
-
     return (
         <>
             <Head>

@@ -38,7 +38,6 @@ export const ZendeskContent = ({ article, params }: Props) => {
         const menu = document.getElementById('invest-menu-stepper');
         if (header && menu) {
             if (isHidden) {
-                console.log('is hidden');
                 header.classList.add('top-0', 'z-[50]', 'shadow-stepper');
                 header.classList.remove('top-14', 'z-[5]');
             } else {

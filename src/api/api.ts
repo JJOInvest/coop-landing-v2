@@ -8,8 +8,6 @@ export interface RequestToken {
 //todo костыль чтобы заработала страница реги, на тесте не находит process.env.NEXT_PUBLIC_API_DOMAIN
 const baseUrl = process.env.NEXT_PUBLIC_API_DOMAIN || 'https://api-test.jjo.finance';
 
-console.log(baseUrl);
-
 if (!baseUrl) {
     throw new Error('NEXT_PUBLIC_API_DOMAIN is not defined');
 }
