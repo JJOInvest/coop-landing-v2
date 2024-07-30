@@ -9,7 +9,6 @@ import { getServerTranslations } from '@/i18n/server';
 import JJO from '@/assets/jjo.svg';
 
 export function InvestCalculator() {
-    // const { t } = await getServerTranslations();
     const { t } = useTranslation();
 
     return (

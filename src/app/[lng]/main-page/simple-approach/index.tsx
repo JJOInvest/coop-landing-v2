@@ -14,8 +14,6 @@ import { BlobIcon } from './blob-icon';
 export async function SimpleApproach() {
     const { t, i18n } = await getServerTranslations();
 
-    console.log(i18n.language);
-
     return (
         <section className="pt-20 relative isolate overflow-hidden pb-[170px] lg:py-32">
             <div className="absolute w-[475px] h-[435px] rounded-full bg-blue-400 -z-10 -top-[50px] -right-[160px] lg:top-[140px] lg:-right-[80px] opacity-10 blur-[100px]" />

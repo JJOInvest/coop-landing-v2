@@ -9,6 +9,7 @@ import { useInView } from 'react-intersection-observer';
 import { InvestCalculator } from '@/app/[lng]/invest/[id]/components/invest-calculator';
 import Arrow from '@/app/[lng]/invest/assets/arrow-icon.svg';
 import { News } from '@/app/[lng]/invest/components/news';
+import { useMobileMenuStore } from '@/components/layout/header/use-mobile-menu-store';
 import { Article } from '@/types/article';
 
 interface Props {
@@ -37,7 +38,7 @@ export const ZendeskContent = ({ article, params }: Props) => {
         const menu = document.getElementById('invest-menu-stepper');
         if (header && menu) {
             if (isHidden) {
-                header.classList.add('top-0', 'z-[50]');
+                header.classList.add('top-0', 'z-[50]', 'shadow-stepper');
                 header.classList.remove('top-14', 'z-[5]');
             } else {
                 header.classList.add('top-14', 'z-[5]');

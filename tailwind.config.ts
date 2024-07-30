@@ -115,6 +115,7 @@ const config: Config = {
                 button: '0px 1px 2px 0px rgba(77, 84, 94, 0.05), 2px 4px 10px 0px rgba(77, 84, 94, 0.10)',
                 checkbox:
                     '0px 2px 4px -1px rgba(27, 10, 82, 0.12), 0px 8px 8px -4px rgba(78, 117, 246, 0.12)',
+                stepper: '0px 5px 15px 0px rgba(223, 230, 240, 0.70)',
             },
         },
     },

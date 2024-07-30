@@ -1,8 +1,12 @@
+'use client';
+
 import cn from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
 import { investPages } from '@/app/[lng]/invest/constants';
+import { useMobileMenuStore } from '@/components/layout/header/use-mobile-menu-store';
 import { getServerTranslations } from '@/i18n/server';
 
 import StepActive from '../assets/jjo-step-active.svg';
@@ -12,9 +16,12 @@ interface Props {
     id: string;
 }
 
-export async function InvestMenuMobile({ id }: Props) {
+export function InvestMenuMobile({ id }: Props) {
     const articleId = parseInt(id as any, 10);
-    const { t, i18n } = await getServerTranslations();
+    const { t, i18n } = useTranslation();
+    const isMobileMenuOpened = useMobileMenuStore((state) => state.data.isOpened);
+
+    if (isMobileMenuOpened) return null;
 
     return (
         <div
