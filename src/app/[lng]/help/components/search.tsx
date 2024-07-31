@@ -23,7 +23,8 @@ export const Search = () => {
 
     const queryValue = watch('query', '');
 
-    const isMobile = useMediaMatch('(max-width: 1024px)');
+    // const isMobile = useMediaMatch('(max-width: 1024px)');
+    //mobile test fix
 
     useEffect(() => {
         setShowResetButton(queryValue !== '');
@@ -58,7 +59,7 @@ export const Search = () => {
             </div>
 
             <div className="bg-black">
-                <Button arrow={!isMobile} className="px-5 hover:text-white gap-8">
+                <Button arrow className="px-5 hover:text-white gap-8">
                     {t('search')}
                 </Button>
             </div>
