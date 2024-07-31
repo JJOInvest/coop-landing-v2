@@ -17,7 +17,8 @@ interface Props extends SectionWithTopArticles {
 
 export const CategoryItem = ({ id, name, topArticles, children, defaultOpened }: Props) => {
     const params = useParams();
-    const isMobile = useMediaMatch('(max-width: 1024px)');
+    const isMobile = false;
+    //mobile test fix
 
     const openedArticle = Boolean(
         topArticles.find((article) => article.id.toString() === params.id),
