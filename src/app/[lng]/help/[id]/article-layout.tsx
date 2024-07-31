@@ -25,13 +25,13 @@ const ArticleLayout = ({ article }: Props) => {
         }
     }, []);
 
-    useEffect(() => {
-        if (article.section_id === 19613933802265) {
-            setArticleBody(
-                replaceInstructionBody(article.body, t('ip_addresses_can_be_found'), article.id),
-            );
-        } else setArticleBody(article.body);
-    }, [article.section_id, article.body, article.id]);
+    // useEffect(() => {
+    //     if (article.section_id === 19613933802265) {
+    //         setArticleBody(
+    //             replaceInstructionBody(article.body, t('ip_addresses_can_be_found'), article.id),
+    //         );
+    //     } else setArticleBody(article.body);
+    // }, [article.section_id, article.body, article.id]);
 
     return (
         <div className="flex flex-col gap-6 lg:gap-8">
