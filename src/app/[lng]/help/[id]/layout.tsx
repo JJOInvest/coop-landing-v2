@@ -13,9 +13,11 @@ export default async function ArticleLayout({ children }: Props) {
             <div className="container">
                 {/*<div className="lg:hidden block">{!forArticles && children}</div>*/}
                 <div className="lg:flex justify-between">
-                    <CategoriesList />
+                    <CategoriesList>
+                        <div className="lg:hidden">{children}</div>
+                    </CategoriesList>
 
-                    <div className="flex max-w-[770px] w-full">{children}</div>
+                    <div className="hidden lg:flex max-w-[770px] w-full">{children}</div>
                 </div>
             </div>
         </div>

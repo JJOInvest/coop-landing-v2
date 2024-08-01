@@ -23,8 +23,7 @@ export const Search = () => {
 
     const queryValue = watch('query', '');
 
-    // const isMobile = useMediaMatch('(max-width: 1024px)');
-    const isMobile = true;
+    const isMobile = useMediaMatch('(max-width: 1024px)');
 
     useEffect(() => {
         setShowResetButton(queryValue !== '');

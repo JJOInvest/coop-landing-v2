@@ -15,18 +15,18 @@ interface Props {
     params: Params;
 }
 
-// export async function generateMetadata({ params }: Props): Promise<Metadata> {
-//     const language = await detectLanguage();
-//
-//     const articleId = parseInt(params.id, 10);
-//     const article = await getArticle(language, articleId);
-//
-//     const { title } = article;
-//
-//     return {
-//         title: `${title} - JJO Invest`,
-//     };
-// }
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const language = await detectLanguage();
+
+    const articleId = parseInt(params.id, 10);
+    const article = await getArticle(language, articleId);
+
+    const { title } = article;
+
+    return {
+        title: `${title} - JJO Invest`,
+    };
+}
 
 export default async function Page({ params }: Props) {
     const { id, lng } = params;
