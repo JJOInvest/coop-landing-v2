@@ -1,6 +1,5 @@
 import cn from 'classnames';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { ReactNode, useState } from 'react';
 
 interface Props {
@@ -23,6 +22,7 @@ export const ArticleItem = ({ article, children, articleIdUrl }: Props) => {
                 key={article.id}
                 href={`/help/${article.id}`}
                 onClick={toggleOpened}
+                prefetch={false}
             >
                 <div
                     className={cn('font-light text-sm py-4 lg:py-0 hover:text-black', {
