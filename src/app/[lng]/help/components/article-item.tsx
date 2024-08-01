@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import Link from 'next/link';
 import { ReactNode, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
     article: {
@@ -15,12 +16,14 @@ export const ArticleItem = ({ article, children, articleIdUrl }: Props) => {
     const [isOpened, setIsOpened] = useState(false || articleIdUrl === article.id.toString());
     const toggleOpened = () => setIsOpened((isOpened) => !isOpened);
 
+    const { i18n } = useTranslation();
+
     return (
         <div>
             <Link
                 className="flex justify-between items-center border-t-[1px] border-black/10 lg:border-0"
                 key={article.id}
-                href={`/help/${article.id}`}
+                href={`/${i18n.language}/help/${article.id}`}
                 onClick={toggleOpened}
                 prefetch={false}
             >
