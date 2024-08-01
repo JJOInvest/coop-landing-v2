@@ -18,12 +18,12 @@ const ArticleLayout = ({ article }: Props) => {
 
     const [articleBody, setArticleBody] = useState(body);
 
-    useEffect(() => {
-        const element = document.getElementById('target-element');
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    }, []);
+    // useEffect(() => {
+    //     const element = document.getElementById('target-element');
+    //     if (element) {
+    //         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    //     }
+    // }, []);
 
     // useEffect(() => {
     //     if (article.section_id === 19613933802265) {
