@@ -22,7 +22,7 @@ export async function Welcome() {
         <div className="relative">
             <div className="absolute bg-black hidden lg:block h-32 w-screen bottom-0 left-0 -z-20" />
 
-            <section className="pt-20 relative lg:rounded-xl lg:mx-20 overflow-hidden isolate bg-white">
+            <section className="pt-20 relative lg:rounded-xl lg:mx-20 overflow-hidden isolate bg-white h-[745px] lg:h-[664px]">
                 <Image
                     alt=""
                     src={BgLines}
@@ -62,11 +62,18 @@ export async function Welcome() {
                             {t('try_for_free')}
                         </Button>
                     </div>
-                    <ResponseImage
-                        mobile={Hand}
-                        desktop={HandLg}
-                        className="mt-10 lg:mt-16 -ml-28 lg:-ml-20 max-w-[375px] lg:max-w-[575px]"
-                    />
+                    <video
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        src={
+                            i18n.language === 'ru'
+                                ? '/assets/iphone-hand.webm'
+                                : '/assets/iphone-hand-en.webm'
+                        }
+                        className="mt-10 lg:mt-16 -ml-28 lg:-ml-20 w-[500px] max-w-none lg:w-[800px] absolute -bottom-[10px] left-8 lg:left-[234px] lg:-bottom-[150px]"
+                    ></video>
                 </div>
             </section>
         </div>

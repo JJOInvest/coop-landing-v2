@@ -39,11 +39,18 @@ export async function SimpleApproach() {
                 </div>
 
                 <div className="mx-auto mt-[130px] lg:mt-0 flex items-center justify-center relative lg:flex-grow">
-                    <Image
-                        className="z-10 max-w-[290px]"
-                        src={i18n.language === 'ru' ? IPhoneRu : IPhoneEn}
-                        alt="iphone"
-                    />
+                    <video
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        src={
+                            i18n.language === 'ru'
+                                ? '/assets/iphone.webm'
+                                : '/assets/iphone-en.webm'
+                        }
+                        className="z-10 max-w-[290px] rounded-[50px]"
+                    ></video>
 
                     <div className="absolute w-[290px] h-[585px] bg-blue-900 opacity-15 blur-[20px] -mb-8 -mr-8" />
 
