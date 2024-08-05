@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import { WatchVideoButton } from '@/app/[lng]/main-page/watch-video-button';
 import { Button } from '@/components/button';
 import { getServerTranslations } from '@/i18n/server';
+import { trackAnalytics } from '@/lib/trackAnalytics';
 
 import bgMobile from './assets/hero-image-small.png';
 import bgDesktop from './assets/hero-image.png';
@@ -27,6 +28,21 @@ export async function Hero() {
 
                 <div className="flex gap-4 lg:gap-5 mt-8 items-center lg:flex-row-reverse flex-col lg:w-min w-full">
                     <Button
+                        // onClick={() => {
+                        //     trackAnalytics(
+                        //         {
+                        //             event: 'click_start-free-1_id-34',
+                        //             eventCategory: 'click',
+                        //             eventAction: 'start-free-1',
+                        //             eventLabel: 'id-34',
+                        //         },
+                        //         {
+                        //             counterId: 93612829,
+                        //             eventName: 'reachGoal',
+                        //             target: 'click_start-free-1_id-34',
+                        //         },
+                        //     );
+                        // }}
                         as="link"
                         href={`/${i18n.language}/register`}
                         className="lg:w-72 w-full lg:justify-between"

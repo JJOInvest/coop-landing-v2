@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { LanguagePicker } from '@/components/layout/header/desktop/language-picker';
 import { LoginButton } from '@/components/layout/header/desktop/login-button';
 import { MenuItems } from '@/components/layout/header/desktop/menu-items';
+import { trackAnalytics } from '@/lib/trackAnalytics';
 
 import JJO from '@/assets/jjo-text.svg';
 
