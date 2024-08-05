@@ -70,8 +70,22 @@ export async function Welcome() {
                         className="flex -mt-[65px] lg:mt-16 -ml-20 lg:-ml-20 max-w-[150%] w-[150%] lg:max-w-[820px]"
                         // className="mt-10 lg:mt-16 -ml-28 lg:-ml-20 w-[500px] max-w-none lg:w-[800px] absolute -bottom-[10px] left-8 lg:left-[234px] lg:-bottom-[150px]"
                     >
-                        <source src="/assets/iphoine-safari.mov" type="video/quicktime" />
-                        <source src="/assets/iphone-hand-en.webm" type="video/webm" />
+                        <source
+                            src={
+                                i18n.language === 'ru'
+                                    ? '/assets/iphone-hand-safari.mov'
+                                    : '/assets/iphone-hand-safari-en.mov'
+                            }
+                            type="video/quicktime"
+                        />
+                        <source
+                            src={
+                                i18n.language === 'ru'
+                                    ? '/assets/iphone-hand.webm'
+                                    : '/assets/iphone-hand-en.webm'
+                            }
+                            type="video/webm"
+                        />
                     </video>
                 </div>
             </section>
