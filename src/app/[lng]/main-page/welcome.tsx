@@ -67,13 +67,11 @@ export async function Welcome() {
                         muted
                         loop
                         playsInline
-                        src={
-                            i18n.language === 'ru'
-                                ? '/assets/iphone-hand.webm'
-                                : '/assets/iphone-hand-en.webm'
-                        }
                         className="mt-10 lg:mt-16 -ml-28 lg:-ml-20 w-[500px] max-w-none lg:w-[800px] absolute -bottom-[10px] left-8 lg:left-[234px] lg:-bottom-[150px]"
-                    ></video>
+                    >
+                        <source src="/assets/iphoine-safari.mov" type="video/quicktime" />
+                        <source src="/assets/iphone-hand-en.webm" type="video/webm" />
+                    </video>
                 </div>
             </section>
         </div>
