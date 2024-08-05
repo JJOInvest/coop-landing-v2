@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { SwitcherLink } from '@/app/[lng]/(auth)/components/switcher-link';
 
 export const Switcher = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const pathname = usePathname();
 
     const getLastPathSegment = (path: string) => {
@@ -16,10 +16,13 @@ export const Switcher = () => {
 
     return (
         <div className="h-16 border-grey-70 border-b-[1px] flex">
-            <SwitcherLink href="/register" isActivate={lastSegment === 'register'}>
+            <SwitcherLink
+                href={`/${i18n.language}/register`}
+                isActivate={lastSegment === 'register'}
+            >
                 {t('registration')}
             </SwitcherLink>
-            <SwitcherLink href="/login" isActivate={lastSegment === 'login'}>
+            <SwitcherLink href={`/${i18n.language}/login`} isActivate={lastSegment === 'login'}>
                 {t('login')}
             </SwitcherLink>
         </div>

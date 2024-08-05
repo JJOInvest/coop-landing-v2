@@ -22,7 +22,7 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 export const LoginForm = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [error, setError] = useState<string | null>(null);
 
     const step = useStepStore((state) => state.data.step);
@@ -115,7 +115,7 @@ export const LoginForm = () => {
                 </Button>
 
                 <Link
-                    href="/password-reset"
+                    href={`/${i18n.language}/password-reset`}
                     className="mt-5 mx-auto text-grey-100 text-sm font-light"
                 >
                     {t('forgot_password')}
