@@ -46,7 +46,7 @@ export async function Welcome() {
                 />
 
                 <div className="container flex flex-col lg:flex-row-reverse lg:gap-16 lg:items-center">
-                    <div className="flex flex-col gap-8 lg:ml-auto lg:max-w-[470px] lg:items-start">
+                    <div className="flex flex-col gap-8 lg:ml-auto lg:max-w-[470px] lg:items-start z-10">
                         <h2 className="text-[28px] font-medium lg:text-5xl/tight lg:max-w-[95%]">
                             {t('welcome_to_jjo')}
                         </h2>
@@ -67,7 +67,7 @@ export async function Welcome() {
                         muted
                         loop
                         playsInline
-                        className="flex mt-10 lg:mt-16 -ml-10 lg:-ml-20 max-w-[375px] lg:max-w-[820px]"
+                        className="flex -mt-[65px] lg:mt-16 -ml-20 lg:-ml-20 max-w-[150%] w-[150%] lg:max-w-[820px]"
                         // className="mt-10 lg:mt-16 -ml-28 lg:-ml-20 w-[500px] max-w-none lg:w-[800px] absolute -bottom-[10px] left-8 lg:left-[234px] lg:-bottom-[150px]"
                     >
                         <source src="/assets/iphoine-safari.mov" type="video/quicktime" />
